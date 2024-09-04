@@ -1,0 +1,209 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#mainwrapper header {
+	/*Header */
+	background-color: lightcoral;
+	overflow: auto;
+	font-family: monospace;
+	font-weight: 600;
+	display: flex;
+	justify-content: space-between;
+}
+#mainwrapper header #logo {
+	/* Company Logo text */
+	width: 50%;
+	float: left;
+	padding-left: 2%;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	color: black;
+}
+
+#mainwrapper header #logo img{
+	border-radius: 100%;
+	display: flex;
+	justify-content: space-between;
+	margin-right: 12px;
+}
+
+#mainwrapper header #logo a{
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: black;
+	font-size: 15px;
+}
+
+#mainwrapper header nav {
+	/*Nav bar containing links in header */
+	text-align: right;
+	padding: 12px 2%;
+	width: 50%;
+	margin: auto;
+}
+header nav a {
+	/* Links in header */
+	margin-right: 30px;
+	color: black;
+	text-decoration: none;
+	transition: 0.4s ease;
+}
+
+nav a:hover{
+	color: yellow;
+}
+
+header nav i{
+	margin-right: 5px;
+}
+
+
+.login-page{
+	background-color: #fcf5c7;
+}
+
+.container-log{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+
+}
+
+.login-group{
+	width: 280px;
+	border: 1px solid lightgray;
+	box-shadow: 2px 2px 10px lightgray;
+	border-radius: 10px;
+	text-align: center;
+	padding: 12px;
+	background-color: white;
+}
+
+.login-form{
+	margin-top: 20px;
+}
+
+.box{
+	height: 25px;
+	margin-bottom: 12px;
+	width: 80%;
+	align-content: center;
+	margin-top: 12px;
+	background-color: #e1e1e1;
+	border: none;
+	border-radius: 3px;
+}
+
+.btn{
+	color: white;
+	font-size: 12px;
+	border-radius: 8px;
+	width: 60px;
+	border: none;
+	background-color: lightcoral;
+	height: 30px;
+	font-weight: 700;
+	transition: 0.5s ease;
+}
+
+.btn:hover{
+	background-color: red;
+}
+
+.container{
+	max-width: 1170px;
+	margin:  auto;
+	background-color: #fcf5c7;
+	max-height: 100%;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	padding-left: 30px;
+}
+
+.sport i{
+	font-weight: 600;
+	padding-left: 15px;
+	transition: 0.4s ease;
+	cursor: pointer;
+}
+
+.sport i:hover{
+	color: yellow;
+}
+.cate li{
+	display: flex;
+	list-style: none;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+	outline: solid;
+	outline-width: 0.5px;
+	margin: auto ;
+
+}
+
+.cate li a{
+	text-decoration: none;
+	color: black;
+	font-family: monospace;
+	font-weight: 600;
+	font-size: 15px;
+	text-align: center;
+	
+}
+.cate li a:hover{
+	background-color: orange;
+	width: 100%;
+
+}
+.head-sp{
+	border: 1px solid;
+	width: 300px;
+	border-radius: 10px	;
+}
+
+.head-sp p{
+	background-color: skyblue;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	height: 30px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+}
+.sport{
+	display: flex;
+	
+	margin-top: 20px;
+}
+
+.login-group-1{
+	
+	width: 500px;
+	border: 1px solid lightgray;
+	
+	border-radius: 10px;
+	text-align: center;
+	padding: 12px;
+	background-color: white;
+	margin-top: 20px;
+}
+
+#footerbar {
+	/* Footer bar at the bottom of the page */
+	height: 18px;
+	clear: both;
+	background-color: rgba(208,207,207,1.00);
+	width: 100%;
+	}
+
+#footerbar p{
+	color: white;
+	text-align: center;
+}
+
