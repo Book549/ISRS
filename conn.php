@@ -8,4 +8,5 @@ $conn = mysqli_connect($db_server, $db_username, $db_password, $db_name);
 if ($conn) {
 	echo "";
 }
- ?>
+#error_reporting(E_ERROR | E_PARSE);
+?>
