@@ -7,7 +7,8 @@
 		<title>admin dashboard</title>
 	</head>
 	<body>
-	<?php include 'side_bar.php' ?>
+	<?php include 'element\side_bar.php' ?>
+
 
 
 	</body>
