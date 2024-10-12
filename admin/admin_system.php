@@ -11,8 +11,6 @@ switch ($_GET['sub_page']) {
 
 	case 'add':
 		echo "202 page found.";
-
-		include 'admin\admin_system.php';
 		break;
 
 	default:

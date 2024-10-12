@@ -7,7 +7,13 @@
 		<title>admin dashboard</title>
 	</head>
 	<body>
-	<a href="admin_system.php">admin dashbord</a>
+	<a href="admin_system.php">admin dashbord</a><br>
+	<a href="login.php">login</a><br>
+	<?php 
+foreach ($_SESSION as $key => $value) {
+	echo "$key -- $value";
+}
+	 ?>
 
 
 
