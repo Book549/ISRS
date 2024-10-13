@@ -1,12 +1,16 @@
 <body>
 <ul>
-	<li><a href="?page=admin_system&sub_page=edit">แก้ไข/ลบ</a></li>
+	<li><a href="?page=admin_system&sub_page=view">แก้ไข/ลบ</a></li>
 	<li><a href="?page=admin_system&sub_page=add">เพิ่ม</a></li>
 </ul>
 <?php 
 switch ($_GET['sub_page']) {
+	case 'view':
+		include 'admin\view_admin_sys.php';
+		break;
+
 	case 'edit':
-		echo "202 page found.";
+		include 'admin\edit\edit_admin_sys.php';
 		break;
 
 	case 'add':

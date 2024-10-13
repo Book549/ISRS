@@ -1,11 +1,11 @@
 <body>
-<form method="post" action=" ">
+<form method="post" action="">
 	<label for="user_name">user_name</label>
-	<input type="text" name="user_name" required><br>
+	<input type="text" id="user_name" name="user_name" required><br>
 	<label for="user_username">user_username</label>
-	<input type="text" name="user_username" required><br>
+	<input type="text" id="user_username" name="user_username" required><br>
 	<label for="user_password">user_password</label>
-	<input type="text" name="user_password" required><br>
+	<input type="text" id="user_password" name="user_password" required><br>
 	<p>user_role:</p>
 	<input type="radio" id="admin_system" name="user_role" value="admin_system" required>
 	<label for="admin_system">admin_system</label><br>
@@ -13,7 +13,7 @@
 	<label for="admin_sport">admin_sport</label><br> 
 	<input type="radio" id="admin_report" name="user_role" value="admin_report" required>
 	<label for="admin_report">admin_report</label><br>
-	<input type="submit" name="add_admin"><br>
+	<input type="submit" name="add_admin" value="เพิ่มผู้ใช้"><br>
 </form>
 <?php 
 	if ($_POST['add_admin']) {

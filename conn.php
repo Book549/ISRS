@@ -8,7 +8,10 @@ $conn = mysqli_connect($db_server, $db_username, $db_password, $db_name);
 if ($conn) {
 	echo "";
 }
-session_start();
+
+if (!isset($_SESSION)) {
+	session_start();
+}
 #error_reporting(E_ERROR | E_PARSE);
 
 ?>
