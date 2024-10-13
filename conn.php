@@ -10,4 +10,5 @@ if ($conn) {
 }
 session_start();
 #error_reporting(E_ERROR | E_PARSE);
+setcookie("add_admin", "", time() + 86400, "/");
 ?>

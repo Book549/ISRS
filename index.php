@@ -11,7 +11,7 @@
 	<a href="login.php">login</a><br>
 	<?php 
 foreach ($_SESSION as $key => $value) {
-	echo "$key -- $value";
+	echo "$key -- $value<br>";
 }
 	 ?>
 
