@@ -17,9 +17,13 @@ switch ($_GET['sub_page']) {
 		include 'admin\add\add_admin_system.php';
 		break;
 
+	case 'delete':
+		include 'admin\delete\del_admin_sys.php';
+		break;
+
 	default:
 		if (empty($_GET['sub_page'])) {
-			header("Location: ?page=admin_system&sub_page=edit");
+			header("Location: ?page=admin_system&sub_page=view");
 		}else{
 			echo "404 page not found.";
 		}

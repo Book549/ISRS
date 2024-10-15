@@ -30,7 +30,18 @@
 </form>
 <?php 
 	if ($_POST['edit_admin']) {
-		sql_update_users = "";
+		$user_name = $_POST['user_name'];
+		$user_username = $_POST['user_username'];
+		$user_password = $_POST['user_password'];
+		$user_role = $_POST['user_role'];
+		$sql_update_users = "UPDATE `users` SET `user_name`='$user_name',`user_username`='$user_username',`user_password`='$user_password',`user_role`='$user_role' WHERE `user_id`='$user_id'";
+		if (mysqli_query($conn, $sql_update_users)) {
+			echo "Success";
+			header("Location: ?page=admin_system&sub_page=view");
+		}else{
+			echo "Fall";
+		}
+		
 	}
 ?>
 </body>

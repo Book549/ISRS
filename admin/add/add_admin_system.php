@@ -29,15 +29,16 @@
 			$sql_add_admin = "INSERT INTO `users` (`user_name`, `user_username`, `user_password`, `user_role`) VALUES ('$user_name', '$user_username', '$user_password', '$user_role')";
 			$result_add_admin = mysqli_query($conn, $sql_add_admin);
 			if ($result_add_admin) {
-				setcookie("add_admin", "Success", time() + 86400*7, "/");
+				#setcookie("add_admin", "Success", time() + 86400*7, "/");
+				header("Location: ?page=admin_system&sub_page=view");
 				echo "Success";
 			}else{
 				echo "Fall";
 			}
 		}elseif (mysqli_num_rows($result_find_add_admin) > 0) {
 			if ($_COOKIE['add_admin'] == 'Success') {
-				header('Location: '.$_SERVER['REQUEST_URI']);
-				setcookie("add_admin", "", time() - 3600, "/");
+				ssheader('Location: '.$_SERVER['REQUEST_URI']);
+				#setcookie("add_admin", "", time() - 3600, "/");
 			}else{
 				echo "duplicate user";
 			}

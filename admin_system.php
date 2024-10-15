@@ -84,7 +84,7 @@ switch ($_GET['page']) {
 	
 	default:
 		if (empty($_GET['page'])) {
-			header("Location: ?page=main_page");
+			#header("Location: ?page=main_page");
 		}else{
 			echo "404 page not found.";
 		}
