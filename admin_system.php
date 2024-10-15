@@ -45,7 +45,7 @@ switch ($_GET['page']) {
 		break;
 
 	case 'admin_system':
-		echo "202 page found.";
+		echo "admin_system";
 		include 'admin\admin_system.php';
 		break;
 
