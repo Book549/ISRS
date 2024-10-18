@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2024 at 06:52 PM
+-- Generation Time: Oct 18, 2024 at 10:19 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -39,13 +39,44 @@ CREATE TABLE `colors` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `player`
+--
+
+CREATE TABLE `player` (
+  `player_id` int(5) NOT NULL,
+  `player_title` varchar(16) NOT NULL,
+  `player_name` varchar(64) NOT NULL,
+  `player_mid_name` varchar(64) NOT NULL,
+  `player_sirname` varchar(64) NOT NULL,
+  `player_class` int(2) NOT NULL,
+  `player_room` int(2) NOT NULL,
+  `player_gender` varchar(8) NOT NULL,
+  `player_color_id` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `sports`
 --
 
 CREATE TABLE `sports` (
   `sport_id` int(11) NOT NULL,
-  `sport_name` varchar(32) NOT NULL
+  `sport_name` varchar(32) NOT NULL,
+  `sport_type` varchar(64) NOT NULL,
+  `sport_degree` varchar(16) NOT NULL,
+  `sport_gender` varchar(8) NOT NULL,
+  `sport_amount` int(2) NOT NULL,
+  `sport_note` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `sports`
+--
+
+INSERT INTO `sports` (`sport_id`, `sport_name`, `sport_type`, `sport_degree`, `sport_gender`, `sport_amount`, `sport_note`) VALUES
+(1, '1', 'ac', 'a', 'a', 0, 'a'),
+(2, '2', 'b', 'b', 'bc', 0, 'b');
 
 -- --------------------------------------------------------
 
@@ -84,6 +115,16 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `user_name`, `user_username`, `user_password`, `user_role`) VALUES
+(1, 'Test_user_00', 'A001', '12345678', 'admin_system'),
+(2, 'Test_user_02', 'b', 'b', 'admin_sport'),
+(4, 'Test_user_03', 'c', 'c', 'admin_report'),
+(5, 'Test_user_01', 'a', 'a', 'admin_system');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -92,6 +133,12 @@ CREATE TABLE `users` (
 --
 ALTER TABLE `colors`
   ADD PRIMARY KEY (`color_id`);
+
+--
+-- Indexes for table `player`
+--
+ALTER TABLE `player`
+  ADD PRIMARY KEY (`player_id`);
 
 --
 -- Indexes for table `sports`
@@ -122,10 +169,16 @@ ALTER TABLE `colors`
   MODIFY `color_id` int(2) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `player`
+--
+ALTER TABLE `player`
+  MODIFY `player_id` int(5) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `sports`
 --
 ALTER TABLE `sports`
-  MODIFY `sport_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `sport_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `test`
@@ -137,7 +190,7 @@ ALTER TABLE `test`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
