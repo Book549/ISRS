@@ -37,7 +37,7 @@
 			}
 		}elseif (mysqli_num_rows($result_find_add_admin) > 0) {
 			if ($_COOKIE['add_admin'] == 'Success') {
-				ssheader('Location: '.$_SERVER['REQUEST_URI']);
+				header('Location: '.$_SERVER['REQUEST_URI']);
 				#setcookie("add_admin", "", time() - 3600, "/");
 			}else{
 				echo "duplicate user";

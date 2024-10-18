@@ -29,7 +29,7 @@
 	  	</ul>
 	  <li>ระบบนักกีฬา</li>
 	    <ul>
-	      <li><a href="?page=type_sport">ประเภทกีฬา</a></li>
+	      <li><a href="?page=sport">ประเภทกีฬา</a></li>
 	      <li><a href="?page=player">นักกีฬา</a></li>
 	    </ul>
 	  <li><a href="?page=schedule">ตารางการแข่งขัน</a></li>
@@ -46,7 +46,7 @@ switch ($_GET['page']) {
 
 	case 'admin_system':
 		echo "admin_system";
-		include 'admin\admin_system.php';
+		include 'admin/admin_system.php';
 		break;
 
 	case 'admin_sport':
@@ -57,8 +57,9 @@ switch ($_GET['page']) {
 		echo "202 page found.";
 		break;
 
-	case 'type_sport':
-		echo "202 page found.";
+	case 'sport':
+		echo "sport";
+		include 'admin/sport.php';
 		break;
 		
 	case 'player':

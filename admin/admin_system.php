@@ -6,19 +6,19 @@
 <?php 
 switch ($_GET['sub_page']) {
 	case 'view':
-		include 'admin\view_admin_sys.php';
+		include 'admin/view/view_admin_sys.php';
 		break;
 
 	case 'edit':
-		include 'admin\edit\edit_admin_sys.php';
+		include 'admin/edit/edit_admin_sys.php';
 		break;
 
 	case 'add':
-		include 'admin\add\add_admin_system.php';
+		include 'admin/add/add_admin_system.php';
 		break;
 
 	case 'delete':
-		include 'admin\delete\del_admin_sys.php';
+		include 'admin/delete/del_admin_sys.php';
 		break;
 
 	default:
