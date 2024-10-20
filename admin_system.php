@@ -64,6 +64,7 @@ switch ($_GET['page']) {
 		
 	case 'player':
 		echo "202 page found.";
+		include 'admin/player.php';
 		break;
 
 	case 'schedule':
