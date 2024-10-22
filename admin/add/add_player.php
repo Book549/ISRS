@@ -25,7 +25,7 @@
 		$player_note = $_POST['player_color_id'];
 
 		unset($_POST);
-		$find_same_player = "SELECT * FROM `players` WHERE `player_id`LIKE '$player_id';
+		$find_same_player = "SELECT * FROM `players` WHERE `player_id` = '$player_id';
 		$result_find_add_player = mysqli_query($conn, $find_same_player);
 		if (mysqli_num_rows($result_find_add_player) == 0) {
 			$sql_add_player  = "INSERT INTO `players`(`player_id`, `player_title`, `player_name`, `player_mid_name`, `player_sirname`, `player_class`, `player_room`, `player_gender`, `player_color_id`) VALUES ('$player_id', '$player_title', '$player_name', '$player_mid_name', '$player_sirname', '$player_class', '$player_room', '$player_gender', '$player_color_id')";
@@ -41,8 +41,26 @@
 			if ($_COOKIE['add_player'] == 'Success') {
 				header('Location: '.$_SERVER['REQUEST_URI']);
 				#setcookie("add_player", "", time() - 3600, "/");
-			}else{
+			}else{ 
 				echo "duplicate player do you want to replace?";
+				echo "<form method=post action=''><input type=submit name=resuit value=Yes><br><input type=submit name=resuit value=No></form>";
+				if(isset($_POST['resuit']){
+					if($_POST['resuit']=="Yes"){
+						$sql_updae_player = "UPDATE `players` SET `player_id`='[value-1]',`player_title`='[value-2]',`player_name`='[value-3]',`player_mid_name`='[value-4]',`player_sirname`='[value-5]',`player_class`='[value-6]',`player_room`='[value-7]',`player_gender`='[value-8]',`player_color_id`='[value-9]' WHERE  `player_id` = '$player_id'";
+						if (mysql_query($conn, $sql_update_player)) {
+							#setcookie("add_player", "Success", time() + 86400*7, "/");
+							header("Location: ?page=player&sub_page=view");
+							echo "Success";
+						}else{
+							echo "Fall";
+						}
+						
+						}elseif($_POST['resuit']=="No"){
+						header("Location: ?page=player&sub_page=view");
+					}else{
+						echo "err bad url";
+					}
+				}
 			}
 		}
 		$result_find_add_player = mysqli_query($conn, $find_same_player);
@@ -52,50 +70,4 @@
 				}
 			}
 	}
-	
-
-		
-
-		
  ?>
-</body>
-
-<body>
-	<table>
-		<tr>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-		</tr>
-		<?php
-			$sql_find_players = "SELECT * FROM `players`";
-			$result_find_players = mysqli_query($conn, $sql_find_players);
-			if (mysqli_num_rows($result_find_players) > 0) {
-				while ($row_find_players = mysqli_fetch_assoc($result_find_players)) {
-					echo "<tr>
-							<td>".$row_find_players['player_id']."</td>
-							<td>".$row_find_players['player_title']."</td>
-							<td>".$row_find_players['player_name']."</td>
-							<td>".$row_find_players['player_mid_name']."</td>
-							<td>".$row_find_players['player_sirname']."</td>
-							<td>".$row_find_players['player_class']."</td>
-							<td>".$row_find_players['player_room']."</td>						
-							<td>".$row_find_players['player_gender']."</td>
-							<td>".$row_find_players['player_color_id']."</td>
-							<td><a href=\"admin_system.php?page=player&sub_page=edit&player_id=".$row_find_players['player_id']."\">edit</a></td>
-							<td><a href=\"admin_system.php?page=player&sub_page=delete&player_id=".$row_find_players['player_id']."\">del</a></td>
-						</tr>";
-				}
-			}else{
-				echo "no player found...";
-			}
-		 ?>
-
-	</table>
-</body>
