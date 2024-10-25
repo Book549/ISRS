@@ -12,15 +12,15 @@
 	}
 ?>
 <form method="post" action="">
-	<label for="player_name">player_name:</label><input type="text" name="player_name" id="player_name" value="<?php echo $row_find_edit_players['player_id']; ?>"><br>
-	<label for="player_type">player_type:</label><input type="text" name="player_type" id="player_type" value="<?php echo $row_find_edit_players['player_type']; ?>"><br>
+	<label for="player_id">player_id:</label><input type="text" name="player_id" id="player_id" value="<?php echo $row_find_edit_players['player_id']; ?>"><br>
+	<label for="player_title">player_title:</label><input type="text" name="player_title" id="player_title" value="<?php echo $row_find_edit_players['player_title']; ?>"><br>
+	<label for="player_name">player_name:</label><input type="text" name="player_name" id="player_name" value="<?php echo $row_find_edit_players['player_name']; ?>"><br>
+	<label for="player_mid_name">player_mid_name:</label><input type="text" name="player_mid_name" id="player_mid_name" value="<?php echo $row_find_edit_players['player_mid_name']; ?>"><br>
+	<label for="player_sirname">player_sirname:</label><input type="text" name="player_sirname" id="player_sirname" value="<?php echo $row_find_edit_players['player_sirname']; ?>"><br>
+	<label for="player_class">player_class:</label><input type="text" name="player_class" id="player_class" value="<?php echo $row_find_edit_players['player_class']; ?>"><br>
+	<label for="player_room">player_room:</label><input type="text" name="player_room" id="player_room" value="<?php echo $row_find_edit_players['player_room']; ?>"><br>
 	<label for="player_gender">player_gender:</label><input type="text" name="player_gender" id="player_gender" value="<?php echo $row_find_edit_players['player_gender']; ?>"><br>
-	<label for="player_degree">player_degree:</label><input type="text" name="player_degree" id="player_degree" value="<?php echo $row_find_edit_players['player_degree']; ?>"><br>
-	<label for="player_amount">player_amount:</label><input type="text" name="player_amount" id="player_amount" value="<?php echo $row_find_edit_players['player_amount']; ?>"><br>
-	<label for="player_note">player_note:</label><input type="text" name="player_note" id="player_note" value="<?php echo $row_find_edit_players['player_note']; ?>"><br>
-	<label for="player_note">player_note:</label><input type="text" name="player_note" id="player_note" value="<?php echo $row_find_edit_players['player_note']; ?>"><br>
-	<label for="player_note">player_note:</label><input type="text" name="player_note" id="player_note" value="<?php echo $row_find_edit_players['player_note']; ?>"><br>
-	<label for="player_note">player_note:</label><input type="text" name="player_note" id="player_note" value="<?php echo $row_find_edit_players['player_note']; ?>"><br>
+	<label for="player_color_id">player_color_id:</label><input type="text" name="player_color_id" id="player_color_id" value="<?php echo $row_find_edit_players['player_color_id']; ?>"><br>
 
 	<input type="submit" name="edit_player">
 <?php 
@@ -30,13 +30,13 @@
 		$player_name = $_POST['player_name'];
 		$player_mid_name = $_POST['player_mid_name'];
 		$player_sirname = $_POST['player_sirname'];
-		$player_class = $_POST['player_class'];
-		$player_room = $_POST['player_room'];
+		$player_class = $_POST['player_class'];		
+        $player_room = $_POST['player_room'];
 		$player_gender = $_POST['player_gender'];
 		$player_color_id = $_POST['player_color_id'];
-
+		
 		unset($_POST);
-		$sql_update_player = "UPDATE `players` SET `player_name`='$player_name',`player_type`='$player_type',`player_degree`='$player_degree',`player_gender`='$player_gender',`player_amount`='$player_amount',`player_note`='$player_note' WHERE `player_id`= '$player_id'";
+		$sql_update_player = "UPDATE `players` SET `player_id`='$player_id',`player_title`='$player_title',`player_name`='$player_name',`player_mid_name`='$player_mid_name',`player_sirname`='$player_sirname',`player_class`='$player_class',`player_room`='$player_room',`player_gender`='$player_gender',`player_color_id`='$player_color_id' WHERE `player_id`='$player_id'";
 		if (mysqli_query($conn, $sql_update_player)) {
 			echo "Success";
 			header("Location: ?page=player&sub_page=view");

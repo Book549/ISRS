@@ -16,7 +16,7 @@
 		$sport_amount = $_POST['sport_amount'];
 		$sport_note = $_POST['sport_note'];
 		unset($_POST);
-		$find_same_sport = "SELECT * FROM `sports` WHERE `sport_type`LIKE '$sport_type' AND`sport_degree` LIKE '$sport_degree' AND `sport_gender`LIKE '$sport_gender'";
+		$find_same_sport = "SELECT * FROM `sports` WHERE `sport_type` = '$sport_type' AND` sport_degree` = '$sport_degree' AND `sport_gender` = '$sport_gender'";
 		$result_find_add_sport = mysqli_query($conn, $find_same_sport);
 		if (mysqli_num_rows($result_find_add_sport) == 0) {
 			$sql_add_sport  = "INSERT INTO `sports`(`sport_name`, `sport_type`, `sport_degree`, `sport_gender`, `sport_amount`, `sport_note`) VALUES ('$sport_name','$sport_type','$sport_degree','$sport_gender','$sport_amount','$sport_note')";
@@ -29,12 +29,9 @@
 				echo "Fall";
 			}
 		}elseif (mysqli_num_rows($result_find_add_sport) > 0) {
-			if ($_COOKIE['add_sport'] == 'Success') {
-				header('Location: '.$_SERVER['REQUEST_URI']);
-				#setcookie("add_sport", "", time() - 3600, "/");
-			}else{
+
 				echo "duplicate sport";
-			}
+			
 		}
 		$result_find_add_sport = mysqli_query($conn, $find_same_sport);
 			while ($row_find_sport = mysqli_fetch_assoc($result_find_add_sport)) {
