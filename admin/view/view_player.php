@@ -10,6 +10,7 @@
 			<th>player_room</th>
 			<th>player_gender</th>
 			<th>player_color_id</th>
+			<th>player_sport_id</th>
 		</tr>
 		<?php
 			$sql_find_players = "SELECT * FROM `players`";
@@ -26,6 +27,7 @@
 							<td>".$row_find_players['player_room']."</td>						
 							<td>".$row_find_players['player_gender']."</td>
 							<td>".$row_find_players['player_color_id']."</td>
+							<td>".$row_find_players['player_sport_id']."</td>
 							<td><a href=\"admin_system.php?page=player&sub_page=edit&player_id=".$row_find_players['player_id']."\">edit</a></td>
 							<td><a href=\"admin_system.php?page=player&sub_page=delete&player_id=".$row_find_players['player_id']."\">del</a></td>
 						</tr>";

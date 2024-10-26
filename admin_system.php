@@ -45,7 +45,6 @@ switch ($_GET['page']) {
 		break;
 
 	case 'admin_system':
-		echo "admin_system";
 		include 'admin/admin_system.php';
 		break;
 
@@ -58,12 +57,10 @@ switch ($_GET['page']) {
 		break;
 
 	case 'sport':
-		echo "sport";
 		include 'admin/sport.php';
 		break;
 		
 	case 'player':
-		echo "202 page found.";
 		include 'admin/player.php';
 		break;
 
@@ -81,7 +78,6 @@ switch ($_GET['page']) {
 
 	case 'log_out':
 		header("Location: logout.php");
-		echo "202 page found.";
 		break;
 	
 	default:

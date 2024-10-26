@@ -1,4 +1,16 @@
-<?php include 'conn.php'; ?>
+<?php 
+	include 'conn.php'; 
+	switch ($_SESSION['user_role']) {
+	case 'admin_sport':
+		//do notthing
+		break;
+
+	default:
+		header("Location: logout.php");
+		break;
+	}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,41 +19,35 @@
 	<title>admin dashboard</title>
 </head>
 <body>
+	<ul>
+	  <li><a href="?page=main_page">หน้าหลัก</a></li>
+	  <li>จัดการบัญชี</li>
+	  	<ul>
+	  		<li><a href="?page=profile">จัดการคณะสี</a></li>
+	  	</ul>
+	  <li>ระบบนักกีฬา</li>
+	    <ul>
+	      <li><a href="?page=add_sport">เพิ่มการเข่งขัน</a></li>
+	      <li><a href="?page=add_player">เพิ่มนักกีฬา</a></li>
+	    </ul>
+	  <li><a href="?page=log_out">ออกจากระบบ</a></li>
+	</ul>
+
 <?php 
 switch ($_GET['page']) {
 	case 'main_page':
 		echo "202 page found.";
 		break;
 
-	case 'admin_system':
+	case 'profile':
+		include 'admin_sport/admin_sport.php';
+		break;
+
+	case 'add_player':
 		echo "202 page found.";
 		break;
 
-	case 'admin_sport':
-		echo "202 page found.";
-		break;
-
-	case 'admin_report':
-		echo "202 page found.";
-		break;
-
-	case 'type_sport':
-		echo "202 page found.";
-		break;
-		
-	case 'player':
-		echo "202 page found.";
-		break;
-
-	case 'schedule':
-		echo "202 page found.";
-		break;
-
-	case 'results':
-		echo "202 page found.";
-		break;
-		
-	case 'certificate':
+	case 'add_sport':
 		echo "202 page found.";
 		break;
 

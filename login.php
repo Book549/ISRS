@@ -40,7 +40,7 @@ switch ($_SESSION['user_role']) {
 		break;
 	
 	case 'admin_sport':
-		// code...
+		header("Location: admin_sport.php");
 		break;
 	
 	case 'admin_report':

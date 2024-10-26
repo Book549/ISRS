@@ -42,7 +42,7 @@ CREATE TABLE `colors` (
 -- Table structure for table `player`
 --
 
-CREATE TABLE `player` (
+CREATE TABLE `players` (
   `player_id` int(5) NOT NULL,
   `player_title` varchar(16) NOT NULL,
   `player_name` varchar(64) NOT NULL,
