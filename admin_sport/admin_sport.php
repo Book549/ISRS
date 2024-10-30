@@ -1,7 +1,7 @@
 <body>
 <ul>
 	<li><a href="?page=profile&sub_page=view">view</a></li>
-	<li><a href="?page=profile&sub_page=edit">edit</a></li>
+	<li><a href="?page=profile&sub_page=edit">add</a></li>
 </ul>
 <?php 
 switch ($_GET['sub_page']) {
@@ -9,7 +9,7 @@ switch ($_GET['sub_page']) {
 		include 'admin_sport/view/view_admin_sport.php';
 		break;
 
-	case 'edit':
+	case 'add':
 		include 'admin_sport/edit/edit_admin_sport.php';
 		break;
 
