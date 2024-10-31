@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ระบบลงทะเบียน+รายงานผลการแข่งขันกีฬาสี</title>
-    <link rel="stylesheet"  href="element/styles.css">
+    <title>ระบบลงทะเบียน-รายงานผลการแข่งขันกีฬาสี</title>
+    <link rel="stylesheet"  href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -29,7 +29,7 @@
             <div class="menu" id="Mymenu">
                 <ul>
                     <li><a href="index.php"><i class="fas fa-house"></i> Home</a></li>
-                    <li><a href="login.php"><i class="fas fa-user"></i> Sign up</a></li>
+                    <li><a href="login.php"><i class="fas fa-user"></i> Log in</a></li>
                     <li><a href="schedule.php"><i class="fas fa-clipboard-list"></i>รายการแข่งขัน</a></li>
                     <li><a href="result.php"><i class="fas fa-medal"></i>ผลการแข่งขัน</a></li>
                 </ul>
@@ -58,13 +58,13 @@
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active ">
-        <img src="pic/red1.jpg" class="d-block w-100"  style="height: 1000px; ">
+        <img src="pic/red1.jpg" class="d-block w-100"  style="height: 950px; " width="80%">
       </div>
       <div class="carousel-item">
-        <img src="pic/red2.jpg" class="d-block w-100" style="height: 1000px; ">
+        <img src="pic/red2.jpg" class="d-block w-100" style="height: 950px; " width="80%">
       </div>
       <div class="carousel-item">
-        <img src="pic/red3.jpg" class="d-block w-100" style="height: 1000px; ">
+        <img src="pic/red3.jpg" class="d-block w-100" style="height: 950px; " width="80%">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -89,19 +89,91 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><td>แผนผังสถานที่จัดการแข่งขันกีฬาภายใน <i class="fa-solid fa-link"></i></td></tr>
-                <tr><td>แผนที่เดินขบวนกีฬาภายใน <i class="fa-solid fa-link"></i></td></tr>
-                <tr><td>ผังตั้งขบวนกีฬาภายใน <i class="fa-solid fa-link"></i></td></tr>
-                <tr><td>แผนผังการจัดขบวนพาเหรดกีฬาสีภายใน <i class="fa-solid fa-link"></i></td></tr>
-                <tr><td>รายชื่อครูประจำชั้นแบ่งตามคณะสี <i class="fa-solid fa-link"></i></td></tr>
-                <tr><td>ระเบียบการแข่งขันกีฬาสีภายในโรงเรียนสามัคคีวิทยาคม <i class="fa-solid fa-link"></i></td></tr>
+                <tr><td>แผนผังสถานที่จัดการแข่งขันกีฬาภายใน <a href="#"><i class="fa-solid fa-link"></i>image</a></td></tr>
+                <tr><td>แผนที่เดินขบวนกีฬาภายใน <a href="#"><i class="fa-solid fa-link"></i>image</a></td></tr>
+                <tr><td>ผังตั้งขบวนกีฬาภายใน <a href="#"><i class="fa-solid fa-link"></i>pdf</a></td></tr>
+                <tr><td>แผนผังการจัดขบวนพาเหรดกีฬาสีภายใน <a href="#"><i class="fa-solid fa-link"></i>pdf</a></td></tr>
+                <tr><td>รายชื่อครูประจำชั้นแบ่งตามคณะสี <a href="#"><i class="fa-solid fa-link"></i>pdf</a></td></tr>
+                <tr><td>ระเบียบการแข่งขันกีฬาสีภายในโรงเรียนสามัคคีวิทยาคม <a href="#"><i class="fa-solid fa-link"></i>pdf</a></td></tr>
             </tbody>
         </table>
     </div>
 </div>
-
   </section>
 
+  <section>
+  <div class="ndmenu-container">
+    <div class="result-menu">
+    <table>
+  <thead>
+  <tr>
+    <td ><i class="fas fa-trophy"> สรุปผลการแข่งขันตามคณะสี</i></td>
+  </tr>
+    <tr>
+      <th style="width: 10%;">Rank</th>
+      <th>คณะสี</th>
+      <th>🥇 Gold</th>
+      <th>🥈 Silver</th>
+      <th>🥉 Bronze</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>School A</td>
+      <td>10</td>
+      <td>5</td>
+      <td>2</td>
+      <td>17</td>
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>School A</td>
+      <td>10</td>
+      <td>5</td>
+      <td>2</td>
+      <td>17</td>
+    </tr>
+
+    <tr>
+      <td>3</td>
+      <td>School A</td>
+      <td>10</td>
+      <td>5</td>
+      <td>2</td>
+      <td>17</td>
+    </tr>
+
+    <tr>
+      <td>4</td>
+      <td>School A</td>
+      <td>10</td>
+      <td>5</td>
+      <td>2</td>
+      <td>17</td>
+    </tr>
+
+    <tr>
+      <td>5</td>
+      <td>School A</td>
+      <td>10</td>
+      <td>5</td>
+      <td>2</td>
+      <td>17</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+</div>
+  </section>
+
+  <footer>
+    <div class="copyright">
+      <p>© 2024 ICT CENTER SAMAKKHIWITTHAYAKHOM SCHOOL</p> 
+    </div>
+  </footer>
 
   <script>
     window.addEventListener("scroll", function(){
@@ -117,7 +189,7 @@
     const sidebar = document.querySelector('.sidebar')
     sidebar.style.display = 'none'
   }
-    
+  
   </script>
 </body>
 </html>
