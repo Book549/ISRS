@@ -98,7 +98,7 @@
 body{
 	min-height: 100vh;
 	min-height: 100dvh;
-	color: white;
+	color: #444444;
 	display: grid;
 	grid-template-columns: auto 1fr ;
 	line-height: 1.5rem;
