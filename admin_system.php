@@ -22,23 +22,75 @@
 </head>
 <body>
   <nav id="sidebar">
-    <ul>
-      <li>
     <img src="http://samakkhi.ac.th/wp-content/uploads/2022/07/swk-150x150.png" width="40px" height="40px" >
         <span class="logo">ผู้จัดการระบบ</span>
-        <button onclick=toggleSidebar() id="toggle-btn">
-        <img src="element/svg/double_arrow_left.svg" height="24px" width="24px">
-        </button>
-      </li>
-      <li class="active">
+    <ul class="menu">
+      <li>
         <a href="?page=main_page">
-        <i class="fa-solid fa-house" style="padding-right:10px;"></i>
+        <i class="fa-solid fa-house"></i>
           <span>หน้าหลัก</span>
         </a>
       </li>
+
+       <li>
+          <a href="#" class="dropdown">
+          <span class="icon"><i class="fa-solid fa-list"></i></span>
+          <span class="text">จัดการบัญชี</span>
+          <span class="arrow"><i class="fa-solid fa-angle-down"></i></span>
+          </a>
+          <ul class="submenu">
+            <li><a href="?page=admin_system">
+              <span><i class="fa-solid fa-list"></i></span><span class="text">Admin ผู้จัดการระบบ</span>
+            </a></li>
+
+            <li><a href="?page=admin_sport">
+               <span><i class="fa-solid fa-list"></i><span class="text">Admin คณะสี</span>
+            </a></li>
+
+            <li><a href="?page=admin_report">
+             <span><i class="fa-solid fa-list"></i><span class="text">Admin รายงานผล</span>
+            </a></li>
+          </ul>
+      </li> 
+
+      <li>
+        <a href="?page=main_page">
+        <i class="fa-solid fa-list"></i>
+          <span>ระบบนักกีฬา</span>
+        </a>
+      </li> 
+
+      <li>
+        <a href="?page=schedule">
+        <i class="fas fa-calendar-alt"></i>
+          <span>ตารางการแข่งขัน</span>
+        </a>
+      </li> 
+
+      <li>
+        <a href="?page=results">
+        <i class="fa-solid fa-trophy"></i>
+          <span>ผลการแข่งขัน</span>
+        </a>
+      </li> 
+
+      <li>
+        <a href="?page=certificate">
+        <i class="fa-solid fa-award"></i>
+          <span>เกียรติบัตร</span>
+        </a>
+      </li> 
+
+      <li>
+        <a href="?page=log_out">
+        <i class="fas fa-sign-out-alt"></i>
+          <span>ออกจากระบบ</span>
+        </a>
+      </li> 
+
       <li>
         <button onclick=toggleSubMenu(this) class="dropdown-btn">
-    <i class="fas fa-user-cog" style="padding-right:5px;"></i>
+    <i class="fas fa-user-cog"></i>
           <span>จัดการบัญชี</span>
           <img id="rotated" src="element/svg/single_arrow_left.svg" height="12px" width="12px">
         </button>
@@ -52,7 +104,7 @@
       </li>
       <li>
         <button onclick=toggleSubMenu(this) class="dropdown-btn">
-    <i class="fas fa-basketball-ball" style="padding-right: 10px;"></i>
+    <i class="fas fa-basketball-ball" ></i>
           <span>ระบบนักกีฬา</span>
          <img id="rotated" src="element/svg/single_arrow_left.svg" height="12px" width="12px">
         </button>
@@ -63,30 +115,9 @@
           </div>
         </ul>
       </li>
-    <li>
-        <a href="?page=schedule">
-    <i class="fas fa-calendar-alt" style="padding-right: 10px;"></i>
-          <span>ตารางการแข่งขัน</span>
-        </a>
-      </li>
-      <li>
-        <a href="?page=results">
-    <i class="fa-solid fa-trophy" ></i>
-          <span style="padding-left: 7px;">ผลการแข่งขัน</span>
-        </a>
-      </li>
-      <li>
-        <a href="?page=certificate">
-    <i class="fa-solid fa-award" ></i>
-          <span style="padding-left: 12px;">เกียรติบัตร</span>
-        </a>
-      </li>
-    <li>
-        <a href="?page=log_out">
-        <i class="fas fa-sign-out-alt" ></i>
-          <span style="padding-left: 10px;">ออกจากระบบ</span>
-        </a>
-      </li>
+
+
+ 
     </ul>
   </nav>
   <main>
@@ -102,11 +133,11 @@
             break;
 
           case 'admin_sport':
-            include 'admin/admin_system.php';
+            echo "202 page found.";
             break;
 
           case 'admin_report':
-            include 'admin/admin_system.php';
+            echo "202 page found.";
             break;
 
           case 'sport':
@@ -118,7 +149,7 @@
             break;
 
           case 'schedule':
-            include 'admin/schedule.php';
+            echo "202 page found.";
             break;
 
           case 'results':
@@ -149,18 +180,16 @@
 <script>
   const toggleButton = document.getElementById('toggle-btn')
   const sidebar = document.getElementById('sidebar')
-  //const img = document.getElementById("rotated");
 
   function toggleSidebar(){
     sidebar.classList.toggle('close')
     toggleButton.classList.toggle('rotate')
 
-    toggleRotate()
     closeAllSubMenus()
   }
 
   function toggleSubMenu(button){
-    
+
     if(!button.nextElementSibling.classList.contains('show')){
       closeAllSubMenus()
     }
@@ -172,17 +201,6 @@
       sidebar.classList.toggle('close')
       toggleButton.classList.toggle('rotate')
     }
-  }
-
-  function toggleRotate() {
-    
-    if (rotated) {
-      toggleButton.style.transform = "rotate(0deg)"; // Rotate back to original
-    } else {
-      toggleButton.style.transform = "rotate(180deg)"; // Rotate to 90 degrees
-
-    }
-      rotated = !rotated; // Toggle the state
   }
 
   function closeAllSubMenus(){
