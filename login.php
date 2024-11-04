@@ -24,15 +24,15 @@
 			<form method="post" class="login-form">
 				<div>
 				<label for="login-user">Username </label><br>
-				<input type="text" name="username"  id="login-user" class="box" placeholder=" Enter your username" required><br>
+				<input type="text" name="username"  id="login-user" class="box" placeholder="  Enter your username" required><br>
 				</div>
 				<div>
 				<label for="login-pass">Password </label><br>
 				<div class="password">
-				<input type="password" name="password"  id="login-pass" class="box" placeholder=" Enter your password"  required ><br> 
+				<input type="password" name="password"  id="login-pass" class="box" placeholder="  Enter your password"  required ><br> 
 				<i class="fa-solid fa-eye-slash" id="showpassword"></i>
 				</div>
-				<div style="display: flex; justify-content: center;">
+				<div style="display: flex; justify-content: center; width: 100%;">
 				<input type="submit" name="login"  class="btn" value="Log in">
 				</div>
 				
