@@ -21,105 +21,96 @@
 
 </head>
 <body>
-  <nav id="sidebar">
-    <img src="http://samakkhi.ac.th/wp-content/uploads/2022/07/swk-150x150.png" width="40px" height="40px" >
-        <span class="logo">ผู้จัดการระบบ</span>
+  <nav id="sidebar-ad">
+    <div class="logo-ad">
+        <img src="http://samakkhi.ac.th/wp-content/uploads/2022/07/swk-150x150.png" width="50px" height="50px" >
+        <span class="logo-text">ผู้จัดการระบบ</span>
+    </div>
+    <div>
     <ul class="menu">
       <li>
-        <a href="?page=main_page">
-        <i class="fa-solid fa-house"></i>
-          <span>หน้าหลัก</span>
+        <a href="?page=main_page" class="active"><span class="icon">
+        <i class="fa-solid fa-house"></i></span>
+          <span >หน้าหลัก</span>
         </a>
       </li>
 
        <li>
           <a href="#" class="dropdown">
-          <span class="icon"><i class="fa-solid fa-list"></i></span>
-          <span class="text">จัดการบัญชี</span>
-          <span class="arrow"><i class="fa-solid fa-angle-down"></i></span>
+          <span class="icon"><i class="fas fa-user-gear"></i></span>
+          <span class="text">จัดการบัญชี </span>
+          <span class="arrow"><i class="fas fa-angle-down"></i></span>
           </a>
           <ul class="submenu">
             <li><a href="?page=admin_system">
-              <span><i class="fa-solid fa-list"></i></span><span class="text">Admin ผู้จัดการระบบ</span>
+              <span class="icon"><i class="fa-solid fa-list"></i></span><span class="text"> Admin ผู้จัดการระบบ</span>
             </a></li>
 
             <li><a href="?page=admin_sport">
-               <span><i class="fa-solid fa-list"></i><span class="text">Admin คณะสี</span>
+              <span class="icon"><i class="fa-solid fa-list"></i></span><span class="text"> Admin คณะสี</span>
             </a></li>
 
             <li><a href="?page=admin_report">
-             <span><i class="fa-solid fa-list"></i><span class="text">Admin รายงานผล</span>
+             <span class="icon"><i class="fa-solid fa-list"></i></span><span class="text"> Admin รายงานผล</span>
             </a></li>
           </ul>
       </li> 
 
       <li>
-        <a href="?page=main_page">
-        <i class="fa-solid fa-list"></i>
-          <span>ระบบนักกีฬา</span>
+        <a href="#" class="dropdown">
+          <span class="icon"><i class="fa-solid fa-person-running"></i></span>
+          <span class="text">ระบบนักกีฬา </span>
+          <span class="arrow"><i class="fas fa-angle-down"></i></span>
         </a>
+
+        <ul class="submenu">
+            <li><a href="?page=sport">
+              <span class="icon"><i class="fas fa-list"></i></span>
+              <span class="text">ประเภทกีฬา</span>
+            </a></li>
+
+            <li><a href="?page=player">
+              <span class="icon"><i class="fa-solid fa-list"></i>
+              </span><span class="text">นักกีฬา</span>
+            </a></li>
+        </ul>
       </li> 
 
       <li>
-        <a href="?page=schedule">
-        <i class="fas fa-calendar-alt"></i>
+        <a href="?page=schedule"><span class="icon">
+        <i class="fas fa-calendar-alt"></i></span>
           <span>ตารางการแข่งขัน</span>
         </a>
       </li> 
 
       <li>
-        <a href="?page=results">
-        <i class="fa-solid fa-trophy"></i>
+        <a href="?page=results"><span  class="icon">
+        <i class="fa-solid fa-trophy"></i></span>
           <span>ผลการแข่งขัน</span>
         </a>
       </li> 
 
       <li>
-        <a href="?page=certificate">
-        <i class="fa-solid fa-award"></i>
+        <a href="?page=certificate"><span  class="icon">
+        <i class="fa-solid fa-award"></i></span>
           <span>เกียรติบัตร</span>
         </a>
       </li> 
 
       <li>
-        <a href="?page=log_out">
-        <i class="fas fa-sign-out-alt"></i>
+        <a href="?page=log_out"><span  class="icon">
+        <i class="fas fa-sign-out-alt"></i></span>
           <span>ออกจากระบบ</span>
         </a>
       </li> 
-
-      <li>
-        <button onclick=toggleSubMenu(this) class="dropdown-btn">
-    <i class="fas fa-user-cog"></i>
-          <span>จัดการบัญชี</span>
-          <img id="rotated" src="element/svg/single_arrow_left.svg" height="12px" width="12px">
-        </button>
-        <ul class="sub-menu">
-          <div>
-            <li><a href="?page=admin_system">Admin ผู้จัดการระบบ</a></li>
-            <li><a href="?page=admin_sport">Admin คณะสี</a></li>
-            <li><a href="?page=admin_report">Admin รายงานผล</a></li>
-          </div>
-        </ul>
-      </li>
-      <li>
-        <button onclick=toggleSubMenu(this) class="dropdown-btn">
-    <i class="fas fa-basketball-ball" ></i>
-          <span>ระบบนักกีฬา</span>
-         <img id="rotated" src="element/svg/single_arrow_left.svg" height="12px" width="12px">
-        </button>
-        <ul class="sub-menu">
-          <div>
-            <li><a href="?page=sport">ประเภทกีฬา</a></li>
-            <li><a href="?page=player">นักกีฬา</a></li>
-          </div>
-        </ul>
-      </li>
-
-
- 
-    </ul>
+ </ul>
+    <span class="toggle">
+      <i class="fas fa-angle-left"></i>
+    </span>
+    </div>
   </nav>
+
+
   <main>
     <div class="container">
       <?php 
@@ -178,37 +169,35 @@
     </div>
   </main>
 <script>
-  const toggleButton = document.getElementById('toggle-btn')
-  const sidebar = document.getElementById('sidebar')
+const dropdownButtons = document.querySelectorAll('.dropdown');
+const toggleBtn = document.querySelector('.toggle');
+const nav = document.querySelector('nav');
 
-  function toggleSidebar(){
-    sidebar.classList.toggle('close')
-    toggleButton.classList.toggle('rotate')
+dropdownButtons.forEach((dropdownBtn) => {
+  dropdownBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    nav.classList.remove('hide');
+    const submenu = this.nextElementSibling;
 
-    closeAllSubMenus()
-  }
+    // Close any other open submenus
+    document.querySelectorAll('.submenu.show').forEach(openSubmenu => {
+      if (openSubmenu !== submenu) {
+        openSubmenu.classList.remove('show');
+      }
+    });
 
-  function toggleSubMenu(button){
+    // Toggle the current submenu
+    submenu.classList.toggle('show');
+  });
+});
 
-    if(!button.nextElementSibling.classList.contains('show')){
-      closeAllSubMenus()
-    }
+toggleBtn.addEventListener('click', function() {
+  nav.classList.toggle('hide');
+  submenu.classList.remove(show);
+});
 
-    button.nextElementSibling.classList.toggle('show')
-    button.classList.toggle('rotate')
 
-    if(sidebar.classList.contains('close')){
-      sidebar.classList.toggle('close')
-      toggleButton.classList.toggle('rotate')
-    }
-  }
 
-  function closeAllSubMenus(){
-    Array.from(sidebar.getElementsByClassName('show')).forEach(ul => {
-      ul.classList.remove('show')
-      ul.previousElementSibling.classList.remove('rotate')
-    })
-  }
 </script>
 </body>
 </html>
