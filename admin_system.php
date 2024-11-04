@@ -12,7 +12,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ผู้จัดการระบบ</title>
-    <link rel="stylesheet"  href="styles_admin.css">
+    <link rel="stylesheet"  href="element/styles_admin.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
@@ -24,10 +24,10 @@
   <nav id="sidebar">
     <ul>
       <li>
-	  <img src="http://samakkhi.ac.th/wp-content/uploads/2022/07/swk-150x150.png" width="40px" height="40px" >
+    <img src="http://samakkhi.ac.th/wp-content/uploads/2022/07/swk-150x150.png" width="40px" height="40px" >
         <span class="logo">ผู้จัดการระบบ</span>
         <button onclick=toggleSidebar() id="toggle-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"/></svg>
+        <img id="rotated" src="element/svg/double_arrow_left.svg" height="24px" width="24px">
         </button>
       </li>
       <li class="active">
@@ -38,9 +38,9 @@
       </li>
       <li>
         <button onclick=toggleSubMenu(this) class="dropdown-btn">
-		<i class="fas fa-user-cog" style="padding-right:5px;"></i>
+    <i class="fas fa-user-cog" style="padding-right:5px;"></i>
           <span>จัดการบัญชี</span>
-          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"/></svg>
+          <img id="rotated" src="element/svg/single_arrow_left.svg" height="12px" width="12px">
         </button>
         <ul class="sub-menu">
           <div>
@@ -52,9 +52,9 @@
       </li>
       <li>
         <button onclick=toggleSubMenu(this) class="dropdown-btn">
-		<i class="fas fa-basketball-ball" style="padding-right: 10px;"></i>
+    <i class="fas fa-basketball-ball" style="padding-right: 10px;"></i>
           <span>ระบบนักกีฬา</span>
-          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"/></svg>
+         <img id="rotated" src="element/svg/single_arrow_left.svg" height="12px" width="12px">
         </button>
         <ul class="sub-menu">
           <div>
@@ -63,27 +63,27 @@
           </div>
         </ul>
       </li>
-	  <li>
+    <li>
         <a href="?page=schedule">
-		<i class="fas fa-calendar-alt" style="padding-right: 10px;"></i>
+    <i class="fas fa-calendar-alt" style="padding-right: 10px;"></i>
           <span>ตารางการแข่งขัน</span>
         </a>
       </li>
       <li>
         <a href="?page=results">
-		<i class="fa-solid fa-trophy" ></i>
+    <i class="fa-solid fa-trophy" ></i>
           <span style="padding-left: 7px;">ผลการแข่งขัน</span>
         </a>
       </li>
       <li>
         <a href="?page=certificate">
-		<i class="fa-solid fa-award" ></i>
+    <i class="fa-solid fa-award" ></i>
           <span style="padding-left: 12px;">เกียรติบัตร</span>
         </a>
       </li>
-	  <li>
+    <li>
         <a href="?page=log_out">
-		    <i class="fas fa-sign-out-alt" ></i>
+        <i class="fas fa-sign-out-alt" ></i>
           <span style="padding-left: 10px;">ออกจากระบบ</span>
         </a>
       </li>
