@@ -27,7 +27,7 @@
     <img src="http://samakkhi.ac.th/wp-content/uploads/2022/07/swk-150x150.png" width="40px" height="40px" >
         <span class="logo">ผู้จัดการระบบ</span>
         <button onclick=toggleSidebar() id="toggle-btn">
-        <img id="rotated" src="element/svg/double_arrow_left.svg" height="24px" width="24px">
+        <img src="element/svg/double_arrow_left.svg" height="24px" width="24px">
         </button>
       </li>
       <li class="active">
@@ -102,11 +102,11 @@
             break;
 
           case 'admin_sport':
-            echo "202 page found.";
+            include 'admin/admin_system.php';
             break;
 
           case 'admin_report':
-            echo "202 page found.";
+            include 'admin/admin_system.php';
             break;
 
           case 'sport':
@@ -118,7 +118,7 @@
             break;
 
           case 'schedule':
-            echo "202 page found.";
+            include 'admin/schedule.php';
             break;
 
           case 'results':
@@ -149,16 +149,18 @@
 <script>
   const toggleButton = document.getElementById('toggle-btn')
   const sidebar = document.getElementById('sidebar')
+  //const img = document.getElementById("rotated");
 
   function toggleSidebar(){
     sidebar.classList.toggle('close')
     toggleButton.classList.toggle('rotate')
 
+    toggleRotate()
     closeAllSubMenus()
   }
 
   function toggleSubMenu(button){
-
+    
     if(!button.nextElementSibling.classList.contains('show')){
       closeAllSubMenus()
     }
@@ -170,6 +172,17 @@
       sidebar.classList.toggle('close')
       toggleButton.classList.toggle('rotate')
     }
+  }
+
+  function toggleRotate() {
+    
+    if (rotated) {
+      toggleButton.style.transform = "rotate(0deg)"; // Rotate back to original
+    } else {
+      toggleButton.style.transform = "rotate(180deg)"; // Rotate to 90 degrees
+
+    }
+      rotated = !rotated; // Toggle the state
   }
 
   function closeAllSubMenus(){
