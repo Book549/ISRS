@@ -1,6 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>เพิ่มรายชื่อนักกีฬา</title>
+	<link rel="stylesheet"  href="element/styles_admin_sport.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
 <body>
 	<center>
-	<table class="view_add_player_all">
+	<table class="table_all">
 		<tr>
 			<th>player_id</th>
 			<th>player_title</th>
@@ -29,8 +42,8 @@
 							<td>".$row_find_players['player_gender']."</td>
 							<td>".$row_find_players['player_color_id']."</td>
 							<td>".$row_find_players['player_sport_id']."</td>
-							<td><a href=\"admin_sport.php?page=add_player&sub_page=edit&player_id=".$row_find_players['player_id']."\" >edit</a></td>
-							<td><a href=\"admin_sport.php?page=add_player&sub_page=del&player_id=".$row_find_players['player_id']."\">del</a></td>
+							<td class=edit><a href=\"admin_sport.php?page=add_player&sub_page=edit&player_id=".$row_find_players['player_id']."\" >edit</a></td>
+							<td class=del><a href=\"admin_sport.php?page=add_player&sub_page=del&player_id=".$row_find_players['player_id']."\">del</a></td>
 						</tr>";
 				}
 			}else{
@@ -41,3 +54,4 @@
 	</table>
 	</center>
 </body>
+</html>
