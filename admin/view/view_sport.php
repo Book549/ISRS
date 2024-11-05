@@ -24,8 +24,8 @@
 							<td>".$row_find_sports['sport_gender']."</td>
 							<td>".$row_find_sports['sport_amount']."</td>
 							<td>".$row_find_sports['sport_note']."</td>
-							<td><a href=\"admin_system.php?page=sport&sub_page=edit&sport_id=".$row_find_sports['sport_id']."\">edit</a></td>
-							<td><a href=\"admin_system.php?page=sport&sub_page=delete&sport_id=".$row_find_sports['sport_id']."\">del</a></td>
+							<td class=edit><a href=\"admin_system.php?page=sport&sub_page=edit&sport_id=".$row_find_sports['sport_id']."\">edit</a></td>
+							<td class=del><a href=\"admin_system.php?page=sport&sub_page=delete&sport_id=".$row_find_sports['sport_id']."\">del</a></td>
 						</tr>";
 				}
 			}else{
