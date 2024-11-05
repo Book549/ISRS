@@ -1,5 +1,6 @@
 <body>
-	<table>
+	<center>
+	<table class="view_add_player_all">
 		<tr>
 			<th>player_id</th>
 			<th>player_title</th>
@@ -28,7 +29,7 @@
 							<td>".$row_find_players['player_gender']."</td>
 							<td>".$row_find_players['player_color_id']."</td>
 							<td>".$row_find_players['player_sport_id']."</td>
-							<td><a href=\"admin_sport.php?page=add_player&sub_page=edit&player_id=".$row_find_players['player_id']."\">edit</a></td>
+							<td><a href=\"admin_sport.php?page=add_player&sub_page=edit&player_id=".$row_find_players['player_id']."\" >edit</a></td>
 							<td><a href=\"admin_sport.php?page=add_player&sub_page=del&player_id=".$row_find_players['player_id']."\">del</a></td>
 						</tr>";
 				}
@@ -38,4 +39,5 @@
 		 ?>
 
 	</table>
+	</center>
 </body>
