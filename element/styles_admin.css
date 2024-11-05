@@ -7,211 +7,83 @@
   	list-style: none;
     font-family: "Mitr", sans-serif;
 }
-:root{
-	--base-clr: #11121a;
-	--line-clr: #42434a;
-	--hover-clr: #222533;
-	--text-clr: #e6e6ef;
-	--accent-clr: #5e63ff;
-	--secondary-text-clr: #b0b3c1;
-  }
 
-body{
-	min-height: 100vh;
-	min-height: 100dvh;
-	color: #444444;
-	display: grid;
-	grid-template-columns: auto 1fr ;
-	line-height: 1.5rem;
-  }
-  nav{
-	box-sizing: border-box;
-	height: 100vh;
-	width: 290px;
-	background-color: darkblue;
-	box-shadow: 5px 5px 400px 2px rgba(40, 62, 115, 0.5);
-	overflow-y: auto;
-	overflow-x: hidden;
-	transition: 0.4s ease;
-	white-space: nowrap;
-  }
- #sidebar-ad a {
-	text-decoration: none;
-	color: white;
+.add_sport_all{
+    padding: 20px 20px;
+    border: 2px solid black;
+    width: 25%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+}
 
- }
- nav.hide{
-	width: 60px;
-
- }
-
- nav.hide .toggle .fas{
-	transform: rotate(180deg);
- }
-
- .logo-ad{
-	padding-left: 10px;
+.box_sport{
+	height: 50px;
 	margin-bottom: 20px;
-	margin-top: 15px;
-	display: flex;
-	white-space: nowrap;
-	padding: 16px 0;
-	
- }
-
- .logo-text{
-	color: white;
-	display: flex;
-	align-items: center;
-	margin-left: 10px;
-	font-size: 18px;
- }
-
- .menu li{
-	margin-bottom: 20px;
-	
-
- }
-  
-.menu li a{
-	display: flex;
-	align-items: center;
 	width: 100%;
-	transition: 0.4s ease;
-	height: 100%;
-	padding: 9px 0;
-	font-size: 16px;
-}
-.menu li a.active,
-.menu li a.active:hover{
-	background: rgb(20, 77, 173);
-	color: white;
-}
- 
-.menu li a:hover{
-	background-color: skyblue;
-}
-
-.menu li a .icon{
-	min-width: 60px;
-	text-align: center;
-	font-size: 18px;
-}
-.menu li a .arrow{
-	margin-left: auto;
-	margin-right: 16px;
-}
-.submenu{
-	max-height: 0;
-	overflow-y: hidden;
-	transition: max-height 0.5s ease;
-	background-color: rgb(20, 77, 173);
-	
-}
-
-.submenu li a{
-	padding-left: 24px;
-}
-
-.submenu.show{
-	max-height: 480px;
-	margin-top: 15px;
-}
-
-.submenu.show .arrow .fas{
-	transform: rotate(60deg);
-}
-.toggle{
-	width: 50px;
-	height: 50px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 24px;
-	color: white;
-	background-color: rgb(20, 77, 173);
-	border-radius: 100%;
-	margin: 0 auto 16px;
-	margin-top: 36px;
-	cursor: pointer;
-	transition: 0.4s ease;
-}
-
-.toggle:hover{
-	background-color: rgb(32, 130, 243);
-}
-
-  main{
-	padding: min(30px, 10%);
-	float: right;
-  }
-  .container{
-	border-radius: 1em;
-	margin-bottom: 20px;
-	padding: min(3em, 15%);
-  
-	h2, p { margin-top: 1em }
-  }
-
-  .add-sport form{
-	max-width: 500px;
-	border-radius: 10px;
-	border: 1px solid black;
-	padding: 12px 15px;
-	justify-content: center;
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-	color: black;
-}
-
-.add-sport main h1{
-	padding: 20px;
-	color: black;
-	font-size: 25px;
-}
-.add-sport form h3{
-	margin-bottom: 10px;
-	color: black;
-	font-size: 25px;
-	padding-top: 25px;
-	font-weight: 400	;
-}
-.box_ad{
-	height: 50px;
-	margin-bottom: 20px;
-	width: 85%;
 	align-content: center;
 	margin-top: 12px;
 	background-color: #e1e1e1;
 	border: 2px solid black;
 	border-radius: 50px;
+    padding: 15px;
 	
 }
 
-.btn-sub{
-	background-color: darkblue;
+.btn{
 	color: white;
-	border-radius: 15px;
-	padding: 10px;
-	margin-bottom: 20px;
-	border: none;
-}
-
-input{
 	font-size: 20px;
+	border-radius: 20px;
+	width: 30%;
+	border: none;
+	background-color: darkblue;
+	height: 40px;
+	transition: 0.5s ease;
+    font-family: "Mitr", sans-serif;
+    font-weight: 400;
+    display: flex;
+   text-align: center;
 }
 
-.level{
-	font-size: 18px;
-	margin-bottom: 15px;
+.btn_viewadd{
+    color: white;
+	font-size: 20px;
+	border-radius: 20px;
+    max-width: 180px;
+	width: 15%;
+	border: none;
+	background-color: darkblue;
+	height: 40px;
+	transition: 0.5s ease;
+    font-family: "Mitr", sans-serif;
+    font-weight: 400;
+   text-align: center;
+   display: flex;
+   padding: 15px;
+   margin: 0 auto ;
+   align-items: center;
+   margin-bottom: 30px;
 }
 
-@media screen and (max-width: 576px){
-	nav{
-		position: fixed;
-		z-index: 999;
-		width: 100%;
-	}
-	
+.table_all, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+.table_all{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 20px;
+}
+
+tr{
+    background-color: skyblue;
+    color: black;
+    font-size: 20px;
+}
+
+td{
+    background-color: white;
+    text-align: center;
 }
