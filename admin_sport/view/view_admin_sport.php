@@ -36,7 +36,7 @@
 							<td>".$row_view_admin_sport['color_president']."</td>
 							<td>".$row_view_admin_sport['color_vice-president']."</td>
 							<td>".$row_view_admin_sport['color_id_user']."</td>
-							<td ><a href=\"admin_sport.php?page=profile&sub_page=edit\">edit</a></td>
+							<td class=edit><a href=\"admin_sport.php?page=profile&sub_page=edit\">edit</a></td>
 						</tr>";
 				}
 			}else{
