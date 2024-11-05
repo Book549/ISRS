@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>เพิ่มจำนวนนักกีฬา</title>
+	<title>เพิ่มรายชื่อนักกีฬา</title>
 	<link rel="stylesheet"  href="element/styles_admin_sport.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,8 +13,8 @@
 </head>
 <body>
 <ul>
-	<li><a href="?page=add_player&sub_page=view" class="btn_viewadd">ดูรายชื่อนักกีฬา</a></li>
-	<li><a href="?page=add_player&sub_page=add" class="btn_viewadd">เพิ่มจำนวนนักกีฬา</a></li>
+	<li><a href="?page=add_player&sub_page=view" class="btn_viewadd2">ดูรายชื่อนักกีฬา</a></li>
+	<li><a href="?page=add_player&sub_page=add" class="btn_viewadd2">เพิ่มจำนวนนักกีฬา</a></li>
 </ul>
 <?php 
 switch ($_GET['sub_page']) {
