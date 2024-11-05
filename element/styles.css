@@ -78,10 +78,12 @@ nav.sticky{
 
 .title{
     margin-top: 10px;
+    font-size: 12px;
 }
 
 .title p{
     color: black;
+    
 }
 
 .search{
@@ -370,10 +372,10 @@ table {
     width: 100%;
     border-collapse: collapse;
     border-radius: 10px;
+    border: 1px solid black;
 }
 
 th, td {
-   border: 2px solid darkblue;
     padding: 10px;
     text-align: left;
     
@@ -391,6 +393,7 @@ td{
     background-color: #f9f9f9;
     transition: 0.4s ease;
     cursor: pointer;
+   
 }
 td a{
     color: darkblue;
@@ -403,15 +406,30 @@ td:hover{
     background-color: #e1e1e1;
 }
 
+.table_head{
+    background-color: skyblue;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    margin-bottom: 15px;
+    color: black;
+}
+
 .copyright{
     display: flex;
+    justify-content: center;
     background-color: darkblue;
     width: 100%;
     color: white;
-    height: 40px;
-    justify-content: center;
-    text-align: center;
+    height: 40px;   
     font-weight: 300;
+}
+
+.copyright p{
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
 }
 
 .result-menu th{
@@ -476,3 +494,58 @@ td:hover{
     }
 }
   
+
+@media (max-width: 1024px) {
+    /* For tablets */
+    .menu ul {
+        margin-right: 100px;
+    }
+    .box-search {
+        width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* For iPads and smaller screens */
+    .menu ul {
+        display: none; /* Hide menu links */
+    }
+    .sc .bar-icon {
+        display: inline-block; /* Show sidebar toggle icon */
+    }
+    .logo img {
+        width: 50px;
+        height: 50px;
+    }
+    .box-search {
+        width: 180px;
+    }
+    .search {
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* For mobile devices (iPhones) */
+    nav {
+        padding: 10px;
+    }
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+    .title p {
+        display: none;
+    }
+    .box-search {
+        width: 150px;
+        height: 25px;
+    }
+    .search {
+        margin-left: 10px;
+    }
+
+}
+
+
+
