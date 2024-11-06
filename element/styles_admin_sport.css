@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	text-decoration: none;
+  	list-style: none;
+    font-family: "Mitr", sans-serif;
+}
+
+.add_sport_all{
+    padding: 20px 20px;
+    border: 2px solid black;
+    width: 25%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.box_sport{
+	height: 50px;
+	margin-bottom: 20px;
+	width: 100%;
+	align-content: center;
+	margin-top: 12px;
+	background-color: #e1e1e1;
+	border: 2px solid black;
+	border-radius: 50px;
+    padding: 15px;
+	
+}
+
+.btn{
+	color: white;
+	font-size: 20px;
+	border-radius: 20px;
+	width: 30%;
+	border: none;
+	background-color: darkblue;
+	height: 40px;
+	transition: 0.5s ease;
+    font-family: "Mitr", sans-serif;
+    font-weight: 400;
+    display: flex;
+   text-align: center;
+}
+
+.btn:hover{
+    background-color: rgb(20, 77, 173);
+}
+
+.btn_viewadd{
+    color: white;
+	font-size: 25px;
+	border-radius: 50px;
+    max-width: 180px;
+	background-color: darkblue;
+	transition: 0.5s ease;
+    font-family: "Mitr", sans-serif;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+   padding: 10px;
+   margin: 0 auto ;
+   align-items: center;
+   transition: 0.3s ease;
+   margin-bottom: 20px;
+}
+.btn_viewadd:hover{
+    background-color: rgb(20, 77, 173);
+}
+
+.btn_viewadd2{
+    color: white;
+	font-size: 18px;
+	border-radius: 50px;
+    max-width: 180px;
+	background-color: darkblue;
+	transition: 0.5s ease;
+    font-family: "Mitr", sans-serif;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+   padding: 10px;
+   margin: 0 auto ;
+   align-items: center;
+   transition: 0.3s ease;
+   margin-bottom: 20px;
+}
+.btn_viewadd2:hover{
+    background-color: rgb(20, 77, 173);
+}
+
+
+.table_all, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+    margin-top: 50px;
+}
+
+.table_all{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 20px;
+}
+
+tr{
+    background-color: skyblue;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+td{
+    background-color: white;
+    text-align: center;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+td:hover{
+    background-color: #e1e1e1;
+}
+
+@media (max-width: 1024px) {
+    .table_all, th, td {
+        font-size: 16px;
+        padding: 8px;
+    }
+    
+    .btn, .btn_viewadd {
+        font-size: 18px;
+        width: 40%;
+    }
+
+    .add_sport_all {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .table_all, th, td {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    .btn, .btn_viewadd {
+        font-size: 16px;
+        width: 60%;
+    }
+
+    .add_sport_all {
+        width: 70%;
+    }
+}
+
+@media (max-width: 576px) {
+    .table_all, th, td {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .btn, .btn_viewadd {
+        font-size: 14px;
+        width: 80%;
+    }
+
+    .add_sport_all {
+        width: 90%;
+    }
+
+    .table_all {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    th, td {
+        display: inline-block;
+        min-width: 100px;
+    }
+}
+
+.add{
+    background-color: rgb(92, 183, 1);
+}
+.add:hover{
+    background-color:  rgb(66, 133, 0);
+}
+.edit{
+    background-color: rgb(36, 87, 154);
+    cursor: pointer;
+}
+.edit:hover{
+    background-color: rgb(25, 61, 107);
+}
+.del{
+    background-color: rgb(164, 6, 6);
+}
+.del:hover{
+    background-color: rgb(118, 2, 2);  
+}
+
+.add a{
+    color: #e1e1e1;
+}
+
+.edit a{
+    color: #e1e1e1;
+}
+
+.del a{
+    color: #e1e1e1;
+}
