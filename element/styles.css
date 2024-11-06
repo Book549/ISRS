@@ -197,8 +197,8 @@ nav.sticky{
 .sidebar{
     position: fixed;
     top: 0;
-    min-height: 100vh;
-    width: 250px;
+    min-height: 500px;
+    width: 100%;
     z-index: 999;
     background-color: rgba(0, 0, 139, 0.884);
     backdrop-filter: blur(10px);
@@ -210,9 +210,14 @@ nav.sticky{
    transition: 0.4s ease;
 }
 .sidebar li{
+    display: flex;
     list-style: none;
     margin-bottom: 30px;
     width: 100%;
+   text-align: center;
+   align-items: center;
+   margin-bottom: 10px;
+
 }
 
 .sidebar li a{
@@ -220,6 +225,7 @@ nav.sticky{
     font-family: "Mitr", sans-serif;
     color: white;
     width: 100%;
+   
 }
 
 .sidebar li a:hover{
@@ -545,6 +551,23 @@ td:hover{
         margin-left: 10px;
     }
 
+}
+.additionl_menu{
+    max-width: 1200px;
+    margin: 20px auto;
+    margin-top: 30px;
+    padding: 20px;
+}
+.btn-menu{
+    text-decoration: none;
+    background-color: darkblue;
+    color: white;
+    padding: 15px;
+    border-radius: 30px;
+}
+
+.btn-menu a:hover{
+    background-color: lightcoral;
 }
 
 
