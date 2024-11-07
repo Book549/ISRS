@@ -29,8 +29,7 @@
 			$sql_add_admin = "INSERT INTO `users` (`user_name`, `user_username`, `user_password`, `user_role`) VALUES ('$user_name', '$user_username', '$user_password', '$user_role')";
 			$result_add_admin = mysqli_query($conn, $sql_add_admin);
 			if ($result_add_admin) {
-				#setcookie("add_admin", "Success", time() + 86400*7, "/");
-				header("Location: ?page=admin_system&sub_page=view");
+				echo "<meta http-equiv='refresh' content='0;url=?page=admin_system&sub_page=view' />";
 				echo "Success";
 			}else{
 				echo "Fall";

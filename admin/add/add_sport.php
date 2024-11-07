@@ -23,7 +23,7 @@
 			$result_add_sport = mysqli_query($conn, $sql_add_sport);
 			if ($result_add_sport) {
 				#setcookie("add_sport", "Success", time() + 86400*7, "/");
-				header("Location: ?page=sport&sub_page=view");
+				echo "<meta http-equiv='refresh' content='0;url=?page=sport&sub_page=view' />";
 				echo "Success";
 			}else{
 				echo "Fall";

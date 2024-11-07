@@ -31,7 +31,7 @@
 		$sql_update_sport = "UPDATE `sports` SET `sport_name`='$sport_name',`sport_type`='$sport_type',`sport_degree`='$sport_degree',`sport_gender`='$sport_gender',`sport_amount`='$sport_amount',`sport_note`='$sport_note' WHERE `sport_id`= '$sport_id'";
 		if (mysqli_query($conn, $sql_update_sport)) {
 			echo "Success";
-			header("Location: ?page=sport&sub_page=view");
+			echo "<meta http-equiv='refresh' content='0;url=?page=sport&sub_page=view' />";
 		}else{
 			echo "Fall";
 		}

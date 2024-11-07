@@ -29,7 +29,7 @@
 			$sql_add_player  = "INSERT INTO `players` (`player_id`, `player_title`, `player_name`, `player_mid_name`, `player_sirname`, `player_class`, `player_room`, `player_gender`, `player_color_id`, `player_sport_id`) VALUES ('$player_id', '$player_title', '$player_name', '$player_mid_name', '$player_sirname', '$player_class', '$player_room', '$player_gender', '$player_color_id', '$player_sport_id')";
 			$result_add_player = mysqli_query($conn, $sql_add_player);
 			if ($result_add_player) {
-				header("Location: ?page=add_sport&sub_page=view");
+				echo "<meta http-equiv='refresh' content='0;url=?page=add_sport&sub_page=view' />";
 				unset($_POST);
 				#echo "Success";
 			}else{
@@ -59,7 +59,7 @@
 						$sql_update_player = "UPDATE `players` SET `player_title`='$player_title',`player_name`='$player_name',`player_mid_name`='$player_mid_name',`player_sirname`='$player_sirname',`player_class`='$player_class',`player_room`='$player_room',`player_gender`='$player_gender',`player_color_id`='$player_color_id',`player_sport_id`='$player_sport_id' WHERE `player_id`='$player_id'";
 							$result_update_player = mysqli_query($conn, $sql_update_player);
 						if ($result_update_player) {
-							header("Location: ?page=add_sport&sub_page=view");
+							echo "<meta http-equiv='refresh' content='0;url=?page=add_sport&sub_page=view' />";
 							echo "Success";
 							echo $player_id;
 
@@ -69,7 +69,7 @@
 						break;
 					
 					case 'No':
-						header("Location: ?page=add_sport&sub_page=view");
+						echo "<meta http-equiv='refresh' content='0;url=?page=add_sport&sub_page=view' />";
 						break;
 
 					default:

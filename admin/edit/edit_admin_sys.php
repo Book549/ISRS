@@ -37,7 +37,7 @@
 		$sql_update_users = "UPDATE `users` SET `user_name`='$user_name',`user_username`='$user_username',`user_password`='$user_password',`user_role`='$user_role' WHERE `user_id`='$user_id'";
 		if (mysqli_query($conn, $sql_update_users)) {
 			echo "Success";
-			header("Location: ?page=admin_system&sub_page=view");
+			echo "<meta http-equiv='refresh' content='0;url=?page=admin_system&sub_page=view' />";
 		}else{
 			echo "Fall";
 		}

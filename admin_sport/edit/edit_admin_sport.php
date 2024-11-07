@@ -28,7 +28,7 @@
 		$sql_edit_profile = "UPDATE `colors` SET `color_id`='$color_id',`color_name`='$color_name',`color_color`='$color_color',`color_president`='$color_president',`color_vice-president`='$color_vice_president',`color_id_user`='$user_id' WHERE `color_id_user` = '$user_id'";
 		if (mysqli_query($conn, $sql_edit_profile)) {
 			echo "ok";
-			header("Location: admin_sport.php?page=profile&sub_page=view");
+			echo "<meta http-equiv='refresh' content='0;url=admin_sport.php?page=profile&sub_page=view' />";
 		}else{
 			echo "err";
 		}

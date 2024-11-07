@@ -1,15 +1,9 @@
 <?php 
-	include 'conn.php'; 
-	switch ($_SESSION['user_role']) {
-	case 'admin_sport':
-		//do notthing
-		break;
-
-	default:
-		header("Location: logout.php");
-		break;
-	}
-
+  include 'conn.php'; 
+  if ($_SESSION['user_role'] !== 'admin_system') {
+      echo "<meta http-equiv='refresh' content='0;url=logout.php'/>";
+      exit();
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -52,13 +46,13 @@ switch ($_GET['page']) {
 		break;
 
 	case 'log_out':
-		header("Location: logout.php");
+		echo "<meta http-equiv='refresh' content='0;url=logout.php' />";
 		echo "202 page found.";
 		break;
 	
 	default:
 		if (empty($_GET['page'])) {
-			header("Location: ?page=main_page");
+			echo "<meta http-equiv='refresh' content='0;url=?page=main_page' />";
 		}else{
 			echo "404 page not found.";
 		}

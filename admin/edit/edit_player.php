@@ -41,7 +41,7 @@
 		$sql_update_player = "UPDATE `players` SET `player_id`='$player_id',`player_title`='$player_title',`player_name`='$player_name',`player_mid_name`='$player_mid_name',`player_sirname`='$player_sirname',`player_class`='$player_class',`player_room`='$player_room',`player_gender`='$player_gender',`player_color_id`='$player_color_id',`player_sport_id`='$player_sport_id' WHERE `player_id`='$player_id'";
 		if (mysqli_query($conn, $sql_update_player)) {
 			echo "Success";
-			header("Location: ?page=player&sub_page=view");
+			echo "<meta http-equiv='refresh' content='0;url=?page=player&sub_page=view' />";
 		}else{
 			echo "Fall";
 		}

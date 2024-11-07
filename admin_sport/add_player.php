@@ -23,7 +23,7 @@ switch ($_GET['sub_page']) {
 
 	default:
 		if (empty($_GET['sub_page'])) {
-			header("Location: ?page=add_player&sub_page=view");
+			echo "<meta http-equiv='refresh' content='0;url=?page=add_player&sub_page=view' />";
 		}else{
 			echo "404 page not found.";
 		}

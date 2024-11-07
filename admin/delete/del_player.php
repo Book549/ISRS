@@ -8,7 +8,7 @@
 		$sql_del_player = "DELETE FROM `players` WHERE `player_id` = '$id_del_players'";
 		if (mysqli_query($conn, $sql_del_player)) {
 			echo "Success";
-			header("Location: ?page=player&sub_page=view");
+			echo "<meta http-equiv='refresh' content='0;url=?page=player&sub_page=view' />";
 		}else{
 			echo "Fall";
 		}

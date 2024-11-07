@@ -54,7 +54,7 @@
 
 		default:
 			if (empty($_GET['sub_page'])) {
-				header("Location: ?page=sport&sub_page=view");
+				echo "<meta http-equiv='refresh' content='0;url=?page=sport&sub_page=view' />";
 			}else{
 				echo "404 page not found.";
 			}

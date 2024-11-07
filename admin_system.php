@@ -1,12 +1,10 @@
-
 <?php 
   include 'conn.php'; 
   if ($_SESSION['user_role'] !== 'admin_system') {
-      header("Location: logout.php");
+      echo "<meta http-equiv='refresh' content='0;url=logout.php'/>";
       exit();
   }
-?>
-  
+?>  
 <!DOCTYPE html>
 <html lang="th">
 <head>
@@ -130,13 +128,13 @@
             break;
 
           case 'log_out':
-            header ("Location: logout.php");
+            echo "<meta http-equiv='refresh' content='0;url=logout.php'/>";
             exit();
             break;
           
           default:
             if (empty($_GET['page'])) {
-              header("Location: ?page=main_page");
+              echo "<meta http-equiv='refresh' content='0;url=?page=main_page' />";
               exit();
             }else{
               echo "404 page not found.";
