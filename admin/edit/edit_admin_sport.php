@@ -41,11 +41,10 @@ if (!isset($_SESSION)) {
 		$color_color = $_POST['color_color'];
 		$color_president = $_POST['color_president'];
 		$color_vice_president = $_POST['color_vice-president']; 
-		$color_id_user = $_POST['color_id_user'];
-		$sql_edit_profile = "UPDATE `colors` SET `color_id`='$color_id',`color_name`='$color_name',`color_color`='$color_color',`color_president`='$color_president',`color_vice-president`='$color_vice_president',`color_id_user`='$user_id' WHERE `color_id_user` = '$user_id'";
+		
+		$sql_edit_profile = "UPDATE `colors` SET `color_id`='$color_id',`color_name`='$color_name',`color_color`='$color_color',`color_president`='$color_president',`color_vice-president`='$color_vice_president',`color_id_user`='$user_id' WHERE `color_id` = '$color_id'";
 		if (mysqli_query($conn, $sql_edit_profile)) {
-			echo "ok";
-			header("Location: admin_system.php?page=admin_sport&sub_page=view");
+			echo "<meta http-equiv='refresh' content='0;url=http://localhost/ISRS/admin_system.php?page=admin_sport&sub_page=view' />";
 			exit();
 		}else{
 			echo "err";
