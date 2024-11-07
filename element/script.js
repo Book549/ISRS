@@ -8,21 +8,14 @@ showPassword.addEventListener("click", function(){
 })
 
 
-function toggleHamburgerIcon(el) {
-    el.classList.toggle("change");
-}
-
-const myMenu = document.getElementById("myMenu");
-const hamIcon = document.getElementById("hamIcon");
-
-hamIcon.addEventListener("click", function() {
-    if (myMenu.style.display === "block") {
-        myMenu.style.display = "none";
+function toggleDropdown() {
+    var dropdown = document.getElementById("dropdownMenu");
+    if (dropdown.style.display === "block") {
+        dropdown.style.display = "none";
     } else {
-        myMenu.style.display = "block";
+        dropdown.style.display = "block";
     }
-});
-
+}
 
 function filterBySport(sport) {
     const eventCards = document.querySelectorAll('.event-card');
@@ -77,5 +70,6 @@ function sortTable(n) {
         }
     }
 }
+
 
 

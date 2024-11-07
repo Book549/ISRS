@@ -1,7 +1,7 @@
 <body>
 <ul>
-	<li><a href="?page=add_player&sub_page=view">view</a></li>
-	<li><a href="?page=add_player&sub_page=add">add</a></li>
+	<li><a href="?page=add_player&sub_page=view" class="btn_viewadd2">ดูรายชื่อนักกีฬา</a></li>
+	<li><a href="?page=add_player&sub_page=add" class="btn_viewadd2">เพิ่มจำนวนนักกีฬา</a></li>
 </ul>
 <?php 
 switch ($_GET['sub_page']) {
@@ -31,3 +31,4 @@ switch ($_GET['sub_page']) {
 }
  ?>
 </body>
+</html>

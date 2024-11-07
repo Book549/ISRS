@@ -1,7 +1,7 @@
 <body>
 <ul>
-	<li><a href="?page=profile&sub_page=view">view</a></li>
-	<li><a href="?page=profile&sub_page=edit">add</a></li>
+	<li><a href="?page=profile&sub_page=view" class="btn_viewadd">view</a></li>
+	<li><a href="?page=profile&sub_page=edit"  class="btn_viewadd">add</a></li>
 </ul>
 <?php 
 switch ($_GET['sub_page']) {
@@ -23,3 +23,4 @@ switch ($_GET['sub_page']) {
 }
  ?>
 </body>
+</html>

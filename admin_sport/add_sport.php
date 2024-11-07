@@ -1,6 +1,6 @@
 <body>
 <ul>
-	<li><a href="?page=add_sport&sub_page=view">view</a></li>
+	<li><a href="?page=add_sport&sub_page=view" class="btn_viewadd">view</a></li>
 </ul>
 <?php 
 switch ($_GET['sub_page']) {
@@ -30,3 +30,4 @@ switch ($_GET['sub_page']) {
 }
  ?>
 </body>
+</html>

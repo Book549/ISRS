@@ -1,16 +1,21 @@
+</head>
 <body>
-<form method="post" >
-	<label for="player_id">player_id:</label><input type="text" name="player_id" id="player_id"><br>
-	<label for="player_title">player_title:</label><input type="text" name="player_title" id="player_title"><br>
-	<label for="player_name">player_name:</label><input type="text" name="player_name" id="player_name"><br>
-	<label for="player_mid_name">player_mid_name:</label><input type="text" name="player_mid_name" id="player_mid_name"><br>
-	<label for="player_sirname">player_sirname:</label><input type="text" name="player_sirname" id="player_sirname"><br>
-	<label for="player_class">player_class:</label><input type="text" name="player_class" id="player_class"><br>	
-    <label for="player_room">player_room:</label><input type="text" name="player_room" id="player_room"><br>
-	<label for="player_gender">player_gender:</label><input type="text" name="player_gender" id="player_gender"><br>
-	
-	<label for="player_sport_id">player_sport_id:</label><input type="text" name="player_sport_id" id="player_sport_id"><br>
-	<input type="submit" name="add_player">
+	<center>
+	<div class="add_sport_all">
+	<form method="post" >
+		<label for="player_id">player_id:</label> <input type="text" class="box_sport" name="player_id" id="player_id"><br>
+		<label for="player_title">player_title:</label> <input type="text" class="box_sport" name="player_title" id="player_title"><br>
+		<label for="player_name">player_name:</label> <input type="text" class="box_sport" name="player_name" id="player_name"><br>
+		<label for="player_mid_name">player_mid_name:</label> <input type="text" class="box_sport" name="player_mid_name" id="player_mid_name"><br>
+		<label for="player_sirname">player_sirname:</label> <input type="text" class="box_sport" name="player_sirname" id="player_sirname"><br>
+		<label for="player_class">player_class:</label> <input type="text" class="box_sport" name="player_class" id="player_class"><br>	
+		<label for="player_room">player_room:</label> <input type="text" class="box_sport" name="player_room" id="player_room"><br>
+		<label for="player_gender">player_gender:</label><input type="text" class="box_sport" name="player_gender" id="player_gender"><br>
+		<label for="player_sport_id">player_sport_id:</label><input type="text" class="box_sport" name="player_sport_id" id="player_sport_id"><br>
+		<input type="submit" name="add_player" class="btn">
+	</form>
+	</div>
+	</center>
 <?php 
 	if (isset($_POST['add_player'])) {
 		$player_id = $_POST['player_id'];
@@ -88,3 +93,10 @@
 		
 
  ?>
+
+ <script>
+	
+ </script>
+</body>
+</html>
+

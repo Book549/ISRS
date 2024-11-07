@@ -50,8 +50,8 @@
 							<td>".$row_find_users['user_username']."</td>
 							<td>".$row_find_users['user_password']."</td>
 							<td>".$row_find_users['user_role']."</td>
-							<td><a href=\"admin_system.php?page=admin_system&sub_page=edit&user_id=".$row_find_users['user_id']."\">edit</a></td>
-							<td><a href=\"admin_system.php?page=admin_system&sub_page=delete&user_id=".$row_find_users['user_id']."\">del</a></td>
+							<td class=edit><a href=\"admin_system.php?page=admin_system&sub_page=edit&user_id=".$row_find_users['user_id']."\">edit</a></td>
+							<td class=del><a href=\"admin_system.php?page=admin_system&sub_page=delete&user_id=".$row_find_users['user_id']."\">del</a></td>
 						</tr>";
 				}
 			}else{

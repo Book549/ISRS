@@ -1,5 +1,6 @@
 <body>
-	<table>
+	<center>
+	<table class="table_all">
 		<tr>
 			<th>sport_id</th>
 			<th>sport_name</th>
@@ -7,7 +8,7 @@
 			<th>sport_degree</th>
 			<th>sport_gender</th>
 			<th>sport_amount</th>
-			<th>player_amouth</th>
+			<th>player_amount</th>
 			<th>sport_note</th>
 			<th>add</th>
 			<th>edit</th>
@@ -27,9 +28,9 @@
 							<td>".$row_find_sports['sport_amount']."</td>
 							<td> XX </td>
 							<td>".$row_find_sports['sport_note']."</td>
-							<td><a href=\"admin_sport.php?page=add_sport&sub_page=add&sport_id=".$row_find_sports['sport_id']."\">q_add</a></td>
-							<td><a href=\"admin_sport.php?page=add_sport&sub_page=edit&sport_id=".$row_find_sports['sport_id']."\">edit</a></td>
-							<td><a href=\"admin_sport.php?page=add_sport&sub_page=del&sport_id=".$row_find_sports['sport_id']."\">del</a></td>
+							<td class=add><a href=\"admin_sport.php?page=add_sport&sub_page=add&sport_id=".$row_find_sports['sport_id']."\">q_add</a></td>
+							<td class=edit><a href=\"admin_sport.php?page=add_sport&sub_page=edit&sport_id=".$row_find_sports['sport_id']."\">edit</a></td>
+							<td class=del><a href=\"admin_sport.php?page=add_sport&sub_page=del&sport_id=".$row_find_sports['sport_id']."\">del</a></td>
 						</tr>";
 				}
 			}else{
@@ -38,4 +39,6 @@
 		 ?>
 
 	</table>
+	</center>
 </body>
+</html>

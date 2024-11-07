@@ -56,26 +56,34 @@
     </header>
 
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active ">
-        <img src="pic/red1.jpg" class="d-block w-100"  style="height: 950px; " width="80%">
-      </div>
-      <div class="carousel-item">
-        <img src="pic/red2.jpg" class="d-block w-100" style="height: 950px; " width="80%">
-      </div>
-      <div class="carousel-item">
-        <img src="pic/red3.jpg" class="d-block w-100" style="height: 950px; " width="80%">
-      </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="pic/red1.jpg" class="d-block w-100" alt="Image 1">
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+    <div class="carousel-item">
+      <img src="pic/red2.jpg" class="d-block w-100" alt="Image 2">
+    </div>
+    <div class="carousel-item">
+      <img src="pic/red3.jpg" class="d-block w-100" alt="Image 3">
+    </div>
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<section>
+  <div class="additional_menu">
+    <div>
+      <a href="#" class="btn-menu"><i class="fas fa-address-book"></i> รายชื่อนักกีฬา</a>
+    </div>
+  </div>
+</section>
 
   <section>
   <div class="ndmenu-container">
@@ -106,9 +114,7 @@
     <div class="result-menu">
     <table>
   <thead>
-  <tr>
-    <td ><i class="fas fa-trophy"> สรุปผลการแข่งขันตามคณะสี</i></td>
-  </tr>
+    <span class="table_head"><i class="fas fa-trophy"> สรุปผลการแข่งขันตามคณะสี</i></span>
     <tr>
       <th style="width: 10%;">Rank</th>
       <th>คณะสี</th>

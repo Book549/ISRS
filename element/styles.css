@@ -78,10 +78,12 @@ nav.sticky{
 
 .title{
     margin-top: 10px;
+    font-size: 12px;
 }
 
 .title p{
     color: black;
+    
 }
 
 .search{
@@ -115,7 +117,7 @@ nav.sticky{
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-
+    padding: 0 20px;
 }
 .login-all img{
     margin-bottom: 20px;
@@ -125,9 +127,7 @@ nav.sticky{
 	border: 1px solid lightgray;
 	box-shadow: 2px 2px 10px lightgray;
 	border-radius: 30px;
-	padding-left: 50px;
-	padding-top: 50px;
-	padding-bottom: 50px;
+	padding: 50px 50px 50px 50px;
 	background-color: white;
 	font-size: 20px;
 	font-family: "Mitr", sans-serif;
@@ -137,38 +137,39 @@ nav.sticky{
     display: flex;
     justify-content: center;
     font-size: 25px;
-    margin-right: 50px;
+    margin-bottom: 30px;
 }
 
 .login-form{
 	margin-top: 20px;
+    width: 100%;
 }
 
 .box{
 	height: 50px;
 	margin-bottom: 20px;
-	width: 85%;
+	width: 100%;
 	align-content: center;
 	margin-top: 12px;
 	background-color: #e1e1e1;
 	border: none;
-	border-radius: 3px;
 	border-radius: 10px;
-
+    padding: 10px;
 }
 
 .btn{
 	color: white;
 	font-size: 20px;
 	border-radius: 20px;
-	width: 100px;
+	width:25%;
 	border: none;
 	background-color: darkblue;
 	height: 40px;
 	transition: 0.5s ease;
-	margin-right: 50px;
     font-family: "Mitr", sans-serif;
     font-weight: 400;
+    display: flex;
+    align-items: center;
 }
 
 .btn:hover{
@@ -183,7 +184,7 @@ nav.sticky{
 #showpassword{
     position: absolute;
     top: 35%;
-    right: 17%;
+    right: 5%;
     cursor: pointer;
     color: darkgrey;
     transition: 0.4s ease;
@@ -196,9 +197,8 @@ nav.sticky{
 .sidebar{
     position: fixed;
     top: 0;
-    left: 0;
-    height: 100vh;
-    width: 250px;
+    min-height: 500px;
+    width: 100%;
     z-index: 999;
     background-color: rgba(0, 0, 139, 0.884);
     backdrop-filter: blur(10px);
@@ -206,13 +206,18 @@ nav.sticky{
    box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.1);
    display: none;
    flex-direction: column;
-   align-items: flex-start;
-   justify-content: flex-start;
+
+   transition: 0.4s ease;
 }
 .sidebar li{
+    display: flex;
     list-style: none;
     margin-bottom: 30px;
     width: 100%;
+   text-align: center;
+   align-items: center;
+   margin-bottom: 10px;
+
 }
 
 .sidebar li a{
@@ -220,6 +225,7 @@ nav.sticky{
     font-family: "Mitr", sans-serif;
     color: white;
     width: 100%;
+   
 }
 
 .sidebar li a:hover{
@@ -248,70 +254,6 @@ nav.sticky{
     background-color: skyblue;
 }
 
-@media (max-width: 1240px) {
-    .menu ul {
-        margin-right: 50px;
-    }
-
-    .search {
-        display: none;
-    }
-    .logo span{
-        display: none;
-    }
-    .logo img{
-        top: 0;
-        right: 0;
-    }
-}
-
-@media (max-width: 800px) {
-    nav {
-        padding: 10px;
-        flex-direction: row;
-    }
-
-    .menu ul {
-        display: none; /* Hide the menu in mobile view */
-    }
-
-    .bar-icon {
-        display: block; /* Show the bar icon in mobile view */
-        color: black;
-    }
-
-    .logo img{
-        display: flex;
-        top: 0;
-        left: 0;
-    }
-    .logo span{
-        display: none;
-    }
-
-    .sidebar {
-        display: flex; /* Sidebar menu becomes active */
-    }
-
-    .search {
-        display: none;
-    }
-}
-
-/* Adjustments for even smaller screens */
-@media (max-width: 500px) {
-    .box-search {
-        width: 100px;
-    }
-
-    nav.sticky {
-        padding: 5px;
-    }
-
-    .bar-icon {
-        margin-right: 10px;
-    }
-}
 
 /* Schedule page*/
 
@@ -436,10 +378,10 @@ table {
     width: 100%;
     border-collapse: collapse;
     border-radius: 10px;
+    border: 1px solid black;
 }
 
 th, td {
-   border: 2px solid darkblue;
     padding: 10px;
     text-align: left;
     
@@ -457,6 +399,7 @@ td{
     background-color: #f9f9f9;
     transition: 0.4s ease;
     cursor: pointer;
+   
 }
 td a{
     color: darkblue;
@@ -469,15 +412,30 @@ td:hover{
     background-color: #e1e1e1;
 }
 
+.table_head{
+    background-color: skyblue;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    margin-bottom: 15px;
+    color: black;
+}
+
 .copyright{
     display: flex;
+    justify-content: center;
     background-color: darkblue;
     width: 100%;
     color: white;
-    height: 40px;
-    justify-content: center;
-    text-align: center;
+    height: 40px;   
     font-weight: 300;
+}
+
+.copyright p{
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
 }
 
 .result-menu th{
@@ -487,5 +445,130 @@ td:hover{
 .result-menu td{
     text-align: center;
 }
+
+
+/* Default style for larger screens (desktops/laptops) */
+.carousel-item img {
+    height: 950px;
+  }
+  
+  /* Medium screens (iPads/tablets) */
+  @media (max-width: 1024px) {
+    .carousel-item img {
+      height: 600px;
+    }
+  }
+  
+  /* Small screens (iPhones/small smartphones) */
+  @media (max-width: 768px) {
+    .carousel-item img {
+      height: 400px;
+    }
+  }
+  
+  /* Extra-small screens (very small devices) */
+  @media (max-width: 576px) {
+    .carousel-item img {
+      height: 300px;
+    }
+  }
+
+
+  @media (max-width: 768px) { /* Tablet and small laptop screens */
+
+    .btn {
+        width: 30%;
+        /* Full width button */
+    }
+}
+
+@media (max-width: 480px) { /* Mobile screens */
+    .login-group {
+        width: 90%; /* Make the form take up more width on smaller screens */
+    }
+
+    .login-group h5 {
+        font-size: 20px; /* Smaller heading font */
+    }
+
+    .btn {
+        height: 50px; /* Increase button height for better touch targets */
+    }
+
+    .box {
+        height: 45px; /* Adjust box height for mobile */
+    }
+}
+  
+
+@media (max-width: 1024px) {
+    /* For tablets */
+    .menu ul {
+        margin-right: 100px;
+    }
+    .box-search {
+        width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* For iPads and smaller screens */
+    .menu ul {
+        display: none; /* Hide menu links */
+    }
+    .sc .bar-icon {
+        display: inline-block; /* Show sidebar toggle icon */
+    }
+    .logo img {
+        width: 50px;
+        height: 50px;
+    }
+    .box-search {
+        width: 180px;
+    }
+    .search {
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* For mobile devices (iPhones) */
+    nav {
+        padding: 10px;
+    }
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+    .title p {
+        display: none;
+    }
+    .box-search {
+        width: 150px;
+        height: 25px;
+    }
+    .search {
+        margin-left: 10px;
+    }
+
+}
+.additionl_menu{
+    max-width: 1200px;
+    margin: 20px auto;
+    margin-top: 30px;
+    padding: 20px;
+}
+.btn-menu{
+    text-decoration: none;
+    background-color: darkblue;
+    color: white;
+    padding: 15px;
+    border-radius: 30px;
+}
+
+.btn-menu a:hover{
+    background-color: lightcoral;
+}
+
 
 

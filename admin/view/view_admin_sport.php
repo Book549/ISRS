@@ -11,8 +11,7 @@
 			<th>edit</th>
 		</tr>
 		<?php
-			$user_id = $_SESSION['user_id'];
-			$sql_view_admin_sport = "SELECT * FROM `colors` WHERE `color_id_user` = '$user_id'";
+			$sql_view_admin_sport = "SELECT * FROM `colors`";
 			$result_view_admin_sport = mysqli_query($conn, $sql_view_admin_sport);
 			if (mysqli_num_rows($result_view_admin_sport) == 1) {
 				while ($row_view_admin_sport = mysqli_fetch_assoc($result_view_admin_sport)) {
@@ -23,7 +22,7 @@
 							<td>".$row_view_admin_sport['color_president']."</td>
 							<td>".$row_view_admin_sport['color_vice-president']."</td>
 							<td>".$row_view_admin_sport['color_id_user']."</td>
-							<td class=edit><a href=\"admin_sport.php?page=profile&sub_page=edit\">edit</a></td>
+							<td class=edit><a href=\"admin_system.php?page=admin_sport&sub_page=edit&color_id=".$row_view_admin_sport['color_id']."\">edit</a></td>
 						</tr>";
 				}
 			}else{

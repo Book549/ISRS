@@ -1,5 +1,5 @@
 <body>
-<form method="post">
+<form method="post" class="table_all">
 	<label for="player_id">player_id:</label><input type="text" name="player_id" id="player_id"><br>
 	<label for="player_title">player_title:</label><input type="text" name="player_title" id="player_title"><br>
 	<label for="player_name">player_name:</label><input type="text" name="player_name" id="player_name"><br>
@@ -88,3 +88,5 @@
 		
 
  ?>
+<body>
+</html>
