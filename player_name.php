@@ -53,6 +53,9 @@
             display: none;
             margin: 0;
             padding: 0;
+           
+        }
+        .table-content.open{
             transition: max-height 0.4s ease;
         }
 
@@ -71,9 +74,21 @@
         }
 
         th {
-            background-color: darkcyan;
+            background-color: rgb(25, 61, 107);
             font-weight: 500;
+            color: white;
+            cursor: pointer;
+            
         }
+        td{
+            transition: 0.5s ease;
+            cursor: pointer;
+        }
+        td:hover{
+            background-color: #e1e1e1;
+        }
+
+       
     </style>
 </head>
 <body>
@@ -85,11 +100,12 @@
         <ul id="football" class="table-content">
             <table >
                 <tr>
+                    <th>รายการ</th>
                     <th>ชื่อ</th>
                     <th>สกุล</th>
                     <th>ชั้น</th>
                     <th>ห้อง</th>
-                    <th>เพศ</th>
+                    <th>ประเภท</th>
                     <th>สี</th>
                 </tr>
                 <tr>
@@ -107,11 +123,12 @@
         <ul id="futsal" class="table-content">
             <table>
                 <tr>
+                    <th>รายการ</th>
                     <th>ชื่อ</th>
                     <th>สกุล</th>
                     <th>ชั้น</th>
                     <th>ห้อง</th>
-                    <th>เพศ</th>
+                    <th>ประเภท</th>
                     <th>สี</th>
                 </tr>
                 <tr>
@@ -129,11 +146,12 @@
         <ul id="handball" class="table-content">
             <table>
                 <tr>
+                    <th>รายการ</th>
                     <th>ชื่อ</th>
                     <th>สกุล</th>
                     <th>ชั้น</th>
                     <th>ห้อง</th>
-                    <th>เพศ</th>
+                    <th>ประเภท</th>
                     <th>สี</th>
                 </tr>
                 <tr>
@@ -151,11 +169,12 @@
         <ul id="volleyball" class="table-content">
             <table>
                 <tr>
+                    <th>รายการ</th>
                     <th>ชื่อ</th>
                     <th>สกุล</th>
                     <th>ชั้น</th>
                     <th>ห้อง</th>
-                    <th>เพศ</th>
+                    <th>ประเภท</th>
                     <th>สี</th>
                 </tr>
                 <tr>
@@ -168,19 +187,172 @@
                 </tr>
             </table>
         </ul>
+
+        <li onclick="toggleMenu('petong')">เปตอง</li>
+        <ul id="petong" class="table-content">
+            <table>
+                <tr>
+                    <th>รายการ</th>
+                    <th>ชื่อ</th>
+                    <th>สกุล</th>
+                    <th>ชั้น</th>
+                    <th>ห้อง</th>
+                    <th>ประเภท</th>
+                    <th>สี</th>
+                </tr>
+                <tr>
+                    <td>ไก่</td>
+                    <td>นามเงิน</td>
+                    <td>6</td>
+                    <td>11</td>
+                    <td>ชาย</td>
+                    <td>เหลือง</td>
+                </tr>
+            </table>
+        </ul>
+
+        <li onclick="toggleMenu('basketball')">บาสเก็ตบอล</li>
+        <ul id="basketball" class="table-content">
+            <table>
+                <tr>
+                    <th>รายการ</th>
+                    <th>ชื่อ</th>
+                    <th>สกุล</th>
+                    <th>ชั้น</th>
+                    <th>ห้อง</th>
+                    <th>ประเภท</th>
+                    <th>สี</th>
+                </tr>
+                <tr>
+                    <td>ไก่</td>
+                    <td>นามเงิน</td>
+                    <td>6</td>
+                    <td>11</td>
+                    <td>ชาย</td>
+                    <td>เหลือง</td>
+                </tr>
+            </table>
+        </ul>
+
+        <li onclick="toggleMenu('badminton')">แบดมินตัน</li>
+        <ul id="badminton" class="table-content">
+            <table>
+                <tr>
+                    <th>รายการ</th>
+                    <th>ชื่อ</th>
+                    <th>สกุล</th>
+                    <th>ชั้น</th>
+                    <th>ห้อง</th>
+                    <th>ประเภท</th>
+                    <th>สี</th>
+                </tr>
+                <tr>
+                    <td>ไก่</td>
+                    <td>นามเงิน</td>
+                    <td>6</td>
+                    <td>11</td>
+                    <td>ชาย</td>
+                    <td>เหลือง</td>
+                </tr>
+            </table>
+        </ul>
+
+        <li onclick="toggleMenu('table_tennis')">เทเบิลเทนนิส</li>
+        <ul id="table_tennis" class="table-content">
+            <table>
+                <tr>
+                    <th>รายการ</th>
+                    <th>ชื่อ</th>
+                    <th>สกุล</th>
+                    <th>ชั้น</th>
+                    <th>ห้อง</th>
+                    <th>ประเภท</th>
+                    <th>สี</th>
+                </tr>
+                <tr>
+                    <td>ไก่</td>
+                    <td>นามเงิน</td>
+                    <td>6</td>
+                    <td>11</td>
+                    <td>ชาย</td>
+                    <td>เหลือง</td>
+                </tr>
+            </table>
+        </ul>
+
+        <li onclick="toggleMenu('rope')">กีฬาพื้นบ้าน</li>
+        <ul id="rope" class="table-content">
+            <table>
+                <tr>
+                    <th>รายการ</th>
+                    <th>ชื่อ</th>
+                    <th>สกุล</th>
+                    <th>ชั้น</th>
+                    <th>ห้อง</th>
+                    <th>ประเภท</th>
+                    <th>สี</th>
+                </tr>
+                <tr>
+                    <td>ไก่</td>
+                    <td>นามเงิน</td>
+                    <td>6</td>
+                    <td>11</td>
+                    <td>ชาย</td>
+                    <td>เหลือง</td>
+                </tr>
+            </table>
+        </ul>
+
+        <li ><a href="player_name2.php" style="color: white;">กีฬาแต่ละระดับชั้น</a></li>
+
+
+        <li onclick="toggleMenu('running')">กรีฑา</li>
+        <ul id="running" class="table-content">
+            <table>
+                <tr>
+                    <th>รายการ</th>
+                    <th>ชื่อ</th>
+                    <th>สกุล</th>
+                    <th>ชั้น</th>
+                    <th>ห้อง</th>
+                    <th>ประเภท</th>
+                    <th>สี</th>
+                </tr>
+                <tr>
+                    <td>ไก่</td>
+                    <td>นามเงิน</td>
+                    <td>6</td>
+                    <td>11</td>
+                    <td>ชาย</td>
+                    <td>เหลือง</td>
+                </tr>
+            </table>
+        </ul>
+
+    
     </ul>
 </div>
 
 <script>
-    // Toggle display of each table content
-    function toggleMenu(id) {
-        const tableContent = document.getElementById(id);
-        if (tableContent.style.display === 'block') {
-            tableContent.style.display = 'none';
-        } else {
-            tableContent.style.display = 'block';
+   function toggleMenu(id) {
+    // Get all submenu elements
+    const allMenus = document.querySelectorAll('.table-content');
+    
+    // Close all menus before opening the clicked one
+    allMenus.forEach(menu => {
+        if (menu.id !== id) {
+            menu.style.display = 'none';
         }
+    });
+    
+    // Toggle the clicked menu
+    const tableContent = document.getElementById(id);
+    if (tableContent.style.display === 'block') {
+        tableContent.style.display = 'none';
+    } else {
+        tableContent.style.display = 'block';
     }
+}
 
     
 </script>
