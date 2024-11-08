@@ -379,6 +379,7 @@ table {
     border-collapse: collapse;
     border-radius: 10px;
     border: 1px solid black;
+    margin-top: 30px;
 }
 
 th, td {
@@ -554,6 +555,7 @@ td:hover{
 }
 .additionl_menu{
     max-width: 1200px;
+    max-height: 100px;
     margin: 20px auto;
     margin-top: 30px;
     padding: 20px;
@@ -570,5 +572,66 @@ td:hover{
     background-color: lightcoral;
 }
 
+#btn-player{
+    position: relative;
+    left: 30px;
+    bottom: -30px;
+    margin-bottom: 25px;
+    color: white;
+    transition: 0.4s ease;
+}
+
+#btn-player:hover{
+    background-color: skyblue;
+    color: black;
+}
 
 
+/* player name */
+.player_container {
+    max-width: 1200px;
+    margin: 20px auto;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+
+.submenu_sport{
+   list-style: none;
+    
+
+}
+
+.sport_head a{
+    text-decoration: none;
+    background-color: darkblue;
+    width: 100%;
+    padding: 10px;
+    border-radius: 30px;
+    color: white;
+     cursor: pointer;
+
+}
+
+.sport_head {
+            list-style: none;
+            padding: 10px;
+           
+            background-color: darkblue;
+            color: black;
+            margin: 5px 0;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /* Hover effect */
+        .sport_head:hover {
+            background-color: #45a049;
+        }
+
+        /* Submenu with table hidden initially */
+        .sport_name_table {
+            display: none;
+            margin: 0;
+            padding: 0;
+        }

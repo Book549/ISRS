@@ -56,7 +56,7 @@
     </header>
 
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-  <div class="carousel-inner">
+    <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="pic/red1.jpg" class="d-block w-100" alt="Image 1">
     </div>
@@ -77,13 +77,17 @@
   </button>
 </div>
 
-<section>
+
+<center>
+<section >
   <div class="additional_menu">
     <div>
-      <a href="#" class="btn-menu"><i class="fas fa-address-book"></i> รายชื่อนักกีฬา</a>
+      <a href="player_name.php" class="btn-menu" id="btn-player"><i class="fas fa-address-book"></i> รายชื่อนักกีฬา</a>
     </div>
   </div>
 </section>
+</center>
+
 
   <section>
   <div class="ndmenu-container">
@@ -112,65 +116,65 @@
   <section>
   <div class="ndmenu-container">
     <div class="result-menu">
-    <table>
-  <thead>
-    <span class="table_head"><i class="fas fa-trophy"> สรุปผลการแข่งขันตามคณะสี</i></span>
-    <tr>
-      <th style="width: 10%;">Rank</th>
-      <th>คณะสี</th>
-      <th>🥇 Gold</th>
-      <th>🥈 Silver</th>
-      <th>🥉 Bronze</th>
-      <th>Total</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>School A</td>
-      <td>10</td>
-      <td>5</td>
-      <td>2</td>
-      <td>17</td>
-    </tr>
-    
-    <tr>
-      <td>2</td>
-      <td>School A</td>
-      <td>10</td>
-      <td>5</td>
-      <td>2</td>
-      <td>17</td>
-    </tr>
+      <table>
+        <thead>
+          <span class="table_head"><i class="fas fa-trophy"> สรุปผลการแข่งขันตามคณะสี</i></span>
+          <tr>
+            <th style="width: 10%;">Rank</th>
+            <th>คณะสี</th>
+            <th>🥇 Gold</th>
+            <th>🥈 Silver</th>
+            <th>🥉 Bronze</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>School A</td>
+            <td>10</td>
+            <td>5</td>
+            <td>2</td>
+            <td>17</td>
+          </tr>
+          
+          <tr>
+            <td>2</td>
+            <td>School A</td>
+            <td>10</td>
+            <td>5</td>
+            <td>2</td>
+            <td>17</td>
+          </tr>
 
-    <tr>
-      <td>3</td>
-      <td>School A</td>
-      <td>10</td>
-      <td>5</td>
-      <td>2</td>
-      <td>17</td>
-    </tr>
+          <tr>
+            <td>3</td>
+            <td>School A</td>
+            <td>10</td>
+            <td>5</td>
+            <td>2</td>
+            <td>17</td>
+          </tr>
 
-    <tr>
-      <td>4</td>
-      <td>School A</td>
-      <td>10</td>
-      <td>5</td>
-      <td>2</td>
-      <td>17</td>
-    </tr>
+          <tr>
+            <td>4</td>
+            <td>School A</td>
+            <td>10</td>
+            <td>5</td>
+            <td>2</td>
+            <td>17</td>
+          </tr>
 
-    <tr>
-      <td>5</td>
-      <td>School A</td>
-      <td>10</td>
-      <td>5</td>
-      <td>2</td>
-      <td>17</td>
-    </tr>
-  </tbody>
-</table>
+          <tr>
+            <td>5</td>
+            <td>School A</td>
+            <td>10</td>
+            <td>5</td>
+            <td>2</td>
+            <td>17</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 </div>
   </section>
