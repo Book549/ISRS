@@ -1,6 +1,6 @@
 <?php 
   include 'conn.php'; 
-  if ($_SESSION['user_role'] !== 'admin_system') {
+  if ($_SESSION['user_role'] !== 'admin_sport') {
       echo "<meta http-equiv='refresh' content='0;url=logout.php'/>";
       exit();
   }
@@ -11,76 +11,65 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>admin dashboard</title>
-	<link rel="stylesheet"  href="element/styles_admin.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin dashboard</title>
+    <link rel="stylesheet"  href="element/styles_admin_old.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
-<nav id="sidebar-ad">
-    <div class="logo-ad">
-        <img src="http://samakkhi.ac.th/wp-content/uploads/2022/07/swk-150x150.png" width="50px" height="50px" >
-        <span class="logo-text">Admin คณะสี</span>
-    </div>
-    <div>
-    <ul class="menu">
+  <nav id="sidebar">
+    <ul>
       <li>
-        <a href="?page=main_page" class="active"><span class="icon">
-        <i class="fa-solid fa-house"></i></span>
-          <span >หน้าหลัก</span>
+    <img src="http://samakkhi.ac.th/wp-content/uploads/2022/07/swk-150x150.png" width="40px" height="40px" >
+        <span class="logo">ผู้จัดการระบบ</span>
+        <button onclick=toggleSidebar() id="toggle-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"/></svg>
+        </button>
+      </li>
+      <li class="active">
+        <a href="?page=main_page">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M240-200h120v-200q0-17 11.5-28.5T400-440h160q17 0 28.5 11.5T600-400v200h120v-360L480-740 240-560v360Zm-80 0v-360q0-19 8.5-36t23.5-28l240-180q21-16 48-16t48 16l240 180q15 11 23.5 28t8.5 36v360q0 33-23.5 56.5T720-120H560q-17 0-28.5-11.5T520-160v-200h-80v200q0 17-11.5 28.5T400-120H240q-33 0-56.5-23.5T160-200Zm320-270Z"/></svg>
+          <span>หน้าหลัก</span>
         </a>
       </li>
-
-       <li>
-          <a href="#" class="dropdown">
-          <span class="icon"><i class="fas fa-user-gear"></i></span>
-          <span class="text">จัดการบัญชี </span>
-          <span class="arrow"><i class="fas fa-angle-down"></i></span>
-          </a>
-          <ul class="submenu">
-            <li><a href="?page=profile">
-              <span class="icon"><i class="fa-solid fa-list"></i></span><span class="text"> จัดการคณะสี</span>
-            </a></li>
-          </ul>
-      </li> 
-
       <li>
-        <a href="#" class="dropdown">
-          <span class="icon"><i class="fa-solid fa-person-running"></i></span>
-          <span class="text">ระบบนักกีฬา </span>
-          <span class="arrow"><i class="fas fa-angle-down"></i></span>
-        </a>
-
-        <ul class="submenu">
-            <li><a href="?page=add_sport">
-              <span class="icon"><i class="fas fa-list"></i></span>
-              <span class="text">เพิ่มจำนวนนักกีฬา</span>
-            </a></li>
-
-            <li><a href="?page=add_player">
-              <span class="icon"><i class="fa-solid fa-list"></i>
-              </span><span class="text">จัดการนักกีฬา</span>
-            </a></li>
+        <button onclick=toggleSubMenu(this) class="dropdown-btn">
+    <i class="fas fa-user-cog" style="padding-right:5px;"></i>
+          <span>จัดการบัญชี</span>
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"/></svg>
+        </button>
+        <ul class="sub-menu">
+          <div>
+            <li><a href="?page=profile"> จัดการคณะสี</a></li>
+          </div>
         </ul>
-      </li> 
-
-	  <li>
-        <a href="?page=log_out"><span  class="icon">
-        <i class="fas fa-sign-out-alt"></i></span>
+      </li>
+      <li>
+        <button onclick=toggleSubMenu(this) class="dropdown-btn">
+    <i class="fas fa-basketball-ball" style="padding-right: 10px;"></i>
+          <span>ระบบนักกีฬา</span>
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"/></svg>
+        </button>
+        <ul class="sub-menu">
+          <div>
+            <li><a href="?page=add_sport">เพิ่มจำนวนนักกีฬา</a></li>
+            <li><a href="?page=add_player">จัดการนักกีฬา</a></li>
+          </div>
+        </ul>
+      </li>
+    <li>
+        <a href="?page=log_out">
+    <i class="fas fa-sign-out-alt" style="padding-right: 5px;"></i>
           <span>ออกจากระบบ</span>
         </a>
-      </li> 
- </ul>
-    <span class="toggle">
-      <i class="fas fa-angle-left"></i>
-    </span>
-    </div>
+      </li>
+    </ul>
   </nav>
-
   <main>
     <div class="container">
 <?php 
@@ -119,35 +108,37 @@ switch ($_GET['page']) {
   </main> 	
 
 <script>
-const dropdownButtons = document.querySelectorAll('.dropdown');
-const toggleBtn = document.querySelector('.toggle');
-const nav = document.querySelector('nav');
+  const toggleButton = document.getElementById('toggle-btn')
+  const sidebar = document.getElementById('sidebar')
 
-dropdownButtons.forEach((dropdownBtn) => {
-  dropdownBtn.addEventListener('click', function(e) {
-    e.preventDefault();
-    nav.classList.remove('hide');
-    const submenu = this.nextElementSibling;
+  function toggleSidebar(){
+    sidebar.classList.toggle('close')
+    toggleButton.classList.toggle('rotate')
 
-    // Close any other open submenus
-    document.querySelectorAll('.submenu.show').forEach(openSubmenu => {
-      if (openSubmenu !== submenu) {
-        openSubmenu.classList.remove('show');
-      }
-    });
+    closeAllSubMenus()
+  }
 
-    // Toggle the current submenu
-    submenu.classList.toggle('show');
-  });
-});
+  function toggleSubMenu(button){
 
-toggleBtn.addEventListener('click', function() {
-  nav.classList.toggle('hide');
-  submenu.classList.remove(show);
-});
+    if(!button.nextElementSibling.classList.contains('show')){
+      closeAllSubMenus()
+    }
 
+    button.nextElementSibling.classList.toggle('show')
+    button.classList.toggle('rotate')
 
+    if(sidebar.classList.contains('close')){
+      sidebar.classList.toggle('close')
+      toggleButton.classList.toggle('rotate')
+    }
+  }
 
+  function closeAllSubMenus(){
+    Array.from(sidebar.getElementsByClassName('show')).forEach(ul => {
+      ul.classList.remove('show')
+      ul.previousElementSibling.classList.remove('rotate')
+    })
+  }
 </script>
 </body>
 </html>
