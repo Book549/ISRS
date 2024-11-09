@@ -9,13 +9,17 @@
 		echo "some thing is wrong..";
 	}
 ?>
-<form method="post" action="">
-	<label for="color_name">ชื่อคณะสี</label><input type="text" name="color_name" id="color_name" value="<?php echo $row_view_admin_sport['color_name']; ?>" required><br>
-	<label for="color_color">คณะสี</label><input type="text" name="color_color" id="color_color" value="<?php echo $row_view_admin_sport['color_color']; ?>" required><br>
-	<label for="color_president">ประธานสี</label><input type="text" name="color_president" id="color_president" value="<?php echo $row_view_admin_sport['color_president']; ?>" required><br>
-	<label for="color_vice-president">รองประธานสี</label><input type="text" name="color_vice-president" id="color_vice-president" value="<?php echo $row_view_admin_sport['color_vice-president']; ?>" required><br>
-	<input type="submit" name="edit"><br>
+<center>
+<form method="post" action="" class="edit_sport_all">
+	<label for="color_name">ชื่อคณะสี</label><input type="text" class="box_sport" name="color_name" id="color_name" value="<?php echo $row_view_admin_sport['color_name']; ?>" required><br>
+	<label for="color_color">คณะสี</label><input type="text" class="box_sport" name="color_color" id="color_color" value="<?php echo $row_view_admin_sport['color_color']; ?>" required><br>
+	<label for="color_president">ประธานสี</label><input type="text" class="box_sport" name="color_president" id="color_president" value="<?php echo $row_view_admin_sport['color_president']; ?>" required><br>
+	<label for="color_vice-president">รองประธานสี</label><input type="text" class="box_sport"  name="color_vice-president" id="color_vice-president" value="<?php echo $row_view_admin_sport['color_vice-president']; ?>" required><br>
+	<center>
+	<input type="submit" name="edit" class="btn"><br>
+	</center>
 </form>
+</center>
 <?php 
 	if ($_POST['edit']) {
 		//$color_id = $_POST['color_id'];
