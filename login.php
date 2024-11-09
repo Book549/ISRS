@@ -15,12 +15,7 @@
 	<div class="login-all">
 	<a href="index.php"><img src="http://samakkhi.ac.th/wp-content/uploads/2022/07/swk-150x150.png" width="100px" height="100px"></a>
 		<div class="login-group">
-			
-		
-		
 			<h5>ลงทะเบียนกีฬาสี</h5>
-           
-
 			<form method="post" class="login-form">
 				<div>
 				<label for="login-user">Username </label><br>
@@ -35,14 +30,10 @@
 				<div style="display: flex; justify-content: center; width: 100%;">
 				<input type="submit" name="login"  class="btn" value="Log in">
 				</div>
-				
 			</form>
 		</div>
 	</div>
-
 	<script src="element/script.js"></script>
-</body>
-</html>
 
 <?php #minlength="6"
 if ($_POST) {
@@ -83,7 +74,6 @@ if (isset($_SESSION['user_role'])) {
 		break;
 	}
 }
-
 ?>
 </body>
 </html>
