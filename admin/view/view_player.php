@@ -4,7 +4,7 @@
 			<th>player_id</th>
 			<th>player_title</th>
 			<th>player_name</th>
-			<th>player_mid_name</th>
+
 			<th>player_sirname</th>
 			<th>player_class</th>
 			<th>player_room</th>
@@ -21,7 +21,7 @@
 							<td>".$row_find_players['player_id']."</td>
 							<td>".$row_find_players['player_title']."</td>
 							<td>".$row_find_players['player_name']."</td>
-							<td>".$row_find_players['player_mid_name']."</td>
+
 							<td>".$row_find_players['player_sirname']."</td>
 							<td>".$row_find_players['player_class']."</td>
 							<td>".$row_find_players['player_room']."</td>						
