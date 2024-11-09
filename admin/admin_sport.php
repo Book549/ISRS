@@ -1,3 +1,4 @@
+<link rel="stylesheet"  href="element/styles_admin_sport.css">
 <body>
 <ul>
 	<li><a href="?page=admin_sport&sub_page=view" class="btn_viewadd">view</a></li>
