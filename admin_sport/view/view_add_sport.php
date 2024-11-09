@@ -10,8 +10,7 @@
 			<th>sport_amount</th>
 			<th>player_amount</th>
 			<th>sport_note</th>
-			<th>add</th>
-			<th>edit</th>
+			<th>add/edit</th>
 			<th>del</th>
 		</tr>
 		<?php
@@ -31,8 +30,7 @@
 					echo mysqli_num_rows(mysqli_query($conn, "SELECT `player_id` FROM `players` WHERE `player_sport_id` = ".$row_find_sports['sport_id']." AND `player_color_id` = ".$_SESSION['user_id']));
 					echo "</td>
 							<td>".$row_find_sports['sport_note']."</td>
-							<td class=add><a href=admin_sport.php?page=add_sport&sub_page=add&sport_id=".$row_find_sports['sport_id'].">q_add</a></td>
-							<td class=edit><a href=admin_sport.php?page=add_sport&sub_page=edit&sport_id=".$row_find_sports['sport_id'].">edit</a></td>
+							<td class=edit><a href=admin_sport.php?page=add_sport&sub_page=add&sport_id=".$row_find_sports['sport_id'].">add/edit</a></td>
 							<td class=del><a href=admin_sport.php?page=add_sport&sub_page=del&sport_id=".$row_find_sports['sport_id'].">del</a></td>
 						</tr>";
 				}
