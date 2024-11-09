@@ -1,3 +1,5 @@
+
+
 <?php 
 
 	if (isset($_GET['sport_id'])) {
@@ -44,7 +46,7 @@
 ?>
 
 <body>
-<form method="post" class="table_all">
+<form method="post" class="add_sport_all">
 <label for="player_id">รหัสนักเรียน:</label> <input type="text" class="box_sport" name="player_id" id="player_id"><br>
 		<label for="player_title">คำนำหน้า:</label> <input type="text" class="box_sport" name="player_title" id="player_title"><br>
 		<label for="player_name">ชื่อ:</label> <input type="text" class="box_sport" name="player_name" id="player_name"><br>
@@ -162,3 +164,4 @@
 
 
 <body>
+</html>
