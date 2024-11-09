@@ -1,7 +1,8 @@
+<link rel="stylesheet"  href="element/styles_admin_sport.css">
 <body>
 <ul>
-	<li><a href="?page=player&sub_page=view">แก้ไข/ลบ</a></li>
-	<li><a href="?page=player&sub_page=add">เพิ่ม</a></li>
+	<li><a href="?page=player&sub_page=view" class="btn_viewadd">แก้ไข/ลบ</a></li>
+	<li><a href="?page=player&sub_page=add" class="btn_viewadd">เพิ่ม</a></li>
 </ul>
 <?php 
 switch ($_GET['sub_page']) {
