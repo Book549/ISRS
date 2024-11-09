@@ -2,16 +2,15 @@
 	<center>
 	<table class="table_all">
 		<tr>
-			<th>sport_id</th>
-			<th>sport_name</th>
-			<th>sport_type</th>
-			<th>sport_degree</th>
-			<th>sport_gender</th>
-			<th>sport_amount</th>
-			<th>player_amount</th>
-			<th>sport_note</th>
-			<th>add/edit</th>
-			<th>del</th>
+			<th>รหัสกีฬา</th>
+			<th>ชื่อกีฬา</th>
+			<th>ประเภทกีฬา</th>
+			<th>ระดับชั้น</th>
+			<th>เพศ</th>
+			<th>จำกัดจำนวน</th>
+			<th>จำนวนผู้เล่น</th>
+			<th>หมายเหตุ</th>
+			<th>เพิ่ม/แก้ไข</th>
 		</tr>
 		<?php
 
@@ -30,8 +29,7 @@
 					echo mysqli_num_rows(mysqli_query($conn, "SELECT `player_id` FROM `players` WHERE `player_sport_id` = ".$row_find_sports['sport_id']." AND `player_color_id` = ".$_SESSION['user_id']));
 					echo "</td>
 							<td>".$row_find_sports['sport_note']."</td>
-							<td class=edit><a href=admin_sport.php?page=add_sport&sub_page=add&sport_id=".$row_find_sports['sport_id'].">add/edit</a></td>
-							<td class=del><a href=admin_sport.php?page=add_sport&sub_page=del&sport_id=".$row_find_sports['sport_id'].">del</a></td>
+							<td class=edit><a href=admin_sport.php?page=add_sport&sub_page=add&sport_id=".$row_find_sports['sport_id'].">เพิ่ม/แก้ไข</a></td>
 						</tr>";
 				}
 			} else {

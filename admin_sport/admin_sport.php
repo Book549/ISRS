@@ -1,7 +1,6 @@
 <body>
 <ul>
-	<li><a href="?page=profile&sub_page=view" class="btn_viewadd">view</a></li>
-	<li><a href="?page=profile&sub_page=edit" class="btn_viewadd">edit</a></li>
+	<li><a href="?page=profile&sub_page=view" class="btn_viewadd">หน้าหลัก</a></li>
 </ul>
 <?php 
 switch ($_GET['sub_page']) {

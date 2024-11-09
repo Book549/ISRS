@@ -2,16 +2,16 @@
 	<center>
 	<table class="table_all">
 		<tr>
-			<th>player_id</th>
-			<th>player_title</th>
-			<th>player_name</th>
-			<th>player_mid_name</th>
-			<th>player_sirname</th>
-			<th>player_class</th>
-			<th>player_room</th>
-			<th>player_gender</th>
-			<th>player_color_id</th>
-			<th>player_sport_id</th>
+			<th>รหัสนักเรียน</th>
+			<th>คำนำหน้า</th>
+			<th>ชื่อ</th>
+			<th>ชื่อกลาง</th>
+			<th>นามสกุล</th>
+			<th>ชั้น</th>
+			<th>ห้อง</th>
+			<th>เพศ</th>
+			<th>รหัสคณะสี</th>
+			<th>รหัสกีฬา</th>
 		</tr>
 		<?php
 			$sql_find_players = "SELECT * FROM `players`";

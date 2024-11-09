@@ -45,17 +45,16 @@
 
 <body>
 <form method="post" class="table_all">
-	<label for="player_id">player_id:</label><input type="text" name="player_id" id="player_id"><br>
-	<label for="player_title">player_title:</label><input type="text" name="player_title" id="player_title"><br>
-	<label for="player_name">player_name:</label><input type="text" name="player_name" id="player_name"><br>
-	<label for="player_mid_name">player_mid_name:</label><input type="text" name="player_mid_name" id="player_mid_name"><br>
-	<label for="player_sirname">player_sirname:</label><input type="text" name="player_sirname" id="player_sirname"><br>
-	<label for="player_class">player_class:</label><input type="text" name="player_class" id="player_class"><br>	
-    <label for="player_room">player_room:</label><input type="text" name="player_room" id="player_room"><br>
-	<label for="player_gender">player_gender:</label><input type="text" name="player_gender" id="player_gender"><br>
-
-
-	<input type="submit" name="add_player">
+<label for="player_id">รหัสนักเรียน:</label> <input type="text" class="box_sport" name="player_id" id="player_id"><br>
+		<label for="player_title">คำนำหน้า:</label> <input type="text" class="box_sport" name="player_title" id="player_title"><br>
+		<label for="player_name">ชื่อ:</label> <input type="text" class="box_sport" name="player_name" id="player_name"><br>
+		<label for="player_mid_name">ชื่อกลาง:</label> <input type="text" class="box_sport" name="player_mid_name" id="player_mid_name"><br>
+		<label for="player_sirname">นามสกุล:</label> <input type="text" class="box_sport" name="player_sirname" id="player_sirname"><br>
+		<label for="player_class">ชั้น:</label> <input type="text" class="box_sport" name="player_class" id="player_class"><br>	
+		<label for="player_room">ห้อง:</label> <input type="text" class="box_sport" name="player_room" id="player_room"><br>
+		<label for="player_gender">เพศ:</label><input type="text" class="box_sport" name="player_gender" id="player_gender"><br>
+		<label for="player_sport_id">รหัสกีฬา:</label><input type="text" class="box_sport" name="player_sport_id" id="player_sport_id"><br>
+		<input type="submit" name="add_player" class="btn">
 </form>
 <?php 
 
@@ -122,16 +121,16 @@
 	<center>
 	<table class="table_all">
 		<tr>
-			<th>player_id</th>
-			<th>player_title</th>
-			<th>player_name</th>
-			<th>player_mid_name</th>
-			<th>player_sirname</th>
-			<th>player_class</th>
-			<th>player_room</th>
-			<th>player_gender</th>
-			<th>player_color_id</th>
-			<th>player_sport_id</th>
+			<th>รหัสนักเรียน</th>
+			<th>คำนำหน้า</th>
+			<th>ชื่อ</th>
+			<th>ชื่อกลาง</th>
+			<th>นามสกุล</th>
+			<th>ชั้น</th>
+			<th>ห้อง</th>
+			<th>เพศ</th>
+
+			<th>รหัสกีฬา</th>
 		</tr>
 		<?php
 			$sql_find_players = "SELECT * FROM `players` WHERE `player_color_id` = '$user_id' AND `player_sport_id` = '$sport_id'";
@@ -147,10 +146,10 @@
 							<td>".$row_find_players['player_class']."</td>
 							<td>".$row_find_players['player_room']."</td>						
 							<td>".$row_find_players['player_gender']."</td>
-							<td>".$row_find_players['player_color_id']."</td>
+							
 							<td>".$row_find_players['player_sport_id']."</td>
-							<td class=edit><a href=\"admin_sport.php?page=add_sport&sub_page=edit&player_id=".$row_find_players['player_id']."\" >edit</a></td>
-							<td class=del><a href=\"admin_sport.php?page=add_sport&sub_page=del&player_id=".$row_find_players['player_id']."&sport_id=".$row_find_players['player_sport_id']."\">del</a></td>
+							<td class=edit><a href=\"admin_sport.php?page=add_sport&sub_page=edit&player_id=".$row_find_players['player_id']."\" >แก้ไข</a></td>
+							<td class=del><a href=\"admin_sport.php?page=add_sport&sub_page=del&player_id=".$row_find_players['player_id']."&sport_id=".$row_find_players['player_sport_id']."\">ลบ</a></td>
 						</tr>";
 				}
 			}else{
