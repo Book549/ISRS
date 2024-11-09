@@ -55,7 +55,7 @@
 		<label for="player_class">ชั้น:</label> <input type="text" class="box_sport" name="player_class" id="player_class"><br>	
 		<label for="player_room">ห้อง:</label> <input type="text" class="box_sport" name="player_room" id="player_room"><br>
 		<label for="player_gender">เพศ:</label><input type="text" class="box_sport" name="player_gender" id="player_gender"><br>
-		<label for="player_sport_id">รหัสกีฬา:</label><input type="text" class="box_sport" name="player_sport_id" id="player_sport_id"><br>
+		
 		<input type="submit" name="add_player" class="btn">
 </form>
 <?php 
@@ -126,7 +126,7 @@
 			<th>รหัสนักเรียน</th>
 			<th>คำนำหน้า</th>
 			<th>ชื่อ</th>
-			<th>ชื่อกลาง</th>
+			
 			<th>นามสกุล</th>
 			<th>ชั้น</th>
 			<th>ห้อง</th>

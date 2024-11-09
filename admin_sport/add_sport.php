@@ -3,7 +3,7 @@
 
 <body>
 <ul>
-	<li><a href="?page=add_sport&sub_page=view" class="btn_viewadd">กลับหน้าหลัก</a></li>
+	<li><a href="?page=add_sport&sub_page=view" class="btn_viewadd">หน้าหลัก</a></li>
 </ul>
 <?php 
 switch ($_GET['sub_page']) {
