@@ -1,4 +1,5 @@
-</head>
+
+
 <body>
 	<center>
 	<div class="add_sport_all">
@@ -98,5 +99,5 @@
 	
  </script>
 </body>
-</html>
+
 
