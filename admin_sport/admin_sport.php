@@ -1,3 +1,5 @@
+
+<link rel="stylesheet"  href="element/styles_admin_sport.css">
 <body>
 <ul>
 	<li><a href="?page=profile&sub_page=view" class="btn_viewadd">หน้าหลัก</a></li>
@@ -22,4 +24,4 @@ switch ($_GET['sub_page']) {
 }
  ?>
 </body>
-</html>
+
