@@ -58,46 +58,65 @@
 	<input type="submit" name="add_player">
 </form>
 <?php 
-	if (isset($_POST['add_player'])) {
-		$player_id = $_POST['player_id'];
-		$player_title = $_POST['player_title'];
-		$player_name = $_POST['player_name'];
-		$player_mid_name = $_POST['player_mid_name'];
-		$player_sirname = $_POST['player_sirname'];
-		$player_class = $_POST['player_class'];		
-		$player_room = $_POST['player_room'];
-		$player_gender = $_POST['player_gender'];
-		$player_color_id = $user_id;
-		$player_sport_id = $sport_id;
-		$find_same_player = "SELECT * FROM `players` WHERE `player_id` = '$player_id'";
-		$result_find_add_player = mysqli_query($conn, $find_same_player);
-		if (mysqli_num_rows($result_find_add_player) == 0) {
-			$sql_add_player  = "INSERT INTO `players` (`player_id`, `player_title`, `player_name`, `player_mid_name`, `player_sirname`, `player_class`, `player_room`, `player_gender`, `player_color_id`, `player_sport_id`) VALUES ('$player_id', '$player_title', '$player_name', '$player_mid_name', '$player_sirname', '$player_class', '$player_room', '$player_gender', '$player_color_id', '$player_sport_id')";
-			$result_add_player = mysqli_query($conn, $sql_add_player);
-			if ($result_add_player) {
-				echo "<meta http-equiv='refresh' content='0;url=?page=add_sport&sub_page=add&sport_id=$sport_id' />";
-				unset($_POST);
-				#echo "Success";
-			}else{
-				#echo "Fall";
-			}
-		}elseif (mysqli_num_rows($result_find_add_player) > 0) {
-				$posttoget = "";
-				foreach ($_POST as $key => $value) {
-					$posttoget = $posttoget."&$key=$value";
-				}
-				#echo $posttoget."<br>";
-				echo "duplicate player do you want to replace?";
-				echo "<a href='?page=add_sport&sub_page=add&resuit=Yes$posttoget'>Yes</a><a href='?page=add_sport&sub_page=add&resuit=No'>No</a>";
-		}
-		$result_find_add_player = mysqli_query($conn, $find_same_player);
-			while ($row_find_player = mysqli_fetch_assoc($result_find_add_player)) {
-				foreach ($row_find_player as $key => $value) {
-					echo "$key => $value<br>";
-				}
-			}
-	}
 
+	$sql_find_sports = "SELECT `sport_amount` FROM `sports` WHERE `sport_id` = '$sport_id'";
+	$result_find_sports = mysqli_query($conn, $sql_find_sports);
+	while ($row_find_sports = mysqli_fetch_assoc($result_find_sports)) {
+		foreach ($row_find_sports as $row_find_sports_key => $row_find_sports_value) {
+		    //echo $row_find_sports_key . " => " . $row_find_sports_value . "<br>";
+		}
+	}
+	$player_limt = mysqli_num_rows(mysqli_query($conn, "SELECT `player_id` FROM `players` WHERE `player_sport_id` = ".$sport_id." AND `player_color_id` = ".$_SESSION['user_id']));
+		if ($player_limt < $row_find_sports_value) {
+
+			if (isset($_POST['add_player'])) {
+				$player_id = $_POST['player_id'];
+				$player_title = $_POST['player_title'];
+				$player_name = $_POST['player_name'];
+				$player_mid_name = $_POST['player_mid_name'];
+				$player_sirname = $_POST['player_sirname'];
+				$player_class = $_POST['player_class'];		
+				$player_room = $_POST['player_room'];
+				$player_gender = $_POST['player_gender'];
+				$player_color_id = $user_id;
+				$player_sport_id = $sport_id;
+
+				$find_same_player = "SELECT * FROM `players` WHERE `player_id` = '$player_id'";
+				$result_find_add_player = mysqli_query($conn, $find_same_player);
+				if (mysqli_num_rows($result_find_add_player) == 0) {
+					$sql_add_player  = "INSERT INTO `players` (`player_id`, `player_title`, `player_name`, `player_mid_name`, `player_sirname`, `player_class`, `player_room`, `player_gender`, `player_color_id`, `player_sport_id`) VALUES ('$player_id', '$player_title', '$player_name', '$player_mid_name', '$player_sirname', '$player_class', '$player_room', '$player_gender', '$player_color_id', '$player_sport_id')";
+					$result_add_player = mysqli_query($conn, $sql_add_player);
+					if ($result_add_player) {
+						echo "<meta http-equiv='refresh' content='0;url=?page=add_sport&sub_page=add&sport_id=$sport_id' />";
+						unset($_POST);
+						#echo "Success";
+					}else{
+						#echo "Fall";
+					}
+				}elseif (mysqli_num_rows($result_find_add_player) > 0) {
+						$posttoget = "";
+						foreach ($_POST as $key => $value) {
+							$posttoget = $posttoget."&$key=$value";
+						}
+						#echo $posttoget."<br>";
+						echo "duplicate player do you want to replace?";
+						echo "<a href='?page=add_sport&sub_page=add&resuit=Yes$posttoget'>Yes</a><a href='?page=add_sport&sub_page=add&resuit=No'>No</a>";
+						$result_find_add_player = mysqli_query($conn, $find_same_player);
+						while ($row_find_player = mysqli_fetch_assoc($result_find_add_player)) {
+							foreach ($row_find_player as $key => $value) {
+								echo "<br>$key => $value";
+							}
+						}
+				}
+			}
+	
+		}else{
+			echo "Over limt";
+		}
+		
+
+
+	
  ?>
 
 	<center>

@@ -14,7 +14,7 @@
 			<th>del</th>
 		</tr>
 		<?php
-			$num_player = 0;
+
 			$sql_find_sports = "SELECT * FROM `sports`";
 			$result_find_sports = mysqli_query($conn, $sql_find_sports);
 			if (mysqli_num_rows($result_find_sports) > 0) {
