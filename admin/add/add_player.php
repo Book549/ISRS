@@ -3,7 +3,7 @@
 	<label for="player_id">player_id:</label><input type="text" class="box_sport"  name="player_id" id="player_id"><br>
 	<label for="player_title">player_title:</label><input type="text" class="box_sport" name="player_title" id="player_title"><br>
 	<label for="player_name">player_name:</label><input type="text" class="box_sport" name="player_name" id="player_name"><br>
-	<label for="player_mid_name">player_mid_name:</label><input type="text" class="box_sport" name="player_mid_name" id="player_mid_name"><br>
+	
 	<label for="player_sirname">player_sirname:</label><input type="text" class="box_sport" name="player_sirname" id="player_sirname"><br>
 	<label for="player_class">player_class:</label><input type="text" class="box_sport" name="player_class" id="player_class"><br>	
     <label for="player_room">player_room:</label><input type="text" class="box_sport" name="player_room" id="player_room"><br>
@@ -16,7 +16,7 @@
 		$player_id = $_POST['player_id'];
 		$player_title = $_POST['player_title'];
 		$player_name = $_POST['player_name'];
-		$player_mid_name = $_POST['player_mid_name'];
+		
 		$player_sirname = $_POST['player_sirname'];
 		$player_class = $_POST['player_class'];		
 		$player_room = $_POST['player_room'];
@@ -26,7 +26,7 @@
 		$find_same_player = "SELECT * FROM `players` WHERE `player_id` = '$player_id'";
 		$result_find_add_player = mysqli_query($conn, $find_same_player);
 		if (mysqli_num_rows($result_find_add_player) == 0) {
-			$sql_add_player  = "INSERT INTO `players` (`player_id`, `player_title`, `player_name`, `player_mid_name`, `player_sirname`, `player_class`, `player_room`, `player_gender`, `player_color_id`, `player_sport_id`) VALUES ('$player_id', '$player_title', '$player_name', '$player_mid_name', '$player_sirname', '$player_class', '$player_room', '$player_gender', '$player_color_id', '$player_sport_id')";
+			$sql_add_player  = "INSERT INTO `players` (`player_id`, `player_title`, `player_name`,  `player_sirname`, `player_class`, `player_room`, `player_gender`, `player_color_id`, `player_sport_id`) VALUES ('$player_id', '$player_title', '$player_name',  '$player_sirname', '$player_class', '$player_room', '$player_gender', '$player_color_id', '$player_sport_id')";
 			$result_add_player = mysqli_query($conn, $sql_add_player);
 			if ($result_add_player) {
 				echo "<meta http-equiv='refresh' content='0;url=?page=player&sub_page=view' />";
@@ -49,14 +49,14 @@
 						$player_id = $_GET['player_id'];
 						$player_title = $_GET['player_title'];
 						$player_name = $_GET['player_name'];
-						$player_mid_name = $_GET['player_mid_name'];
+					
 						$player_sirname = $_GET['player_sirname'];
 						$player_class = $_GET['player_class'];		
 						$player_room = $_GET['player_room'];
 						$player_gender = $_GET['player_gender'];
 						$player_color_id = $_GET['player_color_id'];
 						$player_sport_id = $_GET['player_sport_id'];
-						$sql_update_player = "UPDATE `players` SET `player_title`='$player_title',`player_name`='$player_name',`player_mid_name`='$player_mid_name',`player_sirname`='$player_sirname',`player_class`='$player_class',`player_room`='$player_room',`player_gender`='$player_gender',`player_color_id`='$player_color_id',`player_sport_id`='$player_sport_id' WHERE `player_id`='$player_id'";
+						$sql_update_player = "UPDATE `players` SET `player_title`='$player_title',`player_name`='$player_name',`player_sirname`='$player_sirname',`player_class`='$player_class',`player_room`='$player_room',`player_gender`='$player_gender',`player_color_id`='$player_color_id',`player_sport_id`='$player_sport_id' WHERE `player_id`='$player_id'";
 							$result_update_player = mysqli_query($conn, $sql_update_player);
 						if ($result_update_player) {
 							echo "<meta http-equiv='refresh' content='0;url=?page=player&sub_page=view' />";

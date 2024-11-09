@@ -16,7 +16,7 @@
 	<label for="player_id">รหัสนักเรียน:</label><input type="text" class="box_sport" name="player_id" id="player_id" value="<?php echo $row_find_edit_players['player_id']; ?>"><br>
 	<label for="player_title">คำนำหน้า:</label><input type="text" class="box_sport" name="player_title" id="player_title" value="<?php echo $row_find_edit_players['player_title']; ?>"><br>
 	<label for="player_name">ชื่อ:</label><input type="text" class="box_sport" name="player_name" id="player_name" value="<?php echo $row_find_edit_players['player_name']; ?>"><br>
-	<label for="player_mid_name">ชื่อกลาง:</label><input type="text" class="box_sport" name="player_mid_name" id="player_mid_name" value="<?php echo $row_find_edit_players['player_mid_name']; ?>"><br>
+	
 	<label for="player_sirname">นามสกุล:</label><input type="text" class="box_sport" name="player_sirname" id="player_sirname" value="<?php echo $row_find_edit_players['player_sirname']; ?>"><br>
 	<label for="player_class">ชั้น:</label><input type="text" class="box_sport" name="player_class" id="player_class" value="<?php echo $row_find_edit_players['player_class']; ?>"><br>
 	<label for="player_room">ห้อง:</label><input type="text" class="box_sport" name="player_room" id="player_room" value="<?php echo $row_find_edit_players['player_room']; ?>"><br>
@@ -30,7 +30,7 @@
 		$player_id = $_POST['player_id'];
 		$player_title = $_POST['player_title'];
 		$player_name = $_POST['player_name'];
-		$player_mid_name = $_POST['player_mid_name'];
+		
 		$player_sirname = $_POST['player_sirname'];
 		$player_class = $_POST['player_class'];		
         $player_room = $_POST['player_room'];
@@ -39,7 +39,7 @@
 		$player_sport_id = $_POST['player_sport_id'];
 		
 		unset($_POST);
-		$sql_update_player = "UPDATE `players` SET `player_id`='$player_id',`player_title`='$player_title',`player_name`='$player_name',`player_mid_name`='$player_mid_name',`player_sirname`='$player_sirname',`player_class`='$player_class',`player_room`='$player_room',`player_gender`='$player_gender',`player_color_id`='$player_color_id',`player_sport_id`='$player_sport_id' WHERE `player_id`='$player_id'";
+		$sql_update_player = "UPDATE `players` SET `player_id`='$player_id',`player_title`='$player_title',`player_name`='$player_name',`player_sirname`='$player_sirname',`player_class`='$player_class',`player_room`='$player_room',`player_gender`='$player_gender',`player_color_id`='$player_color_id',`player_sport_id`='$player_sport_id' WHERE `player_id`='$player_id'";
 		if (mysqli_query($conn, $sql_update_player)) {
 			echo "Success";
 			echo "<meta http-equiv='refresh' content='0;url=?page=add_player&sub_page=view' />";

@@ -42,9 +42,9 @@
         </button>
         <ul class="sub-menu">
           <div>
-            <li><a href="?page=admin_system">Admin ผู้จัดการระบบ</a></li>
-            <li><a href="?page=admin_sport">Admin คณะสี</a></li>
-            <li><a href="?page=admin_report">Admin รายงานผล</a></li>
+            <li><a href="?page=admin_system">จัดการบัญชี</a></li>
+            <li><a href="?page=admin_sport">จัดการคณะสี</a></li>
+            <li><a href="?page=admin_report">จัดการ...</a></li>
           </div>
         </ul>
       </li>
