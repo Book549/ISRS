@@ -20,7 +20,7 @@
                     <li><a href="index.php"><i class="fas fa-house"></i> หน้าแรก</a></li>
                     <li><a href="login.php"><i class="fas fa-user"></i> เข้าสู่ระบบ</a></li>
                     <li><a href="schedule.php"><i class="fas fa-clipboard-list"></i> รายการแข่งขัน</a></li>
-                    <li><a href="result.php"><i class="fas fa-medal"></i> ผลการแข่งขัน</a></li>
+                    <li><a href="report.php"><i class="fas fa-medal"></i> ผลการแข่งขัน</a></li>
                 </ul>
             </div>
         <nav>
