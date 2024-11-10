@@ -31,7 +31,7 @@
                     <li><a href="index.php"><i class="fas fa-house"></i> Home</a></li>
                     <li><a href="login.php"><i class="fas fa-user"></i> Log in</a></li>
                     <li><a href="schedule.php"><i class="fas fa-clipboard-list"></i>รายการแข่งขัน</a></li>
-                    <li><a href="result.php"><i class="fas fa-medal"></i>ผลการแข่งขัน</a></li>
+                    <li><a href="report.php"><i class="fas fa-medal"></i>ผลการแข่งขัน</a></li>
                 </ul>
             </div>
             
