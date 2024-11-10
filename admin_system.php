@@ -100,7 +100,7 @@
             break;
 
           case 'admin_sport':
-            echo "202 page found.";
+            include 'admin/admin_sport.php';
             break;
 
           case 'admin_report':
@@ -116,7 +116,7 @@
             break;
 
           case 'schedule':
-            echo "202 page found.";
+            include 'admin/schedule.php';
             break;
 
           case 'results':
