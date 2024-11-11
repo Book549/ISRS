@@ -3,6 +3,7 @@
 	<ul>
 	<li><a href="?page=sport&sub_page=view" class="btn_viewadd">แก้ไข/ลบ</a></li>
 	<li><a href="?page=sport&sub_page=add" class="btn_viewadd">เพิ่ม</a></li>
+	<li><a href="?page=sport&sub_page=add_set" class="btn_viewadd">เพิ่มแบบเซ็ต</a></li>
 	</ul>
 
 	<?php 
@@ -17,6 +18,10 @@
 
 		case 'add':
 			include 'admin/add/add_sport.php';
+			break;		
+
+		case 'add_set':
+			include 'admin/add/add_set_sport.php';
 			break;
 
 		case 'delete':

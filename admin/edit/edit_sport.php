@@ -12,7 +12,7 @@
 	}
 ?>
 <form method="post" action="">
-	<label for="sport_name">sport_name:</label><input type="text" name="sport_name" id="sport_name" value="<?php echo $row_find_edit_users['sport_id']; ?>"><br>
+	<label for="sport_name">sport_name:</label><input type="text" name="sport_name" id="sport_name" value="<?php echo $row_find_edit_users['sport_name']; ?>"><br>
 	<label for="sport_type">sport_type:</label><input type="text" name="sport_type" id="sport_type" value="<?php echo $row_find_edit_users['sport_type']; ?>"><br>
 	<label for="sport_gender">sport_gender:</label><input type="text" name="sport_gender" id="sport_gender" value="<?php echo $row_find_edit_users['sport_gender']; ?>"><br>
 	<label for="sport_degree">sport_degree:</label><input type="text" name="sport_degree" id="sport_degree" value="<?php echo $row_find_edit_users['sport_degree']; ?>"><br>

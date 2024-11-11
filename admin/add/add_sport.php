@@ -2,8 +2,25 @@
 <form method="post" action="" class="add_sport_all">
 	<label for="sport_name">sport_name:</label><input type="text" class="box_sport" name="sport_name" id="sport_name"><br>
 	<label for="sport_type">sport_type:</label><input type="text" class="box_sport" name="sport_type" id="sport_type"><br>
-	<label for="sport_gender">sport_gender:</label><input type="text" class="box_sport" name="sport_gender" id="sport_gender"><br>
-	<label for="sport_degree">sport_degree:</label><input type="text" class="box_sport" name="sport_degree" id="sport_degree"><br>
+
+	<label for="sport_gender">sport_gender:</label>
+	<select name="sport_gender" id="sport_gender" required>
+		<option value="">เลือกเพศ</option>
+		<option value="ชาย">ชาย</option>
+		<option value="หญิง">หญิง</option>
+		<option value="ผสม">ผสม</option>
+		<option value="อื่นๆ">อื่นๆ</option>
+	</select>
+	<br>
+	<label for="sport_degree">sport_degree:</label>
+	<select name="sport_degree" id="sport_degree" required>
+		<option value="">เลือกระดับชั้น</option>
+		<option value="มัธยมต้น">มัธยมต้น</option>
+		<option value="มัธยมปลาย">มัธยมปลาย</option>
+		<option value="อื่นๆ">อื่นๆ</option>
+	</select>
+	<br>
+
 	<label for="sport_amount">sport_amount:</label><input type="text" class="box_sport" name="sport_amount" id="sport_amount"><br>
 	<label for="sport_note">sport_note:</label><input type="text" class="box_sport" name="sport_note" id="sport_note"><br>
 	<input type="submit" name="add_sport" class="btn">
