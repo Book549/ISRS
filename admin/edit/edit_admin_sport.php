@@ -32,6 +32,7 @@ if (!isset($_SESSION)) {
 	<label for="color_color">color_color</label><input type="text" name="color_color" id="color_color" value="<?php echo $row_view_admin_sport['color_color']; ?>" required><br>
 	<label for="color_president">color_president</label><input type="text" name="color_president" id="color_president" value="<?php echo $row_view_admin_sport['color_president']; ?>" required><br>
 	<label for="color_vice-president">color_vice-president</label><input type="text" name="color_vice-president" id="color_vice-president" value="<?php echo $row_view_admin_sport['color_vice-president']; ?>" required><br>
+	<label for="color_id_user">color_id_user</label><input type="text" name="color_id_user" id="color_id_user" value="<?php echo $row_view_admin_sport['color_id_user']; ?>" required><br>
 	<input type="submit" name="edit"><br>
 </form>
 <?php 
@@ -41,8 +42,9 @@ if (!isset($_SESSION)) {
 		$color_color = $_POST['color_color'];
 		$color_president = $_POST['color_president'];
 		$color_vice_president = $_POST['color_vice-president']; 
+		$color_id_user = $_POST['color_id_user']; 
 		
-		$sql_edit_profile = "UPDATE `colors` SET `color_id`='$color_id',`color_name`='$color_name',`color_color`='$color_color',`color_president`='$color_president',`color_vice-president`='$color_vice_president',`color_id_user`='$user_id' WHERE `color_id` = '$color_id'";
+		$sql_edit_profile = "UPDATE `colors` SET `color_id`='$color_id',`color_name`='$color_name',`color_color`='$color_color',`color_president`='$color_president',`color_vice-president`='$color_vice_president',`color_id_user`='$user_id',`color_id_user`='$color_id_user' WHERE `color_id` = '$color_id'";
 		if (mysqli_query($conn, $sql_edit_profile)) {
 			echo "<meta http-equiv='refresh' content='0;url=http://localhost/ISRS/admin_system.php?page=admin_sport&sub_page=view' />";
 			exit();

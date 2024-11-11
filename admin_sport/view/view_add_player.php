@@ -14,7 +14,7 @@
 			<th>รหัสกีฬา</th>
 		</tr>
 		<?php
-			$sql_find_players = "SELECT * FROM `players`";
+			$sql_find_players = "SELECT * FROM `players` WHERE `player_color_id` = ".$_SESSION['user_id'];
 			$result_find_players = mysqli_query($conn, $sql_find_players);
 			if (mysqli_num_rows($result_find_players) > 0) {
 				while ($row_find_players = mysqli_fetch_assoc($result_find_players)) {

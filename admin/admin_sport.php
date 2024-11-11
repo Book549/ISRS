@@ -18,6 +18,10 @@ switch ($_GET['sub_page']) {
 		include 'admin/add/add_admin_sport.php';
 		break;
 
+	case 'delete':
+		include 'admin/delete/del_admin_sport.php';
+		break;
+
 	default:
 		if (empty($_GET['sub_page'])) {
 			echo "<meta http-equiv='refresh' content='0;url=?page=admin_sport&sub_page=view' />";
