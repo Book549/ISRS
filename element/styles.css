@@ -78,7 +78,7 @@ nav.sticky{
 
 .title{
     margin-top: 10px;
-    font-size: 12px;
+    font-size: 15px;
 }
 
 .title p{
@@ -422,6 +422,7 @@ td:hover{
     padding-right: 20px;
     padding-top: 15px;
     margin-bottom: 15px;
+    cursor: pointer;
     color: black;
 }
 
@@ -602,6 +603,7 @@ td:hover{
 }
 
 
+
 .submenu_sport{
    list-style: none;
     
@@ -641,3 +643,64 @@ td:hover{
             margin: 0;
             padding: 0;
         }
+
+        footer {
+            background-color: darkblue;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+          
+          }
+          
+          .footer-container {
+            display: flex;
+            justify-content: space-around;
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 18px;
+          }
+          
+          .footer-section {
+            flex: 1;
+            padding: 0 20px;
+          }
+          
+          .footer-section h4 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+          }
+          
+          .footer-section p,
+          .footer-section ul {
+            font-size: 18px;
+            line-height: 1.6;
+        
+          }
+          
+          .footer-section ul {
+            list-style: none;
+            padding: 0;
+          }
+          
+          .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+          }
+          
+          .footer-section ul li a:hover {
+            text-decoration: underline;
+          }
+          
+          .social-icons a {
+            color: darkblue;
+            display: inline-block;
+            background-color: #e1e1e1;
+            padding: 15px;
+            border-radius: 100%;
+            font-size: 20px;
+            margin: 0 18px;
+            margin-top: 15px;
+          }
+          
+         
+        
