@@ -58,13 +58,25 @@
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="pic/red1.jpg" class="d-block w-100" alt="Image 1">
+      <img src="pic/red1.jpg" class="d-block w-100 h-100" alt="Image 1">
     </div>
     <div class="carousel-item">
-      <img src="pic/red2.jpg" class="d-block w-100" alt="Image 2">
+      <img src="pic/red2.jpg" class="d-block w-100 h-100" alt="Image 2">
     </div>
     <div class="carousel-item">
-      <img src="pic/red3.jpg" class="d-block w-100" alt="Image 3">
+      <img src="pic/yellow.jpg" class="d-block w-100 h-100" alt="Image 4">
+    </div>
+    <div class="carousel-item">
+      <img src="pic/pink.jpg" class="d-block w-100 h-100" alt="Image 5">
+    </div>
+    <div class="carousel-item">
+      <img src="pic/blue.jpg" class="d-block w-100 h-100" alt="Image 6">
+    </div>
+    <div class="carousel-item">
+      <img src="pic/green.jpg" class="d-block w-100 h-100" alt="Image 7">
+    </div>
+    <div class="carousel-item">
+      <img src="pic/flag.jpg" class="d-block w-100 h-100" alt="Image 8">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -180,6 +192,21 @@
   </section>
 
   <footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h4>โรงเรียนสามัคคีวิทยาคม</h4>
+      <p>159 ถนนบรรพปราการ ตำบลเวียง <br> อำเภอเมือง จังหวัดเชียงราย 57000</p>
+      <p>Email: samakkhisc@gmail.com</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/swkstudentcouncil?_rdc=1&_rdr#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/swk.sc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
     <div class="copyright">
       <p>© 2024 ICT CENTER SAMAKKHIWITTHAYAKHOM SCHOOL</p> 
     </div>
