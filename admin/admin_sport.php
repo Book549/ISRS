@@ -16,7 +16,7 @@ switch ($_GET['sub_page']) {
 
 	default:
 		if (empty($_GET['sub_page'])) {
-			header("Location: ?page=admin_sport&sub_page=view");
+			echo "<meta http-equiv='refresh' content='0;url=?page=admin_sport&sub_page=view' />";
 			exit();
 		}else{
 			echo "404 page not found.";
