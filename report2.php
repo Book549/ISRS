@@ -96,7 +96,7 @@
 <body>
 
 <div class="report-container">
-    <div class="menu-title">กีฬาแต่ละระดับชั้น</div>
+    <div class="menu-title"><a href="index.php" style="text-decoration: none; color: black;" > กีฬาแต่ละระดับชั้น</a></div>
     <ul class="table-menu">
         <li onclick="toggleMenu('hideball')">ม.1 บอลมหาชัย(บอลหลบ)</li>
         <ul id="hideball" class="table-content">
