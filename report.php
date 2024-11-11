@@ -15,7 +15,7 @@
         /* General styling */
         .report-container {
             width: 80%;
-            max-width: 1000px;
+            max-width: 800px;
             margin: auto;
             padding: 20px;
            
@@ -94,7 +94,7 @@
 <body>
 
 <div class="report-container">
-    <div class="menu-title">ผลการแข่งขัน</div>
+    <div class="menu-title"><a href="index.php" style="text-decoration: none; color: black;" > ผลการแข่งขัน</a></div>
     <ul class="table-menu">
         <li onclick="toggleMenu('football')">ฟุตบอล</li>
         <ul id="football" class="table-content">
@@ -240,9 +240,29 @@
                     
                 </tr>
                 <tr>
-                    <td>1</td>
-                    <td>นามเงิน</td>
-                    <td>6</td>
+                    <td>🥇1</td>
+                    <td>เหลือง</td>
+                    <td>62</td>
+                </tr>
+                <tr>
+                    <td>🥈2</td>
+                    <td>แดง</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td>🥉3</td>
+                    <td>ฟ้า</td>
+                    <td>58</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>เขียว</td>
+                    <td>57</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>ชมพู</td>
+                    <td>50</td>
                 </tr>
             </table>
         </ul>
