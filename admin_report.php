@@ -56,39 +56,15 @@
 <?php 
 switch ($_GET['page']) {
 	case 'main_page':
-		echo "202 page found.";
+		echo "XXX";
 		break;
 
-	case 'admin_system':
-		echo "202 page found.";
+	case 'add_sport':
+		include 'admin_report/add/add_report_sport.php';
 		break;
 
-	case 'admin_sport':
-		echo "202 page found.";
-		break;
-
-	case 'admin_report':
-		echo "202 page found.";
-		break;
-
-	case 'type_sport':
-		echo "202 page found.";
-		break;
-		
-	case 'player':
-		echo "202 page found.";
-		break;
-
-	case 'schedule':
-		echo "202 page found.";
-		break;
-
-	case 'results':
-		echo "202 page found.";
-		break;
-		
-	case 'certificate':
-		echo "202 page found.";
+	case 'add_player':
+		include 'admin_report/add/add_report_all.php';
 		break;
 
 	case 'log_out':

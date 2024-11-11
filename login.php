@@ -66,7 +66,7 @@ if (isset($_SESSION['user_role'])) {
 		break;
 	
 	case 'admin_report':
-		// code...
+		header("Location: admin_report.php");
 		break;
 	
 	default:

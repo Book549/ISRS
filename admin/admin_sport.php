@@ -2,7 +2,7 @@
 <body>
 <ul>
 	<li><a href="?page=admin_sport&sub_page=view" class="btn_viewadd">view</a></li>
-	<li><a href="?page=admin_sport&sub_page=edit"  class="btn_viewadd">add</a></li>
+	<li><a href="?page=admin_sport&sub_page=add"  class="btn_viewadd">add</a></li>
 </ul>
 <?php 
 switch ($_GET['sub_page']) {
@@ -12,6 +12,10 @@ switch ($_GET['sub_page']) {
 
 	case 'edit':
 		include 'admin/edit/edit_admin_sport.php';
+		break;
+
+	case 'add':
+		include 'admin/add/add_admin_sport.php';
 		break;
 
 	default:
