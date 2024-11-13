@@ -95,6 +95,7 @@
     background-color: darkblue;
 }
 */
+
 body{
 	min-height: 100vh;
 	min-height: 100dvh;
@@ -102,6 +103,7 @@ body{
 	display: grid;
 	grid-template-columns: auto 1fr ;
 	line-height: 1.5rem;
+	height: -webkit-fill-available;
   }
   #sidebar{
 	box-sizing: border-box;
