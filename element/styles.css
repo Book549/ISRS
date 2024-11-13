@@ -289,19 +289,20 @@ nav.sticky{
 
 .schedule-categories {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 10px;
     margin-bottom: 30px;
 }
 
 .filter-button {
+    padding: 10px 20px;
+    font-size: 16px;
     background-color: darkblue;
-    color: white;
-    font-family: "Mitr", sans-serif;
     border: none;
-    border-radius: 30px;
-    
-    padding: 10px 10px;
-    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
     cursor: pointer;
 }
 
@@ -359,8 +360,8 @@ nav.sticky{
 }
 
 @media (max-width: 768px) {
-    .schedule-list {
-        grid-template-columns: 1fr;
+    .schedule-categories {
+        justify-content: center;
     }
 
     .filter-button {

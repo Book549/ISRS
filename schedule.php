@@ -19,7 +19,7 @@
     <div class="schedule-header">
         <h2 ><a href="index.php" style="text-decoration: none; color: black;" >รายการแข่งขัน</a></h2>
         <div class="schedule-filter">
-            <input type="search" placeholder="Search event or sport...">
+            <input type="search" placeholder="  ค้นหารายการแข่งขัน...">
         </div>
     </div>
     

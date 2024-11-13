@@ -21,11 +21,23 @@
            
         }
 
-        .menu-title {
-            font-size: 30px;
-            text-align: center;
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 20px;
+        }
 
+        .menu-header h2 {
+            font-family: "Mitr", sans-serif;
+            font-size: 28px;
+        }
+
+        .menu-filter input {
+            padding: 10px;
+            width: 250px;
+            border-radius: 20px;
+            border: 1px solid lightgray;
         }
 
         /* Dropdown menu style */
@@ -94,7 +106,12 @@
 <body>
 
 <div class="menu-container">
-    <div class="menu-title">รายชื่อนักกีฬา</div>
+<div class="menu-header">
+        <h2 ><a href="index.php" style="text-decoration: none; color: black;" >รายชื่อนักกีฬา</a></h2>
+        <div class="menu-filter">
+            <input type="search" placeholder="  ค้นหานักกีฬา...">
+        </div>
+    </div>
     <ul class="table-menu">
         <li onclick="toggleMenu('football')">ฟุตบอล</li>
         <ul id="football" class="table-content">
