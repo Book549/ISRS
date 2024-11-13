@@ -1,5 +1,7 @@
-	<link rel="stylesheet"  href="element/styles_admin_sport.css">
-
+<head>
+<link rel="stylesheet"  href="element/styles_admin_sport.css">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ </head>
 <body>
 <ul>
 	<li><a href="?page=add_player&sub_page=view" class="btn_viewadd2">ดูรายชื่อนักกีฬา</a></li>

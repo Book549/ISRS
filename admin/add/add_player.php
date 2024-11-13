@@ -1,4 +1,5 @@
 <body>
+	<div class="table_container">
 <form method="post" class="add_sport_all">
 	<label for="player_id">player_id:</label><input type="text" class="box_sport"  name="player_id" id="player_id"><br>
 	<label for="player_title">player_title:</label><input type="text" class="box_sport" name="player_title" id="player_title"><br>
@@ -11,6 +12,9 @@
 	<label for="player_color_id">player_color_id:</label><input type="text" class="box_sport" name="player_color_id" id="player_color_id"><br>
 	<label for="player_sport_id">player_sport_id:</label><input type="text" class="box_sport" name="player_sport_id" id="player_sport_id"><br>
 	<input type="submit" name="add_player" class="btn">
+</form>
+</div>
+	
 <?php 
 	if (isset($_POST['add_player'])) {
 		$player_id = $_POST['player_id'];

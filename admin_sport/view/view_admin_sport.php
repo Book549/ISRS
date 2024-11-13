@@ -1,5 +1,9 @@
+ <head>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ </head>
 <body>
 	<center>
+		<div class="table_container">
 	<table class="table_all">
 		<tr>
 			<th>รหัสคณะสี</th>
@@ -30,6 +34,7 @@
 		 ?>
 
 	</table>
+</div>
 	</center>
 </body>
 </html>

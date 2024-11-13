@@ -1,7 +1,9 @@
-
-
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ </head>
 <body>
 	<center>
+		<div class="table_container">
 	<div class="add_sport_all">
 	<form method="post" >
 		<label for="player_id">รหัสนักเรียน:</label><input type="text" class="box_sport" name="player_id" id="player_id"><br>
@@ -16,6 +18,7 @@
 		<input type="submit" name="add_player" class="btn">
 	</form>
 	</div>
+</div>
 	</center>
 <?php 
 	if (isset($_POST['add_player'])) {

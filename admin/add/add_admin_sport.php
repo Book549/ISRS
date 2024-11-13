@@ -1,4 +1,5 @@
 <body>
+	<div class="table_container">
 <form method="post" action="" class="add_sport_all">
 	<label for="user_name">user_name</label><input type="text" class="box_sport" id="user_name" name="user_name" required><br>
 	<label for="user_username">user_username</label><input type="text" class="box_sport" id="user_username" name="user_username" required><br>
@@ -11,6 +12,7 @@
 
 	<input type="submit" name="add_admin_sport" class="btn" value="เพิ่มผู้ใช้"><br>
 </form>
+</div>
 <?php 
 if ($_POST['add_admin_sport']) {
 		$user_name = $_POST['user_name'];

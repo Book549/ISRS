@@ -1,4 +1,5 @@
 <body>
+	<div class="table_container">
 	<table>
 		<tr>
 			<th>sport_id</th>
@@ -34,4 +35,5 @@
 		 ?>
 
 	</table>
+</div>
 </body>

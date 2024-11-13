@@ -1,5 +1,8 @@
-
+  <head>
+  <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet"  href="element/styles_admin_sport.css">
+</head>
 <body>
 <ul>
 	<li><a href="?page=profile&sub_page=view" class="btn_viewadd">หน้าหลัก</a></li>

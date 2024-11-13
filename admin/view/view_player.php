@@ -1,4 +1,5 @@
 <body>
+	<div class="table_container">
 	<table>
 		<tr>
 			<th>player_id</th>
@@ -38,4 +39,5 @@
 		 ?>
 
 	</table>
+</div>
 </body>

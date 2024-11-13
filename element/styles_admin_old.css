@@ -243,14 +243,13 @@ body{
   
 	  > ul{
 		padding: 0;
-		display: grid;
-		grid-auto-columns: 60px;
-		grid-auto-flow: column;
-		align-items: center;
+		display: flex;
 		overflow-x: scroll;
-	  }
+		
+			  }
 	  ul li{
 		height: 100%;
+
 	  }
 	  ul a, ul .dropdown-btn{
 		width: 60px;
@@ -274,7 +273,7 @@ body{
 		background-color: var(--hover-clr);
 		border-top: 1px solid var(--line-clr);
 		display: flex;
-		justify-content: center;
+		justify-content: left;
   
 		> div{
 		  overflow-x: auto;

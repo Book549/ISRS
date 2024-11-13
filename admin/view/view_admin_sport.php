@@ -1,5 +1,6 @@
 <body>
 	<center>
+		<div class="table_container">
 	<table class="table_all">
 		<tr>
 			<th>color_id</th>
@@ -33,6 +34,7 @@
 		 ?>
 
 	</table>
+	</div>
 	</center>
 </body>
 </html>

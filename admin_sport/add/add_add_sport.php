@@ -1,5 +1,6 @@
-
-
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ </head>
 <?php 
 
 	if (isset($_GET['sport_id'])) {
@@ -46,6 +47,7 @@
 ?>
 
 <body>
+	<div class="table_container">
 <form method="post" class="add_sport_all">
 <label for="player_id">รหัสนักเรียน:</label> <input type="text" class="box_sport" name="player_id" id="player_id"><br>
 		<label for="player_title">คำนำหน้า:</label> <input type="text" class="box_sport" name="player_title" id="player_title"><br>
@@ -58,6 +60,7 @@
 		
 		<input type="submit" name="add_player" class="btn">
 </form>
+</div>
 <?php 
 
 	$sql_find_sports = "SELECT `sport_amount` FROM `sports` WHERE `sport_id` = '$sport_id'";
