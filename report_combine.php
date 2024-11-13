@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>ผลการแข่งขันรายกีฬา</title>
+    <title>กีฬาแต่ละระดับชั้น</title>
     <style>
         body{
             font-family: "Mitr", sans-serif;
@@ -20,7 +20,7 @@
             padding: 20px;
            
         }
-        
+
         .menu-title {
             font-size: 30px;
             text-align: center;
@@ -28,9 +28,6 @@
 
         }
 
-        ul li a{
-            text-decoration: none;
-        }
         /* Dropdown menu style */
         .table-menu {
             list-style: none;
@@ -91,67 +88,83 @@
             background-color: #e1e1e1;
         }
 
-       
+        td .another{
+            background-color: lightcoral;
+        }
     </style>
 </head>
 <body>
 
 <div class="report-container">
-    <div class="menu-title"><a href="index.php" style="text-decoration: none; color: black;" > ผลการแข่งขัน</a></div>
+    <div class="menu-title"><a href="index.php" style="text-decoration: none; color: black;" > กีฬาแต่ละระดับชั้น</a></div>
     <ul class="table-menu">
-        <li ><a href="report_football.php" style="color: white;">ฟุตบอล</a></li>
-        <li ><a href="report_footsul.php" style="color: white;">ฟุตซอล</a></li>
-        <li ><a href="report_handball.php" style="color: white;">แฮนด์บอล</a></li>
-        <li ><a href="report_volleyball.php" style="color: white;">วอลเลย์บอล</a></li>
-        <li ><a href="report_petong.php" style="color: white;">เปตอง</a></li>
-        <li ><a href="report_basketball.php" style="color: white;">บาสเก็ตบอล</a></li>
-        <li ><a href="report_badminton.php" style="color: white;">แบดมินตัน</a></li>
-        <li ><a href="report_pingpong.php" style="color: white;">เทเบิลเทนนิส</a></li>
-        <li ><a href="report_rugby.php" style="color: white;">รักบี้</a></li>
-        <li onclick="toggleMenu('rope')">กีฬาพื้นบ้าน</li>
-        <ul id="rope" class="table-content">
-            <table>
+        <li onclick="toggleMenu('hideball')">ม.1 บอลมหาชัย(บอลหลบ)</li>
+        <ul id="hideball" class="table-content">
+        <table>
                 <tr>
                     <th style="width: 10%;">อันดับ</th>
-                    <th style="width: 40%">รายการ</th>
-                    <th style="width: 30%;">สี</th>
+                    <th style="width: 70%;">สี</th>
                     <th>คะแนนรวม</th>
                     
                 </tr>
                 <tr>
-                    <td>🥇1</t
-                    d><td>ม.ต้น ชาย</td>
-                    <td>เหลือง</td>
-                    <td>62</td>
-                </tr>
-                <tr>
-                    <td>🥈2</td>
-                    <td>แดง</td>
-                    <td>60</td>
-                </tr>
-                <tr>
-                    <td>🥉3</td>
-                    <td>ฟ้า</td>
-                    <td>58</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>เขียว</td>
-                    <td>57</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>ชมพู</td>
-                    <td>50</td>
+                    <td>1</td>
+                    <td>นามเงิน</td>
+                    <td>6</td>
                 </tr>
             </table>
         </ul>
-        <li ><a href="report_combine.php" style="color: white;">กีฬาแต่ละระดับชั้น</a></li>
-        <li ><a href="report_run.php" style="color: white;">กรีฑา</a></li>
 
+        <li onclick="toggleMenu('arobic')">ม.2 แอโรบิก</li>
+        <ul id="arobic" class="table-content">
+             <table>
+                <tr>
+                    <th style="width: 10%;">อันดับ</th>
+                    <th style="width: 70%;">สี</th>
+                    <th>คะแนนรวม</th>
+                    
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>นามเงิน</td>
+                    <td>6</td>
+                </tr>
+            </table>
+        </ul>
 
+       <li onclick="toggleMenu('boxing')">ม.3 Boxing Kids</li>
+        <ul id="boxing" class="table-content">
+        <table>
+                <tr>
+                    <th style="width: 10%;">อันดับ</th>
+                    <th style="width: 70%;">สี</th>
+                    <th>คะแนนรวม</th>
+                    
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>นามเงิน</td>
+                    <td>6</td>
+                </tr>
+            </table>
+        </ul>
 
-    
+        <li onclick="toggleMenu('bicycle')">ม.4 จักรยานคนจน</li>
+        <ul id="bicycle" class="table-content">
+        <table>
+                <tr>
+                    <th style="width: 10%;">อันดับ</th>
+                    <th style="width: 70%;">สี</th>
+                    <th>คะแนนรวม</th>
+                    
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>นามเงิน</td>
+                    <td>6</td>
+                </tr>
+            </table>
+        </ul>
     </ul>
 </div>
 
