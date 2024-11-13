@@ -1,13 +1,13 @@
 <body>
 <?php 
-	$id_edit_players = $_GET['player_id'] ;
-	$sql_find_edit_players = "SELECT * FROM `players` WHERE `player_id` = '$id_edit_players'";
+	$id_player = $_GET['id_player'] ;
+	$sql_find_edit_players = "SELECT * FROM `players` WHERE `id_player` = '$id_player'";
 	$result_find_edit_players = mysqli_query($conn, $sql_find_edit_players);
 	if (mysqli_num_rows($result_find_edit_players) > 0 ) {
 		$row_find_edit_players = mysqli_fetch_assoc($result_find_edit_players);
 		$player_id = $row_find_edit_players['player_id'];
 	}else{
-		echo  $_GET['player_id'];
+		echo  $_GET['id_player'];
 		echo "not found";
 	}
 ?>
@@ -39,7 +39,7 @@
 		$player_sport_id = $_POST['player_sport_id'];
 		
 		unset($_POST);
-		$sql_update_player = "UPDATE `players` SET `player_id`='$player_id',`player_title`='$player_title',`player_name`='$player_name',`player_sirname`='$player_sirname',`player_class`='$player_class',`player_room`='$player_room',`player_gender`='$player_gender',`player_color_id`='$player_color_id',`player_sport_id`='$player_sport_id' WHERE `player_id`='$player_id'";
+		$sql_update_player = "UPDATE `players` SET `player_id`='$player_id',`player_title`='$player_title',`player_name`='$player_name',`player_sirname`='$player_sirname',`player_class`='$player_class',`player_room`='$player_room',`player_gender`='$player_gender',`player_color_id`='$player_color_id',`player_sport_id`='$player_sport_id' WHERE `id_player`='$id_player'";
 		if (mysqli_query($conn, $sql_update_player)) {
 			echo "Success";
 			echo "<meta http-equiv='refresh' content='0;url=?page=add_player&sub_page=view' />";

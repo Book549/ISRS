@@ -1,22 +1,6 @@
 <body>
-<?php 
-$db_server = 'localhost';
-$db_username = 'root';
-$db_password = '';
-$db_name = 'isrs';
-
-$conn = mysqli_connect($db_server, $db_username, $db_password, $db_name);
-if ($conn) {
-	echo "";
-}
-
-if (!isset($_SESSION)) {
-	session_start();
-}
-#error_reporting(E_ERROR | E_PARSE);
-
-?>
 <?php
+
 	$color_id = $_GET['color_id'];
 	$sql_view_admin_sport = "SELECT * FROM `colors` WHERE `color_id` = '$color_id'";
 	$result_view_admin_sport = mysqli_query($conn, $sql_view_admin_sport);

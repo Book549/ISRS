@@ -1,7 +1,7 @@
 <body>
 <?php 
-	$id_edit_players = $_GET['player_id'] ;
-	$sql_find_edit_players = "SELECT * FROM `players` WHERE `player_id` = '$id_edit_players'";
+	$id_edit_players = $_GET['id_player'] ;
+	$sql_find_edit_players = "SELECT * FROM `players` WHERE `id_player` = '$id_edit_players'";
 	$result_find_edit_players = mysqli_query($conn, $sql_find_edit_players);
 	if (mysqli_num_rows($result_find_edit_players) > 0 ) {
 		$row_find_edit_players = mysqli_fetch_assoc($result_find_edit_players);
@@ -12,7 +12,9 @@
 	}
 ?>
 <form method="post" action="">
-	<label for="player_id">player_id:</label><input type="text" name="player_id" id="player_id" value="<?php echo $row_find_edit_players['player_id']; ?>"><br>
+	<label for="player_id">player_id:</label><input type="text" class="box_sport"  name="player_id" id="player_id" value="<?php echo "$player_id"; ?>" ><br>
+	
+	<br>
 	<label for="player_title">player_title:</label><input type="text" name="player_title" id="player_title" value="<?php echo $row_find_edit_players['player_title']; ?>"><br>
 	<label for="player_name">player_name:</label><input type="text" name="player_name" id="player_name" value="<?php echo $row_find_edit_players['player_name']; ?>"><br>
 	
@@ -26,6 +28,7 @@
 	<input type="submit" name="edit_player">
 <?php 
 	if ($_POST['edit_player']) {
+		
 		$player_id = $_POST['player_id'];
 		$player_title = $_POST['player_title'];
 		$player_name = $_POST['player_name'];
@@ -38,7 +41,7 @@
 		$player_sport_id = $_POST['player_sport_id'];
 		
 		unset($_POST);
-		$sql_update_player = "UPDATE `players` SET `player_id`='$player_id',`player_title`='$player_title',`player_name`='$player_name',`player_sirname`='$player_sirname',`player_class`='$player_class',`player_room`='$player_room',`player_gender`='$player_gender',`player_color_id`='$player_color_id',`player_sport_id`='$player_sport_id' WHERE `player_id`='$player_id'";
+		$sql_update_player = "UPDATE `players` SET `player_id`='$player_id',`player_title`='$player_title',`player_name`='$player_name',`player_sirname`='$player_sirname',`player_class`='$player_class',`player_room`='$player_room',`player_gender`='$player_gender',`player_color_id`='$player_color_id',`player_sport_id`='$player_sport_id' WHERE `id_player`='$id_edit_players'";
 		if (mysqli_query($conn, $sql_update_player)) {
 			echo "Success";
 			echo "<meta http-equiv='refresh' content='0;url=?page=player&sub_page=view' />";

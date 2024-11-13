@@ -29,8 +29,8 @@
 							<td>".$row_find_players['player_gender']."</td>
 							<td>".$row_find_players['player_color_id']."</td>
 							<td>".$row_find_players['player_sport_id']."</td>
-							<td class=edit><a href=\"admin_sport.php?page=add_player&sub_page=edit&player_id=".$row_find_players['player_id']."\" >edit</a></td>
-							<td class=del><a href=\"admin_sport.php?page=add_player&sub_page=del&player_id=".$row_find_players['player_id']."\">del</a></td>
+							<td class=edit><a href=\"admin_sport.php?page=add_player&sub_page=edit&id_player=".$row_find_players['id_player']."\" >edit</a></td>
+							<td class=del><a href=\"admin_sport.php?page=add_player&sub_page=del&id_player=".$row_find_players['id_player']."\">del</a></td>
 						</tr>";
 				}
 			}else{

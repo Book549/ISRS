@@ -46,6 +46,8 @@
 				unset($_POST);
 				switch ($_GET['resuit']) {
 					case 'Yes':
+						$id_player = $_GET['id_player'];
+					
 						$player_id = $_GET['player_id'];
 						$player_title = $_GET['player_title'];
 						$player_name = $_GET['player_name'];
@@ -56,12 +58,12 @@
 						$player_gender = $_GET['player_gender'];
 						$player_color_id = $_GET['player_color_id'];
 						$player_sport_id = $_GET['player_sport_id'];
-						$sql_update_player = "UPDATE `players` SET `player_title`='$player_title',`player_name`='$player_name',`player_sirname`='$player_sirname',`player_class`='$player_class',`player_room`='$player_room',`player_gender`='$player_gender',`player_color_id`='$player_color_id',`player_sport_id`='$player_sport_id' WHERE `player_id`='$player_id'";
+						$sql_update_player = "UPDATE `players` SET `player_title`='$player_title',`player_name`='$player_name',`player_sirname`='$player_sirname',`player_class`='$player_class',`player_room`='$player_room',`player_gender`='$player_gender',`player_color_id`='$player_color_id',`player_sport_id`='$player_sport_id' WHERE `id_player`='$id_player'";
 							$result_update_player = mysqli_query($conn, $sql_update_player);
 						if ($result_update_player) {
 							echo "<meta http-equiv='refresh' content='0;url=?page=player&sub_page=view' />";
 							echo "Success";
-							echo $player_id;
+							echo $id_player;
 
 						}else{
 							echo "Fall";

@@ -1,11 +1,11 @@
 <body>
 	<?php 
-		if (isset($_GET['player_id'])) {
-			$id_del_players = $_GET['player_id'];
+		if (isset($_GET['id_player'])) {
+			$id_del_players = $_GET['id_player'];
 		} else {
 			echo "url par not found";
 		}
-		$sql_del_player = "DELETE FROM `players` WHERE `player_id` = '$id_del_players'";
+		$sql_del_player = "DELETE FROM `players` WHERE `id_player` = '$id_del_players'";
 		if (mysqli_query($conn, $sql_del_player)) {
 			echo "Success";
 			echo "<meta http-equiv='refresh' content='0;url=?page=player&sub_page=view' />";
