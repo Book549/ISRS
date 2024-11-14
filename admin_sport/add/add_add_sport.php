@@ -47,20 +47,60 @@
 ?>
 
 <body>
-	<div class="table_container">
+<center>
 <form method="post" class="add_sport_all">
 <label for="player_id">รหัสนักเรียน:</label> <input type="text" class="box_sport" name="player_id" id="player_id"><br>
 		<label for="player_title">คำนำหน้า:</label> <input type="text" class="box_sport" name="player_title" id="player_title"><br>
 		<label for="player_name">ชื่อ:</label> <input type="text" class="box_sport" name="player_name" id="player_name"><br>
 		
 		<label for="player_sirname">นามสกุล:</label> <input type="text" class="box_sport" name="player_sirname" id="player_sirname"><br>
-		<label for="player_class">ชั้น:</label> <input type="text" class="box_sport" name="player_class" id="player_class"><br>	
-		<label for="player_room">ห้อง:</label> <input type="text" class="box_sport" name="player_room" id="player_room"><br>
-		<label for="player_gender">เพศ:</label><input type="text" class="box_sport" name="player_gender" id="player_gender"><br>
 		
+		<label for="player_class">ชั้นม. :</label>
+		<select class="select_box" name="player_class" id="player_class" required>
+		<option value="">เลือกชั้น</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+	</select>
+	<br>
+
+		<label for="player_room">ห้อง :</label>
+		<select class="select_box" name="player_room" id="player_room" required>
+		<option value="">เลือกห้อง</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+		<option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+		<option value="17">17</option>
+	</select>
+	<br>
+		<label for="player_gender">เพศ :</label>
+		<select class="select_box" name="player_gender" id="player_gender" required>
+		<option value="">เลือกเพศ</option>
+		<option value="ชาย">ชาย</option>
+		<option value="หญิง">หญิง</option>
+		</select>
+		<br>
+		<center>
 		<input type="submit" name="add_player" class="btn">
+		</center>
 </form>
-</div>
+</center>
 <?php 
 
 	$sql_find_sports = "SELECT `sport_amount` FROM `sports` WHERE `sport_id` = '$sport_id'";
@@ -115,7 +155,7 @@
 			}
 	
 		}else{
-			echo "Over limt";
+			echo "Over limit";
 		}
 		
 
@@ -124,7 +164,7 @@
  ?>
 
 	<center>
-	<table class="table_all">
+	<table class="table_all" style="margin-top: 20px;">
 		<tr>
 			<th>รหัสนักเรียน</th>
 			<th>คำนำหน้า</th>

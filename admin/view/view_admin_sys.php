@@ -1,14 +1,16 @@
 <body>
+
 	<form method="post" action="admin_system.php?page=admin_system&sub_page=view"><!--warn-->
-		<select name="filier">
+		<select class="select_box" name="filier">
 			<option value="">all</option>
 			<option value="admin_system">admin_system</option>
 			<option value="admin_sport">admin_sport</option>
 			<option value="admin_report">admin_report</option>
 		</select>
-		<input type="text" name="search"><!-- find user_id or user_name -->
-		<input type="submit" name="find" value="find">
+		<input type="text" class="box_acc" name="search" placeholder="  ค้นหา"><!-- find user_id or user_name -->
+		<input type="submit" name="find" value="find" class="btn_acc">
 	</form>
+	
 	<?php 
 		$sql_find_users = "SELECT * FROM `users`";
 		$value_find_role = "";
@@ -30,7 +32,7 @@
 		$sql_search_user = $sql_find_users.$value_find_role.$conjunction_sql.$value_find_id_or_name;
 		echo $sql_search_user;
 	 ?>
-	<table>
+	<table style="margin-top: 20px;">
 		<tr>
 			<th>user_id</th>
 			<th>user_name</th>

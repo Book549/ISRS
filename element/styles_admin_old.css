@@ -440,3 +440,22 @@ body{
 .filter-button:hover {
     color: skyblue;
 }
+
+.btn_acc{
+	background-color: darkblue;
+	padding-left: 15px;
+	padding-right: 15px;
+	color: white;
+	font-size: 18px;
+	border-radius: 30px;
+	transition: 0.4s ease;
+}
+.btn_acc:hover{
+	color: skyblue;
+}
+
+.box_acc{
+	height: 40px;
+	margin-left: 15px;
+	margin-right:6px;
+}

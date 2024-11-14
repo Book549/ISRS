@@ -34,5 +34,6 @@ switch ($_GET['sub_page']) {
 		break;
 }
  ?>
+
 </body>
 

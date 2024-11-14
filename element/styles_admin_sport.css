@@ -237,5 +237,42 @@ td:hover{
     font-size: 16px;
     border-radius: 30px;
     margin-top: 8px;
-    padding: 5x;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.radio-option input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.radio-option input[type="radio"]:checked {
+    background-color: darkblue;
+}
+
+.radio-option label {
+    font-size: 18px;
+    padding-right: 15px;
+    cursor: pointer;
 }
