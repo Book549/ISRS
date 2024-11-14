@@ -98,29 +98,28 @@
 <div class="report-container">
     <div class="menu-title"><a href="index.php" style="text-decoration: none; color: black;" > ฟุตบอล</a></div>
     <ul class="table-menu">
-        <li onclick="toggleMenu('่jumen')">ม.ต้น ชาย</li>
+    <li onclick="toggleMenu('jumen')">ม.ต้น ชาย</li>
         <ul id="jumen" class="table-content">
         <table>
                 <tr>
                     <th style="width: 10%;">อันดับ</th>
                     <th style="width: 60%;">สี</th>
-                    <th>คะแนนรวม</th>
                     
                 </tr>
                 <tr>
                     <td>🥇1</t
                     d><td>ม.ต้น ชาย</td>
-                    <td>เหลือง</td>
+             
                 </tr>
                 <tr>
                     <td>🥈2</td>
                     <td>แดง</td>
-                    <td>60</td>
+                   
                 </tr>
                 <tr>
                     <td>🥉3</td>
                     <td>ฟ้า</td>
-                    <td>58</td>
+          
                 </tr>
             </table>
         </ul>
@@ -131,23 +130,22 @@
                 <tr>
                     <th style="width: 10%;">อันดับ</th>
                     <th style="width: 60%;">สี</th>
-                    <th>คะแนนรวม</th>
                     
                 </tr>
                 <tr>
                     <td>🥇1</t
                     d><td>ม.ต้น ชาย</td>
-                    <td>เหลือง</td>
+              
                 </tr>
                 <tr>
                     <td>🥈2</td>
                     <td>แดง</td>
-                    <td>60</td>
+             
                 </tr>
                 <tr>
                     <td>🥉3</td>
                     <td>ฟ้า</td>
-                    <td>58</td>
+        
                 </tr>
             </table>
         </ul>
@@ -158,23 +156,22 @@
                 <tr>
                     <th style="width: 10%;">อันดับ</th>
                     <th style="width: 60%;">สี</th>
-                    <th>คะแนนรวม</th>
                     
                 </tr>
                 <tr>
                     <td>🥇1</t
                     d><td>ม.ต้น ชาย</td>
-                    <td>เหลือง</td>
+             
                 </tr>
                 <tr>
                     <td>🥈2</td>
                     <td>แดง</td>
-                    <td>60</td>
+                  
                 </tr>
                 <tr>
                     <td>🥉3</td>
                     <td>ฟ้า</td>
-                    <td>58</td>
+                
                 </tr>
             </table>
         </ul>
