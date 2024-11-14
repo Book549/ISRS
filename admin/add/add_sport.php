@@ -5,7 +5,7 @@
 	<label for="sport_type">sport_type:</label><input type="text" class="box_sport" name="sport_type" id="sport_type"><br>
 
 	<label for="sport_gender">sport_gender:</label>
-	<select name="sport_gender" id="sport_gender" required>
+	<select class="select_box" name="sport_gender" id="sport_gender" required>
 		<option value="">เลือกเพศ</option>
 		<option value="ชาย">ชาย</option>
 		<option value="หญิง">หญิง</option>
@@ -14,7 +14,7 @@
 	</select>
 	<br>
 	<label for="sport_degree">sport_degree:</label>
-	<select name="sport_degree" id="sport_degree" required>
+	<select class="select_box" name="sport_degree" id="sport_degree" required>
 		<option value="">เลือกระดับชั้น</option>
 		<option value="มัธยมต้น">มัธยมต้น</option>
 		<option value="มัธยมปลาย">มัธยมปลาย</option>

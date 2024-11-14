@@ -22,7 +22,7 @@
 
 .box_sport{
 	height: 50px;
-	margin-bottom: 20px;
+	margin-bottom: 8px;
 	width: 100%;
 	align-content: center;
 	margin-top: 12px;
@@ -230,4 +230,12 @@ td:hover{
     flex-direction: column;
     justify-content: center;
     border-radius: 20px;
+}
+.select_box{
+    background-color: #e1e1e1;
+    height: 35px;
+    font-size: 16px;
+    border-radius: 30px;
+    margin-top: 8px;
+    padding: 5x;
 }

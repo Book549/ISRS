@@ -1,6 +1,40 @@
+
+<link rel="stylesheet"  href="element/styles_admin_sport.css">
 <body>
+<ul>
+	<li><a href="?page=schedule&sub_page=view" class="btn_viewadd">แก้ไข/ลบ</a></li>
+	<li><a href="?page=schedule&sub_page=add" class="btn_viewadd">เพิ่ม</a></li>
+</ul>
+<?php 
+switch ($_GET['sub_page']) {
+	case 'view':
+		include 'admin/view/view_schedule.php';
+		break;
 
+	case 'edit':
+		include 'admin/edit/edit_schedule.php';
+		break;
 
+	case 'add':
+		include 'admin/add/add_schedule.php';
+		break;
+
+	case 'delete':
+		include 'admin/delete/del_schedule.php';
+		break;
+
+	default:
+		if (empty($_GET['sub_page'])) {
+			echo "<meta http-equiv='refresh' content='0;url=?page=schedule&sub_page=view' />";
+		}else{
+			echo "404 page not found.";
+		}
+		break;
+}
+ ?>
+</body>
+<link rel="stylesheet"  href="element/styles_admin_sport.css">
+<body>
     <div class="schedule-container">
     <div class="schedule-header">
         <h2>รายการแข่งขัน</h2>
@@ -44,49 +78,7 @@
                 </div>
             </div>
 
-            <div class="event-card" data-sport="Swimming">
-                <div class="event-info">
-                    <h3>Swimming - 200m Freestyle Women</h3>
-                    <p>Date: November 29, 2024</p>
-                    <p>Time: 10:00</p>
-                    <p>Venue: สนามฟุตบอล</p>
-                </div>
-                <div class="event-status">
-                    <p>Status: การแข่งขันสิ้นสุดแล้ว</p>
-                </div>
-            </div>
-            <!-- More event cards -->
-        </div>
-
-        <div class="event-date">
-                <h1>20 November</h1>
-        </div>
-        
-        <div class="schedule-list">
     
-            <div class="event-card" data-sport="Athletics">
-                <div class="event-info">
-                    <h3>Athletics - 100m Men</h3>
-                    <p>Date: November 28, 2024</p>
-                    <p>Time: 14:00</p>
-                    <p>Venue: สนามปิงปอง</p>
-                </div>
-                <div class="event-status">
-                    <p>Status: กำลังแข่งขัน</p>
-                </div>
-            </div>
-
-            <div class="event-card" data-sport="Swimming">
-                <div class="event-info">
-                    <h3>Swimming - 200m Freestyle Women</h3>
-                    <p>Date: November 29, 2024</p>
-                    <p>Time: 10:00</p>
-                    <p>Venue: สนามฟุตบอล</p>
-                </div>
-                <div class="event-status">
-                    <p>Status: การแข่งขันสิ้นสุดแล้ว</p>
-                </div>
-            </div>
             <!-- More event cards -->
         </div>
     </div>
@@ -94,7 +86,6 @@
 
    
 </div>
-
 
 
 

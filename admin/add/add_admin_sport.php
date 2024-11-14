@@ -1,3 +1,4 @@
+<link rel="stylesheet"  href="element/styles_admin_sport.css">
 <body>
 	<div class="table_container">
 <form method="post" action="" class="add_sport_all">
