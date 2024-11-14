@@ -5,7 +5,6 @@
 			<th>player_id</th>
 			<th>player_title</th>
 			<th>player_name</th>
-
 			<th>player_sirname</th>
 			<th>player_class</th>
 			<th>player_room</th>
