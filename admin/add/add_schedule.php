@@ -25,9 +25,9 @@
 	<label for="schedule_status">schedule_status:</label>
     <select class="select_box" name="schedule_status" id="schedule_status" required>
 		<option value="">เลือกสถานะแข่งขัน</option>
-        <option value="สนามวอลเลย์บอล">ยังไม่แข่งขัน</option>
-		<option value="สนามวอลเลย์บอล">กำลังแข่งขัน</option>
-		<option value="สนามบาสเก็ตบอล">การแข่งขันจบแล้ว</option>
+        <option value="ยังไม่แข่งขัน" style="color: darkblue;">ยังไม่แข่งขัน</option>
+		<option value="กำลังแข่งขัน" style="color: green;">กำลังแข่งขัน</option>
+		<option value="การแข่งขันจบแล้ว" style="color: darkred;">การแข่งขันจบแล้ว</option>
 	</select>
 	<br>	
     <center>
