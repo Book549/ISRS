@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2024 at 04:48 PM
+-- Generation Time: Nov 15, 2024 at 05:10 AM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -89,8 +89,20 @@ CREATE TABLE `reward` (
   `reward_sport_id` int(11) NOT NULL,
   `reward_first` int(2) NOT NULL,
   `reward_second` int(2) NOT NULL,
-  `reward_third` int(2) NOT NULL
+  `reward_third` int(2) NOT NULL,
+  `reward_fourth` int(2) NOT NULL,
+  `reward_fifth` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `reward`
+--
+
+INSERT INTO `reward` (`reward_id`, `reward_sport_id`, `reward_first`, `reward_second`, `reward_third`, `reward_fourth`, `reward_fifth`) VALUES
+(1, 0, 0, 0, 0, 0, 0),
+(2, 1, 0, 0, 0, 0, 0),
+(3, 1, 2, 2, 0, 2, 2),
+(4, 1, 2, 4, 5, 6, 8);
 
 -- --------------------------------------------------------
 
@@ -243,7 +255,7 @@ ALTER TABLE `players`
 -- AUTO_INCREMENT for table `reward`
 --
 ALTER TABLE `reward`
-  MODIFY `reward_id` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `reward_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `sports`
