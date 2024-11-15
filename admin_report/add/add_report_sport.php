@@ -5,72 +5,115 @@
 	<form method="post" >
     <table>
   			<label>รายการกีฬา:</label>
-  			<select>
-  				<option value="ฟุตบอล">ฟุตบอล</option>
-  				<option value="ฟุตซอล"> ฟุตซอล</option>
-  				<option value="แฮนด์บอล">แฮนด์บอล</option>
-  				<option value="วอลเลย์บอล">วอลเลย์บอล</option>
-				<option value="เปตอง"> เปตอง</option>
-  				<option value="บาสเก็ตบอล">บาสเก็ตบอล</option>
-  				<option value="เทเบิลเทนนิส">เทเบิลเทนนิส</option>
-				<option value="กีฬาพื้นบ้าน"> กีฬาพื้นบ้าน</option>
-  				<option value="กรีฑา">กรีฑา</option>
-  				<option value="ม.1 บอลมหาชัย">ม.1 บอลมหาชัย</option>
-                <option value="ม.2 แอโรบิก">ม.2 แอโรบิก</option>
-  				<option value="ม.3 Boxing Kids">ม.3 Boxing Kids</option>
-                <option value="ม.4 จักรยานคนจน">ม.4 จักรยานคนจน</option>
+  			<select name="reward_sport_id">
+          <option value="">เลือกรายการกีฬา</option>
+          <?php 
+            $sql_find_sport_name = "SELECT `sport_id`, `sport_name` FROM `sports`";
+            $result_find_sports_name = mysqli_query($conn, $sql_find_sport_name);
+            if (mysqli_num_rows($result_find_sports_name) > 0) {
+                while ($row_find_sports_name = mysqli_fetch_assoc($result_find_sports_name)) {
+                  echo "<option value=\"".$row_find_sports_name['sport_id']."\">".$row_find_sports_name['sport_name']."</option>";
+                }
+            }  
+           ?>
   			</select>
   		</table>
 
         <h3>ผลการแข่งขัน:</h3>
-          <table>
+        <table>
   			<label>🥇1</label>
-  			<select>
-  				<option value="ชมพู">ชมพู</option>
-  				<option value="ฟ้า"> ฟ้า</option>
-  				<option value="เหลือง">เหลือง</option>
-  				<option value="เขียว">เขียว</option>
-				<option value="แดง"> แดง</option>
+  			<select name="reward_color_1st">
+          <option value="">เลือกรายการสี</option>
+        <?php 
+            $sql_find_color_color = "SELECT `color_color`, `color_id_user` FROM `colors`";
+            $result_find_colors_name = mysqli_query($conn, $sql_find_color_color);
+            if (mysqli_num_rows($result_find_colors_name) > 0) {
+                while ($row_find_colors_name = mysqli_fetch_assoc($result_find_colors_name)) {
+                  echo "<option value=\"".$row_find_colors_name['color_id_user']."\">".$row_find_colors_name['color_color']."</option>";
+                }
+            }  
+           ?>
   			</select>
 
-              <label>🥈2</label>
-  			<select>
-  				<option value="ชมพู">ชมพู</option>
-  				<option value="ฟ้า"> ฟ้า</option>
-  				<option value="เหลือง">เหลือง</option>
-  				<option value="เขียว">เขียว</option>
-				<option value="แดง"> แดง</option>
-  			</select>
+        <label>🥈2</label>
+  			<select name="reward_color_2nd">
+          <option value="">เลือกรายการสี</option>
+        <?php 
+            $sql_find_color_color = "SELECT `color_color`, `color_id_user` FROM `colors`";
+            $result_find_colors_name = mysqli_query($conn, $sql_find_color_color);
+            if (mysqli_num_rows($result_find_colors_name) > 0) {
+                while ($row_find_colors_name = mysqli_fetch_assoc($result_find_colors_name)) {
+                  echo "<option value=\"".$row_find_colors_name['color_id_user']."\">".$row_find_colors_name['color_color']."</option>";
+                }
+            }  
+           ?>
+        </select>
 
               <label>🥉3</label>
-  			<select>
-  				<option value="ชมพู">ชมพู</option>
-  				<option value="ฟ้า"> ฟ้า</option>
-  				<option value="เหลือง">เหลือง</option>
-  				<option value="เขียว">เขียว</option>
-				<option value="แดง"> แดง</option>
-  			</select>
+  			<select name="reward_color_3rd">
+          <option value="">เลือกรายการสี</option>
+        <?php 
+            $sql_find_color_color = "SELECT `color_color`, `color_id_user` FROM `colors`";
+            $result_find_colors_name = mysqli_query($conn, $sql_find_color_color);
+            if (mysqli_num_rows($result_find_colors_name) > 0) {
+                while ($row_find_colors_name = mysqli_fetch_assoc($result_find_colors_name)) {
+                  echo "<option value=\"".$row_find_colors_name['color_id_user']."\">".$row_find_colors_name['color_color']."</option>";
+                }
+            }  
+           ?>
+        </select>
 
               <label>4</label>
-  			<select>
-  				<option value="ชมพู">ชมพู</option>
-  				<option value="ฟ้า"> ฟ้า</option>
-  				<option value="เหลือง">เหลือง</option>
-  				<option value="เขียว">เขียว</option>
-				<option value="แดง"> แดง</option>
-  			</select>
+  			<select name="reward_color_4th">
+          <option value="">เลือกรายการสี</option>
+        <?php 
+            $sql_find_color_color = "SELECT `color_color`, `color_id_user` FROM `colors`";
+            $result_find_colors_name = mysqli_query($conn, $sql_find_color_color);
+            if (mysqli_num_rows($result_find_colors_name) > 0) {
+                while ($row_find_colors_name = mysqli_fetch_assoc($result_find_colors_name)) {
+                  echo "<option value=\"".$row_find_colors_name['color_id_user']."\">".$row_find_colors_name['color_color']."</option>";
+                }
+            }  
+           ?>
+        </select>
             
               <label>5</label>
-  			<select>
-  				<option value="ชมพู">ชมพู</option>
-  				<option value="ฟ้า"> ฟ้า</option>
-  				<option value="เหลือง">เหลือง</option>
-  				<option value="เขียว">เขียว</option>
-				<option value="แดง"> แดง</option>
-  			</select>
-  		</table>
-		<input type="submit" name="add_player" class="btn">
+  			<select name="reward_color_5th">
+          <option value="">เลือกรายการสี</option>
+        <?php 
+            $sql_find_color_color = "SELECT `color_color`, `color_id_user` FROM `colors`";
+            $result_find_colors_name = mysqli_query($conn, $sql_find_color_color);
+            if (mysqli_num_rows($result_find_colors_name) > 0) {
+                while ($row_find_colors_name = mysqli_fetch_assoc($result_find_colors_name)) {
+                  echo "<option value=\"".$row_find_colors_name['color_id_user']."\">".$row_find_colors_name['color_color']."</option>";
+                }
+            }  
+           ?>
+        </select>  		</table>
+		<input type="submit" name="add_reward" class="btn">
 	</form>
 	</div>
+
+
+
+  
 	</center>
+  <?php 
+    if ($_POST['add_reward']) {
+      $reward_sport_id = $_POST['reward_sport_id'];
+      $reward_color_1st = $_POST['reward_color_1st'];
+      $reward_color_2nd = $_POST['reward_color_2nd'];
+      $reward_color_3rd = $_POST['reward_color_3rd'];
+      $reward_color_4th = $_POST['reward_color_4th'];
+      $reward_color_5th = $_POST['reward_color_5th'];
+      $sql_add_reward = "INSERT INTO `reward`( `reward_sport_id`, `reward_first`, `reward_second`, `reward_third`, `reward_fourth`, `reward_fifth`) VALUES ('$reward_sport_id','$reward_color_1st','$reward_color_2nd','$reward_color_3rd','$reward_color_4th','$reward_color_5th')";
+      if (mysqli_query($conn, $sql_add_reward)) {
+        echo "<meta http-equiv='refresh' content='0;url=?page=add_sport' />";
+      }else{
+        echo "err";
+      }
+
+    }
+    
+   ?>
 </body>
