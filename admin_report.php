@@ -1,4 +1,10 @@
-
+<?php 
+  include 'conn.php'; 
+  if ($_SESSION['user_role'] !== 'admin_report') {
+      echo "<meta http-equiv='refresh' content='0;url=logout.php'/>";
+      exit();
+  }
+?>
 <!DOCTYPE html>
 <html>
 <head>
