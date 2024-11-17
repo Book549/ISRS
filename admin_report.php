@@ -43,7 +43,7 @@
         </button>
         <ul class="sub-menu">
           <div>
-            <li><a href="?page=add_sport">ผลการแข่งขันรายกีฬา</a></li>
+            <li><a href="?page=add_report">ผลการแข่งขันรายกีฬา</a></li>
             <li><a href="?page=add_player">ผลกาารแข่งขันรวม</a></li>
           </div>
         </ul>
@@ -65,8 +65,8 @@ switch ($_GET['page']) {
 		echo "XXX";
 		break;
 
-	case 'add_sport':
-		include 'admin_report/add/add_report_sport.php';
+	case 'add_report':
+		include 'admin_report/report_sport.php';
 		break;
 
 	case 'add_player':

@@ -11,4 +11,4 @@
 		
 		<input type="submit" name="add_player" class="btn">
 </form>
-<
+</body>
