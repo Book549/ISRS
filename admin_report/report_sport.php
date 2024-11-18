@@ -11,12 +11,14 @@ switch ($_GET['sub_page']) {
     break;
 
   case 'del':
-    include 'admin_report/delete/del_report_sport.php';
-    break;
+    include 'admin_report/del/del_report_sport.php';
+    break; 
+
+
 
   default:
     if (empty($_GET['sub_page'])) {
-      echo "<meta http-equiv='refresh' content='0;url=?page=add_report&sub_page=view' />";
+      echo "<meta http-equiv='refresh' content='0;url=?page=reward&sub_page=view' />";
       exit();
     }else{
       echo "404 page not found.";
