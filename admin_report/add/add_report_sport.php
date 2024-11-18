@@ -1,11 +1,12 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet"  href="element/styles_admin_sport.css">
 <body>
 	<center>
 	<div class="add_sport_all">
 	<form method="post" >
 
   			<label>รายการกีฬา:</label>
-  			<select name="reward_sport_id">
+  			<select name="reward_sport_id" style="margin-bottom: 25px;" class="select_box">
           <option value="">เลือกรายการกีฬา</option>
           <?php 
             $sql_find_sport_name = "SELECT `sport_id`, `sport_name` FROM `sports`";
@@ -32,28 +33,31 @@ function sport_list($conn) {
         <h3>ผลการแข่งขัน:</h3>
     
   			<label>🥇1</label>
-  			<select name="reward_color_1st">
+  			<select name="reward_color_1st" style="margin-bottom: 15px;" class="select_box">
           <option value="">เลือกรายการสี</option>
           <?php 
             sport_list($conn);
           ?>
   			</select>
+        <br>
 
         <label>🥈2</label>
-  			<select name="reward_color_2nd">
+  			<select name="reward_color_2nd" style="margin-bottom: 15px;" class="select_box">
           <option value="">เลือกรายการสี</option>
         <?php 
             sport_list($conn);
            ?>
         </select>
+        <br>
 
               <label>🥉3</label>
-  			<select name="reward_color_3rd">
+  			<select name="reward_color_3rd" style="margin-bottom: 15px;" class="select_box">
           <option value="">เลือกรายการสี</option>
         <?php 
             sport_list($conn);
            ?>
         </select>
+        <br>
 
       
 		<input type="submit" name="add_reward" class="btn">

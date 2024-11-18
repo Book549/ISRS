@@ -2,10 +2,10 @@
 <body>
     <center>
 <form method="post" class="add_sport_all">
-	<label for="schedule_sport">schedule_sport:</label><input type="text" class="box_sport"  name="schedule_sport" id="schedule_sport"><br>
-	<label for="schedule_date">schedule_date:</label><input type="date" class="box_sport" name="schedule_date" id="schedule_date"><br>
-	<label for="schedule_time">schedule_time:</label><input type="time" class="box_sport" name="schedule_time" id="schedule_time"><br>
-    <label for="schedule_venue">schedule_venue:</label>
+	<label for="schedule_sport">ชื่อกีฬา :</label><input type="text" class="box_sport"  name="schedule_sport" id="schedule_sport"><br>
+	<label for="schedule_date">วันที่:</label><input type="date" class="box_sport" name="schedule_date" id="schedule_date"><br>
+	<label for="schedule_time">เวลา :</label><input type="time" class="box_sport" name="schedule_time" id="schedule_time"><br>
+    <label for="schedule_venue">สถานที่ :</label>
 	<select class="select_box" name="schedule_venue" id="schedule_venue" required>
 		<option value="">เลือกสถานที่แข่ง</option>
 		<option value="สนามวอลเลย์บอล">สนามวอลเลย์บอล</option>
@@ -22,7 +22,7 @@
         <option value="กองเชียร์สีชมพู">กองเชียร์สีชมพู</option>
 	</select>
 	<br>
-	<label for="schedule_status">schedule_status:</label>
+	<label for="schedule_status">สถานะ :</label>
     <select class="select_box" name="schedule_status" id="schedule_status" required>
 		<option value="">เลือกสถานะแข่งขัน</option>
         <option value="ยังไม่แข่งขัน" style="color: darkblue;">ยังไม่แข่งขัน</option>

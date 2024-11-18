@@ -1,4 +1,5 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet"  href="element/styles_admin_sport.css">
 <body>
 <form method="post" class="add_sport_all">
         <label for="report_rank">อันดับ:</label> <input type="text" class="box_sport" name="report_rank" id="report_rank"><br>

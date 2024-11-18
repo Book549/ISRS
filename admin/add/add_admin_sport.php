@@ -6,10 +6,10 @@
 	<label for="user_username">user_username</label><input type="text" class="box_sport" id="user_username" name="user_username" required><br>
 	<label for="user_password">user_password</label><input type="text" class="box_sport" id="user_password" name="user_password" required><br>
 
-	<label for="color_name">color_name</label><input type="text" name="color_name" id="color_name" required><br>
-	<label for="color_color">color_color</label><input type="text" name="color_color" id="color_color" required><br>
-	<label for="color_president">color_president</label><input type="text" name="color_president" id="color_president" required><br>
-	<label for="color_vice-president">color_vice-president</label><input type="text" name="color_vice-president" id="color_vice-president" required><br>
+	<label for="color_name">ชื่อคณะสี</label><input type="text" name="color_name" id="color_name" required><br>
+	<label for="color_color">คณะสี</label><input type="text" name="color_color" id="color_color" required><br>
+	<label for="color_president">ประธานสี</label><input type="text" name="color_president" id="color_president" required><br>
+	<label for="color_vice-president">รองประธานสี</label><input type="text" name="color_vice-president" id="color_vice-president" required><br>
 
 	<input type="submit" name="add_admin_sport" class="btn" value="เพิ่มผู้ใช้"><br>
 </form>

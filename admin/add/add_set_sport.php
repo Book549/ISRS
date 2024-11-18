@@ -1,8 +1,8 @@
 <body>
 	<h6>add set_sport(live saver)</h6>
 <form method="post" action="" class="add_sport_all">
-	<label for="sport_name">sport_name:</label><input type="text" class="box_sport" name="sport_name" id="sport_name"><br>
-	<label for="sport_type">sport_type:</label><input type="text" class="box_sport" name="sport_type" id="sport_type"><br>
+	<label for="sport_name">ชื่อกีฬา:</label><input type="text" class="box_sport" name="sport_name" id="sport_name"><br>
+	<label for="sport_type">ชนิดกีฬา:</label><input type="text" class="box_sport" name="sport_type" id="sport_type"><br>
 
 
 	<label for="sport_amount">sport_amount:</label><input type="text" class="box_sport" name="sport_amount" id="sport_amount"><br>

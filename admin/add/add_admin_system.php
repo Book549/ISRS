@@ -11,13 +11,13 @@
 	<label>user role:</label><br>
     <div class="radio-group">
         <input type="radio" class="radio" id="admin_system" name="user_role" value="admin_system" required>
-        <label for="admin_system">admin system</label><br>
+        <label for="admin_system">ผู้จัดการระบบ</label><br>
         
         <input type="radio" class="radio" id="admin_sport" name="user_role" value="admin_sport" required>
-        <label for="admin_sport">admin sport</label><br> 
+        <label for="admin_sport">ผู้จัดการระบบคณะสี</label><br> 
         
         <input type="radio" class="radio" id="admin_report" name="user_role" value="admin_report" required>
-        <label for="admin_report">admin report</label><br>
+        <label for="admin_report">ผู้จัดการระบบรายงานผล</label><br>
     </div>
 
 	<input type="submit" name="add_admin" class="btn" value="เพิ่มผู้ใช้"><br>
