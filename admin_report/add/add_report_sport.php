@@ -17,35 +17,33 @@
             }  
            ?>
   			</select>
-  	
+<?php 
+function sport_list($conn) {
+  $sql_find_color_color = "SELECT `color_color`, `color_id_user` FROM `colors`";
+  $result_find_colors_name = mysqli_query($conn, $sql_find_color_color);
+  if (mysqli_num_rows($result_find_colors_name) > 0) {
+      while ($row_find_colors_name = mysqli_fetch_assoc($result_find_colors_name)) {
+        echo "<option value=\"".$row_find_colors_name['color_id_user']."\">".$row_find_colors_name['color_color']."</option>";
+      }
+  }
+}
+ ?>
 
         <h3>ผลการแข่งขัน:</h3>
     
   			<label>🥇1</label>
   			<select name="reward_color_1st">
           <option value="">เลือกรายการสี</option>
-        <?php 
-            $sql_find_color_color = "SELECT `color_color`, `color_id_user` FROM `colors`";
-            $result_find_colors_name = mysqli_query($conn, $sql_find_color_color);
-            if (mysqli_num_rows($result_find_colors_name) > 0) {
-                while ($row_find_colors_name = mysqli_fetch_assoc($result_find_colors_name)) {
-                  echo "<option value=\"".$row_find_colors_name['color_id_user']."\">".$row_find_colors_name['color_color']."</option>";
-                }
-            }  
-           ?>
+          <?php 
+            sport_list($conn);
+          ?>
   			</select>
 
         <label>🥈2</label>
   			<select name="reward_color_2nd">
           <option value="">เลือกรายการสี</option>
         <?php 
-            $sql_find_color_color = "SELECT `color_color`, `color_id_user` FROM `colors`";
-            $result_find_colors_name = mysqli_query($conn, $sql_find_color_color);
-            if (mysqli_num_rows($result_find_colors_name) > 0) {
-                while ($row_find_colors_name = mysqli_fetch_assoc($result_find_colors_name)) {
-                  echo "<option value=\"".$row_find_colors_name['color_id_user']."\">".$row_find_colors_name['color_color']."</option>";
-                }
-            }  
+            sport_list($conn);
            ?>
         </select>
 
@@ -53,13 +51,7 @@
   			<select name="reward_color_3rd">
           <option value="">เลือกรายการสี</option>
         <?php 
-            $sql_find_color_color = "SELECT `color_color`, `color_id_user` FROM `colors`";
-            $result_find_colors_name = mysqli_query($conn, $sql_find_color_color);
-            if (mysqli_num_rows($result_find_colors_name) > 0) {
-                while ($row_find_colors_name = mysqli_fetch_assoc($result_find_colors_name)) {
-                  echo "<option value=\"".$row_find_colors_name['color_id_user']."\">".$row_find_colors_name['color_color']."</option>";
-                }
-            }  
+            sport_list($conn);
            ?>
         </select>
 
@@ -73,22 +65,76 @@
   
 	</center>
   <?php 
-    if ($_POST['add_reward']) {
-      $reward_sport_id = $_POST['reward_sport_id'];
-      $reward_color_1st = $_POST['reward_color_1st'];
-      $reward_color_2nd = $_POST['reward_color_2nd'];
-      $reward_color_3rd = $_POST['reward_color_3rd'];
+    if (isset($_GET['resuit'])) {
+        switch ($_GET['resuit']) {
+          case 'Yes':
+              $reward_sport_id = $_GET['reward_sport_id'];
+              $reward_color_1st = $_GET['reward_color_1st'];
+              $reward_color_2nd = $_GET['reward_color_2nd'];
+              $reward_color_3rd = $_GET['reward_color_3rd'];
+              $sql_add_reward_dup = "UPDATE `reward` SET `reward_sport_id`='$reward_sport_id',`reward_first`='$reward_color_1st',`reward_second`='$reward_color_2nd',`reward_third`='$reward_color_3rd' WHERE `reward_sport_id` = '$reward_sport_id'";
+              if (mysqli_query($conn, $sql_add_reward_dup)) {
 
-      $sql_add_reward = "INSERT INTO `reward`( `reward_sport_id`, `reward_first`, `reward_second`, `reward_third`) VALUES ('$reward_sport_id','$reward_color_1st','$reward_color_2nd','$reward_color_3rd')";
+                echo "<meta http-equiv='refresh' content='0;url=?page=reward' />";
+              }else{
+                echo "err";
+                mysqli_error($connn);
+              }
+            break;
+          
+          case 'No':
+            echo "<meta http-equiv='refresh' content='0;url=?page=reward&sub_page=view' />";
+            break;
 
-      if (mysqli_query($conn, $sql_add_reward)) {
-        echo "<meta http-equiv='refresh' content='0;url=?page=reward' />";
-      }else{
-        echo "err";
-        mysqli_error($connn);
-      }
-
+          default:
+            echo "err bad url";
+            break;
+        }
     }
+    if (isset($_POST['add_reward'])) {
+      $reward_sport_id = $_POST['reward_sport_id'];
+      $inputs = [$_POST['reward_color_1st'], $_POST['reward_color_2nd'], $_POST['reward_color_3rd']];
+      // Check if all inputs are unique
+      if (count(array_unique($inputs)) < 3) {
+          echo "Error: The three inputs must be different!";
+      } else {
+
+        $sql_check_duplicate = "SELECT * FROM `reward` WHERE `reward_sport_id` = '$reward_sport_id'";
+        $result_check = mysqli_query($conn, $sql_check_duplicate);
+
+        if (mysqli_num_rows($result_check) > 0) {
+            echo "This reward combination already exists!";
+
+                    $posttoget = "";
+        foreach ($_POST as $key => $value) {
+          $posttoget = $posttoget."&$key=$value";
+        }
+        #echo $posttoget."<br>";
+        echo "duplicate reward do you want to replace?";
+        echo "<a href='?page=reward&sub_page=view&resuit=Yes$posttoget'>Yes</a><a href='?page=reward&sub_page=view&resuit=No'>No</a>";
+        unset($_POST);
+
+        } else {
+            
+            $reward_color_1st = $inputs[0];
+            $reward_color_2nd = $inputs[1];
+            $reward_color_3rd = $inputs[2];
+
+            $sql_add_reward = "INSERT INTO `reward`( `reward_sport_id`, `reward_first`, `reward_second`, `reward_third`) VALUES ('$reward_sport_id','$reward_color_1st','$reward_color_2nd','$reward_color_3rd')";
+
+            if (mysqli_query($conn, $sql_add_reward)) {
+              echo "<meta http-equiv='refresh' content='0;url=?page=reward' />";
+            }else{
+              echo "err";
+              mysqli_error($connn);
+            }
+          }
+        }
+    }
+
+
+
+    
     
    ?>
 </body>

@@ -36,7 +36,7 @@
             </div>
             
             <div class="logo">
-              <img src="pic/logo.svg" width="60px" height="60px">
+              <img src="pic/swk_logo.svg" width="60px" height="60px">
               <span class="title">
                 <p >โรงเรียนสามัคคีวิทยาคม<br> SAMAKKHIWITTAYAKHOM SCHOOL</p>
                 
