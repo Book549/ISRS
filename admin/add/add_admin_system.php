@@ -1,6 +1,6 @@
 <link rel="stylesheet"  href="element/styles_admin_sport.css">
 <body>
-	<div class="table_container">
+	<center>
 <form method="post" action="" class="add_sport_all">
 	<label for="user_name">user_name</label>
 	<input type="text" class="box_sport" id="user_name" name="user_name" required><br>
@@ -19,10 +19,11 @@
         <input type="radio" class="radio" id="admin_report" name="user_role" value="admin_report" required>
         <label for="admin_report">ผู้จัดการระบบรายงานผล</label><br>
     </div>
-
+	<center>
 	<input type="submit" name="add_admin" class="btn" value="เพิ่มผู้ใช้"><br>
+	</center>
 </form>
-</div>
+</center>
 <?php 
 	if ($_POST['add_admin']) {
 		$user_name = $_POST['user_name'];

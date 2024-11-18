@@ -244,7 +244,7 @@ td:hover{
 
 .radio-group {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     
 }
 
@@ -265,6 +265,7 @@ td:hover{
     outline: none;
     cursor: pointer;
     transition: 0.3s ease;
+   
 }
 
 .radio-option input[type="radio"]:checked {
@@ -272,8 +273,8 @@ td:hover{
 }
 
 .radio-option label {
-    font-size: 18px;
-    padding-right: 15px;
+    font-size: 16px;
     cursor: pointer;
+    margin-right: 20px;
 }
 

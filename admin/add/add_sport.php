@@ -22,8 +22,8 @@
 	</select>
 	<br>
 
-	<label for="sport_amount">sport_amount:</label><input type="text" class="box_sport" name="sport_amount" id="sport_amount"><br>
-	<label for="sport_note">sport_note:</label><input type="text" class="box_sport" name="sport_note" id="sport_note"><br>
+	<label for="sport_amount">จำนวนนักกีฬา:</label><input type="text" class="box_sport" name="sport_amount" id="sport_amount"><br>
+	<label for="sport_note">หมายเหตุ:</label><input type="text" class="box_sport" name="sport_note" id="sport_note"><br>
 	<center>
 	<input type="submit" name="add_sport" class="btn">
 	</center>
