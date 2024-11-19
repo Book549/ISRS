@@ -1,3 +1,4 @@
+<?php include 'conn.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -132,7 +133,7 @@
         <thead>
           <span class="table_head"><i class="fas fa-trophy"> สรุปผลการแข่งขันตามคณะสี</i></span>
           <tr>
-            <th style="width: 10%;">Rank</th>
+            <!-- <th style="width: 10%;">Rank</th> -->
             <th>คณะสี</th>
             <th>🥇 Gold</th>
             <th>🥈 Silver</th>
@@ -141,50 +142,33 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>School A</td>
-            <td>10</td>
-            <td>5</td>
-            <td>2</td>
-            <td>17</td>
-          </tr>
-          
-          <tr>
-            <td>2</td>
-            <td>School A</td>
-            <td>10</td>
-            <td>5</td>
-            <td>2</td>
-            <td>17</td>
-          </tr>
+          <?php 
+            // $rank_color = 0;
+            $sql_view_color = "SELECT `color_id`, `color_color` FROM `colors`";
+            $result_view_color = mysqli_query($conn, $sql_view_color);
+            if (mysqli_num_rows($result_view_color) > 0) {
+              while ($row_view_color = mysqli_fetch_assoc($result_view_color)) {
+                // $rank_color = $rank_color + 1;
+                $rank_gold = mysqli_num_rows(mysqli_query($conn,"SELECT `reward_id` FROM `reward` WHERE `reward_first` = '".$row_view_color['color_id']."'"));
+                $rank_silver = mysqli_num_rows(mysqli_query($conn,"SELECT `reward_id` FROM `reward` WHERE `reward_second` = '".$row_view_color['color_id']."'"));
+                $rank_bronze = mysqli_num_rows(mysqli_query($conn,"SELECT `reward_id` FROM `reward` WHERE `reward_third` = '".$row_view_color['color_id']."'"));
+                $sum_reward = $rank_gold + $rank_silver + $rank_bronze;
+                echo "<tr>
+                    
+                    <td>".$row_view_color['color_color']."</td>
+                    <td>".$rank_gold."</td>
+                    <td>".$rank_silver."</td>
+                    <td>".$rank_bronze."</td>
+                    <td>".$sum_reward."</td>
 
-          <tr>
-            <td>3</td>
-            <td>School A</td>
-            <td>10</td>
-            <td>5</td>
-            <td>2</td>
-            <td>17</td>
-          </tr>
+                  </tr>";
+              }
+            }else{
+              echo "something is wrong..";
+            }
 
-          <tr>
-            <td>4</td>
-            <td>School A</td>
-            <td>10</td>
-            <td>5</td>
-            <td>2</td>
-            <td>17</td>
-          </tr>
 
-          <tr>
-            <td>5</td>
-            <td>School A</td>
-            <td>10</td>
-            <td>5</td>
-            <td>2</td>
-            <td>17</td>
-          </tr>
+          ?>
         </tbody>
       </table>
     </div>

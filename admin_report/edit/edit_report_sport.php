@@ -5,9 +5,37 @@
 	$result_view_reward = mysqli_query($conn, $sql_view_reward);
 	if (mysqli_num_rows($result_view_reward) == 1) {
 		$row_view_reward = mysqli_fetch_assoc($result_view_reward);
+    foreach ($row_view_reward as $key => $value) {
+      echo "$key => $value<br>";
+    }
+    echo $row_view_reward['reward_id'];
+    echo $row_view_reward['reward_sport_id'];
+    echo $row_view_reward['reward_first'];
+    echo $row_view_reward['reward_second'];
+    echo $row_view_reward['reward_third'];
 	}else{
 		echo "some thing is wrong..";
 	}
+
+function color_color($id_color, $conn) {
+    $sql_find_color_color = "SELECT `color_color` FROM `colors` WHERE `color_id_user` = $id_color";
+    $result_find_colors_name = mysqli_query($conn, $sql_find_color_color);
+    if (mysqli_num_rows($result_find_colors_name) > 0) {
+        $row_find_colors_name = mysqli_fetch_assoc($result_find_colors_name);
+        return $row_find_colors_name['color_color'];
+    }
+    return "N/A"; // Default if no color is found
+}
+
+function sport_name($id_sport, $conn) {
+    $sql_find_sport_name = "SELECT `sport_name` FROM `sports` WHERE `sport_id` = $id_sport";
+    $result_find_sports_name = mysqli_query($conn, $sql_find_sport_name);
+    if (mysqli_num_rows($result_find_sports_name) > 0) {
+        $row_find_sports_name = mysqli_fetch_assoc($result_find_sports_name);
+        return $row_find_sports_name['sport_name'];
+    }
+    return "N/A"; // Default if no color is found
+}
 ?>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
@@ -17,9 +45,9 @@
 
   			<label>รายการกีฬา:</label>
   			<select name="reward_sport_id">
-          <option value="">เลือกรายการกีฬา</option>
+          <option value="<?php echo $row_view_reward['reward_sport_id']; ?>" selected><?php echo sport_name($row_view_reward['reward_sport_id'], $conn); ?></option>
           <?php 
-            $sql_find_sport_name = "SELECT `sport_id`, `sport_name` FROM `sports`";
+            $sql_find_sport_name = "SELECT `sport_id`, `sport_name` FROM `sports` WHERE `sport_id` != ".$row_view_reward['reward_sport_id'];
             $result_find_sports_name = mysqli_query($conn, $sql_find_sport_name);
             if (mysqli_num_rows($result_find_sports_name) > 0) {
                 while ($row_find_sports_name = mysqli_fetch_assoc($result_find_sports_name)) {
@@ -34,9 +62,9 @@
     
   			<label>🥇1</label>
   			<select name="reward_color_1st">
-          <option value="">เลือกรายการสี</option>
+         <option value="<?php echo $row_view_reward['reward_first']; ?>" selected><?php echo color_color($row_view_reward['reward_first'], $conn); ?></option>
         <?php 
-            $sql_find_color_color = "SELECT `color_color`, `color_id_user` FROM `colors`";
+            $sql_find_color_color = "SELECT `color_color`, `color_id_user` FROM `colors` WHERE color_id != ".$row_view_reward['reward_first'];
             $result_find_colors_name = mysqli_query($conn, $sql_find_color_color);
             if (mysqli_num_rows($result_find_colors_name) > 0) {
                 while ($row_find_colors_name = mysqli_fetch_assoc($result_find_colors_name)) {
@@ -48,7 +76,7 @@
 
         <label>🥈2</label>
   			<select name="reward_color_2nd">
-          <option value="">เลือกรายการสี</option>
+          <option value="<?php echo $row_view_reward['reward_second']; ?>" selected><?php echo color_color($row_view_reward['reward_second'], $conn); ?></option>
         <?php 
             $sql_find_color_color = "SELECT `color_color`, `color_id_user` FROM `colors`";
             $result_find_colors_name = mysqli_query($conn, $sql_find_color_color);
@@ -60,9 +88,9 @@
            ?>
         </select>
 
-              <label>🥉3</label>
+        <label>🥉3</label>
   			<select name="reward_color_3rd">
-          <option value="">เลือกรายการสี</option>
+          <option value="<?php echo $row_view_reward['reward_third']; ?>" selected><?php echo color_color($row_view_reward['reward_third'], $conn); ?></option>
         <?php 
             $sql_find_color_color = "SELECT `color_color`, `color_id_user` FROM `colors`";
             $result_find_colors_name = mysqli_query($conn, $sql_find_color_color);
@@ -120,16 +148,33 @@
         $result_check = mysqli_query($conn, $sql_check_duplicate);
 
         if (mysqli_num_rows($result_check) > 0) {
+          $row_check_reward = mysqli_fetch_assoc($result_check);
+          if ($row_view_reward['reward_id'] != $row_check_reward['reward_id']) {
             echo "This reward combination already exists!";
 
-                    $posttoget = "";
-        foreach ($_POST as $key => $value) {
-          $posttoget = $posttoget."&$key=$value";
-        }
-        #echo $posttoget."<br>";
-        echo "duplicate reward do you want to replace?";
-        echo "<a href='?page=reward&sub_page=view&resuit=Yes$posttoget'>Yes</a><a href='?page=reward&sub_page=view&resuit=No'>No</a>";
-        unset($_POST);
+            $posttoget = "";
+            foreach ($_POST as $key => $value) {
+              $posttoget = $posttoget."&$key=$value";
+            }
+            #echo $posttoget."<br>";
+            echo "duplicate reward do you want to replace?";
+            echo "<a href='?page=reward&sub_page=view&resuit=Yes$posttoget'>Yes</a><a href='?page=reward&sub_page=view&resuit=No'>No</a>";
+            unset($_POST);
+          }else{
+            $reward_color_1st = $inputs[0];
+            $reward_color_2nd = $inputs[1];
+            $reward_color_3rd = $inputs[2];
+
+            $sql_update_reward = "UPDATE `reward` SET `reward_sport_id`='$reward_sport_id',`reward_first`='$reward_color_1st',`reward_second`='$reward_color_2nd',`reward_third`='$reward_color_3rd' WHERE `reward_id` = '$reward_id'";
+
+            if (mysqli_query($conn, $sql_update_reward)) {
+              echo "<meta http-equiv='refresh' content='0;url=?page=reward' />";
+            }else{
+              echo "err";
+              mysqli_error($connn);
+            }
+          }
+          
 
         } else {
             
@@ -137,7 +182,7 @@
             $reward_color_2nd = $inputs[1];
             $reward_color_3rd = $inputs[2];
 
-            $sql_update_reward = "UPDATE `reward` SET `reward_sport_id`='$reward_sport_id',`reward_first`='$reward_color_1st',`reward_second`='$reward_color_2nd',`reward_third`='$reward_color_3rd' WHERE `reward_sport_id` = '$reward_id'";
+            $sql_update_reward = "UPDATE `reward` SET `reward_sport_id`='$reward_sport_id',`reward_first`='$reward_color_1st',`reward_second`='$reward_color_2nd',`reward_third`='$reward_color_3rd' WHERE `reward_id` = '$reward_id'";
 
             if (mysqli_query($conn, $sql_update_reward)) {
               echo "<meta http-equiv='refresh' content='0;url=?page=reward' />";

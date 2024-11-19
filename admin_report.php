@@ -44,7 +44,7 @@
         <ul class="sub-menu">
           <div>
             <li><a href="?page=reward">ผลการแข่งขันรายกีฬา</a></li>
-            <li><a href="?page=add_player">ผลกาารแข่งขันรวม</a></li>
+            <!-- <li><a href="?page=add_player">ผลกาารแข่งขันรวม</a></li> -->
           </div>
         </ul>
       </li>
