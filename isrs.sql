@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2024 at 05:10 AM
+-- Generation Time: Nov 19, 2024 at 05:24 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -89,20 +89,17 @@ CREATE TABLE `reward` (
   `reward_sport_id` int(11) NOT NULL,
   `reward_first` int(2) NOT NULL,
   `reward_second` int(2) NOT NULL,
-  `reward_third` int(2) NOT NULL,
-  `reward_fourth` int(2) NOT NULL,
-  `reward_fifth` int(2) NOT NULL
+  `reward_third` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `reward`
 --
 
-INSERT INTO `reward` (`reward_id`, `reward_sport_id`, `reward_first`, `reward_second`, `reward_third`, `reward_fourth`, `reward_fifth`) VALUES
-(1, 0, 0, 0, 0, 0, 0),
-(2, 1, 0, 0, 0, 0, 0),
-(3, 1, 2, 2, 0, 2, 2),
-(4, 1, 2, 4, 5, 6, 8);
+INSERT INTO `reward` (`reward_id`, `reward_sport_id`, `reward_first`, `reward_second`, `reward_third`) VALUES
+(14, 1, 2, 4, 5),
+(16, 10, 6, 4, 2),
+(17, 17, 4, 2, 5);
 
 -- --------------------------------------------------------
 
@@ -162,15 +159,16 @@ INSERT INTO `sports` (`sport_id`, `sport_name`, `sport_type`, `sport_degree`, `s
 (40, 'กรีฑา มัธยมต้น หญิง', 'กรีฑา', 'มัธยมต้น', 'หญิง', 40, ''),
 (41, 'กรีฑา มัธยมปลาย ชาย', 'กรีฑา', 'มัธยมปลาย', 'ชาย', 40, ''),
 (42, 'กรีฑา มัธยมปลาย หญิง', 'กรีฑา', 'มัธยมปลาย', 'หญิง', 40, ''),
-(43, 'บอลหลบ', 'ดอร์จบอล', 'อื่นๆ', 'ผสม', 1, 'ชั้นมัธยมศึกษาปีที่ 1'),
-(44, ' แอโรบิค', ' แอโรบิก', 'อื่นๆ', 'ผสม', 1, 'ชั้นมัธยมศึกษาปีที่ 2'),
-(45, 'Boxing Kids', 'มวย', 'อื่นๆ', 'ผสม', 1, 'ชั้นมัธยมศึกษาปีที่ 3'),
-(46, 'จักรยานคนจน', 'ไตรกีฬา', 'อื่นๆ', 'ผสม', 1, 'ชั้นมัธยมศึกษาปีที่ 4'),
+(43, 'บอลหลบ', 'บอลหลบ', 'อื่นๆ', 'ผสม', 1, 'ชั้นมัธยมศึกษาปีที่ 1'),
+(44, ' แอโรบิค', ' แอโรบิค', 'อื่นๆ', 'ผสม', 1, 'ชั้นมัธยมศึกษาปีที่ 2'),
+(45, 'Boxing Kids', 'Boxing Kids', 'อื่นๆ', 'ผสม', 1, 'ชั้นมัธยมศึกษาปีที่ 3'),
+(46, 'จักรยานคนจน', 'จักรยานคนจน', 'อื่นๆ', 'ผสม', 1, 'ชั้นมัธยมศึกษาปีที่ 4'),
 (47, 'กีฬาพื้นบ้าน', 'กีฬาพื้นบ้าน', 'อื่นๆ', 'ผสม', 1, 'ชั้นมัธยมศึกษาปีที่ 6'),
 (49, 'AAA มัธยมต้น ชาย', 'AAA', 'มัธยมต้น', 'ชาย', 99, '---'),
 (50, 'AAA มัธยมต้น หญิง', 'AAA', 'มัธยมต้น', 'หญิง', 99, '---'),
 (51, 'AAA มัธยมปลาย ชาย', 'AAA', 'มัธยมปลาย', 'ชาย', 99, '---'),
-(52, 'AAA มัธยมปลาย หญิง', 'AAA', 'มัธยมปลาย', 'หญิง', 99, '---');
+(52, 'AAA มัธยมปลาย หญิง', 'AAA', 'มัธยมปลาย', 'หญิง', 99, '---'),
+(53, 'บอลหลบฌเเเเ', 'บอลหลบฌเเเเ', 'อื่นๆ', 'ผสมเ', 1, 'ชั้นมัธยมศึกษาปีที่ 1');
 
 -- --------------------------------------------------------
 
@@ -255,13 +253,13 @@ ALTER TABLE `players`
 -- AUTO_INCREMENT for table `reward`
 --
 ALTER TABLE `reward`
-  MODIFY `reward_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `reward_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `sports`
 --
 ALTER TABLE `sports`
-  MODIFY `sport_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `sport_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `users`
