@@ -18,17 +18,17 @@
             }  
            ?>
   			</select>
-<?php 
-function sport_list($conn) {
-  $sql_find_color_color = "SELECT `color_color`, `color_id_user` FROM `colors`";
-  $result_find_colors_name = mysqli_query($conn, $sql_find_color_color);
-  if (mysqli_num_rows($result_find_colors_name) > 0) {
-      while ($row_find_colors_name = mysqli_fetch_assoc($result_find_colors_name)) {
-        echo "<option value=\"".$row_find_colors_name['color_id_user']."\">".$row_find_colors_name['color_color']."</option>";
-      }
-  }
-}
- ?>
+          <?php 
+          function sport_list($conn) {
+            $sql_find_color_color = "SELECT `color_color`, `color_id_user` FROM `colors`";
+            $result_find_colors_name = mysqli_query($conn, $sql_find_color_color);
+            if (mysqli_num_rows($result_find_colors_name) > 0) {
+                while ($row_find_colors_name = mysqli_fetch_assoc($result_find_colors_name)) {
+                  echo "<option value=\"".$row_find_colors_name['color_id_user']."\">".$row_find_colors_name['color_color']."</option>";
+                }
+            }
+          }
+           ?>
 
         <h3>ผลการแข่งขัน:</h3>
     

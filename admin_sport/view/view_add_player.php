@@ -13,9 +13,9 @@
 			<th>นามสกุล</th>
 			<th>ชั้น</th>
 			<th>ห้อง</th>
-			<th>เพศ</th>
-			<th>รหัสคณะสี</th>
-			<th>รหัสกีฬา</th>
+			<!-- <th>เพศ</th> -->
+			<th>คณะสี</th>
+			<th>ชื่อกีฬา</th>
 		</tr>
 		<?php
 			$sql_find_players = "SELECT * FROM `players` WHERE `player_color_id` = ".$_SESSION['user_id'];
@@ -30,9 +30,9 @@
 							<td>".$row_find_players['player_sirname']."</td>
 							<td>".$row_find_players['player_class']."</td>
 							<td>".$row_find_players['player_room']."</td>						
-							<td>".$row_find_players['player_gender']."</td>
-							<td>".$row_find_players['player_color_id']."</td>
-							<td>".$row_find_players['player_sport_id']."</td>
+
+							<td>".color_color($row_find_players['player_color_id'], $conn)."</td>
+							<td>".sport_name($row_find_players['player_sport_id'], $conn)."</td>
 							<td class=edit><a href=\"admin_sport.php?page=add_player&sub_page=edit&id_player=".$row_find_players['id_player']."\" >edit</a></td>
 							<td class=del><a href=\"admin_sport.php?page=add_player&sub_page=del&id_player=".$row_find_players['id_player']."\">del</a></td>
 						</tr>";

@@ -144,14 +144,14 @@
         <tbody>
           <?php 
             // $rank_color = 0;
-            $sql_view_color = "SELECT `color_id`, `color_color` FROM `colors`";
+            $sql_view_color = "SELECT `color_id_user`, `color_color` FROM `colors`";
             $result_view_color = mysqli_query($conn, $sql_view_color);
             if (mysqli_num_rows($result_view_color) > 0) {
               while ($row_view_color = mysqli_fetch_assoc($result_view_color)) {
                 // $rank_color = $rank_color + 1;
-                $rank_gold = mysqli_num_rows(mysqli_query($conn,"SELECT `reward_id` FROM `reward` WHERE `reward_first` = '".$row_view_color['color_id']."'"));
-                $rank_silver = mysqli_num_rows(mysqli_query($conn,"SELECT `reward_id` FROM `reward` WHERE `reward_second` = '".$row_view_color['color_id']."'"));
-                $rank_bronze = mysqli_num_rows(mysqli_query($conn,"SELECT `reward_id` FROM `reward` WHERE `reward_third` = '".$row_view_color['color_id']."'"));
+                $rank_gold = mysqli_num_rows(mysqli_query($conn,"SELECT `reward_id` FROM `reward` WHERE `reward_first` = '".$row_view_color['color_id_user']."'"));
+                $rank_silver = mysqli_num_rows(mysqli_query($conn,"SELECT `reward_id` FROM `reward` WHERE `reward_second` = '".$row_view_color['color_id_user']."'"));
+                $rank_bronze = mysqli_num_rows(mysqli_query($conn,"SELECT `reward_id` FROM `reward` WHERE `reward_third` = '".$row_view_color['color_id_user']."'"));
                 $sum_reward = $rank_gold + $rank_silver + $rank_bronze;
                 echo "<tr>
                     

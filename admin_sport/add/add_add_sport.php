@@ -20,10 +20,10 @@
 				$player_sirname = $_GET['player_sirname'];
 				$player_class = $_GET['player_class'];		
 				$player_room = $_GET['player_room'];
-				$player_gender = $_GET['player_gender'];
+				// $player_gender = $_GET['player_gender'];
 				$player_color_id = $user_id;
 				$player_sport_id = $sport_id;
-				$sql_update_player = "UPDATE `players` SET `player_title`='$player_title',`player_name`='$player_name',`player_sirname`='$player_sirname',`player_class`='$player_class',`player_room`='$player_room',`player_gender`='$player_gender',`player_color_id`='$player_color_id',`player_sport_id`='$player_sport_id' WHERE `player_id`='$player_id'";
+				$sql_update_player = "UPDATE `players` SET `player_title`='$player_title',`player_name`='$player_name',`player_sirname`='$player_sirname',`player_class`='$player_class',`player_room`='$player_room',`player_color_id`='$player_color_id',`player_sport_id`='$player_sport_id' WHERE `player_id`='$player_id'";
 					$result_update_player = mysqli_query($conn, $sql_update_player);
 				if ($result_update_player) {
 					echo "<meta http-equiv='refresh' content='0;url=?page=add_sport&sub_page=add&sport_id=$sport_id' />";
@@ -50,7 +50,14 @@
 <center>
 <form method="post" class="add_sport_all">
 <label for="player_id">รหัสนักเรียน:</label> <input type="text" class="box_sport" name="player_id" id="player_id"><br>
-		<label for="player_title">คำนำหน้า:</label> <input type="text" class="box_sport" name="player_title" id="player_title"><br>
+		<label for="player_title">คำนำหน้า:</label>
+		<select class="box_sport" name="player_title" id="player_title" required>
+			<option value="">เลือก</option>
+			<option value="เด็กชาย">เด็กชาย</option>
+			<option value="เด็กหญิง">เด็กหญิง</option>
+			<option value="นาย">นาย</option>
+			<option value="นางสาว">นางสาว</option>
+		</select><br>
 		<label for="player_name">ชื่อ:</label> <input type="text" class="box_sport" name="player_name" id="player_name"><br>
 		
 		<label for="player_sirname">นามสกุล:</label> <input type="text" class="box_sport" name="player_sirname" id="player_sirname"><br>
@@ -89,12 +96,12 @@
 		<option value="17">17</option>
 	</select>
 	<br>
-		<label for="player_gender">เพศ :</label>
+<!-- 		<label for="player_gender">เพศ :</label>
 		<select class="select_box" name="player_gender" id="player_gender" required>
 		<option value="">เลือกเพศ</option>
 		<option value="ชาย">ชาย</option>
 		<option value="หญิง">หญิง</option>
-		</select>
+		</select> -->
 		<br>
 		<center>
 		<input type="submit" name="add_player" class="btn">
@@ -121,14 +128,14 @@
 				$player_sirname = $_POST['player_sirname'];
 				$player_class = $_POST['player_class'];		
 				$player_room = $_POST['player_room'];
-				$player_gender = $_POST['player_gender'];
+				// $player_gender = $_POST['player_gender'];
 				$player_color_id = $user_id;
 				$player_sport_id = $sport_id;
 
-				$find_same_player = "SELECT * FROM `players` WHERE `player_id` = '$player_id'";
+				$find_same_player = "SELECT * FROM `players` WHERE `player_id` = '$player_id' AND `player_sport_id` = '$sport_id'";
 				$result_find_add_player = mysqli_query($conn, $find_same_player);
 				if (mysqli_num_rows($result_find_add_player) == 0) {
-					$sql_add_player  = "INSERT INTO `players` (`player_id`, `player_title`, `player_name`,  `player_sirname`, `player_class`, `player_room`, `player_gender`, `player_color_id`, `player_sport_id`) VALUES ('$player_id', '$player_title', '$player_name', '$player_sirname', '$player_class', '$player_room', '$player_gender', '$player_color_id', '$player_sport_id')";
+					$sql_add_player  = "INSERT INTO `players` (`player_id`, `player_title`, `player_name`, `player_sirname`, `player_class`, `player_room`, `player_color_id`, `player_sport_id`) VALUES ('$player_id', '$player_title', '$player_name', '$player_sirname', '$player_class', '$player_room', '$player_color_id', '$player_sport_id')";
 					$result_add_player = mysqli_query($conn, $sql_add_player);
 					if ($result_add_player) {
 						echo "<meta http-equiv='refresh' content='0;url=?page=add_sport&sub_page=add&sport_id=$sport_id' />";
@@ -173,9 +180,9 @@
 			<th>นามสกุล</th>
 			<th>ชั้น</th>
 			<th>ห้อง</th>
-			<th>เพศ</th>
+			<!-- <th>เพศ</th> -->
 
-			<th>รหัสกีฬา</th>
+			<th>ชื่อกีฬา</th>
 		</tr>
 		<?php
 			$sql_find_players = "SELECT * FROM `players` WHERE `player_color_id` = '$user_id' AND `player_sport_id` = '$sport_id'";
@@ -190,11 +197,11 @@
 							<td>".$row_find_players['player_sirname']."</td>
 							<td>".$row_find_players['player_class']."</td>
 							<td>".$row_find_players['player_room']."</td>						
-							<td>".$row_find_players['player_gender']."</td>
 							
-							<td>".$row_find_players['player_sport_id']."</td>
-							<td class=edit><a href=\"admin_sport.php?page=add_sport&sub_page=edit&player_id=".$row_find_players['player_id']."\" >แก้ไข</a></td>
-							<td class=del><a href=\"admin_sport.php?page=add_sport&sub_page=del&player_id=".$row_find_players['player_id']."&sport_id=".$row_find_players['player_sport_id']."\">ลบ</a></td>
+							<td>".sport_name($row_find_players['player_sport_id'], $conn)."</td>
+
+							<td class=edit><a href=\"admin_sport.php?page=add_sport&sub_page=edit&id_player=".$row_find_players['id_player']."\" >แก้ไข</a></td>
+							<td class=del><a href=\"admin_sport.php?page=add_sport&sub_page=del&id_player=".$row_find_players['id_player']."&sport_id=".$row_find_players['player_sport_id']."\">ลบ</a></td>
 						</tr>";
 				}
 			}else{

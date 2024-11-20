@@ -8,7 +8,7 @@
 			<th>player_sirname</th>
 			<th>player_class</th>
 			<th>player_room</th>
-			<th>player_gender</th>
+			<!-- <th>player_gender</th> -->
 			<th>player_color_id</th>
 			<th>player_sport_id</th>
 		</tr>
@@ -25,7 +25,7 @@
 							<td>".$row_find_players['player_sirname']."</td>
 							<td>".$row_find_players['player_class']."</td>
 							<td>".$row_find_players['player_room']."</td>						
-							<td>".$row_find_players['player_gender']."</td>
+							
 							<td>".$row_find_players['player_color_id']."</td>
 							<td>".$row_find_players['player_sport_id']."</td>
 							<td class=edit><a href=\"admin_system.php?page=player&sub_page=edit&id_player=".$row_find_players['id_player']."\">edit</a></td>

@@ -44,14 +44,14 @@
           <div>
             <li><a href="?page=admin_system">จัดการบัญชี</a></li>
             <li><a href="?page=admin_sport">จัดการคณะสี</a></li>
-            <li><a href="?page=admin_report">จัดการ...</a></li>
+            <!-- <li><a href="?page=admin_report">จัดการ...</a></li> -->
           </div>
         </ul>
       </li>
       <li>
         <button onclick=toggleSubMenu(this) class="dropdown-btn">
     <i class="fas fa-basketball-ball" style="padding-right: 10px;"></i>
-          <span>ระบบนักกีฬา</span>
+          <span>รายการกีฬา</span>
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"/></svg>
         </button>
         <ul class="sub-menu">
