@@ -69,19 +69,14 @@
 
 
 	 <label for="player_sport_id">รายการกีฬา:</label>
-  		<select name="player_sport_id" style="margin-bottom: 25px;" class="select_box">
 
-          <option value="<?php echo $row_find_edit_players['player_sport_id']; ?>" selected><?php echo sport_name($row_find_edit_players['player_sport_id'], $conn); ?></option>
+  		<select name="player_sport_id" style="margin-bottom: 15px;" class="select_box">
+          <option value="">เลือกรายการสี</option>
           <?php 
-            $sql_find_sport_name = "SELECT `sport_id`, `sport_name` FROM `sports` WHERE `sport_id` != ".$row_find_edit_players['player_sport_id'];
-            $result_find_sports_name = mysqli_query($conn, $sql_find_sport_name);
-            if (mysqli_num_rows($result_find_sports_name) > 0) {
-                while ($row_find_sports_name = mysqli_fetch_assoc($result_find_sports_name)) {
-                  echo "<option value=\"".$row_find_sports_name['sport_id']."\">".$row_find_sports_name['sport_name']."</option>";
-                }
-            }  
-           ?>
+            sport_list($conn);
+          ?>
   			</select>
+
 
 	<input type="submit" name="edit_player" class="btn">
 </form>

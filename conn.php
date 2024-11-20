@@ -33,6 +33,20 @@ function sport_name($id_sport, $conn) {
     return "N/A"; // Default if no color is found
 }
 
+function sport_list($conn) {
+    $sql_find_color_color = "SELECT `color_color`, `color_id_user` FROM `colors`";
+    $result_find_colors_name = mysqli_query($conn, $sql_find_color_color);
+    if (mysqli_num_rows($result_find_colors_name) > 0) {
+        while ($row_find_colors_name = mysqli_fetch_assoc($result_find_colors_name)) {
+          echo "<option value=\"".$row_find_colors_name['color_id_user']."\">".$row_find_colors_name['color_color']."</option>";
+        }
+    }
+}
+
+
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
 #error_reporting(E_ERROR | E_PARSE);
 
 ?>

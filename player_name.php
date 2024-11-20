@@ -132,7 +132,7 @@
                                     <th>สี</th>
                                 </tr>";
 
-                    $sql_find_sports = "SELECT `sport_id`, `sport_name` FROM `sports` WHERE `sport_type` = '".$row_find_sports_type['sport_type']."'";
+                    $sql_find_sports = "SELECT `sport_id`, `sport_name`, `sport_gender` FROM `sports` WHERE `sport_type` = '".$row_find_sports_type['sport_type']."'";
                     $result_find_sports = mysqli_query($conn, $sql_find_sports);
                     if (mysqli_num_rows($result_find_sports) > 0) {
                         while ($row_find_sports = mysqli_fetch_assoc($result_find_sports)) {
@@ -146,7 +146,7 @@
                                             <td>".$row_find_players['player_sirname']."</td>
                                             <td>".$row_find_players['player_class']."</td>
                                             <td>".$row_find_players['player_room']."</td>                       
-                                            <td>".$row_find_players['player_gender']."</td>";
+                                            <td>".$row_find_sports['sport_gender']."</td>";
                                     $sql_view_admin_sport = "SELECT * FROM `colors` WHERE `color_id_user` = ".$row_find_players['player_color_id'];
                                     $result_view_admin_sport = mysqli_query($conn, $sql_view_admin_sport);
                                     if (mysqli_num_rows($result_view_admin_sport) == 1) {
