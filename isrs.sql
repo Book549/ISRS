@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2024 at 05:24 PM
+-- Generation Time: Nov 20, 2024 at 04:46 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -59,11 +59,9 @@ CREATE TABLE `players` (
   `player_id` int(5) NOT NULL,
   `player_title` varchar(16) NOT NULL,
   `player_name` varchar(64) NOT NULL,
-  `player_mid_name` varchar(64) NOT NULL,
   `player_sirname` varchar(64) NOT NULL,
   `player_class` int(2) NOT NULL,
   `player_room` int(2) NOT NULL,
-  `player_gender` varchar(8) NOT NULL,
   `player_color_id` int(2) NOT NULL,
   `player_sport_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -72,11 +70,14 @@ CREATE TABLE `players` (
 -- Dumping data for table `players`
 --
 
-INSERT INTO `players` (`id_player`, `player_id`, `player_title`, `player_name`, `player_mid_name`, `player_sirname`, `player_class`, `player_room`, `player_gender`, `player_color_id`, `player_sport_id`) VALUES
-(2, 88, '677', '6dd', '', '6', 67, 6, '67', 6, 6),
-(4, 555, '5', '5', '', '5', 5, 5, '5', 2, 7),
-(5, 16131, 'เกรซ', 'เกรซ', '', 'เกรซ', 5, 1, 'หญิง', 4, 10),
-(6, 44462, 'ฟฟฟ', 'aa', '[value-5]', '[value-6]', 0, 0, '[value-9', 4, 10);
+INSERT INTO `players` (`id_player`, `player_id`, `player_title`, `player_name`, `player_sirname`, `player_class`, `player_room`, `player_color_id`, `player_sport_id`) VALUES
+(2, 88, '677', '6dd', '6', 67, 6, 6, 6),
+(4, 555, 'นาย', '5', '5', 6, 17, 2, 11),
+(5, 16131, 'เกรซ', 'เกรซ', 'เกรซ', 5, 1, 4, 10),
+(6, 44462, 'ฟฟฟ', 'aa', '[value-6]', 0, 0, 4, 10),
+(7, 66, '6', '6', '6', 1, 17, 2, 66),
+(10, 4454, 'เด็กชาย', '543', 'gsdf', 1, 17, 2, 1),
+(11, 4454, 'นาย', '343', '677', 2, 16, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -97,9 +98,7 @@ CREATE TABLE `reward` (
 --
 
 INSERT INTO `reward` (`reward_id`, `reward_sport_id`, `reward_first`, `reward_second`, `reward_third`) VALUES
-(14, 1, 2, 4, 5),
-(16, 10, 6, 4, 2),
-(17, 17, 4, 2, 5);
+(18, 1, 2, 4, 5);
 
 -- --------------------------------------------------------
 
@@ -247,13 +246,13 @@ ALTER TABLE `colors`
 -- AUTO_INCREMENT for table `players`
 --
 ALTER TABLE `players`
-  MODIFY `id_player` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_player` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `reward`
 --
 ALTER TABLE `reward`
-  MODIFY `reward_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `reward_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `sports`
