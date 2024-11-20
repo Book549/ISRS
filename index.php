@@ -59,7 +59,7 @@
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="pic/red1.jpg" class="d-block w-100 h-100" alt="Image 1">
+      <img src="pic/flag.jpg" class="d-block w-100 h-100" alt="Image 1">
     </div>
     <div class="carousel-item">
       <img src="pic/red2.jpg" class="d-block w-100 h-100" alt="Image 2">
@@ -77,7 +77,7 @@
       <img src="pic/green.jpg" class="d-block w-100 h-100" alt="Image 7">
     </div>
     <div class="carousel-item">
-      <img src="pic/flag.jpg" class="d-block w-100 h-100" alt="Image 8">
+      <img src="pic/red1.jpg " class="d-block w-100 h-100" alt="Image 8">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">

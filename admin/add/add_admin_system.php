@@ -1,7 +1,7 @@
 <link rel="stylesheet"  href="element/styles_admin_sport.css">
 <body>
 	<center>
-<form method="post" action="" class="add_sport_all">
+<form method="post" action="" class="add_sport_all"  style=" border-collapse: collapse;" >
 	<label for="user_name">user_name</label>
 	<input type="text" class="box_sport" id="user_name" name="user_name" required><br>
 	<label for="user_username">user_username</label>
