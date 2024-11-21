@@ -21,7 +21,7 @@
 	<label for="player_sirname">player_sirname:</label><input type="text" name="player_sirname" id="player_sirname" value="<?php echo $row_find_edit_players['player_sirname']; ?>"><br>
 	<label for="player_class">player_class:</label><input type="text" name="player_class" id="player_class" value="<?php echo $row_find_edit_players['player_class']; ?>"><br>
 	<label for="player_room">player_room:</label><input type="text" name="player_room" id="player_room" value="<?php echo $row_find_edit_players['player_room']; ?>"><br>
-	<label for="player_gender">player_gender:</label><input type="text" name="player_gender" id="player_gender" value="<?php echo $row_find_edit_players['player_gender']; ?>"><br>
+	<!-- <label for="player_gender">player_gender:</label><input type="text" name="player_gender" id="player_gender" value="<?php //echo $row_find_edit_players['player_gender']; ?>"><br> -->
 	<label for="player_color_id">player_color_id:</label><input type="text" name="player_color_id" id="player_color_id" value="<?php echo $row_find_edit_players['player_color_id']; ?>"><br>
 	<label for="player_sport_id">player_sport_id:</label><input type="text" name="player_sport_id" id="player_sport_id" value="<?php echo $row_find_edit_players['player_sport_id']; ?>"><br>
 
@@ -36,12 +36,12 @@
 		$player_sirname = $_POST['player_sirname'];
 		$player_class = $_POST['player_class'];		
         $player_room = $_POST['player_room'];
-		$player_gender = $_POST['player_gender'];
+		// $player_gender = $_POST['player_gender'];
 		$player_color_id = $_POST['player_color_id'];
 		$player_sport_id = $_POST['player_sport_id'];
 		
 		unset($_POST);
-		$sql_update_player = "UPDATE `players` SET `player_id`='$player_id',`player_title`='$player_title',`player_name`='$player_name',`player_sirname`='$player_sirname',`player_class`='$player_class',`player_room`='$player_room',`player_gender`='$player_gender',`player_color_id`='$player_color_id',`player_sport_id`='$player_sport_id' WHERE `id_player`='$id_edit_players'";
+		$sql_update_player = "UPDATE `players` SET `player_id`='$player_id',`player_title`='$player_title',`player_name`='$player_name',`player_sirname`='$player_sirname',`player_class`='$player_class',`player_room`='$player_room',`player_color_id`='$player_color_id',`player_sport_id`='$player_sport_id' WHERE `id_player`='$id_edit_players'";
 		if (mysqli_query($conn, $sql_update_player)) {
 			echo "Success";
 			echo "<meta http-equiv='refresh' content='0;url=?page=player&sub_page=view' />";
