@@ -11,14 +11,40 @@
 		echo "not found";
 	}
 ?>
-<form method="post" action="">
-	<label for="sport_name">sport_name:</label><input type="text" name="sport_name" id="sport_name" value="<?php echo $row_find_edit_users['sport_name']; ?>"><br>
-	<label for="sport_type">sport_type:</label><input type="text" name="sport_type" id="sport_type" value="<?php echo $row_find_edit_users['sport_type']; ?>"><br>
-	<label for="sport_gender">sport_gender:</label><input type="text" name="sport_gender" id="sport_gender" value="<?php echo $row_find_edit_users['sport_gender']; ?>"><br>
-	<label for="sport_degree">sport_degree:</label><input type="text" name="sport_degree" id="sport_degree" value="<?php echo $row_find_edit_users['sport_degree']; ?>"><br>
-	<label for="sport_amount">sport_amount:</label><input type="text" name="sport_amount" id="sport_amount" value="<?php echo $row_find_edit_users['sport_amount']; ?>"><br>
-	<label for="sport_note">sport_note:</label><input type="text" name="sport_note" id="sport_note" value="<?php echo $row_find_edit_users['sport_note']; ?>"><br>
-	<input type="submit" name="edit_sport">
+
+<center>
+<form method="post" action="" class="add_sport_all">
+	<label for="sport_name">sport_name:</label><input type="text" class="box_sport" name="sport_name" id="sport_name" value="<?php echo $row_find_edit_users['sport_name']; ?>"><br>
+	<label for="sport_type">sport_type:</label><input type="text" class="box_sport" name="sport_type" id="sport_type" value="<?php echo $row_find_edit_users['sport_type']; ?>"><br>
+
+	<label for="sport_gender">เพศ:</label>
+	<select class="select_box" name="sport_gender" id="sport_gender" required>
+		<option value="" <?php if ($row_find_edit_users['sport_gender'] == "") {echo "checked";} ?>>เลือกเพศ</option>
+		<option value="ชาย" <?php if ($row_find_edit_users['sport_gender'] == "ชาย") {echo "checked";} ?>>ชาย</option>
+		<option value="หญิง" <?php if ($row_find_edit_users['sport_gender'] == "หญิง") {echo "checked";} ?>>หญิง</option>
+		<option value="ผสม" <?php if ($row_find_edit_users['sport_gender'] == "ผสม") {echo "checked";} ?>>ผสม</option>
+		<option value="อื่นๆ" <?php if ($row_find_edit_users['sport_gender'] == "อื่นๆ") {echo "checked";} ?>>อื่นๆ</option>
+	</select>
+	<br>
+	<label for="sport_degree">ระดับชัั้น:</label>
+	<select class="select_box" name="sport_degree" id="sport_degree" required>
+		<option value="" <?php if ($row_find_edit_users['sport_degree'] == "") {echo "checked";} ?>>เลือกระดับชั้น</option>
+		<option value="มัธยมต้น" <?php if ($row_find_edit_users['sport_degree'] == "มัธยมต้น") {echo "checked";} ?>>มัธยมต้น</option>
+		<option value="มัธยมปลาย" <?php if ($row_find_edit_users['sport_degree'] == "มัธยมปลาย") {echo "checked";} ?>>มัธยมปลาย</option>
+		<option value="ผสม" <?php if ($row_find_edit_users['sport_degree'] == "ผสม") {echo "checked";} ?>>ผสม</option>
+		<option value="อื่นๆ" <?php if ($row_find_edit_users['sport_degree'] == "อื่นๆ") {echo "checked";} ?>>อื่นๆ</option>
+	</select>
+	<br>
+
+	<label for="sport_amount">จำนวนนักกีฬา:</label><input type="text" class="box_sport" name="sport_amount" id="sport_amount" value="<?php echo $row_find_edit_users['sport_amount']; ?>"><br>
+	<label for="sport_note">หมายเหตุ:</label><input type="text" class="box_sport" name="sport_note" id="sport_note"  value="<?php echo $row_find_edit_users['sport_note']; ?>"><br>
+	<center>
+	<input type="submit" name="add_sport" class="btn">
+	</center>
+</form>
+
+
+
 <?php 
 	if ($_POST['edit_sport']) {
 		$sport_name = $_POST['sport_name'];

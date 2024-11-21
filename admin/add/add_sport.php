@@ -18,6 +18,7 @@
 		<option value="">เลือกระดับชั้น</option>
 		<option value="มัธยมต้น">มัธยมต้น</option>
 		<option value="มัธยมปลาย">มัธยมปลาย</option>
+		<option value="ผสม">ผสม</option>
 		<option value="อื่นๆ">อื่นๆ</option>
 	</select>
 	<br>
