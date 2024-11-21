@@ -562,9 +562,9 @@ td:hover{
     }
 
 }
-.additionl_menu{
+.additional_menu{
     display: flex;
-    margin: 20px auto;
+    justify-content: center;
     margin-top: 30px;
     padding: 20px;
 }
@@ -574,26 +574,13 @@ td:hover{
     color: white;
     padding: 15px;
     border-radius: 30px;
+    margin-right: 20px;
 }
 
 .btn-menu a:hover{
     background-color: lightcoral;
 }
 
-#btn-player{
-    position: relative;
-    left: 30px;
-    bottom: -30px;
-    margin-bottom: 50px;
-    color: white;
-    transition: 0.4s ease;
-    margin-top: 50px;
-}
-
-#btn-player:hover{
-    background-color: skyblue;
-    color: black;
-}
 
 
 /* player name */
