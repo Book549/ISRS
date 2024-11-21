@@ -94,10 +94,6 @@
 <center>
 <section >
   <div class="additional_menu">
-  <div>
-      <a href="player_form.php" class="btn-menu" id="btn-player"><i class="fas fa-user-pen"></i> ลงทะเบียนนักกีฬา</a>
-    </div>
-    
     <div>
       <a href="player_name.php" class="btn-menu" id="btn-player"><i class="fas fa-address-book"></i> รายชื่อนักกีฬา</a>
     </div>
@@ -118,7 +114,6 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><td>สูจิบัตร 2567 <a href="#"><i class="fa-solid fa-link"></i>pdf</a></td></tr>
                 <tr><td>แผนผังสถานที่จัดการแข่งขันกีฬาภายใน <a href="#"><i class="fa-solid fa-link"></i>image</a></td></tr>
                 <tr><td>แผนที่เดินขบวนกีฬาภายใน <a href="#"><i class="fa-solid fa-link"></i>image</a></td></tr>
                 <tr><td>ผังตั้งขบวนกีฬาภายใน <a href="#"><i class="fa-solid fa-link"></i>pdf</a></td></tr>

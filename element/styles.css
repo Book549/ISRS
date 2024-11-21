@@ -562,29 +562,38 @@ td:hover{
     }
 
 }
-.additional_menu{
+.additionl_menu{
     display: flex;
-    justify-content: center;
     margin: 20px auto;
     margin-top: 30px;
     padding: 20px;
 }
-.additional_menu a{
-    margin-right: 20px;
-    transition: 0.4s ease;
+.btn-menu{
     text-decoration: none;
     background-color: darkblue;
     color: white;
     padding: 15px;
     border-radius: 30px;
-    transition: 0.4s ease;
 }
-.additional_menu a:hover{
+
+.btn-menu a:hover{
     background-color: lightcoral;
+}
+
+#btn-player{
+    position: relative;
+    left: 30px;
+    bottom: -30px;
+    margin-bottom: 50px;
+    color: white;
+    transition: 0.4s ease;
+    margin-top: 50px;
+}
+
+#btn-player:hover{
+    background-color: skyblue;
     color: black;
 }
-
-
 
 
 /* player name */
