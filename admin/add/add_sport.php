@@ -39,7 +39,7 @@
 		$sport_amount = $_POST['sport_amount'];
 		$sport_note = $_POST['sport_note'];
 		unset($_POST);
-		$find_same_sport = "SELECT * FROM `sports` WHERE `sport_type` = '$sport_type' AND `sport_degree` = '$sport_degree' AND `sport_gender` = '$sport_gender'";
+		$find_same_sport = "SELECT * FROM `sports` WHERE `sport_type` = '$sport_type' AND `sport_degree` = '$sport_degree' AND `sport_gender` = '$sport_gender' AND `sport_amount` = '$sport_amount'";
 		$result_find_add_sport = mysqli_query($conn, $find_same_sport);
 		if (mysqli_num_rows($result_find_add_sport) == 0) {
 			$sql_add_sport  = "INSERT INTO `sports`(`sport_name`, `sport_type`, `sport_degree`, `sport_gender`, `sport_amount`, `sport_note`) VALUES ('$sport_name','$sport_type','$sport_degree','$sport_gender','$sport_amount','$sport_note')";
@@ -54,6 +54,17 @@
 		}elseif (mysqli_num_rows($result_find_add_sport) > 0) {
 
 				echo "duplicate sport";
+
+				$sql_add_sport  = "INSERT INTO `sports`(`sport_name`, `sport_type`, `sport_degree`, `sport_gender`, `sport_amount`, `sport_note`) VALUES ('$sport_name','$sport_type','$sport_degree','$sport_gender','$sport_amount','$sport_note')";
+			$result_add_sport = mysqli_query($conn, $sql_add_sport);
+			if ($result_add_sport) {
+				#setcookie("add_sport", "Success", time() + 86400*7, "/");
+				echo "<meta http-equiv='refresh' content='0;url=?page=sport&sub_page=view' />";
+				echo "Success";
+			}else{
+				echo "Fall";
+			}
+
 			
 		}
 		$result_find_add_sport = mysqli_query($conn, $find_same_sport);
