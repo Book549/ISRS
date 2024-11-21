@@ -48,7 +48,7 @@ if (isset($_GET['sport']) && $_GET['sport'] != "main") {
 	<form method="post" >
 
 		<label for="player_sport_id">รายการกีฬา:</label>
-  		<select name="player_sport_id" id="player_sport_id" style="margin-bottom: 25px;" class="select_box">
+  		<select name="player_sport_id" id="player_sport_id" style="margin-bottom: 25px;" class="select_box" required>
           <option value="">เลือกรายการกีฬา</option>
           <?php 
             $sql_find_sport_name = "SELECT `sport_id`, `sport_name` FROM `sports` ".$sport;
@@ -62,7 +62,7 @@ if (isset($_GET['sport']) && $_GET['sport'] != "main") {
   			</select><br>
 
 		<label for="player_color_id">รายการกีฬา:</label>
-  		<select name="player_color_id" id="player_color_id" style="margin-bottom: 15px;" class="select_box">
+  		<select name="player_color_id" id="player_color_id" style="margin-bottom: 15px;" class="select_box" required>
           <option value="">เลือกรายการสี</option>
           <?php 
             sport_list($conn);
@@ -70,7 +70,7 @@ if (isset($_GET['sport']) && $_GET['sport'] != "main") {
   			</select><br>
 
 
-		<label for="player_id">รหัสนักเรียน:</label><input type="text" class="box_sport" name="player_id" id="player_id" ><br>
+		<label for="player_id">รหัสนักเรียน:</label><input type="number" class="box_sport" name="player_id" id="player_id" required><br>
 		<label for="player_title">คำนำหน้า:</label>
 		<select class="box_sport" name="player_title" id="player_title" required>
 			<option value="">เลือก</option>
@@ -81,9 +81,9 @@ if (isset($_GET['sport']) && $_GET['sport'] != "main") {
 		</select><br>
 
 
-		<label for="player_name">ชื่อ:</label><input type="text" class="box_sport" name="player_name" id="player_name"><br>
+		<label for="player_name">ชื่อ:</label><input type="text" class="box_sport" name="player_name" id="player_name" required><br>
 		
-		<label for="player_sirname">นามสกุล:</label><input type="text" class="box_sport" name="player_sirname" id="player_sirname"><br>
+		<label for="player_sirname">นามสกุล:</label><input type="text" class="box_sport" name="player_sirname" id="player_sirname" required><br>
 		
 		<label for="player_class">ชั้นม. :</label>
 		<select class="select_box" name="player_class" id="player_class" required>
@@ -151,11 +151,13 @@ if (isset($_GET['sport']) && $_GET['sport'] != "main") {
 			$sql_add_player  = "INSERT INTO `players` (`player_id`, `player_title`, `player_name`,  `player_sirname`, `player_class`, `player_room`, `player_color_id`, `player_sport_id`) VALUES ('$player_id', '$player_title', '$player_name', '$player_sirname', '$player_class', '$player_room', '$player_color_id', '$player_sport_id')";
 			$result_add_player = mysqli_query($conn, $sql_add_player);
 			if ($result_add_player) {
-				echo "<meta http-equiv='refresh' content='0;url=?sport=main' />";
+				echo "<center><h1>Success</h1></center>";
+				echo "<meta http-equiv='refresh' content='2;url=?sport=main' />";
 				unset($_POST);
-				#echo "Success";
+				
 			}else{
-				#echo "Fall";
+				echo "<center><h1>Fall some thing is wrong... ติดต่อห้อง ICT</h1></center>";
+				echo "<meta http-equiv='refresh' content='5;url=?sport=main' />";
 			}
 		}elseif (mysqli_num_rows($result_find_add_player) > 0) {
 				$posttoget = "";
