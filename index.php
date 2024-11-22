@@ -95,7 +95,11 @@
 <section >
   <div class="additional_menu">
     <div>
-      <a href="player_name.php" class="btn-menu" id="btn-player"><i class="fas fa-address-book"></i> รายชื่อนักกีฬา</a>
+      <a href="form.php" class="btn-menu"><i class="fas fa-user-pen"></i> ลงทะเบียนนักกีฬา</a>
+    </div>
+
+    <div>
+      <a href="player_name.php" class="btn-menu"><i class="fas fa-address-book"></i> ตรวจสอบรายชื่อนักกีฬา</a>
     </div>
   </div>
 </section>
