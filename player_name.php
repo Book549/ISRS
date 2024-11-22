@@ -101,7 +101,15 @@
             background-color: #e1e1e1;
         }
 
-       
+         /* Visited link color */
+        a:visited {
+            color: white;
+            text-decoration: none;
+       }
+        a{
+            color: white;
+            text-decoration: none;
+       }
     </style>
 </head>
 <body>
@@ -114,8 +122,8 @@
         </div>
     </div>
     <ul class="table-menu">
-        <?php 
-            $sql_find_sport_type = "SELECT `sport_type` FROM `sports` WHERE `sport_type` != 'กีฬาพื้นบ้าน' OR `sport_type` != 'กีฬาแต่ละระดับชั้น'  GROUP BY `sport_type`";
+    <?php 
+            $sql_find_sport_type = "SELECT `sport_type` FROM `sports` WHERE `sport_type` != 'กีฬาพื้นบ้าน' AND `sport_type` != 'กีฬาแต่ละระดับชั้น' GROUP BY `sport_type` ORDER BY `sports`.`sport_id` ASC";
             $result_find_sports_type = mysqli_query($conn, $sql_find_sport_type);
             if (mysqli_num_rows($result_find_sports_type) > 0) {
                 while ($row_find_sports_type = mysqli_fetch_assoc($result_find_sports_type)) {
@@ -163,227 +171,14 @@
                         }
                     }
 
-
                     echo "</table>
                         </ul>
 
                     ";
                 }
             }
-            echo "<li ><a href=\"player_name2.php\" style=\"color: white\;'\">กีฬาแต่ละระดับชั้น</a></li>";
+            echo "<li ><a href=\"player_name2.php\" style=\"color: white\; text-decoration: none;'\">กีฬาแต่ละระดับชั้น</a></li>";
          ?>
-
-<!--
-        <li onclick="toggleMenu('ฟุตซอล')">ฟุตซอล</li>
-        <ul id="ฟุตซอล" class="table-content">
-            <table>
-                <tr>
-                    <th>รายการ</th>
-                    <th>ชื่อ</th>
-                    <th>สกุล</th>
-                    <th>ชั้น</th>
-                    <th>ห้อง</th>
-                    <th>ประเภท</th>
-                    <th>สี</th>
-                </tr>
-                <tr>
-                    <td>ไก่</td>
-                    <td>นามเงิน</td>
-                    <td>6</td>
-                    <td>11</td>
-                    <td>ชาย</td>
-                    <td>เหลือง</td>
-                </tr>
-            </table>
-        </ul>
-
-       <li onclick="toggleMenu('handball')">แฮนด์บอล</li>
-        <ul id="handball" class="table-content">
-            <table>
-                <tr>
-                    <th>รายการ</th>
-                    <th>ชื่อ</th>
-                    <th>สกุล</th>
-                    <th>ชั้น</th>
-                    <th>ห้อง</th>
-                    <th>ประเภท</th>
-                    <th>สี</th>
-                </tr>
-                <tr>
-                    <td>ไก่</td>
-                    <td>นามเงิน</td>
-                    <td>6</td>
-                    <td>11</td>
-                    <td>ชาย</td>
-                    <td>เหลือง</td>
-                </tr>
-            </table>
-        </ul>
-
-        <li onclick="toggleMenu('volleyball')">วอลเลย์บอล</li>
-        <ul id="volleyball" class="table-content">
-            <table>
-                <tr>
-                    <th>รายการ</th>
-                    <th>ชื่อ</th>
-                    <th>สกุล</th>
-                    <th>ชั้น</th>
-                    <th>ห้อง</th>
-                    <th>ประเภท</th>
-                    <th>สี</th>
-                </tr>
-                <tr>
-                    <td>ไก่</td>
-                    <td>นามเงิน</td>
-                    <td>6</td>
-                    <td>11</td>
-                    <td>ชาย</td>
-                    <td>เหลือง</td>
-                </tr>
-            </table>
-        </ul>
-
-        <li onclick="toggleMenu('petong')">เปตอง</li>
-        <ul id="petong" class="table-content">
-            <table>
-                <tr>
-                    <th>รายการ</th>
-                    <th>ชื่อ</th>
-                    <th>สกุล</th>
-                    <th>ชั้น</th>
-                    <th>ห้อง</th>
-                    <th>ประเภท</th>
-                    <th>สี</th>
-                </tr>
-                <tr>
-                    <td>ไก่</td>
-                    <td>นามเงิน</td>
-                    <td>6</td>
-                    <td>11</td>
-                    <td>ชาย</td>
-                    <td>เหลือง</td>
-                </tr>
-            </table>
-        </ul>
-
-        <li onclick="toggleMenu('basketball')">บาสเก็ตบอล</li>
-        <ul id="basketball" class="table-content">
-            <table>
-                <tr>
-                    <th>รายการ</th>
-                    <th>ชื่อ</th>
-                    <th>สกุล</th>
-                    <th>ชั้น</th>
-                    <th>ห้อง</th>
-                    <th>ประเภท</th>
-                    <th>สี</th>
-                </tr>
-                <tr>
-                    <td>ไก่</td>
-                    <td>นามเงิน</td>
-                    <td>6</td>
-                    <td>11</td>
-                    <td>ชาย</td>
-                    <td>เหลือง</td>
-                </tr>
-            </table>
-        </ul>
-
-        <li onclick="toggleMenu('badminton')">แบดมินตัน</li>
-        <ul id="badminton" class="table-content">
-            <table>
-                <tr>
-                    <th>รายการ</th>
-                    <th>ชื่อ</th>
-                    <th>สกุล</th>
-                    <th>ชั้น</th>
-                    <th>ห้อง</th>
-                    <th>ประเภท</th>
-                    <th>สี</th>
-                </tr>
-                <tr>
-                    <td>ไก่</td>
-                    <td>นามเงิน</td>
-                    <td>6</td>
-                    <td>11</td>
-                    <td>ชาย</td>
-                    <td>เหลือง</td>
-                </tr>
-            </table>
-        </ul>
-
-        <li onclick="toggleMenu('table_tennis')">เทเบิลเทนนิส</li>
-        <ul id="table_tennis" class="table-content">
-            <table>
-                <tr>
-                    <th>รายการ</th>
-                    <th>ชื่อ</th>
-                    <th>สกุล</th>
-                    <th>ชั้น</th>
-                    <th>ห้อง</th>
-                    <th>ประเภท</th>
-                    <th>สี</th>
-                </tr>
-                <tr>
-                    <td>ไก่</td>
-                    <td>นามเงิน</td>
-                    <td>6</td>
-                    <td>11</td>
-                    <td>ชาย</td>
-                    <td>เหลือง</td>
-                </tr>
-            </table>
-        </ul>
-
-        <li onclick="toggleMenu('rope')">กีฬาพื้นบ้าน</li>
-        <ul id="rope" class="table-content">
-            <table>
-                <tr>
-                    <th>รายการ</th>
-                    <th>ชื่อ</th>
-                    <th>สกุล</th>
-                    <th>ชั้น</th>
-                    <th>ห้อง</th>
-                    <th>ประเภท</th>
-                    <th>สี</th>
-                </tr>
-                <tr>
-                    <td>ไก่</td>
-                    <td>นามเงิน</td>
-                    <td>6</td>
-                    <td>11</td>
-                    <td>ชาย</td>
-                    <td>เหลือง</td>
-                </tr>
-            </table>
-        </ul>
-
-        
-
-
-        <li onclick="toggleMenu('running')">กรีฑา</li>
-        <ul id="running" class="table-content">
-            <table>
-                <tr>
-                    <th>รายการ</th>
-                    <th>ชื่อ</th>
-                    <th>สกุล</th>
-                    <th>ชั้น</th>
-                    <th>ห้อง</th>
-                    <th>ประเภท</th>
-                    <th>สี</th>
-                </tr>
-                <tr>
-                    <td>ไก่</td>
-                    <td>นามเงิน</td>
-                    <td>6</td>
-                    <td>11</td>
-                    <td>ชาย</td>
-                    <td>เหลือง</td>
-                </tr>
-            </table>
-        </ul>
--->
     
     </ul>
 </div>
