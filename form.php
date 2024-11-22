@@ -24,24 +24,29 @@ if (isset($_GET['sport']) && $_GET['sport'] != "main") {
 </head>
 	<center>
 <body><!-- จำเป็นต้องตอบคำถามนี้ -->
+
+
+	 <div class="head_playersign">
+		<h1>ลงทะเบียนนักกีฬา</h1>
+		<p>ทะเบียนกีฬาที่ต้องการ</p>
+		<p>* ระบุว่าเป็นคําถามที่จําเป็น</p>
+	</div>
+
+		<div class="all_filter">
 	<?php 
+
 	 	$sql_find_sport_type = "SELECT `sport_type` FROM `sports` GROUP BY `sport_type`";
         $result_find_sports_type = mysqli_query($conn, $sql_find_sport_type);
         if (mysqli_num_rows($result_find_sports_type) > 0) {
             while ($row_find_sports_type = mysqli_fetch_assoc($result_find_sports_type)) {
                 //echo "<a onclick=\"toggleMenu('".$row_find_sports_type['sport_type']."')\">".$row_find_sports_type['sport_type']."</li>";
-                echo "<a href=\"?sport=" . $row_find_sports_type['sport_type'] . "\">" . $row_find_sports_type['sport_type'] . "</a>";
+                echo "<a href=\"?sport=" . $row_find_sports_type['sport_type'] . "\" class=filter-button>" . $row_find_sports_type['sport_type'] . "</a>";
                 echo "     ";
             }
         }
 
 	 ?>
-
-
-	<h1>ลงทะเบียนนักกีฬา</h1>
-	<p>ทะเบียนกีฬาที่ต้องการ</p>
-	<p>* ระบุว่าเป็นคําถามที่จําเป็น</p>
-
+	 </div>
 
 	<div class="table_container">
 	<div class="add_sport_all">
@@ -61,7 +66,7 @@ if (isset($_GET['sport']) && $_GET['sport'] != "main") {
            ?>
   			</select><br>
 
-		<label for="player_color_id">รายการกีฬา:</label>
+		<label for="player_color_id">คณะสี :</label>
   		<select name="player_color_id" id="player_color_id" style="margin-bottom: 15px;" class="select_box" required>
           <option value="">เลือกรายการสี</option>
           <?php 
@@ -70,9 +75,9 @@ if (isset($_GET['sport']) && $_GET['sport'] != "main") {
   			</select><br>
 
 
-		<label for="player_id">รหัสนักเรียน:</label><input type="number" class="box_sport" name="player_id" id="player_id" required><br>
+		<label for="player_id">รหัสนักเรียน:</label><input type="text" class="box_sport" name="player_id" id="player_id" pattern="[0-9][0-9][0-9][0-9][0-9]" minlength="5" maxlength="5" required><br>
 		<label for="player_title">คำนำหน้า:</label>
-		<select class="box_sport" name="player_title" id="player_title" required>
+		<select class="select_box" name="player_title" id="player_title" required>
 			<option value="">เลือก</option>
 			<option value="เด็กชาย">เด็กชาย</option>
 			<option value="เด็กหญิง">เด็กหญิง</option>
@@ -81,19 +86,19 @@ if (isset($_GET['sport']) && $_GET['sport'] != "main") {
 		</select><br>
 
 
-		<label for="player_name">ชื่อ:</label><input type="text" class="box_sport" name="player_name" id="player_name" required><br>
+		<label for="player_name">ชื่อ :</label><input type="text" class="box_sport" name="player_name" id="player_name" required><br>
 		
-		<label for="player_sirname">นามสกุล:</label><input type="text" class="box_sport" name="player_sirname" id="player_sirname" required><br>
+		<label for="player_sirname">นามสกุล :</label><input type="text" class="box_sport" name="player_sirname" id="player_sirname" required><br>
 		
-		<label for="player_class">ชั้นม. :</label>
+		<label for="player_class">ชั้น :</label>
 		<select class="select_box" name="player_class" id="player_class" required>
 		<option value="">เลือกชั้น</option>
-		<option value="1">1</option>
-		<option value="2">2</option>
-		<option value="3">3</option>
-		<option value="4">4</option>
-		<option value="5">5</option>
-		<option value="6">6</option>
+		<option value="ม.1">ม.1</option>
+		<option value="ม.2">ม.2</option>
+		<option value="ม.3">ม.3</option>
+		<option value="ม.4">ม.4</option>
+		<option value="ม.5">ม.5</option>
+		<option value="ม.6">ม.6</option>
 	</select>
 	<br>
 
@@ -128,11 +133,15 @@ if (isset($_GET['sport']) && $_GET['sport'] != "main") {
 
 
 
-		<input type="submit" name="add_player" class="btn">
+		<input type="submit" name="add_player"  class="btn-sub" value="ส่ง" >
 	</form>
 	</div>
 </div>
+ 	<div>
+      <a href="player_name.php" class="filter-button"><i class="fas fa-address-book" ></i> ตรวจสอบรายชื่อนักกีฬา</a>
+    </div>
 	</center>
+
 <?php 
 	if (isset($_POST['add_player'])) {
 		$player_id = $_POST['player_id'];
