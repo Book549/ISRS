@@ -124,12 +124,12 @@
                         <table>
                                 <tr>
                                     <th>รายการ</th>
+                                    <th>ประเภท</th>
+                                    <th>สี</th>
                                     <th>ชื่อ</th>
                                     <th>สกุล</th>
                                     <th>ชั้น</th>
                                     <th>ห้อง</th>
-                                    <th>ประเภท</th>
-                                    <th>สี</th>
                                 </tr>";
 
                     $sql_find_sports = "SELECT `sport_id`, `sport_name`, `sport_gender` FROM `sports` WHERE `sport_type` = '".$row_find_sports_type['sport_type']."'";
@@ -141,12 +141,8 @@
                             if (mysqli_num_rows($result_find_players) > 0) {
                                 while ($row_find_players = mysqli_fetch_assoc($result_find_players)) {
                                     echo "<tr>";
-                                    echo "<td>".$row_find_sports['sport_name']."</td>";
-                                    echo "<td>".$row_find_players['player_name']."</td>
-                                            <td>".$row_find_players['player_sirname']."</td>
-                                            <td>".$row_find_players['player_class']."</td>
-                                            <td>".$row_find_players['player_room']."</td>                       
-                                            <td>".$row_find_sports['sport_gender']."</td>";
+                                    echo "<td>".$row_find_sports['sport_name']."</td>
+                                    <td>".$row_find_sports['sport_gender']."</td>";
                                     $sql_view_admin_sport = "SELECT * FROM `colors` WHERE `color_id_user` = ".$row_find_players['player_color_id'];
                                     $result_view_admin_sport = mysqli_query($conn, $sql_view_admin_sport);
                                     if (mysqli_num_rows($result_view_admin_sport) == 1) {
@@ -154,6 +150,12 @@
                                             echo "<td>".$row_view_admin_sport['color_color']."</td>";
                                         }
                                     }
+                                    echo "<td>".$row_find_players['player_name']."</td>
+                                            <td>".$row_find_players['player_sirname']."</td>
+                                            <td>".$row_find_players['player_class']."</td>
+                                            <td>".$row_find_players['player_room']."</td>                       
+                                            ";
+                                    
                                 }
                 
                             }
