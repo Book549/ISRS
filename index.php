@@ -197,7 +197,7 @@
     </div>
   </div>
     <div class="copyright">
-      <p>© 2024 ICT CENTER SAMAKKHIWITTHAYAKHOM SCHOOL</p> 
+      <p>© 2024, Created by Kuljira Namjai and Wattachai Maijampa </p> 
     </div>
   </footer>
 
