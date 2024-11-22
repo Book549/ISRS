@@ -144,6 +144,13 @@ td:hover{
     .add_sport_all {
         width: 50%;
     }
+     .filter-button {
+        font-size: 14px;
+        padding: 8px 18px;
+    }
+    .all_filter {
+        justify-content: center; /* Centers buttons in the container */
+    }
 }
 
 @media (max-width: 768px) {
@@ -159,6 +166,13 @@ td:hover{
 
     .add_sport_all {
         width: 70%;
+    }
+ .filter-button {
+        font-size: 12px;
+        padding: 6px 16px;
+    }
+    .all_filter {
+        justify-content: center;
     }
 }
 
@@ -186,6 +200,18 @@ td:hover{
     th, td {
 
         min-width: 100px;
+    }
+
+   .filter-button {
+        font-size: 14px;
+        padding: 6px 14px;
+      /* Ensures buttons take full width on very small screens */
+        text-align: center; /* Centers text */
+        margin-bottom: 10px;
+    }
+
+    .all_filter {
+        padding: 0 10px;
     }
 }
 
@@ -279,3 +305,44 @@ td:hover{
     margin-right: 20px;
 }
 
+.btn-sub{
+    color: white;
+    background-color: darkblue;
+    transition: 0.4s ease;
+    width: 30%;
+    height: 40px;
+    border-radius: 30px;
+    font-size: 18px;
+}
+
+.btn-sub:hover{
+    color: skyblue;
+}
+
+.head_playersign{
+    margin-top: 30px;
+}
+
+.filter-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    background-color: darkblue;
+    border: none;
+    border-radius: 60px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+     display: inline-block;
+}
+
+.filter-button:hover {
+    color: skyblue;
+}
+
+.all_filter{
+    margin-top: 50px;
+}
