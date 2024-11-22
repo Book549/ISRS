@@ -568,20 +568,20 @@ td:hover{
     margin-top: 30px;
     padding: 20px;
 }
-.btn-menu{
+.additional_menu a{
     text-decoration: none;
     background-color: darkblue;
     color: white;
+    
     padding: 15px;
     border-radius: 30px;
     margin-right: 20px;
+    transition: 0.4s ease;
+
 }
-
-.btn-menu a:hover{
-    background-color: lightcoral;
+.additional_menu a:hover{
+    color: skyblue;
 }
-
-
 
 /* player name */
 .player_container {
