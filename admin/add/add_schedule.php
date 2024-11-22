@@ -2,7 +2,19 @@
 <body>
     <center>
 <form method="post" class="add_sport_all">
-	<label for="schedule_sport">ชื่อกีฬา :</label><input type="text" class="box_sport"  name="schedule_sport" id="schedule_sport"><br>
+	<label for="player_sport_id">รายการกีฬา:</label>
+		<select name="schedule_sport_id" id="player_sport_id" style="margin-bottom: 25px;" class="select_box" required>
+	      <option value="">เลือกรายการกีฬา</option>
+	      <?php 
+	        $sql_find_sport_name = "SELECT `sport_id`, `sport_name` FROM `sports`";
+	        $result_find_sports_name = mysqli_query($conn, $sql_find_sport_name);
+	        if (mysqli_num_rows($result_find_sports_name) > 0) {
+	            while ($row_find_sports_name = mysqli_fetch_assoc($result_find_sports_name)) {
+	              echo "<option value=\"".$row_find_sports_name['sport_id']."\">".$row_find_sports_name['sport_name']."</option>";
+	            }
+	        }  
+	       ?>
+		</select><br>
 	<label for="schedule_date">วันที่:</label><input type="date" class="box_sport" name="schedule_date" id="schedule_date"><br>
 	<label for="schedule_time">เวลา :</label><input type="time" class="box_sport" name="schedule_time" id="schedule_time"><br>
     <label for="schedule_venue">สถานที่ :</label>
@@ -31,8 +43,30 @@
 	</select>
 	<br>	
     <center>
-	<input type="submit" name="add_player" class="btn">
+	<input type="submit" name="add_schedule" class="btn">
     </center>
 </form>
 </center>
+<?php 
+	if ($_POST['add_schedule']) {
+		$schedule_sport_id = $_POST['schedule_sport_id'];
+		$schedule_date = $_POST['schedule_date'];
+		$schedule_time = $_POST['schedule_time'];
+		$schedule_venue = $_POST['schedule_venue'];
+		$schedule_status = $_POST['schedule_status'];
+
+		$sql_add_schedule = "INSERT INTO `schedule`(`schedule_sport_id`, `schedule_date`, `schedule_time`, `schedule_venue`, `schedule_status`) VALUES ('$schedule_sport_id','$schedule_date','$schedule_time','$schedule_venue','$schedule_status')";
+		if (mysqli_query($conn, $sql_add_schedule)) {
+			echo "<meta http-equiv='refresh' content='0;url=?page=schedule&sub_page=view' />";
+			echo "Success";
+
+
+		}else{
+			echo "Fall";
+		}
+	} else {
+		# code...
+	}
+	
+ ?>
 </body>
