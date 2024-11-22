@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 	include 'conn.php'; 
 if (isset($_GET['sport']) && $_GET['sport'] != "main") {
     $sport = "WHERE `sport_type` = '" . htmlspecialchars($_GET['sport'], ENT_QUOTES) . "'";
@@ -35,7 +35,7 @@ if (isset($_GET['sport']) && $_GET['sport'] != "main") {
 		<div class="all_filter">
 	<?php 
 
-	 	$sql_find_sport_type = "SELECT `sport_type` FROM `sports` GROUP BY `sport_type`";
+	 	$sql_find_sport_type = "SELECT `sport_type` FROM `sports` GROUP BY `sport_type` ORDER BY `sports`.`sport_id` ASC";
         $result_find_sports_type = mysqli_query($conn, $sql_find_sport_type);
         if (mysqli_num_rows($result_find_sports_type) > 0) {
             while ($row_find_sports_type = mysqli_fetch_assoc($result_find_sports_type)) {
@@ -54,7 +54,7 @@ if (isset($_GET['sport']) && $_GET['sport'] != "main") {
 
 		<label for="player_sport_id">รายการกีฬา:</label>
   		<select name="player_sport_id" id="player_sport_id" style="margin-bottom: 25px;" class="select_box" required>
-          <option value="">เลือกรายการกีฬา</option>
+          <option value="" disabled selected>เลือกรายการกีฬา</option>
           <?php 
             $sql_find_sport_name = "SELECT `sport_id`, `sport_name` FROM `sports` ".$sport;
             $result_find_sports_name = mysqli_query($conn, $sql_find_sport_name);
@@ -68,17 +68,26 @@ if (isset($_GET['sport']) && $_GET['sport'] != "main") {
 
 		<label for="player_color_id">คณะสี :</label>
   		<select name="player_color_id" id="player_color_id" style="margin-bottom: 15px;" class="select_box" required>
-          <option value="">เลือกรายการสี</option>
+          <option value="" disabled selected>เลือกรายการสี</option>
           <?php 
             sport_list($conn);
           ?>
   			</select><br>
 
 
-		<label for="player_id">รหัสนักเรียน:</label><input type="text" class="box_sport" name="player_id" id="player_id" pattern="[0-9][0-9][0-9][0-9][0-9]" minlength="5" maxlength="5" required><br>
+		<label for="player_id">รหัสนักเรียน:</label>
+		<input type="number" class="box_sport" name="player_id" id="player_id" oninput="validateInput(this)" maxlength="5">
+		<script>
+		function validateInput(input) {
+		  if (input.value.length > 5) {
+		    input.value = input.value.slice(0, 5); // Limit to 5 digits
+		  }
+		}
+		</script>
+		<br>
 		<label for="player_title">คำนำหน้า:</label>
 		<select class="select_box" name="player_title" id="player_title" required>
-			<option value="">เลือก</option>
+			<option value="" disabled selected>เลือก</option>
 			<option value="เด็กชาย">เด็กชาย</option>
 			<option value="เด็กหญิง">เด็กหญิง</option>
 			<option value="นาย">นาย</option>
@@ -92,19 +101,19 @@ if (isset($_GET['sport']) && $_GET['sport'] != "main") {
 		
 		<label for="player_class">ชั้น :</label>
 		<select class="select_box" name="player_class" id="player_class" required>
-		<option value="">เลือกชั้น</option>
-		<option value="ม.1">ม.1</option>
-		<option value="ม.2">ม.2</option>
-		<option value="ม.3">ม.3</option>
-		<option value="ม.4">ม.4</option>
-		<option value="ม.5">ม.5</option>
-		<option value="ม.6">ม.6</option>
+		<option value="" disabled selected>เลือกชั้น</option>
+		<option value="1">ม.1</option>
+		<option value="2">ม.2</option>
+		<option value="3">ม.3</option>
+		<option value="4">ม.4</option>
+		<option value="5">ม.5</option>
+		<option value="6">ม.6</option>
 	</select>
 	<br>
 
 		<label for="player_room">ห้อง :</label>
 		<select class="select_box" name="player_room" id="player_room" required>
-		<option value="">เลือกห้อง</option>
+		<option value="" disabled selected>เลือกห้อง</option>
 		<option value="1">1</option>
 		<option value="2">2</option>
 		<option value="3">3</option>
