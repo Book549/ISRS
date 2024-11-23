@@ -108,6 +108,7 @@ if (isset($_GET['sport']) && $_GET['sport'] != "main") {
 		<option value="4">ม.4</option>
 		<option value="5">ม.5</option>
 		<option value="6">ม.6</option>
+		<option value="CIP">CIP</option>
 	</select>
 	<br>
 
@@ -131,6 +132,9 @@ if (isset($_GET['sport']) && $_GET['sport'] != "main") {
         <option value="15">15</option>
         <option value="16">16</option>
 		<option value="17">17</option>
+		<option value="Y.8">Y.8</option>
+		<option value="Y.9">Y.9</option>
+		<option value="Y.10">Y.10</option>
 	</select>
 	<br>
 <!--		<label for="player_gender">เพศ :</label>
