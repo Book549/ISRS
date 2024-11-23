@@ -72,12 +72,11 @@ if (isset($_GET['sport']) && $_GET['sport'] != "main") {
           ?>
   			</select><br>
 
-
 		<label for="player_id">รหัสนักเรียน:</label>
-		<input type="text" class="box_sport" name="player_id" id="player_id" oninput="validateInput(this)" pattern="[0-9]{5}" maxlength="5" required>
+		<input type="text" class="box_sport" name="player_id" id="player_id" oninput="validateInput(this)" maxlength="5" required inputmode="numeric">
 		<script>
 		  function validateInput(input) {
-		    // Allow only digits and limit to 5 characters
+		    // Remove any non-integer characters and limit the input to 5 digits
 		    input.value = input.value.replace(/[^0-9]/g, '').slice(0, 5);
 		  }
 		</script>
