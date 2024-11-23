@@ -3,14 +3,14 @@
 		<div class="table_container">
 	<table class="table_all">
 		<tr>
-			<th>color_id</th>
-			<th>color_name</th>
-			<th>color_color</th>
-			<th>color_president</th>
-			<th>color_vice-president</th>
-			<th>color_id_user</th>
-			<th>edit</th>
-			<th>del</th>
+			<th>user_id</th>
+			<th>ชื่อคณะสี</th>
+			<th>สี</th>
+			<th>ประธานสี</th>
+			<th>รองประธานสี</th>
+			<th>$color_user_id</th>
+			<th>แก้ไข</th>
+			<th>ลบ</th>
 		</tr>
 		<?php
 			$sql_view_admin_sport = "SELECT * FROM `colors`";
@@ -24,8 +24,8 @@
 							<td>".$row_view_admin_sport['color_president']."</td>
 							<td>".$row_view_admin_sport['color_vice-president']."</td>
 							<td>".$row_view_admin_sport['color_id_user']."</td>
-							<td class=edit><a href=\"admin_system.php?page=admin_sport&sub_page=edit&color_id=".$row_view_admin_sport['color_id']."\">edit</a></td>
-							<td class=del><a href=\"admin_system.php?page=admin_sport&sub_page=delete&color_id=".$row_view_admin_sport['color_id']."\">del</a></td>
+							<td class=edit><a href=\"admin_system.php?page=admin_sport&sub_page=edit&color_id=".$row_view_admin_sport['color_id']."\">แก้ไข</a></td>
+							<td class=del><a href=\"admin_system.php?page=admin_sport&sub_page=delete&color_id=".$row_view_admin_sport['color_id']."\">ลบ</a></td>
 						</tr>";
 				}
 			}else{

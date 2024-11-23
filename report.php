@@ -107,7 +107,6 @@
         <li ><a href="report_basketball.php" style="color: white;">บาสเก็ตบอล</a></li>
         <li ><a href="report_badminton.php" style="color: white;">แบดมินตัน</a></li>
         <li ><a href="report_pingpong.php" style="color: white;">เทเบิลเทนนิส</a></li>
-        <li ><a href="report_rugby.php" style="color: white;">รักบี้</a></li>
         <li onclick="toggleMenu('rope')">กีฬาพื้นบ้าน</li>
         <ul id="rope" class="table-content">
             <table>

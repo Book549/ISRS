@@ -19,6 +19,7 @@
 
 
 ?>
+<link rel="stylesheet"  href="element/styles_admin_sport.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
 	<center>

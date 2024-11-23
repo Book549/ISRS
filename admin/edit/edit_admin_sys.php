@@ -1,3 +1,4 @@
+<link rel="stylesheet"  href="element/styles_admin_sport.css">
 <body>
 <?php 
 	$id_edit_users = $_GET['user_id'] ;
@@ -11,14 +12,15 @@
 		echo "not found";
 	}
 ?>
-<form method="post" action="">
+<center>
+<form method="post" action="" class="add_sport_all">
 	<p>id_user : <?php echo $user_id; ?></p>
 	<label for="user_name">user_name</label>
-	<input type="text" id="user_name" name="user_name" value="<?php echo $row_find_edit_users['user_name']; ?>" required><br>
+	<input type="text" id="user_name" name="user_name" class="box_sport" value="<?php echo $row_find_edit_users['user_name']; ?>" required><br>
 	<label for="user_username">user_username</label>
-	<input type="text" id="user_username" name="user_username" value="<?php echo $row_find_edit_users['user_username']; ?>" required><br>
+	<input type="text" id="user_username" name="user_username" class="box_sport" value="<?php echo $row_find_edit_users['user_username']; ?>" required><br>
 	<label for="user_password">user_password</label>
-	<input type="text" id="user_password" name="user_password" value="<?php echo $row_find_edit_users['user_password']; ?>" required><br>
+	<input type="text" id="user_password" name="user_password" class="box_sport" value="<?php echo $row_find_edit_users['user_password']; ?>" required><br>
 	<p>user_role:</p>
 	<input type="radio" id="admin_system" name="user_role" value="admin_system" <?php if ($row_find_edit_users['user_role'] == "admin_system") {echo "checked";} ?> required>
 	<label for="admin_system">admin_system</label><br>
@@ -26,8 +28,11 @@
 	<label for="admin_sport">admin_sport</label><br> 
 	<input type="radio" id="admin_report" name="user_role" value="admin_report" <?php if ($row_find_edit_users['user_role'] == "admin_report") {echo "checked";} ?> required>
 	<label for="admin_report">admin_report</label><br>
-	<input type="submit" name="edit_admin" value="แก้ไขผู้ใช้"><br>
+	<center>
+	<input type="submit" name="edit_admin" class="btn" value="แก้ไขผู้ใช้" style="font-size: 14px;"><br>
+	</center>
 </form>
+</center>
 <?php 
 	if ($_POST['edit_admin']) {
 		$user_name = $_POST['user_name'];

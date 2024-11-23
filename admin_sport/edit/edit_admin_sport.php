@@ -1,3 +1,4 @@
+<link rel="stylesheet"  href="element/styles_admin_sport.css">
 <body>
 <?php
 	$user_id = $_SESSION['user_id'];
@@ -10,7 +11,7 @@
 	}
 ?>
 <center>
-<form method="post" action="" class="edit_sport_all">
+<form method="post" action="" class="add_sport_all">
 	<label for="color_name">ชื่อคณะสี</label><input type="text" class="box_sport" name="color_name" id="color_name" value="<?php echo $row_view_admin_sport['color_name']; ?>" required><br>
 	<label for="color_color">คณะสี</label><input type="text" class="box_sport" name="color_color" id="color_color" value="<?php echo $row_view_admin_sport['color_color']; ?>" required><br>
 	<label for="color_president">ประธานสี</label><input type="text" class="box_sport" name="color_president" id="color_president" value="<?php echo $row_view_admin_sport['color_president']; ?>" required><br>

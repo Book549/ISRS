@@ -223,6 +223,7 @@ nav.sticky{
 .sidebar li a{
     text-decoration: none;
     margin-bottom: 30px;
+    height: 100%;
     font-family: "Mitr", sans-serif;
     color: white;
     width: 100%;
@@ -231,6 +232,7 @@ nav.sticky{
 
 .sidebar li a:hover{
     color: skyblue;
+    font-size: 20px;
 }
 
 .bar-icon{

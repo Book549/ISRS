@@ -2,13 +2,13 @@
 <body>
 	<center>
 <form method="post" action="" class="add_sport_all"  style=" border-collapse: collapse;" >
-	<label for="user_name">user_name</label>
+	<label for="user_name">ชื่อ :</label>
 	<input type="text" class="box_sport" id="user_name" name="user_name" required><br>
-	<label for="user_username">user_username</label>
+	<label for="user_username">ชื่อผู้ใช้ :</label>
 	<input type="text" class="box_sport" id="user_username" name="user_username" required><br>
-	<label for="user_password">user_password</label>
+	<label for="user_password">รหัสผ่าน :</label>
 	<input type="text" class="box_sport" id="user_password" name="user_password" required><br>
-	<label>user role:</label><br>
+	<label>บทบาทหน้าที่ :</label><br>
     <div class="radio-group">
         <input type="radio" class="radio" id="admin_system" name="user_role" value="admin_system" required>
         <label for="admin_system">ผู้จัดการระบบ</label><br>

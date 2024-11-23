@@ -1,8 +1,8 @@
 <body>
 	<center>
 <form method="post" action="" class="add_sport_all">
-	<label for="sport_name">sport_name:</label><input type="text" class="box_sport" name="sport_name" id="sport_name"><br>
-	<label for="sport_type">sport_type:</label><input type="text" class="box_sport" name="sport_type" id="sport_type"><br>
+	<label for="sport_name">รายการกีฬา :</label><input type="text" class="box_sport" name="sport_name" id="sport_name"><br>
+	<label for="sport_type">ชนิดกีฬา :</label><input type="text" class="box_sport" name="sport_type" id="sport_type"><br>
 
 	<label for="sport_gender">เพศ:</label>
 	<select class="select_box" name="sport_gender" id="sport_gender" required>
@@ -13,7 +13,7 @@
 		<option value="อื่นๆ">อื่นๆ</option>
 	</select>
 	<br>
-	<label for="sport_degree">ระดับชัั้น:</label>
+	<label for="sport_degree">ระดับชัั้น :</label>
 	<select class="select_box" name="sport_degree" id="sport_degree" required>
 		<option value="">เลือกระดับชั้น</option>
 		<option value="มัธยมต้น">มัธยมต้น</option>
@@ -23,8 +23,8 @@
 	</select>
 	<br>
 
-	<label for="sport_amount">จำนวนนักกีฬา:</label><input type="text" class="box_sport" name="sport_amount" id="sport_amount"><br>
-	<label for="sport_note">หมายเหตุ:</label><input type="text" class="box_sport" name="sport_note" id="sport_note"><br>
+	<label for="sport_amount">จำนวนนักกีฬา :</label><input type="text" class="box_sport" name="sport_amount" id="sport_amount"><br>
+	<label for="sport_note">หมายเหตุ :</label><input type="text" class="box_sport" name="sport_note" id="sport_note"><br>
 	<center>
 	<input type="submit" name="add_sport" class="btn">
 	</center>

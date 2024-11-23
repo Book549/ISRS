@@ -1,3 +1,4 @@
+
 <body>
 
 	<form method="post" action="admin_system.php?page=admin_system&sub_page=view"><!--warn-->
@@ -32,15 +33,15 @@
 		$sql_search_user = $sql_find_users.$value_find_role.$conjunction_sql.$value_find_id_or_name;
 		echo $sql_search_user;
 	 ?>
-	<table style="margin-top: 20px;">
+	<table style="margin-top: 20px; border-collapse: collapse; ">
 		<tr>
 			<th>user_id</th>
-			<th>user_name</th>
-			<th>user_username</th>
-			<th>user_password</th>
-			<th>user_role</th>
-			<th>edit</th>
-			<th>del</th>
+			<th>ชื่อ</th>
+			<th>ขื่อผู้ใช้</th>
+			<th>รหัสผ่าน</th>
+			<th>บทบาทหน้าที่</th>
+			<th>แก้ไข</th>
+			<th>ลบ</th>
 		</tr>
 		<?php
 			$result_find_users = mysqli_query($conn, $sql_search_user);
@@ -52,8 +53,8 @@
 							<td>".$row_find_users['user_username']."</td>
 							<td>".$row_find_users['user_password']."</td>
 							<td>".$row_find_users['user_role']."</td>
-							<td class=edit><a href=\"admin_system.php?page=admin_system&sub_page=edit&user_id=".$row_find_users['user_id']."\">edit</a></td>
-							<td class=del><a href=\"admin_system.php?page=admin_system&sub_page=delete&user_id=".$row_find_users['user_id']."\">del</a></td>
+							<td class=edit><a href=\"admin_system.php?page=admin_system&sub_page=edit&user_id=".$row_find_users['user_id']."\">แก้ไข</a></td>
+							<td class=del><a href=\"admin_system.php?page=admin_system&sub_page=delete&user_id=".$row_find_users['user_id']."\">ลบ</a></td>
 						</tr>";
 				}
 			}else{

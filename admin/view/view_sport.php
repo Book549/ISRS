@@ -3,14 +3,14 @@
 	<table>
 		<tr>
 			<th>sport_id</th>
-			<th>sport_name</th>
-			<th>sport_type</th>
-			<th>sport_degree</th>
-			<th>sport_gender</th>
-			<th>sport_amount</th>
-			<th>sport_note</th>
-			<th>edit</th>
-			<th>del</th>
+			<th>รายการกีฬา</th>
+			<th>ชนิดกีฬา</th>
+			<th>ระดับชั้น</th>
+			<th>เพศ</th>
+			<th>จำนวนนักกีฬา</th>
+			<th>หมายเหตุ</th>
+			<th>แก้ไข</th>
+			<th>ลบ</th>
 		</tr>
 		<?php
 			$sql_find_sports = "SELECT * FROM `sports`";
@@ -25,8 +25,8 @@
 							<td>".$row_find_sports['sport_gender']."</td>
 							<td>".$row_find_sports['sport_amount']."</td>
 							<td>".$row_find_sports['sport_note']."</td>
-							<td class=edit><a href=\"admin_system.php?page=sport&sub_page=edit&sport_id=".$row_find_sports['sport_id']."\">edit</a></td>
-							<td class=del><a href=\"admin_system.php?page=sport&sub_page=delete&sport_id=".$row_find_sports['sport_id']."\">del</a></td>
+							<td class=edit><a href=\"admin_system.php?page=sport&sub_page=edit&sport_id=".$row_find_sports['sport_id']."\">แก้ไข</a></td>
+							<td class=del><a href=\"admin_system.php?page=sport&sub_page=delete&sport_id=".$row_find_sports['sport_id']."\">ลบ</a></td>
 						</tr>";
 				}
 			}else{
