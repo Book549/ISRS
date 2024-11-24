@@ -8,7 +8,7 @@
 			<th>สี</th>
 			<th>ประธานสี</th>
 			<th>รองประธานสี</th>
-			<th>$color_user_id</th>
+			<th>color_user_id</th>
 			<th>แก้ไข</th>
 			<th>ลบ</th>
 		</tr>

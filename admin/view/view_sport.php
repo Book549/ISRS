@@ -1,6 +1,6 @@
 <body>
-	<div class="table_container">
-	<table>
+	<div class="table_container" >
+	<table style="border-collapse: collapse;">
 		<tr>
 			<th>sport_id</th>
 			<th>รายการกีฬา</th>
