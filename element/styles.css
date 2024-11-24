@@ -563,18 +563,21 @@ td:hover{
         font-size: 10px;
     }
 
+
+
 }
 .additional_menu{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     margin-top: 30px;
     padding: 20px;
+    gap: 40px;
 }
 .additional_menu a{
     text-decoration: none;
     background-color: darkblue;
     color: white;
-    
     padding: 15px;
     border-radius: 30px;
     margin-right: 20px;
