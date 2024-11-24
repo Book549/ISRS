@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1deb1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Nov 21, 2024 at 04:21 PM
--- Server version: 10.11.6-MariaDB-0+deb12u1
--- PHP Version: 8.2.24
+-- Host: 127.0.0.1
+-- Generation Time: Nov 24, 2024 at 05:44 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,12 +41,11 @@ CREATE TABLE `colors` (
 --
 
 INSERT INTO `colors` (`color_id`, `color_name`, `color_color`, `color_president`, `color_vice-president`, `color_id_user`) VALUES
-(0, 'Ash the Test_user1', 'สีเทา', 'นายวัธนชัย ไม้จำปา', 'นางสาวกุลจิรา นามใจ', 2),
-(1, 'RedRumble', 'สีแดง', 'นายประธาน สีแดง', 'นายพระรอง ประธานสีแดง', 4),
-(2, 'OceanShadow', 'สีฟ้า', 'นายประธาน สีฟ้า', 'นายพระรอง ประธานสีฟ้า', 5),
+(1, 'GoldenLion', 'สีเหลือง', 'นายประธาน สีเหลือง', 'นายพระรอง ประธานสีเหลือง', 7),
+(2, 'PinkStorm', 'สีชมพู', 'นายประธาน สีชมพู', 'นายพระรอง ประธานสีชมพู', 8),
 (3, 'GreenGuardian', 'สีเขียว', 'นายประธาน สีเขียว', 'นายพระรอง ประธานสีเขียว', 6),
-(4, 'GoldenLion', 'สีเหลือง', 'นายประธาน สีเหลือง', 'นายพระรอง ประธานสีเหลือง', 7),
-(5, 'PinkStorm', 'สีชมพู', 'นายประธาน สีชมพู', 'นายพระรอง ประธานสีชมพู', 8);
+(5, 'RedRumble', 'สีแดง', 'นายประธาน สีแดง', 'นายพระรอง ประธานสีแดง', 4),
+(6, 'OceanShadow', 'สีฟ้า', 'นายประธาน สีฟ้า', 'นายพระรอง ประธานสีฟ้า', 5);
 
 -- --------------------------------------------------------
 
@@ -55,13 +54,14 @@ INSERT INTO `colors` (`color_id`, `color_name`, `color_color`, `color_president`
 --
 
 CREATE TABLE `players` (
+  `time_in` timestamp NOT NULL DEFAULT current_timestamp(),
   `id_player` int(5) NOT NULL,
   `player_id` int(5) NOT NULL,
   `player_title` varchar(16) NOT NULL,
   `player_name` varchar(64) NOT NULL,
   `player_sirname` varchar(64) NOT NULL,
-  `player_class` int(2) NOT NULL,
-  `player_room` int(2) NOT NULL,
+  `player_class` varchar(3) NOT NULL,
+  `player_room` varchar(4) NOT NULL,
   `player_color_id` int(2) NOT NULL,
   `player_sport_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -79,6 +79,30 @@ CREATE TABLE `reward` (
   `reward_second` int(2) NOT NULL,
   `reward_third` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `schedule`
+--
+
+CREATE TABLE `schedule` (
+  `schedule_id` int(11) NOT NULL,
+  `schedule_sport_id` int(11) NOT NULL,
+  `schedule_date` date NOT NULL,
+  `schedule_time` time(1) NOT NULL,
+  `schedule_venue` varchar(128) NOT NULL,
+  `schedule_status` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `schedule`
+--
+
+INSERT INTO `schedule` (`schedule_id`, `schedule_sport_id`, `schedule_date`, `schedule_time`, `schedule_venue`, `schedule_status`) VALUES
+(12, 1, '2024-10-28', '21:17:00.0', 'สนามแบดมินตัน', 'ยังไม่แข่งขัน'),
+(13, 1, '2024-10-28', '21:17:00.0', 'สนามแบดมินตัน', 'กำลังแข่งขัน'),
+(14, 1, '2024-10-28', '21:17:00.0', 'สนามแบดมินตัน', 'การแข่งขันจบแล้ว');
 
 -- --------------------------------------------------------
 
@@ -186,7 +210,7 @@ INSERT INTO `sports` (`sport_id`, `sport_name`, `sport_type`, `sport_degree`, `s
 (91, 'ม.1 บอลมหาชัย (บอลหลบ)', 'กีฬาแต่ละระดับชั้น', 'อื่นๆ', 'ผสม', 12, 'ชั้นมัธยมศึกษาปีที่ 1 ชาย 6 คน หญิง 6 คน'),
 (92, 'ม.2 แอโรบิก', 'กีฬาแต่ละระดับชั้น', 'อื่นๆ', 'ผสม', 35, 'นชั้นมัธยมศึกษาปีที่ 2'),
 (93, 'ม.3 Boxing Kids', 'กีฬาแต่ละระดับชั้น', 'อื่นๆ', 'ผสม', 40, 'ชั้นมัธยมศึกษาปีที่ 3'),
-(94, 'ม.4 จักรยานคนจน', 'กีฬาแต่ละระดับชั้น', 'อื่นๆ', 'ผสม', 12, 'ชั้นมัธยมศึกษาปีที่ 4 ชาย 6 คน หญิง 6 คน');
+(94, 'ม.4 การแข่งขันวงล้อสามัคค', 'กีฬาแต่ละระดับชั้น', 'อื่นๆ', 'ผสม', 12, 'ชั้นมัธยมศึกษาปีที่ 4 ชาย 6 คน หญิง 6 คน');
 
 -- --------------------------------------------------------
 
@@ -207,11 +231,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_name`, `user_username`, `user_password`, `user_role`) VALUES
-(0, 'Test_user_00', 'root', '12345678', 'admin_system'),
 (1, 'Test_user_01', 'a', 'a', 'admin_system'),
-(2, 'Test_user_02', 'b', 'b', 'admin_sport'),
 (3, 'Test_user_03', 'c', 'c', 'admin_report'),
-(4, 'RedHot', 'Red', 'Blaze999', 'admin_sport'),
+(4, 'RedHot', 'Red', 'red', 'admin_sport'),
 (5, 'Wave', 'Aqua', 'WaveSea999', 'admin_sport'),
 (6, 'Greentea', 'GreenGo', 'Greentea888', 'admin_sport'),
 (7, 'Goldie', 'Sun', 'SunShine11', 'admin_sport'),
@@ -240,6 +262,12 @@ ALTER TABLE `reward`
   ADD PRIMARY KEY (`reward_id`);
 
 --
+-- Indexes for table `schedule`
+--
+ALTER TABLE `schedule`
+  ADD PRIMARY KEY (`schedule_id`);
+
+--
 -- Indexes for table `sports`
 --
 ALTER TABLE `sports`
@@ -259,19 +287,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `colors`
 --
 ALTER TABLE `colors`
-  MODIFY `color_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `color_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `players`
 --
 ALTER TABLE `players`
-  MODIFY `id_player` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_player` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `reward`
 --
 ALTER TABLE `reward`
-  MODIFY `reward_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `reward_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+--
+-- AUTO_INCREMENT for table `schedule`
+--
+ALTER TABLE `schedule`
+  MODIFY `schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `sports`
@@ -283,7 +317,7 @@ ALTER TABLE `sports`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `user_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
