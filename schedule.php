@@ -61,14 +61,34 @@ if (isset($_GET['sport']) && $_GET['sport'] != "main") {
                     while ($row_scheddule = mysqli_fetch_assoc($result_find_scheddule)) {
                         echo "<div class=\"schedule-list\"><div class=\"event-card\" data-sport=\"".sport_type($row_scheddule['schedule_sport_id'], $conn)."\">";
                         echo "<div class=\"event-info\">
-                                <h3>".sport_name($row_scheddule['schedule_sport_id'], $conn)."</h3>
-                                <p>Date: ".$row_scheddule['schedule_date']."</p>
-                                <p>Time: ".$row_scheddule['schedule_time']."</p>
-                                <p>Venue: ".$row_scheddule['schedule_venue']."</p>
-                            </div>
-                            <div class=\"event-status\">
-                                <p>Status: ".$row_scheddule['schedule_status']."</p>
-                            </div>";
+                            <h3>" . sport_name($row_scheddule['schedule_sport_id'], $conn) . "</h3>
+                            <p>Date: " . htmlspecialchars($row_scheddule['schedule_date']) . "</p>
+                            <p>Time: " . htmlspecialchars($row_scheddule['schedule_time']) . "</p>
+                            <p>Venue: " . htmlspecialchars($row_scheddule['schedule_venue']) . "</p>
+                        </div>
+                        <div class=\"event-status\">
+                            <p>Status: ";
+
+                    switch ($row_scheddule['schedule_status']) {
+                        case 'ยังไม่แข่งขัน':
+                            echo "<span style=\"color: darkblue;\">ยังไม่แข่งขัน</span>";
+                            break;
+
+                        case 'กำลังแข่งขัน':
+                            echo "<span style=\"color: green;\">กำลังแข่งขัน</span>";
+                            break;
+
+                        case 'การแข่งขันจบแล้ว':
+                            echo "<span style=\"color: darkred;\">การแข่งขันจบแล้ว</span>";
+                            break;
+
+                        default:
+                            echo "<span>No Status</span>";
+                            break;
+                    }
+
+                    echo "</p>
+                        </div>";
                         echo "</div>";     
                     }
                 }else{
