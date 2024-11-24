@@ -33,6 +33,16 @@ function sport_name($id_sport, $conn) {
     return "N/A"; // Default if no color is found
 }
 
+function sport_type($id_sport, $conn) {
+    $sql_find_sport_type = "SELECT `sport_type` FROM `sports` WHERE `sport_id` = $id_sport";
+    $result_find_sport_type = mysqli_query($conn, $sql_find_sport_type);
+    if (mysqli_num_rows($result_find_sport_type) > 0) {
+        $row_find_sport_type = mysqli_fetch_assoc($result_find_sport_type);
+        return $row_find_sport_type['sport_type'];
+    }
+    return "N/A"; // Default if no color is found
+}
+
 function sport_list($conn) {
     $sql_find_color_color = "SELECT `color_color`, `color_id_user` FROM `colors`";
     $result_find_colors_name = mysqli_query($conn, $sql_find_color_color);
