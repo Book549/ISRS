@@ -11,21 +11,38 @@
 		echo "not found";
 	}
 ?>
-<form method="post" action="">
-	<label for="player_id">player_id:</label><input type="text" class="box_sport"  name="player_id" id="player_id" value="<?php echo "$player_id"; ?>" ><br>
+<center>
+<form method="post" action="" class="add_sport_all">
+	<label for="player_id">รหัสประจำตัว :</label><input type="text" class="box_sport"  name="player_id" id="player_id" value="<?php echo "$player_id"; ?>" ><br>
 	
 	<br>
-	<label for="player_title">player_title:</label><input type="text" name="player_title" id="player_title" value="<?php echo $row_find_edit_players['player_title']; ?>"><br>
-	<label for="player_name">player_name:</label><input type="text" name="player_name" id="player_name" value="<?php echo $row_find_edit_players['player_name']; ?>"><br>
+	<label for="player_title">คำนำหน้า :</label><input type="text" class="box_sport" name="player_title" id="player_title" value="<?php echo $row_find_edit_players['player_title']; ?>"><br>
+	<label for="player_name">ชื่อจริง :</label><input type="text" class="box_sport" name="player_name" id="player_name" value="<?php echo $row_find_edit_players['player_name']; ?>"><br>
 	
-	<label for="player_sirname">player_sirname:</label><input type="text" name="player_sirname" id="player_sirname" value="<?php echo $row_find_edit_players['player_sirname']; ?>"><br>
-	<label for="player_class">player_class:</label><input type="text" name="player_class" id="player_class" value="<?php echo $row_find_edit_players['player_class']; ?>"><br>
-	<label for="player_room">player_room:</label><input type="text" name="player_room" id="player_room" value="<?php echo $row_find_edit_players['player_room']; ?>"><br>
+	<label for="player_sirname">นามสกุล :</label><input type="text" class="box_sport" name="player_sirname" id="player_sirname" value="<?php echo $row_find_edit_players['player_sirname']; ?>"><br>
+	<label for="player_class">ชั้น :</label><input type="text" class="box_sport" name="player_class" id="player_class" value="<?php echo $row_find_edit_players['player_class']; ?>"><br>
+	<label for="player_room">ห้อง :</label><input type="text" class="box_sport" name="player_room" id="player_room" value="<?php echo $row_find_edit_players['player_room']; ?>"><br>
 	<!-- <label for="player_gender">player_gender:</label><input type="text" name="player_gender" id="player_gender" value="<?php //echo $row_find_edit_players['player_gender']; ?>"><br> -->
-	<label for="player_color_id">player_color_id:</label><input type="text" name="player_color_id" id="player_color_id" value="<?php echo $row_find_edit_players['player_color_id']; ?>"><br>
-	<label for="player_sport_id">player_sport_id:</label><input type="text" name="player_sport_id" id="player_sport_id" value="<?php echo $row_find_edit_players['player_sport_id']; ?>"><br>
+	<label for="player_color_id">player_color_id :</label><input type="text" class="box_sport" name="player_color_id" id="player_color_id" value="<?php echo $row_find_edit_players['player_color_id']; ?>"><br>
+	<label for="player_sport_id">player_sport_id :</label><input type="text" class="box_sport" name="player_sport_id" id="player_sport_id" value="<?php echo $row_find_edit_players['player_sport_id']; ?>"><br>
+	<center>
+	<input type="submit" name="edit_player" class="btn">
+	</center>
+</form>
 
-	<input type="submit" name="edit_player">
+<div>
+	<h2>player_color_id</h2><br>
+	<span style="font-size: 20px; margin-bottom: 15px;">สีแดง => 4</span><br>
+	<span style="font-size: 20px; margin-bottom: 15px;">สีฟ้า => 5</span><br>
+	<span style="font-size: 20px; margin-bottom: 15px;">สีเขียว => 6</span><br>
+	<span style="font-size: 20px; margin-bottom: 15px;">สีเหลือง => 7</span><br>
+	<span style="font-size: 20px; margin-bottom: 15px;">สีชมพู => 8</span><br>
+</div>
+
+<div>
+	<h2>player_sport_id</h2><br>
+	<img src="pic/sport_id.jpg">
+</center>
 <?php 
 	if ($_POST['edit_player']) {
 		

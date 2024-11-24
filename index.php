@@ -121,10 +121,10 @@
               <tr><td>สูจิบัตรแข่งขันกีฬาภายใน “สามัคคีเกมส์” ครั้งที่ 50  <a href="pic/สูจิบัตร.pdf"><i class="fa-solid fa-link"></i>pdf</a></td></tr>
                 <tr><td>แผนผังสถานที่จัดการแข่งขันกีฬาภายใน <a href="pic/แผนผังสถานที่จัดการแข่งขัน.png"><i class="fa-solid fa-link"></i>image</a></td></tr>
                 <tr><td>แผนที่เดินขบวนกีฬาภายใน <a href="pic/แผนที่การเดินขบวน.png"><i class="fa-solid fa-link"></i>image</a></td></tr>
-                <tr><td>ผังตั้งขบวนกีฬาภายใน <a href="#"><i class="fa-solid fa-link"></i>pdf</a></td></tr>
-                <tr><td>แผนผังการจัดขบวนพาเหรดกีฬาสีภายใน <a href="#"><i class="fa-solid fa-link"></i>pdf</a></td></tr>
-                <tr><td>รายชื่อครูประจำชั้นแบ่งตามคณะสี <a href="#"><i class="fa-solid fa-link"></i>pdf</a></td></tr>
-                <tr><td>ระเบียบการแข่งขันกีฬาสีภายในโรงเรียนสามัคคีวิทยาคม <a href="#"><i class="fa-solid fa-link"></i>pdf</a></td></tr>
+                <tr><td>แผนผังตั้งขบวนกีฬาภายใน <a href="pic/ผังตั้งขบวน.png"><i class="fa-solid fa-link"></i>image</a></td></tr>
+                <tr><td>แผนผังการจัดขบวนพาเหรดกีฬาสีภายใน <a href="pic/ผังการจัดขบวนพาเหรด.png"><i class="fa-solid fa-link"></i>image</a></td></tr>
+                <tr><td>รายชื่อครูประจำชั้นแบ่งตามคณะสี <a href="pic/รายชื่อครูประจำชั้น.pdf"><i class="fa-solid fa-link"></i>pdf</a></td></tr>
+                <tr><td>ระเบียบการแข่งขันกีฬาสีภายในโรงเรียนสามัคคีวิทยาคม <a href="pic/ระเบียบการแข่ง.pdf"><i class="fa-solid fa-link"></i>pdf</a></td></tr>
             </tbody>
         </table>
     </div>
