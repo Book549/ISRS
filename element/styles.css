@@ -340,7 +340,7 @@ nav.sticky{
 
 .event-info p {
     font-family: "Mitr", sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 5px;
 }
 
@@ -348,7 +348,7 @@ nav.sticky{
     margin-top: 10px;
     font-family: "Mitr", sans-serif;
     font-weight: bold;
-    color: limegreen;
+    color: black;
 }
 
 .event-date{
