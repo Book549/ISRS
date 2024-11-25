@@ -13,11 +13,11 @@
 <center>
 <form method="post" action="" class="add_sport_all">
 	<label for="color_id">color_id</label><input type="text" class="box_sport" name="color_id" id="color_id" value="<?php echo $row_view_admin_sport['color_id']; ?>" required><br>
-	<label for="color_name">color_name</label><input type="text"  class="box_sport" name="color_name" id="color_name" value="<?php echo $row_view_admin_sport['color_name']; ?>" required><br>
-	<label for="color_color">color_color</label><input type="text"  class="box_sport" name="color_color" id="color_color" value="<?php echo $row_view_admin_sport['color_color']; ?>" required><br>
-	<label for="color_president">color_president</label><input type="text"  class="box_sport" name="color_president" id="color_president" value="<?php echo $row_view_admin_sport['color_president']; ?>" required><br>
-	<label for="color_vice-president">color_vice-president</label><input type="text"  class="box_sport" name="color_vice-president" id="color_vice-president" value="<?php echo $row_view_admin_sport['color_vice-president']; ?>" required><br>
-	<label for="color_id_user">color_id_user</label><input type="text" name="color_id_user"  class="box_sport" id="color_id_user" value="<?php echo $row_view_admin_sport['color_id_user']; ?>" required><br>
+	<label for="color_name">ชื่อคณะสี :</label><input type="text"  class="box_sport" name="color_name" id="color_name" value="<?php echo $row_view_admin_sport['color_name']; ?>" required><br>
+	<label for="color_color">สี :</label><input type="text"  class="box_sport" name="color_color" id="color_color" value="<?php echo $row_view_admin_sport['color_color']; ?>" required><br>
+	<label for="color_president">ประธานสี :</label><input type="text"  class="box_sport" name="color_president" id="color_president" value="<?php echo $row_view_admin_sport['color_president']; ?>" required><br>
+	<label for="color_vice-president">รองประธานสี :</label><input type="text"  class="box_sport" name="color_vice-president" id="color_vice-president" value="<?php echo $row_view_admin_sport['color_vice-president']; ?>" required><br>
+	<label for="color_id_user">color_user_id :</label><input type="text" name="color_id_user"  class="box_sport" id="color_id_user" value="<?php echo $row_view_admin_sport['color_id_user']; ?>" required><br>
 	<center>
 	<input type="submit" name="edit" class="btn"><br>
 </center>
