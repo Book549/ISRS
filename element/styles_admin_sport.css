@@ -346,3 +346,21 @@ td:hover{
 .all_filter{
     margin-top: 50px;
 }
+
+.btn_schedule {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: darkblue;
+    color: white;
+    border-radius: 30px;
+    width: 5%;
+    text-align: center;
+    transition: 0.4s ease;
+}
+
+.btn_schedule:hover{
+    color: skyblue;
+}
