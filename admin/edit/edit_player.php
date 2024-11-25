@@ -16,7 +16,14 @@
 	<label for="player_id">รหัสประจำตัว :</label><input type="text" class="box_sport"  name="player_id" id="player_id" value="<?php echo "$player_id"; ?>" ><br>
 	
 	<br>
-	<label for="player_title">คำนำหน้า :</label><input type="text" class="box_sport" name="player_title" id="player_title" value="<?php echo $row_find_edit_players['player_title']; ?>"><br>
+	<label for="player_title">คำนำหน้า :</label>		
+	<select class="box_sport" name="player_title" id="player_title" required>
+			<option value="">เลือก</option>
+			<option value="เด็กชาย">เด็กชาย</option>
+			<option value="เด็กหญิง">เด็กหญิง</option>
+			<option value="นาย">นาย</option>
+			<option value="นางสาว">นางสาว</option>
+		</select><br>
 	<label for="player_name">ชื่อจริง :</label><input type="text" class="box_sport" name="player_name" id="player_name" value="<?php echo $row_find_edit_players['player_name']; ?>"><br>
 	
 	<label for="player_sirname">นามสกุล :</label><input type="text" class="box_sport" name="player_sirname" id="player_sirname" value="<?php echo $row_find_edit_players['player_sirname']; ?>"><br>
