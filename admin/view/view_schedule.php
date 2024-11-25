@@ -73,8 +73,8 @@ if (isset($_GET['sport']) && $_GET['sport'] != "main") {
 
                     echo "</p>
                         </div>";
-                        echo "<td class=edit><a href=\"admin_system.php?page=schedule&sub_page=edit&schedule_id=".$row_scheddule['schedule_id']."\">แก้ไข</a></td>
-                            <td class=del><a href=\"admin_system.php?page=schedule&sub_page=delete&schedule_id=".$row_scheddule['schedule_id']."\">ลบ</a></td>";
+                        echo "<a href=\"admin_system.php?page=schedule&sub_page=edit&schedule_id=".$row_scheddule['schedule_id']."\">แก้ไข</a>
+                            <a href=\"admin_system.php?page=schedule&sub_page=delete&schedule_id=".$row_scheddule['schedule_id']."\">ลบ</a>";
                         echo "</div>";     
                     }
                 }else{

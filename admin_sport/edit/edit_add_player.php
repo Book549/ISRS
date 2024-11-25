@@ -1,3 +1,5 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet"  href="element/styles_admin_sport.css">
 <body>
 <?php 
 	$id_player = $_GET['id_player'] ;
@@ -15,7 +17,7 @@
 
 ?>
 
-<form method="post" action="" class="edit_sport_all">
+<form method="post" action="" class="add_sport_all">
 	<label for="player_id">รหัสนักเรียน:</label><input type="text" class="box_sport" name="player_id" id="player_id" value="<?php echo $row_find_edit_players['player_id']; ?>"><br>
 
 	<label for="player_title">คำนำหน้า:</label>

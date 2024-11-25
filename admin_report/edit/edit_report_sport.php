@@ -23,8 +23,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
 	<center>
-	<div class="add_sport_all">
-	<form method="post" >
+	<div >
+	<form method="post" class="add_sport_all" >
 
   			<label>รายการกีฬา:</label>
   			<select name="reward_sport_id">

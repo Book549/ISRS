@@ -1,4 +1,5 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet"  href="element/styles_admin_sport.css">
 <body>
 <?php 
 	$id_player = $_GET['id_player'] ;

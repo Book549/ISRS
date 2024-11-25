@@ -15,19 +15,19 @@
 <center>
 <form method="post" action="" class="add_sport_all">
 	<p>id_user : <?php echo $user_id; ?></p>
-	<label for="user_name">user_name</label>
+	<label for="user_name">ชื่อ :</label>
 	<input type="text" id="user_name" name="user_name" class="box_sport" value="<?php echo $row_find_edit_users['user_name']; ?>" required><br>
-	<label for="user_username">user_username</label>
+	<label for="user_username">ชื่อผู้ใข้ :</label>
 	<input type="text" id="user_username" name="user_username" class="box_sport" value="<?php echo $row_find_edit_users['user_username']; ?>" required><br>
-	<label for="user_password">user_password</label>
+	<label for="user_password">รหัสผ่าน :</label>
 	<input type="text" id="user_password" name="user_password" class="box_sport" value="<?php echo $row_find_edit_users['user_password']; ?>" required><br>
 	<p>user_role:</p>
 	<input type="radio" id="admin_system" name="user_role" value="admin_system" <?php if ($row_find_edit_users['user_role'] == "admin_system") {echo "checked";} ?> required>
-	<label for="admin_system">admin_system</label><br>
+	<label for="admin_system">ผู้จัดการระบบ</label><br>
 	<input type="radio" id="admin_sport" name="user_role" value="admin_sport" <?php if ($row_find_edit_users['user_role'] == "admin_sport") {echo "checked";} ?> required>
-	<label for="admin_sport">admin_sport</label><br> 
+	<label for="admin_sport">ผู้จัดการคณะสี</label><br> 
 	<input type="radio" id="admin_report" name="user_role" value="admin_report" <?php if ($row_find_edit_users['user_role'] == "admin_report") {echo "checked";} ?> required>
-	<label for="admin_report">admin_report</label><br>
+	<label for="admin_report">ผู้จัดการรายงานผล</label><br>
 	<center>
 	<input type="submit" name="edit_admin" class="btn" value="แก้ไขผู้ใช้" style="font-size: 14px;"><br>
 	</center>

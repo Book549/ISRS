@@ -2,7 +2,7 @@
 <link rel="stylesheet"  href="element/styles_admin_sport.css">
 <body>
 <ul>
-	<li><a href="?page=schedule&sub_page=view" class="btn_viewadd">แก้ไข/ลบ</a></li>
+	<li><a href="?page=schedule&sub_page=view" class="btn_viewadd">แก้ไข</a></li>
 	<li><a href="?page=schedule&sub_page=add" class="btn_viewadd">เพิ่ม</a></li>
 </ul>
 <?php 
