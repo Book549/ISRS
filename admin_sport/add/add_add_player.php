@@ -6,7 +6,7 @@
 		<div class="table_container">
 	<div class="add_sport_all">
 	<form method="post" >
-		<label for="player_id">รหัสนักเรียน:</label><input type="text" class="box_sport" name="player_id" id="player_id" ><br>
+		<label for="player_id">รหัสประจำตัวนักเรียน:</label><input type="text" class="box_sport" name="player_id" id="player_id" ><br>
 		<label for="player_title">คำนำหน้า:</label>
 		<select class="box_sport" name="player_title" id="player_title" required>
 			<option value="">เลือก</option>
