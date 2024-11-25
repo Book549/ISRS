@@ -1,13 +1,13 @@
 <body>
 	<div class="table_container">
-	<table>
+	<table style="border-collapse: collapse;">
 		<tr>
-			<th>player_id</th>
-			<th>player_title</th>
-			<th>player_name</th>
-			<th>player_sirname</th>
-			<th>player_class</th>
-			<th>player_room</th>
+			<th>รหัสประจำตัวนักเรียน</th>
+			<th>คำนำหน้า</th>
+			<th>ชื่อจริง</th>
+			<th>นามสกุล</th>
+			<th>ชั้น(ม. )</th>
+			<th>ห้อง</th>
 			<!-- <th>player_gender</th> -->
 			<th>player_color_id</th>
 			<th>player_sport_id</th>
