@@ -118,7 +118,7 @@
                 </tr>
             </thead>
             <tbody>
-              <tr><td>สูจิบัตรแข่งขันกีฬาภายใน “สามัคคีเกมส์” ครั้งที่ 50  <a href="pic/สูจิบัตร.pdf"><i class="fa-solid fa-link"></i>pdf</a></td></tr>
+              <tr><td>สูจิบัตรแข่งขันกีฬาภายใน “สามัคคีเกมส์” ครั้งที่ 50  <a href="pic/สูจิบัตร สามัคคีเกมส์ 2567.pdf"><i class="fa-solid fa-link"></i>pdf</a></td></tr>
                 <tr><td>แผนผังสถานที่จัดการแข่งขันกีฬาภายใน <a href="pic/แผนผังสถานที่จัดการแข่งขัน.png"><i class="fa-solid fa-link"></i>image</a></td></tr>
                 <tr><td>แผนที่เดินขบวนกีฬาภายใน <a href="pic/แผนที่การเดินขบวน.png"><i class="fa-solid fa-link"></i>image</a></td></tr>
                 <tr><td>แผนผังตั้งขบวนกีฬาภายใน <a href="pic/ผังตั้งขบวน.png"><i class="fa-solid fa-link"></i>image</a></td></tr>
