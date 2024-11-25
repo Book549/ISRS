@@ -189,7 +189,7 @@
     </div>
 
     <div class="footer-section">
-      <h4>Follow Us</h4>
+      <h4>Follow Student Council</h4>
       <div class="social-icons">
         <a href="https://www.facebook.com/swkstudentcouncil?_rdc=1&_rdr#"><i class="fa-brands fa-facebook"></i></a>
         <a href="https://www.instagram.com/swk.sc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fa-brands fa-instagram"></i></a>
