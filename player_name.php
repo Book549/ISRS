@@ -123,7 +123,7 @@
     </div>
     <ul class="table-menu">
     <?php 
-            $sql_find_sport_type = "SELECT `sport_type` FROM `sports` WHERE `sport_type` != 'กีฬาพื้นบ้าน' AND `sport_type` != 'กีฬาแต่ละระดับชั้น' GROUP BY `sport_type` ORDER BY `sports`.`sport_id` ASC";
+            $sql_find_sport_type = "SELECT `sport_type` FROM `sports` WHERE `sport_type` != 'กีฬาพื้นบ้าน' AND `sport_type` != 'กีฬาแต่ละระดับชั้น' GROUP BY `sport_type` ORDER BY `sports`.`sport_name` ASC";
             $result_find_sports_type = mysqli_query($conn, $sql_find_sport_type);
             if (mysqli_num_rows($result_find_sports_type) > 0) {
                 while ($row_find_sports_type = mysqli_fetch_assoc($result_find_sports_type)) {
