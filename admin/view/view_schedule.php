@@ -6,6 +6,8 @@ if (isset($_GET['sport']) && $_GET['sport'] != "main") {
 }
  ?>
 <link rel="stylesheet"  href="element/styles_admin_sport.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <body>
     <div class="schedule-container">
     <div class="schedule-header">
@@ -73,8 +75,8 @@ if (isset($_GET['sport']) && $_GET['sport'] != "main") {
 
                     echo "</p>
                         </div>";
-                        echo "<a href=\"admin_system.php?page=schedule&sub_page=edit&schedule_id=".$row_scheddule['schedule_id']."\">แก้ไข</a>
-                            <a href=\"admin_system.php?page=schedule&sub_page=delete&schedule_id=".$row_scheddule['schedule_id']."\">ลบ</a>";
+                        echo "<a class=btn_schedule href=\"admin_system.php?page=schedule&sub_page=edit&schedule_id=".$row_scheddule['schedule_id']."\">แก้ไข</a>
+                            <a class=btn_schedule href=\"admin_system.php?page=schedule&sub_page=delete&schedule_id=".$row_scheddule['schedule_id']."\">ลบ</a>";
                         echo "</div>";     
                     }
                 }else{
