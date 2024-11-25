@@ -1,8 +1,8 @@
 <link rel="stylesheet"  href="element/styles_admin_sport.css">
 <body>
 <form method="post" class="add_sport_all">
-	<label for="player_id">player_id:</label><input type="text" class="box_sport"  name="player_id" id="player_id"><br>
-	<label for="player_title">player_title:</label><input type="text" class="box_sport" name="player_title" id="player_title"><br>
+	<label for="player_id">รหัสประจำตัวนักเรียน:</label><input type="text" class="box_sport"  name="player_id" id="player_id"><br>
+	<label for="player_title">คำนำหน้า:</label><input type="text" class="box_sport" name="player_title" id="player_title"><br>
 	<label for="player_name">ชื่อจริง:</label><input type="text" class="box_sport" name="player_name" id="player_name"><br>
 	
 	<label for="player_sirname">นามสกุล:</label><input type="text" class="box_sport" name="player_sirname" id="player_sirname"><br>
