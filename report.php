@@ -7,20 +7,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>ผลการแข่งขันรายกีฬา</title>
+    <title>ผลการแข่งขันกีฬา</title>
     <style>
         body{
             font-family: "Mitr", sans-serif;
         }
         /* General styling */
-        .report-container {
+        .menu-container {
             width: 80%;
-            max-width: 800px;
+            max-width: 1200px;
             margin: auto;
             padding: 20px;
            
         }
-        
+
         .menu-title {
             font-size: 30px;
             text-align: center;
@@ -28,9 +28,6 @@
 
         }
 
-        ul li a{
-            text-decoration: none;
-        }
         /* Dropdown menu style */
         .table-menu {
             list-style: none;
@@ -96,50 +93,191 @@
 </head>
 <body>
 
-<div class="report-container">
-    <div class="menu-title"><a href="index.php" style="text-decoration: none; color: black;" > ผลการแข่งขัน</a></div>
+<div class="menu-container">
+    <div class="menu-title" style="font-weight: 650;">ผลการแข่งขันกีฬา</div>
     <ul class="table-menu">
-<!--         <li ><a href="report_football.php" style="color: white;">ฟุตบอล</a></li>
-        <li ><a href="report_footsul.php" style="color: white;">ฟุตซอล</a></li>
-        <li ><a href="report_handball.php" style="color: white;">แฮนด์บอล</a></li>
-        <li ><a href="report_volleyball.php" style="color: white;">วอลเลย์บอล</a></li>
-        <li ><a href="report_petong.php" style="color: white;">เปตอง</a></li>
-        <li ><a href="report_basketball.php" style="color: white;">บาสเก็ตบอล</a></li>
-        <li ><a href="report_badminton.php" style="color: white;">แบดมินตัน</a></li>
-        <li ><a href="report_pingpong.php" style="color: white;">เทเบิลเทนนิส</a></li> -->
-        <li onclick="toggleMenu('rope')">กีฬาพื้นบ้าน</li>
-        <ul id="rope" class="table-content">
-            <table>
+        <li onclick="toggleMenu('football')">ฟุตบอล</li>
+        <ul id="football" class="table-content">
+            <table >
                 <tr>
-                    <th style="width: 10%;">อันดับ</th>
-                    <th style="width: 40%">รายการ</th>
-                    <th style="width: 30%;">สี</th>
-                    <th>คะแนนรวม</th>
-                    
+                    <th>รายการ</th>
+                    <th>ประเภท</th>
+                    <th>🥇1</th>
+                    <th>🥈2</th>
+                    <th>🥉3</th>
                 </tr>
                 <tr>
-                    <td>🥇1</t
-                    d><td> </td>
-                    <td> </td>
-                    <td> </td>
+                    <td>ไก่</td>
+                    <td>นามเงิน</td>
+                    <td>6</td>
+                    <td>11</td>
+                    <td>ชาย</td>
                 </tr>
-                <tr>
-                    <td>🥈2</td>
-                    <td> </td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td>🥉3</td>
-                    <td> </td>
-                    <td> </td>
-                </tr>
-
             </table>
         </ul>
-<!--         <li ><a href="report_combine.php" style="color: white;">กีฬาแต่ละระดับชั้น</a></li>
-        <li ><a href="report_run.php" style="color: white;">กรีฑา</a></li> -->
+
+        <li onclick="toggleMenu('futsal')">ฟุตซอล</li>
+        <ul id="futsal" class="table-content">
+            <table>
+                <tr>
+                    <th>รายการ</th>
+                    <th>ประเภท</th>
+                    <th>🥇1</th>
+                    <th>🥈2</th>
+                    <th>🥉3</th>
+                </tr>
+                <tr>
+                    <td>ไก่</td>
+                    <td>นามเงิน</td>
+                    <td>6</td>
+                    <td>11</td>
+                    <td>ชาย</td>
+                </tr>
+            </table>
+        </ul>
+
+       <li onclick="toggleMenu('handball')">แฮนด์บอล</li>
+        <ul id="handball" class="table-content">
+            <table>
+                <tr>
+                    <th>รายการ</th>
+                    <th>ประเภท</th>
+                    <th>🥇1</th>
+                    <th>🥈2</th>
+                    <th>🥉3</th>
+                </tr>
+                <tr>
+                    <td>ไก่</td>
+                    <td>นามเงิน</td>
+                    <td>6</td>
+                    <td>11</td>
+                    <td>ชาย</td>
+                </tr>
+            </table>
+        </ul>
+
+        <li onclick="toggleMenu('volleyball')">วอลเลย์บอล</li>
+        <ul id="volleyball" class="table-content">
+            <table>
+                <tr>
+                    <th>รายการ</th>
+                    <th>ประเภท</th>
+                    <th>🥇1</th>
+                    <th>🥈2</th>
+                    <th>🥉3</th>
+                </tr>
+                <tr>
+                    <td>ไก่</td>
+                    <td>นามเงิน</td>
+                    <td>6</td>
+                    <td>11</td>
+                    <td>ชาย</td>
+                </tr>
+            </table>
+        </ul>
+
+        <li onclick="toggleMenu('petong')">เปตอง</li>
+        <ul id="petong" class="table-content">
+            <table>
+                <tr>
+                    <th>รายการ</th>
+                    <th>ประเภท</th>
+                    <th>🥇1</th>
+                    <th>🥈2</th>
+                    <th>🥉3</th>
+                </tr>
+                <tr>
+                    <td>ไก่</td>
+                    <td>นามเงิน</td>
+                    <td>6</td>
+                    <td>11</td>
+                    <td>ชาย</td>
+                </tr>
+            </table>
+        </ul>
+
+        <li onclick="toggleMenu('basketball')">บาสเก็ตบอล</li>
+        <ul id="basketball" class="table-content">
+            <table>
+                <tr>
+                    <th>รายการ</th>
+                    <th>ประเภท</th>
+                    <th>🥇1</th>
+                    <th>🥈2</th>
+                    <th>🥉3</th>
+                </tr>
+                <tr>
+                    <td>ไก่</td>
+                    <td>นามเงิน</td>
+                    <td>6</td>
+                    <td>11</td>
+                    <td>ชาย</td>
+                </tr>
+            </table>
+        </ul>
+
+        <li onclick="toggleMenu('badminton')">แบดมินตัน</li>
+        <ul id="badminton" class="table-content">
+            <table>
+                <tr>
+                    <th>รายการ</th>
+                    <th>ประเภท</th>
+                    <th>🥇1</th>
+                    <th>🥈2</th>
+                    <th>🥉3</th>
+                </tr>
+                <tr>
+                    <td>ไก่</td>
+                    <td>นามเงิน</td>
+                    <td>6</td>
+                    <td>11</td>
+                    <td>ชาย</td>
+                </tr>
+            </table>
+        </ul>
+
+        <li onclick="toggleMenu('table_tennis')">เทเบิลเทนนิส</li>
+        <ul id="table_tennis" class="table-content">
+            <table>
+                <tr>
+                    <th>รายการ</th>
+                    <th>ประเภท</th>
+                    <th>🥇1</th>
+                    <th>🥈2</th>
+                    <th>🥉3</th>
+                </tr>
+                <tr>
+                    <td>ไก่</td>
+                    <td>นามเงิน</td>
+                    <td>6</td>
+                    <td>11</td>
+                    <td>ชาย</td>
+                </tr>
+            </table>
+        </ul>
+
+        <li ><a href="report_combine.php" style="color: white;">กีฬาแต่ละระดับชั้น</a></li>
 
 
+        <li onclick="toggleMenu('running')">กรีฑา</li>
+        <ul id="running" class="table-content">
+            <table>
+                <tr>
+                    <th>รายการ</th>
+                    <th>ประเภท</th>
+                    <th>🥇1</th>
+                    <th>🥈2</th>
+                    <th>🥉3</th>
+                </tr>
+                <tr>
+                    <td>ไก่</td>
+                    <td>นามเงิน</td>
+                    <td>6</td>
+                    <td>11</td>
+                    <td>ชาย</td>
+                </tr>
+            </table>
+        </ul>
 
     
     </ul>
