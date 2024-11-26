@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>กีฬาแต่ละระดับชั้น</title>
+    <title>รายชื่อนักกีฬา</title>
     <style>
         body{
             font-family: "Mitr", sans-serif;
@@ -22,11 +22,23 @@
            
         }
 
-        .menu-title {
-            font-size: 30px;
-            text-align: center;
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 20px;
+        }
 
+        .menu-header h2 {
+            font-family: "Mitr", sans-serif;
+            font-size: 28px;
+        }
+
+        .menu-filter input {
+            padding: 10px;
+            width: 250px;
+            border-radius: 20px;
+            border: 1px solid lightgray;
         }
 
         /* Dropdown menu style */
@@ -89,164 +101,70 @@
             background-color: #e1e1e1;
         }
 
-        td .another{
-            background-color: lightcoral;
-        }
+         /* Visited link color */
+        a:visited {
+            color: white;
+            text-decoration: none;
+       }
+        a{
+            color: white;
+            text-decoration: none;
+       }
     </style>
 </head>
 <body>
-
+<script src="element/script_player.js"></script>
 <div class="menu-container">
-    <div class="menu-title">กีฬาแต่ละระดับชั้น</div>
+<div class="menu-header">
+        <h2 ><a href="index.php" style="text-decoration: none; color: black;" >รายชื่อนักกีฬา</a></h2>
+<!--         <div class="menu-filter">
+            <input type="search" placeholder="  ค้นหานักกีฬา...">
+        </div> -->
+    </div>
     <ul class="table-menu">
-        <?php 
-            $sql_find_sport_type = "SELECT `sport_type` FROM `sports` WHERE `sport_type` = 'กีฬาพื้นบ้าน' OR `sport_type` = 'กีฬาแต่ละระดับชั้น' GROUP BY `sport_type`";
-            $result_find_sports_type = mysqli_query($conn, $sql_find_sport_type);
-            if (mysqli_num_rows($result_find_sports_type) > 0) {
-                while ($row_find_sports_type = mysqli_fetch_assoc($result_find_sports_type)) {
-                    echo "<li onclick=\"toggleMenu('".$row_find_sports_type['sport_type']."')\">".$row_find_sports_type['sport_type']."</li>
-                        <ul id=\"".$row_find_sports_type['sport_type']."\" class=\"table-content\">
-                        <table>
-                                <tr>
-                                    <th>รายการ</th>
-                                    <th>ประเภท</th>
-                                    <th>สี</th>
-                                    <th>ชื่อ</th>
-                                    <th>สกุล</th>
-                                    <th>ชั้น</th>
-                                    <th>ห้อง</th>
-                                </tr>";
-
-                    $sql_find_sports = "SELECT `sport_id`, `sport_name`, `sport_gender` FROM `sports` WHERE `sport_type` = '".$row_find_sports_type['sport_type']."' ORDER BY `sports`.`sport_name` ASC";
-                    $result_find_sports = mysqli_query($conn, $sql_find_sports);
-                    if (mysqli_num_rows($result_find_sports) > 0) {
-                        while ($row_find_sports = mysqli_fetch_assoc($result_find_sports)) {
-                            $sql_find_players = "SELECT * FROM `players`  WHERE `player_sport_id` = '".$row_find_sports['sport_id']."' ORDER BY `players`.`player_name` ASC";
-                            $result_find_players = mysqli_query($conn, $sql_find_players);
-                            if (mysqli_num_rows($result_find_players) > 0) {
-                                while ($row_find_players = mysqli_fetch_assoc($result_find_players)) {
-                                    echo "<tr>";
-                                    echo "<td>".$row_find_sports['sport_name']."</td>
-                                        <td>".$row_find_sports['sport_gender']."</td>";
-                                        $sql_view_admin_sport = "SELECT * FROM `colors` WHERE `color_id_user` = ".$row_find_players['player_color_id'];
-                                        $result_view_admin_sport = mysqli_query($conn, $sql_view_admin_sport);
-                                        if (mysqli_num_rows($result_view_admin_sport) == 1) {
-                                            while ($row_view_admin_sport = mysqli_fetch_assoc($result_view_admin_sport)) {
-                                                echo "<td>".$row_view_admin_sport['color_color']."</td>";
-                                            }
-                                        }
-                                    
-                                    echo "<td>".$row_find_players['player_name']."</td>
-                                            <td>".$row_find_players['player_sirname']."</td>
-                                            <td>".$row_find_players['player_class']."</td>
-                                            <td>".$row_find_players['player_room']."</td>";
  
+    <?php 
+    $sql_find_sport_type = "SELECT `sport_type` FROM `sports` WHERE `sport_type` = 'กีฬาพื้นบ้าน' OR `sport_type` = 'กีฬาแต่ละระดับชั้น' GROUP BY `sport_type` ORDER BY `sports`.`sport_name` ASC";
+                $result_find_sports_type = mysqli_query($conn, $sql_find_sport_type);
+                if (mysqli_num_rows($result_find_sports_type) > 0) {
+                    while ($row_find_sports_type = mysqli_fetch_assoc($result_find_sports_type)) {
+                        echo "<li onclick=\"toggleMenu('".$row_find_sports_type['sport_type']."')\">".$row_find_sports_type['sport_type']."</li>
+                            <ul id=\"".$row_find_sports_type['sport_type']."\" class=\"table-content\">";
+                            echo "<div id=\"table_".$row_find_sports_type['sport_type']."\"></div>";
+                            echo "<script>";
+                            echo "const Datatable_".$row_find_sports_type['sport_type']." = {";
+                                    //title: \"ตารางที่ 1: สินค้า\",";
+                            echo "headers: [\"รายการ ⇕\", \"ประเภท ⇕\", \"สี ⇕\", \"คำนำหน้า ⇕\", \"ชื่อ ⇕\", \"สกุล ⇕\", \"ชั้น ⇕\", \"ห้อง ⇕\"],";
+                            echo "rows: [";
+                            $sql_find_sports = "SELECT `sport_id`, `sport_name`, `sport_gender` FROM `sports` WHERE `sport_type` = '".$row_find_sports_type['sport_type']."'";
+                            $result_find_sports = mysqli_query($conn, $sql_find_sports);
+                            if (mysqli_num_rows($result_find_sports) > 0) {
+                                while ($row_find_sports = mysqli_fetch_assoc($result_find_sports)) {
+                                    $sql_find_players = "SELECT * FROM `players`  WHERE `player_sport_id` = '".$row_find_sports['sport_id']."' ORDER BY `players`.`player_sport_id` ASC";
+                                    $result_find_players = mysqli_query($conn, $sql_find_players);
+                                    if (mysqli_num_rows($result_find_players) > 0) {
+                                        while ($row_find_players = mysqli_fetch_assoc($result_find_players)) {
+                                            $sql_view_admin_sport = "SELECT * FROM `colors` WHERE `color_id_user` = ".$row_find_players['player_color_id'];
+                                            $result_view_admin_sport = mysqli_query($conn, $sql_view_admin_sport);
+                                            if (mysqli_num_rows($result_view_admin_sport) == 1) {
+                                                $row_view_admin_sport = mysqli_fetch_assoc($result_view_admin_sport);
+                                                }
+                                            
+                                            echo "[\"".$row_find_sports['sport_name']."\", \"".$row_find_sports['sport_gender']."\", \"".$row_view_admin_sport['color_color']."\",\"".$row_find_players['player_title']."\", \"".$row_find_players['player_name']."\", \"".$row_find_players['player_sirname']."\", \"".$row_find_players['player_class']."\", \"".$row_find_players['player_room']."\"],";
                                         }
+                                    }
+                                }
                             }
-
-                        }
-                    }
-
-
-                    echo "</table>
-                        </ul>
-
-                    ";
+                            echo "]};";
+                            echo "createSortableTable(\"table_".$row_find_sports_type['sport_type']."\", Datatable_".$row_find_sports_type['sport_type'].");
+                            </script>";
+                            echo "</ul>";
+                           
+                        } echo "</ul></div>";
                 }
-            }
-         ?>
-        <!--<li onclick="toggleMenu('hideball')">ม.1 บอลมหาชัย(บอลหลบ)</li>
-        <ul id="hideball" class="table-content">
-            <table >
-                <tr>
-                    <th>ชื่อ</th>
-                    <th>สกุล</th>
-                    <th>ชั้น</th>
-                    <th>ห้อง</th>
-                    <th>ประเภท</th>
-                    <th>สี</th>
-                </tr>
-                <tr>
-                    <td>ไก่</td>
-                    <td>นามเงิน</td>
-                    <td>6</td>
-                    <td>11</td>
-                    <td>ชาย</td>
-                    <td>เหลือง</td>
-                </tr>
-            </table>
-        </ul>
 
-        <li onclick="toggleMenu('arobic')">ม.2 แอโรบิก</li>
-        <ul id="arobic" class="table-content">
-            <table>
-                <tr>
-                    <th>ชื่อ</th>
-                    <th>สกุล</th>
-                    <th>ชั้น</th>
-                    <th>ห้อง</th>
-                    <th>ประเภท</th>
-                    <th>สี</th>
-                </tr>
-                <tr>
-                    <td>ไก่</td>
-                    <td>นามเงิน</td>
-                    <td>6</td>
-                    <td>11</td>
-                    <td>ชาย</td>
-                    <td>เหลือง</td>
-                </tr>
-            </table>
-        </ul>
+     ?>
 
-       <li onclick="toggleMenu('boxing')">ม.3 Boxing Kids</li>
-        <ul id="boxing" class="table-content">
-            <table>
-                <tr>
-                    <th>ชื่อ</th>
-                    <th>สกุล</th>
-                    <th>ชั้น</th>
-                    <th>ห้อง</th>
-                    <th>ประเภท</th>
-                    <th>สี</th>
-                </tr>
-                <tr>
-                    <td>ไก่</td>
-                    <td>นามเงิน</td>
-                    <td>6</td>
-                    <td>11</td>
-                    <td>ชาย</td>
-                    <td>เหลือง</td>
-                </tr>
-            </table>
-        </ul>
-
-        <li onclick="toggleMenu('bicycle')">ม.4 จักรยานคนจน</li>
-        <ul id="bicycle" class="table-content">
-            <table>
-                <tr>
-                    <th>ชื่อ</th>
-                    <th>สกุล</th>
-                    <th>ชั้น</th>
-                    <th>ห้อง</th>
-                    <th>ประเภท</th>
-                    <th>สี</th>
-                </tr>
-                <tr>
-                    <td>ไก่</td>
-                    <td>นามเงิน</td>
-                    <td>6</td>
-                    <td>11</td>
-                    <td>ชาย</td>
-                    <td>เหลือง</td>
-                </tr>
-            </table>
-        </ul>
--->
-
-    
-    </ul>
-</div>
 
 <script>
    function toggleMenu(id) {
@@ -271,6 +189,9 @@
 
     
 </script>
+
+
+
 
 </body>
 </html>

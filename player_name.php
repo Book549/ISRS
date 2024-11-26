@@ -117,12 +117,12 @@
 <div class="menu-container">
 <div class="menu-header">
         <h2 ><a href="index.php" style="text-decoration: none; color: black;" >รายชื่อนักกีฬา</a></h2>
-        <div class="menu-filter">
+<!--         <div class="menu-filter">
             <input type="search" placeholder="  ค้นหานักกีฬา...">
-        </div>
+        </div> -->
     </div>
     <ul class="table-menu">
-
+ 
     <?php 
     $sql_find_sport_type = "SELECT `sport_type` FROM `sports` WHERE `sport_type` != 'กีฬาพื้นบ้าน' AND `sport_type` != 'กีฬาแต่ละระดับชั้น' GROUP BY `sport_type` ORDER BY `sports`.`sport_name` ASC";
                 $result_find_sports_type = mysqli_query($conn, $sql_find_sport_type);
@@ -134,7 +134,7 @@
                             echo "<script>";
                             echo "const Datatable_".$row_find_sports_type['sport_type']." = {";
                                     //title: \"ตารางที่ 1: สินค้า\",";
-                            echo "headers: [\"รายการ ⇕\", \"ประเภท ⇕\", \"สี ⇕\", \"ชื่อ ⇕\", \"สกุล ⇕\", \"ชั้น ⇕\", \"ห้อง ⇕\"],";
+                            echo "headers: [\"รายการ ⇕\", \"ประเภท ⇕\", \"สี ⇕\", \"คำนำหน้า ⇕\", \"ชื่อ ⇕\", \"สกุล ⇕\", \"ชั้น ⇕\", \"ห้อง ⇕\"],";
                             echo "rows: [";
                             $sql_find_sports = "SELECT `sport_id`, `sport_name`, `sport_gender` FROM `sports` WHERE `sport_type` = '".$row_find_sports_type['sport_type']."'";
                             $result_find_sports = mysqli_query($conn, $sql_find_sports);
@@ -150,7 +150,7 @@
                                                 $row_view_admin_sport = mysqli_fetch_assoc($result_view_admin_sport);
                                                 }
                                             
-                                            echo "[\"".$row_find_sports['sport_name']."\", \"".$row_find_sports['sport_gender']."\", \"".$row_view_admin_sport['color_color']."\", \"".$row_find_players['player_name']."\", \"".$row_find_players['player_sirname']."\", \"".$row_find_players['player_class']."\", \"".$row_find_players['player_room']."\"],";
+                                            echo "[\"".$row_find_sports['sport_name']."\", \"".$row_find_sports['sport_gender']."\", \"".$row_view_admin_sport['color_color']."\",\"".$row_find_players['player_title']."\", \"".$row_find_players['player_name']."\", \"".$row_find_players['player_sirname']."\", \"".$row_find_players['player_class']."\", \"".$row_find_players['player_room']."\"],";
                                         }
                                     }
                                 }
