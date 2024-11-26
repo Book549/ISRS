@@ -99,14 +99,14 @@
 <div class="report-container">
     <div class="menu-title"><a href="index.php" style="text-decoration: none; color: black;" > ผลการแข่งขัน</a></div>
     <ul class="table-menu">
-        <li ><a href="report_football.php" style="color: white;">ฟุตบอล</a></li>
+<!--         <li ><a href="report_football.php" style="color: white;">ฟุตบอล</a></li>
         <li ><a href="report_footsul.php" style="color: white;">ฟุตซอล</a></li>
         <li ><a href="report_handball.php" style="color: white;">แฮนด์บอล</a></li>
         <li ><a href="report_volleyball.php" style="color: white;">วอลเลย์บอล</a></li>
         <li ><a href="report_petong.php" style="color: white;">เปตอง</a></li>
         <li ><a href="report_basketball.php" style="color: white;">บาสเก็ตบอล</a></li>
         <li ><a href="report_badminton.php" style="color: white;">แบดมินตัน</a></li>
-        <li ><a href="report_pingpong.php" style="color: white;">เทเบิลเทนนิส</a></li>
+        <li ><a href="report_pingpong.php" style="color: white;">เทเบิลเทนนิส</a></li> -->
         <li onclick="toggleMenu('rope')">กีฬาพื้นบ้าน</li>
         <ul id="rope" class="table-content">
             <table>
@@ -119,34 +119,25 @@
                 </tr>
                 <tr>
                     <td>🥇1</t
-                    d><td>ม.ต้น ชาย</td>
-                    <td>เหลือง</td>
-                    <td>62</td>
+                    d><td> </td>
+                    <td> </td>
+                    <td> </td>
                 </tr>
                 <tr>
                     <td>🥈2</td>
-                    <td>แดง</td>
-                    <td>60</td>
+                    <td> </td>
+                    <td> </td>
                 </tr>
                 <tr>
                     <td>🥉3</td>
-                    <td>ฟ้า</td>
-                    <td>58</td>
+                    <td> </td>
+                    <td> </td>
                 </tr>
-                <tr>
-                    <td>4</td>
-                    <td>เขียว</td>
-                    <td>57</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>ชมพู</td>
-                    <td>50</td>
-                </tr>
+
             </table>
         </ul>
-        <li ><a href="report_combine.php" style="color: white;">กีฬาแต่ละระดับชั้น</a></li>
-        <li ><a href="report_run.php" style="color: white;">กรีฑา</a></li>
+<!--         <li ><a href="report_combine.php" style="color: white;">กีฬาแต่ละระดับชั้น</a></li>
+        <li ><a href="report_run.php" style="color: white;">กรีฑา</a></li> -->
 
 
 

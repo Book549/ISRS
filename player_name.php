@@ -124,44 +124,41 @@
     <ul class="table-menu">
  
     <?php 
-    $sql_find_sport_type = "SELECT `sport_type` FROM `sports` WHERE `sport_type` != 'กีฬาพื้นบ้าน' AND `sport_type` != 'กีฬาแต่ละระดับชั้น' GROUP BY `sport_type` ORDER BY `sports`.`sport_name` ASC";
-                $result_find_sports_type = mysqli_query($conn, $sql_find_sport_type);
-                if (mysqli_num_rows($result_find_sports_type) > 0) {
-                    while ($row_find_sports_type = mysqli_fetch_assoc($result_find_sports_type)) {
-                        echo "<li onclick=\"toggleMenu('".$row_find_sports_type['sport_type']."')\">".$row_find_sports_type['sport_type']."</li>
-                            <ul id=\"".$row_find_sports_type['sport_type']."\" class=\"table-content\">";
-                            echo "<div id=\"table_".$row_find_sports_type['sport_type']."\"></div>";
-                            echo "<script>";
-                            echo "const Datatable_".$row_find_sports_type['sport_type']." = {";
-                                    //title: \"ตารางที่ 1: สินค้า\",";
-                            echo "headers: [\"รายการ ⇕\", \"ประเภท ⇕\", \"สี ⇕\", \"คำนำหน้า ⇕\", \"ชื่อ ⇕\", \"สกุล ⇕\", \"ชั้น ⇕\", \"ห้อง ⇕\"],";
-                            echo "rows: [";
-                            $sql_find_sports = "SELECT `sport_id`, `sport_name`, `sport_gender` FROM `sports` WHERE `sport_type` = '".$row_find_sports_type['sport_type']."'";
-                            $result_find_sports = mysqli_query($conn, $sql_find_sports);
-                            if (mysqli_num_rows($result_find_sports) > 0) {
-                                while ($row_find_sports = mysqli_fetch_assoc($result_find_sports)) {
-                                    $sql_find_players = "SELECT * FROM `players`  WHERE `player_sport_id` = '".$row_find_sports['sport_id']."' ORDER BY `players`.`player_sport_id` ASC";
-                                    $result_find_players = mysqli_query($conn, $sql_find_players);
-                                    if (mysqli_num_rows($result_find_players) > 0) {
-                                        while ($row_find_players = mysqli_fetch_assoc($result_find_players)) {
-                                            $sql_view_admin_sport = "SELECT * FROM `colors` WHERE `color_id_user` = ".$row_find_players['player_color_id'];
-                                            $result_view_admin_sport = mysqli_query($conn, $sql_view_admin_sport);
-                                            if (mysqli_num_rows($result_view_admin_sport) == 1) {
-                                                $row_view_admin_sport = mysqli_fetch_assoc($result_view_admin_sport);
-                                                }
-                                            
-                                            echo "[\"".$row_find_sports['sport_name']."\", \"".$row_find_sports['sport_gender']."\", \"".$row_view_admin_sport['color_color']."\",\"".$row_find_players['player_title']."\", \"".$row_find_players['player_name']."\", \"".$row_find_players['player_sirname']."\", \"".$row_find_players['player_class']."\", \"".$row_find_players['player_room']."\"],";
-                                        }
-                                    }
+        $sql_find_sport_type = "SELECT `sport_type` FROM `sports` WHERE `sport_type` != 'กีฬาพื้นบ้าน' AND `sport_type` != 'กีฬาแต่ละระดับชั้น' GROUP BY `sport_type` ORDER BY `sports`.`sport_name` ASC";
+        $result_find_sports_type = mysqli_query($conn, $sql_find_sport_type);
+        if (mysqli_num_rows($result_find_sports_type) > 0) {
+            while ($row_find_sports_type = mysqli_fetch_assoc($result_find_sports_type)) {
+                echo "<li onclick=\"toggleMenu('".$row_find_sports_type['sport_type']."')\">".$row_find_sports_type['sport_type']."</li>
+                    <ul id=\"".$row_find_sports_type['sport_type']."\" class=\"table-content\">";
+                    echo "<div id=\"table_".$row_find_sports_type['sport_type']."\"></div>";
+                    echo "<script>";
+                    echo "const Datatable_".$row_find_sports_type['sport_type']." = {";
+                            //title: \"ตารางที่ 1: สินค้า\",";
+                    echo "headers: [\"รายการ ⇕\", \"ประเภท ⇕\", \"สี ⇕\", \"คำนำหน้า ⇕\", \"ชื่อ ⇕\", \"สกุล ⇕\", \"ชั้น ⇕\", \"ห้อง ⇕\"],";
+                    echo "rows: [";
+
+                    //SELECT `time_in`, `id_player`, `player_id`, `player_title`, `player_name`, `player_sirname`, `player_class`, `player_room`, `player_color_id`, `player_sport_id` FROM `players` WHERE 1
+                    $sql_find_sports = "SELECT `sport_id`, `sport_name`, `sport_gender` FROM `sports` WHERE `sport_type` = '".$row_find_sports_type['sport_type']."'";
+                    $result_find_sports = mysqli_query($conn, $sql_find_sports);
+                    if (mysqli_num_rows($result_find_sports) > 0) {
+                        while ($row_find_sports = mysqli_fetch_assoc($result_find_sports)) {
+                            $sql_find_players = "SELECT * FROM `players`  WHERE `player_sport_id` = '".$row_find_sports['sport_id']."' ORDER BY `players`.`player_color_id` ASC";
+                            $result_find_players = mysqli_query($conn, $sql_find_players);
+                            if (mysqli_num_rows($result_find_players) > 0) {
+                                while ($row_find_players = mysqli_fetch_assoc($result_find_players)) {
+
+                                echo "[\"".$row_find_sports['sport_name']."\", \"".$row_find_sports['sport_gender']."\", \"".color_color($row_find_players['player_color_id'], $conn)."\",\"".$row_find_players['player_title']."\", \"".$row_find_players['player_name']."\", \"".$row_find_players['player_sirname']."\", \"".$row_find_players['player_class']."\", \"".$row_find_players['player_room']."\"],";
                                 }
                             }
-                            echo "]};";
-                            echo "createSortableTable(\"table_".$row_find_sports_type['sport_type']."\", Datatable_".$row_find_sports_type['sport_type'].");
-                            </script>";
-                            echo "</ul>";
-                           
-                        } echo "<li><a href=\"player_name2.php\" style=\"color: white; text-decoration: none;'\">กีฬาแต่ละระดับชั้น</a></li></ul></div>";
-                }
+                        }
+                    }
+                    echo "]};";
+                    echo "createSortableTable(\"table_".$row_find_sports_type['sport_type']."\", Datatable_".$row_find_sports_type['sport_type'].");
+                    </script>";
+                    echo "</ul>";
+                   
+                } echo "<li><a href=\"player_name2.php\" style=\"color: white; text-decoration: none;'\">กีฬาแต่ละระดับชั้น</a></li></ul></div>";
+        }
 
      ?>
 
