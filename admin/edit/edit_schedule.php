@@ -42,7 +42,7 @@
 
 					if (mysqli_num_rows($result_find_colors_name) > 0) {
 					    while ($row_colors = mysqli_fetch_assoc($result_find_colors_name)) {
-					    		echo "<option value=\"" . $row_find_edit_schedule['schedule_rival_one'] . "\" selected disabled>";
+					    		echo "<option value=\"" . $row_find_edit_schedule['schedule_rival_one'] . "\" selected>";
 									echo $row_find_edit_schedule['schedule_rival_one'];
 									echo "</option>";
 					    }
@@ -61,7 +61,7 @@
 					<?php
 					for ($sequence_schedule_rival_one = 1; $sequence_schedule_rival_one <= 56; $sequence_schedule_rival_one++) {
 					    $current_value = "คู่ที่ " . $sequence_schedule_rival_one;
-					    $selected = ($current_value == $row_find_edit_schedule['schedule_rival_one']) ? "selected disabled" : "";
+					    $selected = ($current_value == $row_find_edit_schedule['schedule_rival_one']) ? "selected" : "";
 					    echo "<option value=\"$current_value\" $selected>$current_value</option>";
 					}
 					?>
@@ -82,7 +82,7 @@
 
 					if (mysqli_num_rows($result_find_colors_name) > 0) {
 					    while ($row_colors = mysqli_fetch_assoc($result_find_colors_name)) {
-					    		echo "<option value=\"" . $row_find_edit_schedule['schedule_rival_two'] . "\" selected disabled>";
+					    		echo "<option value=\"" . $row_find_edit_schedule['schedule_rival_two'] . "\" selected>";
 									echo $row_find_edit_schedule['schedule_rival_two'];
 									echo "</option>";
 					    }
@@ -101,7 +101,7 @@
 					<?php
 					for ($sequence_schedule_rival_two = 1; $sequence_schedule_rival_two <= 56; $sequence_schedule_rival_two++) {
 					    $current_value = "คู่ที่ " . $sequence_schedule_rival_two;
-					    $selected = ($current_value == $row_find_edit_schedule['schedule_rival_two']) ? "selected disabled" : "";
+					    $selected = ($current_value == $row_find_edit_schedule['schedule_rival_two']) ? "selected" : "";
 					    echo "<option value=\"$current_value\" $selected>$current_value</option>";
 					}
 					?>

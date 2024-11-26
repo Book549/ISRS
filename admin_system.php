@@ -120,7 +120,7 @@
             break;
 
           case 'results':
-            echo "202 page found.";
+            include 'admin/report.php';
             break;
             
           case 'certificate':

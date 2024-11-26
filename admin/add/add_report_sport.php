@@ -68,7 +68,7 @@
               $sql_add_reward_dup = "UPDATE `reward` SET `reward_sport_id`='$reward_sport_id',`reward_first`='$reward_color_1st',`reward_second`='$reward_color_2nd',`reward_third`='$reward_color_3rd' WHERE `reward_sport_id` = '$reward_sport_id'";
               if (mysqli_query($conn, $sql_add_reward_dup)) {
 
-                echo "<meta http-equiv='refresh' content='0;url=?page=reward' />";
+                echo "<meta http-equiv='refresh' content='0;url=?page=results' />";
               }else{
                 echo "err";
                 mysqli_error($connn);
@@ -76,7 +76,7 @@
             break;
           
           case 'No':
-            echo "<meta http-equiv='refresh' content='0;url=?page=reward&sub_page=view' />";
+            echo "<meta http-equiv='refresh' content='0;url=?page=results&sub_page=view' />";
             break;
 
           default:
@@ -104,7 +104,7 @@
         }
         #echo $posttoget."<br>";
         echo "duplicate reward do you want to replace?";
-        echo "<a href='?page=reward&sub_page=view&resuit=Yes$posttoget'>Yes</a><a href='?page=reward&sub_page=view&resuit=No'>No</a>";
+        echo "<a href='?page=results&sub_page=view&resuit=Yes$posttoget'>Yes</a><a href='?page=results&sub_page=view&resuit=No'>No</a>";
         unset($_POST);
 
         } else {
@@ -116,7 +116,7 @@
             $sql_add_reward = "INSERT INTO `reward`( `reward_sport_id`, `reward_first`, `reward_second`, `reward_third`) VALUES ('$reward_sport_id','$reward_color_1st','$reward_color_2nd','$reward_color_3rd')";
 
             if (mysqli_query($conn, $sql_add_reward)) {
-              echo "<meta http-equiv='refresh' content='0;url=?page=reward' />";
+              echo "<meta http-equiv='refresh' content='0;url=?page=results' />";
             }else{
               echo "err";
               mysqli_error($connn);
