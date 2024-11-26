@@ -7,15 +7,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>กีฬาแต่ละระดับชั้น</title>
+    <title>ผลการแข่งขันกีฬา</title>
     <style>
         body{
             font-family: "Mitr", sans-serif;
         }
         /* General styling */
-        .report-container {
+        .menu-container {
             width: 80%;
-            max-width: 800px;
+            max-width: 1200px;
             margin: auto;
             padding: 20px;
            
@@ -88,83 +88,56 @@
             background-color: #e1e1e1;
         }
 
-        td .another{
-            background-color: lightcoral;
-        }
+       
     </style>
 </head>
 <body>
 
-<div class="report-container">
-    <div class="menu-title"><a href="index.php" style="text-decoration: none; color: black;" > กีฬาแต่ละระดับชั้น</a></div>
+<div class="menu-container">
+    <div class="menu-title" style="font-weight: 650;">กีฬาแต่ละระดับชั้น</div>
     <ul class="table-menu">
-        <li onclick="toggleMenu('hideball')">ม.1 บอลมหาชัย(บอลหลบ)</li>
-        <ul id="hideball" class="table-content">
-        <table>
+        <li onclick="toggleMenu('football')">กีฬาพื้นบ้าน</li>
+        <ul id="football" class="table-content">
+            <table >
                 <tr>
-                    <th style="width: 10%;">อันดับ</th>
-                    <th style="width: 70%;">สี</th>
-                    <th>คะแนนรวม</th>
-                    
+                    <th>รายการ</th>
+                    <th>ประเภท</th>
+                    <th>🥇1</th>
+                    <th>🥈2</th>
+                    <th>🥉3</th>
                 </tr>
                 <tr>
-                    <td>1</td>
+                    <td>ไก่</td>
                     <td>นามเงิน</td>
                     <td>6</td>
+                    <td>11</td>
+                    <td>ชาย</td>
                 </tr>
             </table>
         </ul>
 
-        <li onclick="toggleMenu('arobic')">ม.2 แอโรบิก</li>
-        <ul id="arobic" class="table-content">
-             <table>
+       <li onclick="toggleMenu('handball')">กีฬาแต่ละระดับชั้น</li>
+        <ul id="handball" class="table-content">
+            <table>
                 <tr>
-                    <th style="width: 10%;">อันดับ</th>
-                    <th style="width: 70%;">สี</th>
-                    <th>คะแนนรวม</th>
-                    
+                    <th>รายการ</th>
+                    <th>ประเภท</th>
+                    <th>🥇1</th>
+                    <th>🥈2</th>
+                    <th>🥉3</th>
                 </tr>
                 <tr>
-                    <td>1</td>
+                    <td>ไก่</td>
                     <td>นามเงิน</td>
                     <td>6</td>
+                    <td>11</td>
+                    <td>ชาย</td>
                 </tr>
             </table>
         </ul>
 
-       <li onclick="toggleMenu('boxing')">ม.3 Boxing Kids</li>
-        <ul id="boxing" class="table-content">
-        <table>
-                <tr>
-                    <th style="width: 10%;">อันดับ</th>
-                    <th style="width: 70%;">สี</th>
-                    <th>คะแนนรวม</th>
-                    
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>นามเงิน</td>
-                    <td>6</td>
-                </tr>
-            </table>
-        </ul>
 
-        <li onclick="toggleMenu('bicycle')">ม.4 จักรยานคนจน</li>
-        <ul id="bicycle" class="table-content">
-        <table>
-                <tr>
-                    <th style="width: 10%;">อันดับ</th>
-                    <th style="width: 70%;">สี</th>
-                    <th>คะแนนรวม</th>
-                    
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>นามเงิน</td>
-                    <td>6</td>
-                </tr>
-            </table>
-        </ul>
+    
     </ul>
 </div>
 
