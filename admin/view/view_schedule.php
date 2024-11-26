@@ -38,7 +38,7 @@ if (isset($_GET['sport']) && $_GET['sport'] != "main") {
         $result_find_date = mysqli_query($conn, $sql_find_date);
         if (mysqli_num_rows($result_find_date) > 0){
             while ($row_date = mysqli_fetch_assoc($result_find_date)) {
-                echo "<div class=\"event-date\"><h1>".$row_date['schedule_date']."</h1></div>";
+                echo "<div class=\"event-date\"><h1>".date('d M', strtotime(htmlspecialchars($row_date['schedule_date'])))."</h1></div>";
                 
 
                 $sql_find_scheddule = "SELECT * FROM `schedule` WHERE `schedule_date` = ".date('Ymd', strtotime($row_date['schedule_date']));
@@ -48,8 +48,9 @@ if (isset($_GET['sport']) && $_GET['sport'] != "main") {
                         echo "<div class=\"schedule-list\"><div class=\"event-card\" data-sport=\"".sport_type($row_scheddule['schedule_sport_id'], $conn)."\">";
                         echo "<div class=\"event-info\">
                             <h3>" . sport_name($row_scheddule['schedule_sport_id'], $conn) . "</h3>
+                            <h3>" . $row_scheddule['schedule_rival_one'] . " VS " . $row_scheddule['schedule_rival_two'] . "</h3>
                             <p>Date: " . htmlspecialchars($row_scheddule['schedule_date']) . "</p>
-                            <p>Time: " . htmlspecialchars($row_scheddule['schedule_time']) . "</p>
+                            <p>Time: " .  substr(htmlspecialchars($row_scheddule['schedule_time']), 0, 5) . "</p>
                             <p>Venue: " . htmlspecialchars($row_scheddule['schedule_venue']) . "</p>
                         </div>
                         <div class=\"event-status\">
