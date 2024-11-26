@@ -1,3 +1,4 @@
+<?php include 'conn.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -96,12 +97,58 @@
 <div class="menu-container">
     <div class="menu-title" style="font-weight: 650;">ผลการแข่งขันกีฬา</div>
     <ul class="table-menu">
+        <?php 
+        $sql_find_sport_type = "SELECT * FROM `sports` GROUP BY `sport_type` ORDER BY `sports`.`sport_id` ASC";
+        $result_find_sports_type = mysqli_query($conn, $sql_find_sport_type);
+        if (mysqli_num_rows($result_find_sports_type) > 0) {
+            while ($row_find_sports_type = mysqli_fetch_assoc($result_find_sports_type)) {
+                echo "<li onclick=\"toggleMenu('".$row_find_sports_type['sport_type']."')\">".$row_find_sports_type['sport_type']."</li>";
+                echo "<ul id=\"".$row_find_sports_type['sport_type']."\" class=\"table-content\">";
+                echo "<table><tr>
+                        <th>รายการ</th>
+                        <th>ประเภท</th> 
+                        <th>🥇1</th>
+                        <th>🥈2</th>
+                        <th>🥉3</th>
+                    </tr>";
+                $sql_find_sports = "SELECT `sport_id`, `sport_name`, `sport_gender` FROM `sports` WHERE `sport_type` = '".$row_find_sports_type['sport_type']."'";
+                $result_find_sports = mysqli_query($conn, $sql_find_sports);
+                if (mysqli_num_rows($result_find_sports) > 0) {
+                    while ($row_find_sports = mysqli_fetch_assoc($result_find_sports)) {
+                        echo "<tr>
+                                <td>".$row_find_sports['sport_name']."</td>
+                                <td>".$row_find_sports['sport_gender']."</td>";
+
+                            $sql_find_rewards = "SELECT `reward_sport_id`, `reward_first`, `reward_second`, `reward_third` FROM `reward` WHERE `reward_sport_id` = '".$row_find_sports['sport_id']."'";
+                            $result_find_rewards = mysqli_query($conn, $sql_find_rewards);
+                            if (mysqli_num_rows($result_find_rewards) == 1) {
+                                while ($row_find_rewards = mysqli_fetch_assoc($result_find_rewards)) {
+                                    echo "<td>".color_color($row_find_rewards['reward_first'], $conn)."</td>
+                                        <td>".color_color($row_find_rewards['reward_second'], $conn)."</td>
+                                        <td>".color_color($row_find_rewards['reward_third'], $conn)."</td>";
+                                }
+                            }else{
+                                    echo "<td> N/A </td>
+                                        <td> N/A </td>
+                                        <td> N/A </td>";
+                            }
+                        echo "</tr>";
+                    }
+                }
+
+
+                echo "</table></ul>";
+            }
+        }
+        
+        ?>
+        <!-- <ul class="table-menu">
         <li onclick="toggleMenu('football')">ฟุตบอล</li>
         <ul id="football" class="table-content">
             <table >
                 <tr>
                     <th>รายการ</th>
-                    <th>ประเภท</th>
+                    <th>ประเภท</th> 
                     <th>🥇1</th>
                     <th>🥈2</th>
                     <th>🥉3</th>
@@ -115,173 +162,9 @@
                 </tr>
             </table>
         </ul>
-
-        <li onclick="toggleMenu('futsal')">ฟุตซอล</li>
-        <ul id="futsal" class="table-content">
-            <table>
-                <tr>
-                    <th>รายการ</th>
-                    <th>ประเภท</th>
-                    <th>🥇1</th>
-                    <th>🥈2</th>
-                    <th>🥉3</th>
-                </tr>
-                <tr>
-                    <td>ไก่</td>
-                    <td>นามเงิน</td>
-                    <td>6</td>
-                    <td>11</td>
-                    <td>ชาย</td>
-                </tr>
-            </table>
-        </ul>
-
-       <li onclick="toggleMenu('handball')">แฮนด์บอล</li>
-        <ul id="handball" class="table-content">
-            <table>
-                <tr>
-                    <th>รายการ</th>
-                    <th>ประเภท</th>
-                    <th>🥇1</th>
-                    <th>🥈2</th>
-                    <th>🥉3</th>
-                </tr>
-                <tr>
-                    <td>ไก่</td>
-                    <td>นามเงิน</td>
-                    <td>6</td>
-                    <td>11</td>
-                    <td>ชาย</td>
-                </tr>
-            </table>
-        </ul>
-
-        <li onclick="toggleMenu('volleyball')">วอลเลย์บอล</li>
-        <ul id="volleyball" class="table-content">
-            <table>
-                <tr>
-                    <th>รายการ</th>
-                    <th>ประเภท</th>
-                    <th>🥇1</th>
-                    <th>🥈2</th>
-                    <th>🥉3</th>
-                </tr>
-                <tr>
-                    <td>ไก่</td>
-                    <td>นามเงิน</td>
-                    <td>6</td>
-                    <td>11</td>
-                    <td>ชาย</td>
-                </tr>
-            </table>
-        </ul>
-
-        <li onclick="toggleMenu('petong')">เปตอง</li>
-        <ul id="petong" class="table-content">
-            <table>
-                <tr>
-                    <th>รายการ</th>
-                    <th>ประเภท</th>
-                    <th>🥇1</th>
-                    <th>🥈2</th>
-                    <th>🥉3</th>
-                </tr>
-                <tr>
-                    <td>ไก่</td>
-                    <td>นามเงิน</td>
-                    <td>6</td>
-                    <td>11</td>
-                    <td>ชาย</td>
-                </tr>
-            </table>
-        </ul>
-
-        <li onclick="toggleMenu('basketball')">บาสเก็ตบอล</li>
-        <ul id="basketball" class="table-content">
-            <table>
-                <tr>
-                    <th>รายการ</th>
-                    <th>ประเภท</th>
-                    <th>🥇1</th>
-                    <th>🥈2</th>
-                    <th>🥉3</th>
-                </tr>
-                <tr>
-                    <td>ไก่</td>
-                    <td>นามเงิน</td>
-                    <td>6</td>
-                    <td>11</td>
-                    <td>ชาย</td>
-                </tr>
-            </table>
-        </ul>
-
-        <li onclick="toggleMenu('badminton')">แบดมินตัน</li>
-        <ul id="badminton" class="table-content">
-            <table>
-                <tr>
-                    <th>รายการ</th>
-                    <th>ประเภท</th>
-                    <th>🥇1</th>
-                    <th>🥈2</th>
-                    <th>🥉3</th>
-                </tr>
-                <tr>
-                    <td>ไก่</td>
-                    <td>นามเงิน</td>
-                    <td>6</td>
-                    <td>11</td>
-                    <td>ชาย</td>
-                </tr>
-            </table>
-        </ul>
-
-        <li onclick="toggleMenu('table_tennis')">เทเบิลเทนนิส</li>
-        <ul id="table_tennis" class="table-content">
-            <table>
-                <tr>
-                    <th>รายการ</th>
-                    <th>ประเภท</th>
-                    <th>🥇1</th>
-                    <th>🥈2</th>
-                    <th>🥉3</th>
-                </tr>
-                <tr>
-                    <td>ไก่</td>
-                    <td>นามเงิน</td>
-                    <td>6</td>
-                    <td>11</td>
-                    <td>ชาย</td>
-                </tr>
-            </table>
-        </ul>
-
-        <li ><a href="report_combine.php" style="color: white;">กีฬาแต่ละระดับชั้น</a></li>
-
-
-        <li onclick="toggleMenu('running')">กรีฑา</li>
-        <ul id="running" class="table-content">
-            <table>
-                <tr>
-                    <th>รายการ</th>
-                    <th>ประเภท</th>
-                    <th>🥇1</th>
-                    <th>🥈2</th>
-                    <th>🥉3</th>
-                </tr>
-                <tr>
-                    <td>ไก่</td>
-                    <td>นามเงิน</td>
-                    <td>6</td>
-                    <td>11</td>
-                    <td>ชาย</td>
-                </tr>
-            </table>
-        </ul>
-
     
     </ul>
-</div>
+</div> -->
 
 <script>
    function toggleMenu(id) {
