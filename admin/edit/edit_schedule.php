@@ -42,6 +42,7 @@
 		<option value="สนามบาสเก็ตบอล" <?php if ($row_find_edit_schedule['schedule_venue'] == "สนามบาสเก็ตบอล") {echo "selected";} ?>>สนามบาสเก็ตบอล</option>
 		<option value="สนามเปตอง" <?php if ($row_find_edit_schedule['schedule_venue'] == "สนามเปตอง") {echo "selected";} ?>>สนามเปตอง</option>
 		<option value="สนามฟุตบอล" <?php if ($row_find_edit_schedule['schedule_venue'] == "สนามฟุตบอล") {echo "selected";} ?>>สนามฟุตบอล</option>
+		<option value="สนามฟุตซอล" <?php if ($row_find_edit_schedule['schedule_venue'] == "สนามฟุตซอล") {echo "selected";} ?>>สนามฟุตซอล</option>
 		<option value="สนามเทเบิลเทนนิส" <?php if ($row_find_edit_schedule['schedule_venue'] == "สนามเทเบิลเทนนิส") {echo "selected";} ?>>สนามเทเบิลเทนนิส</option>
 		<option value="สนามแบดมินตัน" <?php if ($row_find_edit_schedule['schedule_venue'] == "สนามแบดมินตัน") {echo "selected";} ?>>สนามแบดมินตัน</option>
 		<option value="สนามแฮนด์บอล" <?php if ($row_find_edit_schedule['schedule_venue'] == "สนามแฮนด์บอล") {echo "selected";} ?>>สนามแฮนด์บอล</option>

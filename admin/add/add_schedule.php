@@ -24,6 +24,7 @@
 		<option value="สนามบาสเก็ตบอล">สนามบาสเก็ตบอล</option>
 		<option value="สนามเปตอง">สนามเปตอง</option>
 		<option value="สนามฟุตบอล">สนามฟุตบอล</option>
+		<option value="สนามฟุตซอล">สนามฟุตซอล</option>
 		<option value="สนามเทเบิลเทนนิส">สนามเทเบิลเทนนิส</option>
 		<option value="สนามแบดมินตัน">สนามแบดมินตัน</option>
 		<option value="สนามแฮนด์บอล">สนามแฮนด์บอล</option>
