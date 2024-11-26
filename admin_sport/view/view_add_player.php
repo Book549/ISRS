@@ -2,6 +2,17 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  </head>
 <body>
+		<form method="post">
+		<input type="search" name="search">
+		<input type="submit" name="send">
+	</form>
+	<?php 
+	if (isset($_POST['send'])) {
+		$search = " AND `player_id` LIKE '%".$_POST['search']."%' OR `player_name` LIKE '%".$_POST['search']."%' OR `player_sirname` LIKE '%".$_POST['search']."%'";
+	}else{
+	 	$search = "";
+	}
+	?>
 	<center>
 		<div class="table_container">
 	<table class="table_all">
@@ -18,7 +29,7 @@
 			<th>ชื่อกีฬา</th>
 		</tr>
 		<?php
-			$sql_find_players = "SELECT * FROM `players` WHERE `player_color_id` = ".$_SESSION['user_id'];
+			$sql_find_players = "SELECT * FROM `players` WHERE `player_color_id` = ".$_SESSION['user_id'] . $search;
 			$result_find_players = mysqli_query($conn, $sql_find_players);
 			if (mysqli_num_rows($result_find_players) > 0) {
 				while ($row_find_players = mysqli_fetch_assoc($result_find_players)) {
