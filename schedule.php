@@ -62,6 +62,7 @@ if (isset($_GET['sport']) && $_GET['sport'] != "main") {
                         echo "<div class=\"schedule-list\"><div class=\"event-card\" data-sport=\"".sport_type($row_scheddule['schedule_sport_id'], $conn)."\">";
                         echo "<div class=\"event-info\">
                             <h3>" . sport_name($row_scheddule['schedule_sport_id'], $conn) . "</h3>
+                            <h3>" . $row_scheddule['schedule_rival_one'] . " VS " . $row_scheddule['schedule_rival_two'] . "</h3>
                             <p>Date: " . htmlspecialchars($row_scheddule['schedule_date']) . "</p>
                             <p>Time: " .  substr(htmlspecialchars($row_scheddule['schedule_time']), 0, 5) . "</p>
                             <p>Venue: " . htmlspecialchars($row_scheddule['schedule_venue']) . "</p>
