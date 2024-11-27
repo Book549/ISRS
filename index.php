@@ -1,4 +1,6 @@
-<?php include 'conn.php'; ?>
+<?php include 'conn.php'; 
+$sum_reward = 0;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -162,13 +164,15 @@
                 $rank_gold = mysqli_num_rows(mysqli_query($conn,"SELECT `reward_id` FROM `reward` WHERE `reward_first` = '".$row_view_color['color_id_user']."'"));
                 $rank_silver = mysqli_num_rows(mysqli_query($conn,"SELECT `reward_id` FROM `reward` WHERE `reward_second` = '".$row_view_color['color_id_user']."'"));
                 $rank_bronze = mysqli_num_rows(mysqli_query($conn,"SELECT `reward_id` FROM `reward` WHERE `reward_third` = '".$row_view_color['color_id_user']."'"));
-                $sum_reward = $rank_gold + $rank_silver + $rank_bronze;
+                $rank_bronze_one = mysqli_num_rows(mysqli_query($conn,"SELECT `reward_id` FROM `reward` WHERE `reward_third_one` = '".$row_view_color['color_id_user']."'"));
+                $rank_bronze_two = mysqli_num_rows(mysqli_query($conn,"SELECT `reward_id` FROM `reward` WHERE `reward_third_two` = '".$row_view_color['color_id_user']."'"));
+                $sum_reward = $rank_gold + $rank_silver + $rank_bronze + $rank_bronze_one + $rank_bronze_two;
                 echo "<tr>
                     
                     <td>".$row_view_color['color_color']."</td>
                     <td>".$rank_gold."</td>
                     <td>".$rank_silver."</td>
-                    <td>".$rank_bronze."</td>
+                    <td>".$rank_bronze + $rank_bronze_one + $rank_bronze_two."</td>
                     <td>".$sum_reward."</td>
 
                   </tr>";

@@ -4,6 +4,7 @@
 	<li><a href="?page=admin_system&sub_page=view" class="btn_viewadd">ตรวจสอบ</a></li>
 	<li><a href="?page=admin_system&sub_page=add" class="btn_viewadd">เพิ่ม</a></li>
 </ul>
+
 <?php 
 switch ($_GET['sub_page']) {
 	case 'view':

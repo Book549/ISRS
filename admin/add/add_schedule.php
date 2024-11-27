@@ -70,14 +70,14 @@
         <option value="กองเชียร์สีชมพู">กองเชียร์สีชมพู</option>
 	</select>
 	<br>
-	<!---<label for="schedule_status">สถานะ :</label>
+	<label for="schedule_status">สถานะ :</label>
     <select class="select_box" name="schedule_status" id="schedule_status" required>
 		<option value="" disabled selected>เลือกสถานะแข่งขัน</option>
         <option value="ยังไม่แข่งขัน" style="color: darkblue;">ยังไม่แข่งขัน</option>
 		<option value="กำลังแข่งขัน" style="color: green;">กำลังแข่งขัน</option>
 		<option value="การแข่งขันจบแล้ว" style="color: darkred;">การแข่งขันจบแล้ว</option>
 	</select>
-	<br>	--->
+	<br>	
 
 
     <center>

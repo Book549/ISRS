@@ -85,96 +85,93 @@
            ?>
         </select>
 
-      
+              <br>
+
+        <a href="admin_system.php?page=results&sub_page=edit&switch=third_place&reward_id=<?php echo $reward_id; ?>"><p>กดสลับถ้าหาก อันดับ3ร่วม</p></a>
+        <br>
 		<input type="submit" name="add_reward" class="btn">
 	</form>
 	</div>
 </center>
-	<?php 
-      if (isset($_GET['resuit'])) {
-        switch ($_GET['resuit']) {
-          case 'Yes':
-              $reward_sport_id = $_GET['reward_sport_id'];
-              $reward_color_1st = $_GET['reward_color_1st'];
-              $reward_color_2nd = $_GET['reward_color_2nd'];
-              $reward_color_3rd = $_GET['reward_color_3rd'];
-              $sql_add_reward_dup = "UPDATE `reward` SET `reward_sport_id`='$reward_sport_id',`reward_first`='$reward_color_1st',`reward_second`='$reward_color_2nd',`reward_third`='$reward_color_3rd' WHERE `reward_sport_id` = '$reward_sport_id'";
-              if (mysqli_query($conn, $sql_add_reward_dup)) {
+<?php
+if (isset($_GET['resuit'])) {
+    switch ($_GET['resuit']) {
+        case 'Yes':
+            $reward_sport_id = mysqli_real_escape_string($conn, $_GET['reward_sport_id']);
+            $reward_color_1st = mysqli_real_escape_string($conn, $_GET['reward_color_1st']);
+            $reward_color_2nd = mysqli_real_escape_string($conn, $_GET['reward_color_2nd']);
+            $reward_color_3rd = mysqli_real_escape_string($conn, $_GET['reward_color_3rd']);
 
-                echo "<meta http-equiv='refresh' content='0;url=?page=results' />";
-              }else{
-                echo "err";
-                mysqli_error($connn);
-              }
-            break;
-          
-          case 'No':
-            echo "<meta http-equiv='refresh' content='0;url=?page=results&sub_page=view' />";
+            $sql_add_reward_dup = "UPDATE `reward` SET `reward_sport_id`='$reward_sport_id', `reward_first`='$reward_color_1st', `reward_second`='$reward_color_2nd', `reward_third`='$reward_color_3rd', `reward_third_one`='0', `reward_third_two`='0' WHERE `reward_sport_id` = '$reward_sport_id'";
+
+            if (mysqli_query($conn, $sql_add_reward_dup)) {
+                echo "<meta http-equiv='refresh' content='0;url=?page=results&sub_page=view' />";
+                exit();
+            } else {
+                echo "Error: " . mysqli_error($conn);
+            }
             break;
 
-          default:
-            echo "err bad url";
+        case 'No':
+            header("Location: ?page=results&sub_page=view");
+            exit();
+
+        default:
+            echo "Error: Bad URL";
             break;
-        }
-      }
+    }
+}
 
-      if (isset($_POST['add_reward'])) {
+if (isset($_POST['add_reward'])) {
+    $reward_sport_id = mysqli_real_escape_string($conn, $_POST['reward_sport_id']);
+    $inputs = [$_POST['reward_color_1st'], $_POST['reward_color_2nd'], $_POST['reward_color_3rd']];
 
-        $reward_sport_id = $_POST['reward_sport_id'];
-        $inputs = [$_POST['reward_color_1st'], $_POST['reward_color_2nd'], $_POST['reward_color_3rd']];
-      // Check if all inputs are unique
-      if (count(array_unique($inputs)) < 3) {
-          echo "Error: The three inputs must be different!";
-      } else {
-
+    // Check if all inputs are unique
+    if (count(array_unique($inputs)) < 3) {
+        echo "Error: The three inputs must be different!";
+    } else {
         $sql_check_duplicate = "SELECT * FROM `reward` WHERE `reward_sport_id` = '$reward_sport_id'";
         $result_check = mysqli_query($conn, $sql_check_duplicate);
 
         if (mysqli_num_rows($result_check) > 0) {
-          $row_check_reward = mysqli_fetch_assoc($result_check);
-          if ($row_view_reward['reward_id'] != $row_check_reward['reward_id']) {
-            echo "This reward combination already exists!";
+            $row_check_reward = mysqli_fetch_assoc($result_check);
+            if ($row_view_reward['reward_id'] != $row_check_reward['reward_id']) {
+                echo "This reward combination already exists!";
+                $posttoget = "";
+                foreach ($_POST as $key => $value) {
+                    $posttoget .= "&$key=" . urlencode($value);
+                }
+                echo "Duplicate reward. Do you want to replace?";
+                echo "<a href='?page=results&sub_page=view&resuit=Yes$posttoget'>Yes</a><a href='?page=results&sub_page=view&resuit=No'>No</a>";
+                unset($_POST);
+            } else {
+                $reward_color_1st = $inputs[0];
+                $reward_color_2nd = $inputs[1];
+                $reward_color_3rd = $inputs[2];
 
-            $posttoget = "";
-            foreach ($_POST as $key => $value) {
-              $posttoget = $posttoget."&$key=$value";
+                $sql_update_reward = "UPDATE `reward` SET `reward_sport_id`='$reward_sport_id', `reward_first`='$reward_color_1st', `reward_second`='$reward_color_2nd', `reward_third`='$reward_color_3rd', `reward_third_one`='0', `reward_third_two`='0' WHERE `reward_sport_id` = '$reward_sport_id'";
+
+                if (mysqli_query($conn, $sql_update_reward)) {
+                    echo "<meta http-equiv='refresh' content='0;url=?page=results&sub_page=view' />";
+                    exit();
+                } else {
+                    echo "Error: " . mysqli_error($conn);
+                }
             }
-            #echo $posttoget."<br>";
-            echo "duplicate reward do you want to replace?";
-            echo "<a href='?page=results&sub_page=view&resuit=Yes$posttoget'>Yes</a><a href='?page=results&sub_page=view&resuit=No'>No</a>";
-            unset($_POST);
-          }else{
-            $reward_color_1st = $inputs[0];
-            $reward_color_2nd = $inputs[1];
-            $reward_color_3rd = $inputs[2];
-
-            $sql_update_reward = "UPDATE `reward` SET `reward_sport_id`='$reward_sport_id',`reward_first`='$reward_color_1st',`reward_second`='$reward_color_2nd',`reward_third`='$reward_color_3rd' WHERE `reward_id` = '$reward_id'";
-
-            if (mysqli_query($conn, $sql_update_reward)) {
-              echo "<meta http-equiv='refresh' content='0;url=?page=results' />";
-            }else{
-              echo "err";
-              mysqli_error($connn);
-            }
-          }
-          
-
         } else {
-            
             $reward_color_1st = $inputs[0];
             $reward_color_2nd = $inputs[1];
             $reward_color_3rd = $inputs[2];
 
-            $sql_update_reward = "UPDATE `reward` SET `reward_sport_id`='$reward_sport_id',`reward_first`='$reward_color_1st',`reward_second`='$reward_color_2nd',`reward_third`='$reward_color_3rd' WHERE `reward_id` = '$reward_id'";
+            $sql_update_reward = "UPDATE `reward` SET `reward_sport_id`='$reward_sport_id', `reward_first`='$reward_color_1st', `reward_second`='$reward_color_2nd', `reward_third`='$reward_color_3rd', `reward_third_one`='0', `reward_third_two`='0' WHERE `reward_sport_id` = '$reward_sport_id'";
 
             if (mysqli_query($conn, $sql_update_reward)) {
-              echo "<meta http-equiv='refresh' content='0;url=?page=results' />";
-            }else{
-              echo "err";
-              mysqli_error($connn);
+                echo "<meta http-equiv='refresh' content='0;url=?page=results&sub_page=view' />";
+                exit();
+            } else {
+                echo "Error: " . mysqli_error($conn);
             }
-          }
         }
     }
-    
-   ?>
+}
+?>

@@ -119,19 +119,38 @@
                                 <td>".$row_find_sports['sport_name']."</td>
                                 <td>".$row_find_sports['sport_gender']."</td>";
 
-                            $sql_find_rewards = "SELECT `reward_sport_id`, `reward_first`, `reward_second`, `reward_third` FROM `reward` WHERE `reward_sport_id` = '".$row_find_sports['sport_id']."'";
+                            $sql_find_rewards = "SELECT * FROM `reward` WHERE `reward_sport_id` = '".$row_find_sports['sport_id']."'";
                             $result_find_rewards = mysqli_query($conn, $sql_find_rewards);
-                            if (mysqli_num_rows($result_find_rewards) == 1) {
+
+                            if (mysqli_num_rows($result_find_rewards) > 0) {
                                 while ($row_find_rewards = mysqli_fetch_assoc($result_find_rewards)) {
-                                    echo "<td>".color_color($row_find_rewards['reward_first'], $conn)."</td>
-                                        <td>".color_color($row_find_rewards['reward_second'], $conn)."</td>
-                                        <td>".color_color($row_find_rewards['reward_third'], $conn)."</td>";
-                                }
+                                    if ($row_find_rewards['reward_third_one'] != 0 || $row_find_rewards['reward_third_two'] != 0) {
+                                        echo "
+
+                                            <td> - </td>
+                                            <td> - </td>
+                                            <td>" . color_color($row_find_rewards['reward_third'], $conn) . ",
+                                                " . color_color($row_find_rewards['reward_third_one'], $conn) . ",
+                                                " . color_color($row_find_rewards['reward_third_two'], $conn) . "</td>
+                                            
+                                          </tr>";
+                                    }else{
+                                        echo "
+
+                                            <td>" . color_color($row_find_rewards['reward_first'], $conn) . "</td>
+                                            <td>" . color_color($row_find_rewards['reward_second'], $conn) . "</td>
+                                            <td>" . color_color($row_find_rewards['reward_third'], $conn) . "</td>
+                                            
+                                          </tr>";
+                                      }
+                                  }
+                                    
                             }else{
                                     echo "<td> N/A </td>
                                         <td> N/A </td>
                                         <td> N/A </td>";
-                            }
+                            
+                        }
                         echo "</tr>";
                     }
                 }

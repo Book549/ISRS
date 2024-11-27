@@ -21,8 +21,8 @@
 
         <h3>ผลการแข่งขัน:</h3>
     
-  			<label>🥇1</label>
-  			<select name="reward_color_1st" style="margin-bottom: 15px;" class="select_box">
+  			<label>🥉3</label>
+  			<select name="reward_third" style="margin-bottom: 15px;" class="select_box">
           <option value="" disabled selected>เลือกรายการสี</option>
           <?php 
             sport_list($conn);
@@ -30,8 +30,8 @@
   			</select>
         <br>
 
-        <label>🥈2</label>
-  			<select name="reward_color_2nd" style="margin-bottom: 15px;" class="select_box">
+        <label>🥉3</label>
+  			<select name="reward_third_one" style="margin-bottom: 15px;" class="select_box">
           <option value="" disabled selected>เลือกรายการสี</option>
         <?php 
             sport_list($conn);
@@ -40,15 +40,14 @@
         <br>
 
               <label>🥉3</label>
-  			<select name="reward_color_3rd" style="margin-bottom: 15px;" class="select_box">
+  			<select name="reward_third_two" style="margin-bottom: 15px;" class="select_box">
           <option value="" disabled selected>เลือกรายการสี</option>
         <?php 
             sport_list($conn);
            ?>
         </select>
         <br>
-
-        <a href="admin_system.php?page=results&sub_page=view&switch=third_place"><p>กดสลับถ้าหาก อันดับ3ร่วม</p></a>
+        <a href="admin_system.php?page=results&sub_page=view&switch=main"><p>กดสลับสู่โหมดปกติ</p></a>
         <br>
       
 		<input type="submit" name="add_reward" class="btn">
@@ -64,10 +63,10 @@
         switch ($_GET['resuit']) {
           case 'Yes':
               $reward_sport_id = $_GET['reward_sport_id'];
-              $reward_color_1st = $_GET['reward_color_1st'];
-              $reward_color_2nd = $_GET['reward_color_2nd'];
-              $reward_color_3rd = $_GET['reward_color_3rd'];
-              $sql_add_reward_dup = "UPDATE `reward` SET `reward_sport_id`='$reward_sport_id',`reward_first`='$reward_color_1st',`reward_second`='$reward_color_2nd',`reward_third`='$reward_color_3rd' WHERE `reward_sport_id` = '$reward_sport_id'";
+              $reward_third = $_GET['reward_third'];
+              $reward_third_one = $_GET['reward_third_one'];
+              $reward_third_two = $_GET['reward_third_two'];
+              $sql_add_reward_dup = "UPDATE `reward` SET `reward_sport_id`='$reward_sport_id',`reward_third`='$reward_third',`reward_third_one`='$reward_third_one',`reward_third_two`='$reward_third_two' WHERE `reward_sport_id` = '$reward_sport_id'";
               if (mysqli_query($conn, $sql_add_reward_dup)) {
 
                 echo "<meta http-equiv='refresh' content='0;url=?page=results' />";
@@ -88,7 +87,7 @@
     }
     if (isset($_POST['add_reward'])) {
       $reward_sport_id = $_POST['reward_sport_id'];
-      $inputs = [$_POST['reward_color_1st'], $_POST['reward_color_2nd'], $_POST['reward_color_3rd']];
+      $inputs = [$_POST['reward_third'], $_POST['reward_third_one'], $_POST['reward_third_two']];
       // Check if all inputs are unique
       if (count(array_unique($inputs)) < 3) {
           echo "Error: The three inputs must be different!";
@@ -111,11 +110,11 @@
 
         } else {
             
-            $reward_color_1st = $inputs[0];
-            $reward_color_2nd = $inputs[1];
-            $reward_color_3rd = $inputs[2];
+            $reward_third = $inputs[0];
+            $reward_third_one = $inputs[1];
+            $reward_third_two = $inputs[2];
 
-            $sql_add_reward = "INSERT INTO `reward`( `reward_sport_id`, `reward_first`, `reward_second`, `reward_third`) VALUES ('$reward_sport_id','$reward_color_1st','$reward_color_2nd','$reward_color_3rd')";
+            $sql_add_reward = "INSERT INTO `reward`( `reward_sport_id`, `reward_third`, `reward_third_one`, `reward_third_two`) VALUES ('$reward_sport_id','$reward_third','$reward_third_one','$reward_third_two')";
 
             if (mysqli_query($conn, $sql_add_reward)) {
               echo "<meta http-equiv='refresh' content='0;url=?page=results' />";
