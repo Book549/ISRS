@@ -21,8 +21,8 @@ if (mysqli_num_rows($result_find_rewards) > 0) {
             echo "<tr>
                 <td>" . $row_find_rewards['reward_id'] . "</td>
                 <td>" . sport_name($row_find_rewards['reward_sport_id'], $conn) . "</td>
-                <td> - </td>
-                <td> - </td>
+                <td>" . color_color($row_find_rewards['reward_first'], $conn) . "</td>
+                <td>" . color_color($row_find_rewards['reward_second'], $conn) . "</td>
                 <td>" . color_color($row_find_rewards['reward_third'], $conn) . ",
                     " . color_color($row_find_rewards['reward_third_one'], $conn) . ",
                     " . color_color($row_find_rewards['reward_third_two'], $conn) . "</td>

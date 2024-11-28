@@ -127,8 +127,8 @@
                                     if ($row_find_rewards['reward_third_one'] != 0 || $row_find_rewards['reward_third_two'] != 0) {
                                         echo "
 
-                                            <td> - </td>
-                                            <td> - </td>
+                                            <td>" . color_color($row_find_rewards['reward_first'], $conn) . "</td>
+                                            <td>" . color_color($row_find_rewards['reward_second'], $conn) . "</td>
                                             <td>" . color_color($row_find_rewards['reward_third'], $conn) . ",
                                                 " . color_color($row_find_rewards['reward_third_one'], $conn) . ",
                                                 " . color_color($row_find_rewards['reward_third_two'], $conn) . "</td>

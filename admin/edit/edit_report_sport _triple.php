@@ -42,7 +42,34 @@
   	
 
         <h3>ผลการแข่งขัน:</h3>
-    
+
+                <label>🥇1</label>
+            <select name="reward_color_1st">
+         <option value="<?php echo $row_view_reward['reward_first']; ?>" selected><?php echo color_color($row_view_reward['reward_first'], $conn); ?></option>
+        <?php 
+            $sql_find_color_color = "SELECT `color_color`, `color_id_user` FROM `colors` WHERE color_id != ".$row_view_reward['reward_first'];
+            $result_find_colors_name = mysqli_query($conn, $sql_find_color_color);
+            if (mysqli_num_rows($result_find_colors_name) > 0) {
+                while ($row_find_colors_name = mysqli_fetch_assoc($result_find_colors_name)) {
+                  echo "<option value=\"".$row_find_colors_name['color_id_user']."\">".$row_find_colors_name['color_color']."</option>";
+                }
+            }  
+           ?>
+            </select>
+
+        <label>🥈2</label>
+            <select name="reward_color_2nd">
+          <option value="<?php echo $row_view_reward['reward_second']; ?>" selected><?php echo color_color($row_view_reward['reward_second'], $conn); ?></option>
+        <?php 
+            $sql_find_color_color = "SELECT `color_color`, `color_id_user` FROM `colors`";
+            $result_find_colors_name = mysqli_query($conn, $sql_find_color_color);
+            if (mysqli_num_rows($result_find_colors_name) > 0) {
+                while ($row_find_colors_name = mysqli_fetch_assoc($result_find_colors_name)) {
+                  echo "<option value=\"".$row_find_colors_name['color_id_user']."\">".$row_find_colors_name['color_color']."</option>";
+                }
+            }  
+           ?>
+        </select>
   			<label>🥉3</label>
         <select name="reward_third">
             <option value="<?php echo $row_view_reward['reward_third']; ?>" selected>
@@ -141,13 +168,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Sanitize inputs
     $reward_id = mysqli_real_escape_string($conn, $_GET['reward_id']);
     $reward_sport_id = mysqli_real_escape_string($conn, $_POST['reward_sport_id']);
+    $reward_color_1st = mysqli_real_escape_string($conn, $_POST['reward_color_1st']);
+    $reward_color_2nd = mysqli_real_escape_string($conn, $_POST['reward_color_2nd']);
     $reward_third = mysqli_real_escape_string($conn, $_POST['reward_third']);
     $reward_third_one = mysqli_real_escape_string($conn, $_POST['reward_third_one']);
     $reward_third_two = mysqli_real_escape_string($conn, $_POST['reward_third_two']);
 
     // Check for unique inputs
-    $inputs = [$reward_third, $reward_third_one, $reward_third_two];
-    if (count(array_unique($inputs)) < 3) {
+    $inputs = [$reward_color_1st, $reward_color_2nd, $reward_third, $reward_third_one, $reward_third_two];
+    if (count(array_unique($inputs)) < 5) {
         die("Error: The three inputs must be different!");
     }
 
@@ -167,8 +196,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Update reward
     $sql_update_reward = "
         UPDATE `reward` 
-        SET `reward_first`='0',
-            `reward_second`='0',
+        SET `reward_first`='$reward_color_1st',
+            `reward_second`='$reward_color_2nd',
             `reward_sport_id` = '$reward_sport_id',
             `reward_third` = '$reward_third',
             `reward_third_one` = '$reward_third_one',
