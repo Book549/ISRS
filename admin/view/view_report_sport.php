@@ -3,9 +3,9 @@
 	<tr>
 		<th>reward_id</th>
 		<th>reward_reward_id</th>
-		<th>reward_first</th>
-		<th>reward_second</th>
-        <th>reward_third</th>   
+		<th>🥇1</th>
+		<th>🥈2</th>
+        <th>3</th>   
 		<th>edit</th>	
 		<th>del</th>	
 	</tr>

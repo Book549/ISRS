@@ -52,8 +52,8 @@ if (isset($_GET['sport']) && $_GET['sport'] != "main") {
                             <p>Date: " . htmlspecialchars($row_scheddule['schedule_date']) . "</p>
                             <p>Time: " .  substr(htmlspecialchars($row_scheddule['schedule_time']), 0, 5) . "</p>
                             <p>Venue: " . htmlspecialchars($row_scheddule['schedule_venue']) . "</p>
-                        </div>
-                        <div class=\"event-status\">
+                        </div>";
+                        /*echo <div class=\"event-status\">
                             <p>Status: ";
 
                     switch ($row_scheddule['schedule_status']) {
@@ -72,7 +72,7 @@ if (isset($_GET['sport']) && $_GET['sport'] != "main") {
                         default:
                             echo "<span>No Status</span>";
                             break;
-                    }
+                    }*/
 
                     echo "</p>
                         </div>";

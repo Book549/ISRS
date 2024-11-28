@@ -1,5 +1,17 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet"  href="element/styles_admin_sport.css">
+ <style type="text/css">
+   .switch a{
+    display: flex;
+    padding: 15px;
+    background-color: limegreen;
+    color: white;
+   gap: 20px;
+    border-radius: 30px;
+    width:60%;
+    justify-content: center;
+}
+ </style>
 <body>
 	<center>
 	<div class="add_sport_all">
@@ -47,8 +59,9 @@
            ?>
         </select>
         <br>
-
-        <a href="admin_system.php?page=results&sub_page=view&switch=third_place"><p>กดสลับถ้าหาก อันดับ3ร่วม</p></a>
+        <div  class="switch">
+        <a href="admin_system.php?page=results&sub_page=view&switch=third_place">กดสลับถ้าหาก อันดับ3ร่วม</a>
+        </div>
         <br>
       
 		<input type="submit" name="add_reward" class="btn">

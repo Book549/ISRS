@@ -21,13 +21,25 @@
 ?>
 <link rel="stylesheet"  href="element/styles_admin_sport.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">
+   .switch a{
+    display: flex;
+    padding: 15px;
+    background-color: limegreen;
+    color: white;
+   gap: 20px;
+    border-radius: 30px;
+    width:60%;
+    justify-content: center;
+}
+ </style>
 <body>
 	<center>
-	<div >
+	<div>
 	<form method="post" class="add_sport_all" >
 
   			<label>รายการกีฬา:</label>
-  			<select name="reward_sport_id">
+  			<select name="reward_sport_id" style="margin-bottom: 25px;" class="select_box">
           <option value="<?php echo $row_view_reward['reward_sport_id']; ?>" selected><?php echo sport_name($row_view_reward['reward_sport_id'], $conn); ?></option>
           <?php 
             $sql_find_sport_name = "SELECT `sport_id`, `sport_name` FROM `sports` WHERE `sport_id` != ".$row_view_reward['reward_sport_id'];
@@ -44,7 +56,7 @@
         <h3>ผลการแข่งขัน:</h3>
 
                 <label>🥇1</label>
-            <select name="reward_color_1st">
+            <select name="reward_color_1st" style="margin-bottom: 25px;" class="select_box">
          <option value="<?php echo $row_view_reward['reward_first']; ?>" selected><?php echo color_color($row_view_reward['reward_first'], $conn); ?></option>
         <?php 
             $sql_find_color_color = "SELECT `color_color`, `color_id_user` FROM `colors` WHERE color_id != ".$row_view_reward['reward_first'];
@@ -58,7 +70,7 @@
             </select>
 
         <label>🥈2</label>
-            <select name="reward_color_2nd">
+            <select name="reward_color_2nd" style="margin-bottom: 25px;" class="select_box">
           <option value="<?php echo $row_view_reward['reward_second']; ?>" selected><?php echo color_color($row_view_reward['reward_second'], $conn); ?></option>
         <?php 
             $sql_find_color_color = "SELECT `color_color`, `color_id_user` FROM `colors`";
@@ -71,7 +83,7 @@
            ?>
         </select>
   			<label>🥉3</label>
-        <select name="reward_third">
+        <select name="reward_third" style="margin-bottom: 25px;" class="select_box">
             <option value="<?php echo $row_view_reward['reward_third']; ?>" selected>
                 <?php echo color_color($row_view_reward['reward_third'], $conn); ?>
             </option>
@@ -100,7 +112,7 @@
         </select>
 
         <label>🥉3</label>
-        <select name="reward_third_one">
+        <select name="reward_third_one" style="margin-bottom: 25px;" class="select_box">
             <option value="<?php echo $row_view_reward['reward_third_one']; ?>" selected>
                 <?php echo color_color($row_view_reward['reward_third_one'], $conn); ?>
             </option>
@@ -129,7 +141,7 @@
         </select>
 
         <label>🥉3</label>
-        <select name="reward_third_two">
+        <select name="reward_third_two" style="margin-bottom: 25px;" class="select_box">
             <option value="<?php echo $row_view_reward['reward_third_two']; ?>" selected>
                 <?php echo color_color($row_view_reward['reward_third_two'], $conn); ?>
             </option>
@@ -156,7 +168,10 @@
                 }
             ?>
         </select><br>
-        <a href="admin_system.php?page=results&sub_page=edit&switch=main&reward_id=<?php echo $reward_id; ?>"><p>กดสลับสู่โหมดปกติ</p></a>
+        <div class="switch">
+            <a href="admin_system.php?page=results&sub_page=edit&switch=main&reward_id=<?php echo $reward_id; ?>">กดสลับสู่โหมดปกติ</a>
+        </div>
+        
 <br>
       
 		<input type="submit" name="add_reward" class="btn">
