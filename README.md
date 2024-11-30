@@ -41,8 +41,8 @@ To run ISRS, ensure the following:
 ```bash
 git clone https://github.com/your-username/isrs.git
 ```
-2.Set up the required database and environment variables.
-3.Start the server using one of the prerequisites listed above.
+2. Set up the required database and environment variables.
+3. Start the server using one of the prerequisites listed above.
 ### Usage (Draft)
 This section is still being worked on. Check back for more detailed instructions soon.
 
