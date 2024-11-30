@@ -1,7 +1,7 @@
-const showPassword =  document.querySelector("#showpassword");
-const passwordField= document.querySelector("#login-pass");
+const showPassword = document.querySelector("#showpassword");
+const passwordField = document.querySelector("#login-pass");
 
-showPassword.addEventListener("click", function(){
+showPassword.addEventListener("click", function() {
     this.classList.toggle("fa-eye");
     const type = passwordField.getAttribute("type") === "password" ? "text" : "password";
     passwordField.setAttribute("type", type);
@@ -39,7 +39,7 @@ function sortTable(n) {
     while (switching) {
         switching = false;
         const rows = table.rows;
-        
+
         for (let i = 1; i < (rows.length - 1); i++) {
             shouldSwitch = false;
             const x = rows[i].getElementsByTagName("TD")[n];
@@ -70,6 +70,3 @@ function sortTable(n) {
         }
     }
 }
-
-
-

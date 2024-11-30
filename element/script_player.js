@@ -76,9 +76,9 @@ function createSortableTable(targetContainerId, tableData) {
             if (!isNaN(valA) && !isNaN(valB)) {
                 return isAscending ? valA - valB : valB - valA;
             } else {
-                return isAscending
-                    ? String(valA).localeCompare(String(valB), 'th')
-                    : String(valB).localeCompare(String(valA), 'th');
+                return isAscending ?
+                    String(valA).localeCompare(String(valB), 'th') :
+                    String(valB).localeCompare(String(valA), 'th');
             }
         });
 

@@ -1,367 +1,318 @@
 @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap');
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-	text-decoration: none;
-  	list-style: none;
-    font-family: "Mitr", sans-serif;
+ *{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     text-decoration: none;
+     list-style: none;
+     font-family: "Mitr", sans-serif;
 }
-
-.add_sport_all{
-    padding: 20px 20px;
-    border: 2px solid black;
-    width: 25%;
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 20px;
+ .add_sport_all{
+     padding: 20px 20px;
+     border: 2px solid black;
+     width: 25%;
+     margin-top: 30px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     border-radius: 20px;
 }
-
-.box_sport{
-	height: 50px;
-	margin-bottom: 8px;
-	width: 100%;
-	align-content: center;
-	margin-top: 12px;
-	background-color: #e1e1e1;
-	border: 2px solid black;
-	border-radius: 50px;
-    padding: 15px;
-	
+ .box_sport{
+     height: 50px;
+     margin-bottom: 8px;
+     width: 100%;
+     align-content: center;
+     margin-top: 12px;
+     background-color: #e1e1e1;
+     border: 2px solid black;
+     border-radius: 50px;
+     padding: 15px;
 }
-
-.btn{
-	color: white;
-	font-size: 20px;
-	border-radius: 20px;
-	width: 30%;
-	border: none;
-	background-color: darkblue;
-	height: 40px;
-	transition: 0.5s ease;
-    font-family: "Mitr", sans-serif;
-    font-weight: 400;
-    display: flex;
-   text-align: center;
+ .btn{
+     color: white;
+     font-size: 20px;
+     border-radius: 20px;
+     width: 30%;
+     border: none;
+     background-color: darkblue;
+     height: 40px;
+     transition: 0.5s ease;
+     font-family: "Mitr", sans-serif;
+     font-weight: 400;
+     display: flex;
+     text-align: center;
 }
-
-.btn:hover{
-    background-color: rgb(20, 77, 173);
+ .btn:hover{
+     background-color: rgb(20, 77, 173);
 }
-
-.btn_viewadd{
-    color: white;
-	font-size: 25px;
-	border-radius: 50px;
-    max-width: 180px;
-	background-color: darkblue;
-	transition: 0.5s ease;
-    font-family: "Mitr", sans-serif;
-    font-weight: 400;
-    display: flex;
-    flex-direction: column;
-   padding: 10px;
-   margin: 0 auto ;
-   align-items: center;
-   transition: 0.3s ease;
-   margin-bottom: 20px;
+ .btn_viewadd{
+     color: white;
+     font-size: 25px;
+     border-radius: 50px;
+     max-width: 180px;
+     background-color: darkblue;
+     transition: 0.5s ease;
+     font-family: "Mitr", sans-serif;
+     font-weight: 400;
+     display: flex;
+     flex-direction: column;
+     padding: 10px;
+     margin: 0 auto ;
+     align-items: center;
+     transition: 0.3s ease;
+     margin-bottom: 20px;
 }
-.btn_viewadd:hover{
-    background-color: rgb(20, 77, 173);
+ .btn_viewadd:hover{
+     background-color: rgb(20, 77, 173);
 }
-
-.btn_viewadd2{
-    color: white;
-	font-size: 18px;
-	border-radius: 50px;
-    max-width: 180px;
-	background-color: darkblue;
-	transition: 0.5s ease;
-    font-family: "Mitr", sans-serif;
-    font-weight: 400;
-    display: flex;
-    flex-direction: column;
-   padding: 10px;
-   margin: 0 auto ;
-   align-items: center;
-   transition: 0.3s ease;
-   margin-bottom: 20px;
+ .btn_viewadd2{
+     color: white;
+     font-size: 18px;
+     border-radius: 50px;
+     max-width: 180px;
+     background-color: darkblue;
+     transition: 0.5s ease;
+     font-family: "Mitr", sans-serif;
+     font-weight: 400;
+     display: flex;
+     flex-direction: column;
+     padding: 10px;
+     margin: 0 auto ;
+     align-items: center;
+     transition: 0.3s ease;
+     margin-bottom: 20px;
 }
-.btn_viewadd2:hover{
-    background-color: rgb(20, 77, 173);
+ .btn_viewadd2:hover{
+     background-color: rgb(20, 77, 173);
 }
-
-
-.table_all, th, td{
-    border: 1px solid black;
-    border-collapse: collapse;
-    padding: 10px;
-   
+ .table_all, th, td{
+     border: 1px solid black;
+     border-collapse: collapse;
+     padding: 10px;
 }
-.table_container{
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+ .table_container{
+     overflow-x: auto;
+     -webkit-overflow-scrolling: touch;
 }
-.table_all{
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 20px;
-  
-    
+ .table_all{
+     border-top-left-radius: 10px;
+     border-bottom-left-radius: 20px;
 }
-
-tr{
-    background-color: skyblue;
-    color: black;
-    font-size: 18px;
-    cursor: pointer;
+ tr{
+     background-color: skyblue;
+     color: black;
+     font-size: 18px;
+     cursor: pointer;
 }
-
-td{
-    background-color: white;
-    text-align: center;
-    transition: 0.3s ease;
-    cursor: pointer;
+ td{
+     background-color: white;
+     text-align: center;
+     transition: 0.3s ease;
+     cursor: pointer;
 }
-
-td:hover{
-    background-color: #e1e1e1;
+ td:hover{
+     background-color: #e1e1e1;
 }
-
-@media (max-width: 1024px) {
-    .table_all, th, td {
-        font-size: 16px;
-        padding: 8px;
+ @media (max-width: 1024px) {
+     .table_all, th, td {
+         font-size: 16px;
+         padding: 8px;
     }
-    
-    .btn, .btn_viewadd {
-        font-size: 18px;
-        width: 40%;
+     .btn, .btn_viewadd {
+         font-size: 18px;
+         width: 40%;
     }
-
-    .add_sport_all {
-        width: 50%;
+     .add_sport_all {
+         width: 50%;
     }
      .filter-button {
-        font-size: 14px;
-        padding: 8px 18px;
+         font-size: 14px;
+         padding: 8px 18px;
     }
-    .all_filter {
-        justify-content: center; /* Centers buttons in the container */
+     .all_filter {
+         justify-content: center;
+        /* Centers buttons in the container */
     }
 }
-
-@media (max-width: 768px) {
-    .table_all, th, td {
-        font-size: 14px;
-        padding: 6px;
+ @media (max-width: 768px) {
+     .table_all, th, td {
+         font-size: 14px;
+         padding: 6px;
     }
-
-    .btn, .btn_viewadd {
-        font-size: 16px;
-        width: 60%;
+     .btn, .btn_viewadd {
+         font-size: 16px;
+         width: 60%;
     }
-
-    .add_sport_all {
-        width: 70%;
+     .add_sport_all {
+         width: 70%;
     }
+     .filter-button {
+         font-size: 12px;
+         padding: 6px 16px;
+    }
+     .all_filter {
+         justify-content: center;
+    }
+}
+ @media (max-width: 576px) {
+     .table_all, th, td {
+         font-size: 12px;
+         padding: 5px;
+    }
+     .btn, .btn_viewadd {
+         font-size: 14px;
+         width: 80%;
+    }
+     .add_sport_all {
+         width: 90%;
+    }
+     .table_all {
+         display: block;
+         overflow-x: auto;
+         white-space: nowrap;
+    }
+     th, td {
+         min-width: 100px;
+    }
+     .filter-button {
+         font-size: 14px;
+         padding: 6px 14px;
+        /* Ensures buttons take full width on very small screens */
+         text-align: center;
+        /* Centers text */
+         margin-bottom: 10px;
+    }
+     .all_filter {
+         padding: 0 10px;
+    }
+}
+ .add{
+     background-color: rgb(92, 183, 1);
+}
+ .add:hover{
+     background-color: rgb(66, 133, 0);
+}
+ .edit{
+     background-color: rgb(36, 87, 154);
+     cursor: pointer;
+}
+ .edit:hover{
+     background-color: rgb(25, 61, 107);
+}
+ .del{
+     background-color: rgb(164, 6, 6);
+}
+ .del:hover{
+     background-color: rgb(118, 2, 2);
+}
+ .add a{
+     color: #e1e1e1;
+}
+ .edit a{
+     color: #e1e1e1;
+}
+ .del a{
+     color: #e1e1e1;
+}
+ .edit_sport_all{
+     padding: 20px 20px;
+     border: 2px solid black;
+     width: 25%;
+     margin-top: 30px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     border-radius: 20px;
+}
+ .select_box{
+     background-color: #e1e1e1;
+     height: 35px;
+     font-size: 16px;
+     border-radius: 30px;
+     margin-top: 8px;
+     padding: 5px;
+     text-align: center;
+     margin-bottom: 20px;
+}
+ .radio-group {
+     display: flex;
+     flex-direction: column;
+}
+ .radio-option {
+     display: flex;
+     align-items: center;
+     margin-bottom: 15px;
+}
+ .radio-option input[type="radio"] {
+     appearance: none;
+     width: 20px;
+     height: 20px;
+     margin-right: 10px;
+     background-color: #fff;
+     border: 2px solid #000;
+     border-radius: 50%;
+     outline: none;
+     cursor: pointer;
+     transition: 0.3s ease;
+}
+ .radio-option input[type="radio"]:checked {
+     background-color: darkblue;
+}
+ .radio-option label {
+     font-size: 16px;
+     cursor: pointer;
+     margin-right: 20px;
+}
+ .btn-sub{
+     color: white;
+     background-color: darkblue;
+     transition: 0.4s ease;
+     width: 30%;
+     height: 40px;
+     border-radius: 30px;
+     font-size: 18px;
+}
+ .btn-sub:hover{
+     color: skyblue;
+}
+ .head_playersign{
+     margin-top: 30px;
+}
  .filter-button {
-        font-size: 12px;
-        padding: 6px 16px;
-    }
-    .all_filter {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 576px) {
-    .table_all, th, td {
-        font-size: 12px;
-        padding: 5px;
-    }
-
-    .btn, .btn_viewadd {
-        font-size: 14px;
-        width: 80%;
-    }
-
-    .add_sport_all {
-        width: 90%;
-    }
-
-    .table_all {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-
-    th, td {
-
-        min-width: 100px;
-    }
-
-   .filter-button {
-        font-size: 14px;
-        padding: 6px 14px;
-      /* Ensures buttons take full width on very small screens */
-        text-align: center; /* Centers text */
-        margin-bottom: 10px;
-    }
-
-    .all_filter {
-        padding: 0 10px;
-    }
-}
-
-.add{
-    background-color: rgb(92, 183, 1);
-}
-.add:hover{
-    background-color:  rgb(66, 133, 0);
-}
-.edit{
-    background-color: rgb(36, 87, 154);
-    cursor: pointer;
-}
-.edit:hover{
-    background-color: rgb(25, 61, 107);
-}
-.del{
-    background-color: rgb(164, 6, 6);
-}
-.del:hover{
-    background-color: rgb(118, 2, 2);  
-}
-
-.add a{
-    color: #e1e1e1;
-}
-
-.edit a{
-    color: #e1e1e1;
-}
-
-.del a{
-    color: #e1e1e1;
-}
-
-
-.edit_sport_all{
-    padding: 20px 20px;
-    border: 2px solid black;
-    width: 25%;
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 20px;
-}
-.select_box{
-    background-color: #e1e1e1;
-    height: 35px;
-    font-size: 16px;
-    border-radius: 30px;
-    margin-top: 8px;
-    padding: 5px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.radio-group {
-    display: flex;
-    flex-direction: column;
-    
-}
-
-.radio-option {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.radio-option input[type="radio"] {
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    background-color: #fff;
-    border: 2px solid #000;
-    border-radius: 50%;
-    outline: none;
-    cursor: pointer;
-    transition: 0.3s ease;
-   
-}
-
-.radio-option input[type="radio"]:checked {
-    background-color: darkblue;
-}
-
-.radio-option label {
-    font-size: 16px;
-    cursor: pointer;
-    margin-right: 20px;
-}
-
-.btn-sub{
-    color: white;
-    background-color: darkblue;
-    transition: 0.4s ease;
-    width: 30%;
-    height: 40px;
-    border-radius: 30px;
-    font-size: 18px;
-}
-
-.btn-sub:hover{
-    color: skyblue;
-}
-
-.head_playersign{
-    margin-top: 30px;
-}
-
-.filter-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-bottom: 15px;
-    margin-top: 20px;
-    background-color: darkblue;
-    border: none;
-    border-radius: 60px;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    cursor: pointer;
-    text-decoration: none;
+     padding: 10px 20px;
+     font-size: 16px;
+     margin-bottom: 15px;
+     margin-top: 20px;
+     background-color: darkblue;
+     border: none;
+     border-radius: 60px;
+     color: white;
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+     cursor: pointer;
+     text-decoration: none;
      display: inline-block;
 }
-
-.filter-button:hover {
-    color: skyblue;
+ .filter-button:hover {
+     color: skyblue;
 }
-
-.all_filter{
-    margin-top: 50px;
+ .all_filter{
+     margin-top: 50px;
 }
-
-.btn_schedule {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 20px;
-    padding: 10px;
-    background-color: darkblue;
-    color: white;
-    border-radius: 30px;
-    width: 5%;
-    text-align: center;
-    transition: 0.4s ease;
+ .btn_schedule {
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     margin-top: 20px;
+     padding: 10px;
+     background-color: darkblue;
+     color: white;
+     border-radius: 30px;
+     width: 5%;
+     text-align: center;
+     transition: 0.4s ease;
 }
-
-.btn_schedule:hover{
-    color: skyblue;
+ .btn_schedule:hover{
+     color: skyblue;
 }
-
+ 
