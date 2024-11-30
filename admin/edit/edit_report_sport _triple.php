@@ -54,7 +54,7 @@
                 <select name="reward_color_1st" style="margin-bottom: 25px;" class="select_box">
                     <option value="<?php echo $row_view_reward['reward_first']; ?>" selected><?php echo color_color($row_view_reward['reward_first'], $conn); ?></option>
                     <?php 
-                        $sql_find_color_color = "SELECT `color_color`, `color_id_user` FROM `colors` WHERE color_id != ".$row_view_reward['reward_first'];
+                        $sql_find_color_color = "SELECT `color_color`, `color_id_user` FROM `colors` WHERE `color_id_user` != ".$row_view_reward['reward_first'];
                         $result_find_colors_name = mysqli_query($conn, $sql_find_color_color);
                         if (mysqli_num_rows($result_find_colors_name) > 0) {
                             while ($row_find_colors_name = mysqli_fetch_assoc($result_find_colors_name)) {
@@ -67,7 +67,7 @@
                 <select name="reward_color_2nd" style="margin-bottom: 25px;" class="select_box">
                     <option value="<?php echo $row_view_reward['reward_second']; ?>" selected><?php echo color_color($row_view_reward['reward_second'], $conn); ?></option>
                     <?php 
-                        $sql_find_color_color = "SELECT `color_color`, `color_id_user` FROM `colors`";
+                        $sql_find_color_color = "SELECT `color_color`, `color_id_user` FROM `colors` WHERE `color_id_user` != ".$row_view_reward['reward_second'];
                         $result_find_colors_name = mysqli_query($conn, $sql_find_color_color);
                         if (mysqli_num_rows($result_find_colors_name) > 0) {
                             while ($row_find_colors_name = mysqli_fetch_assoc($result_find_colors_name)) {

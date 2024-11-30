@@ -5,7 +5,7 @@
             <th>reward_reward_id</th>
             <th>🥇1</th>
             <th>🥈2</th>
-            <th>3</th>
+            <th>🥉3</th>
             <th>edit</th>
             <th>del</th>
         </tr>
