@@ -39,7 +39,7 @@ To run ISRS, ensure the following:
 ### Installation (if hosted locally)  
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/isrs.git
+git clone https://github.com/Book549/ISRS.git
 ```
 2. Set up the required database and environment variables.
 3. Start the server using one of the prerequisites listed above.
