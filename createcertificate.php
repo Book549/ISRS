@@ -1,29 +1,30 @@
-<?php
-// Set the content type header to indicate an image
-header("Content-Type: image/png");
+<!DOCTYPE html>
+<html lang="th" dir="ltr">
+  <head>
+    <title>การแข่งขันกีฬาภายใน สามัคคีเกมส์ ครั้งที่ ๕๐ “กีฬาสร้างสรรค์ รวมพลังสามัคคี” ประจำปี ๒๕๖๗</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="http://data.samakkhi.ac.th/certificate/modules/certificate/template/print.css" />
+    <link rel="stylesheet" href="http://data.samakkhi.ac.th/certificate/skin/fonts.css" />
+<link href="https://fonts.googleapis.com/css?family=Kodchasan|Athiti|Charm|Charmonman|Chonburi|Fahkwang|Itim|K2D|Kanit|KoHo|Krub|Maitree|Mali|Mitr|Niramit|Pattaya|Pridi|Prompt|Sarabun|Sriracha|Srisakdi:700|Taviraj|Thasadith:700|Trirong" rel="stylesheet">
+  </head>
 
-// Load the background image
-$background = imagecreatefrompng('pic\certificate.png');
+  <body>
+    <a class="icon-print" onclick="window.print()" title="พิมพ์หน้านี้"></a>
+  <div id="cert_bg">
+    <img src="pic/download.png">
+        <span class="cert_number" style="background-color:#FFFFFF;border-radius:15px;"><font color="blue">&nbsp;&nbsp;เลขที่ ๐๐๑ ส.ว.ค. ๖๑/๒๕๖๗&nbsp;&nbsp;</font></span>
+    <div id="cert_name" style="font-family:Sarabun;font-size:26px;color:#000000;top:340px;font-weight: bold;">
+            เด็กชายณัทธภัทร สุทธสม
+        </div>
 
-  
-if (!$background) { /* See if it failed */
-    $background  = imagecreatetruecolor(180, 30); /* Create a blank image */
-    $bgc = imagecolorallocate($background, 255, 255, 255);
-    $tc  = imagecolorallocate($background, 0, 0, 0);
-    imagefilledrectangle($background, 0, 0, 180, 30, $bgc);
-    /* Output an errmsg */
-    imagestring($background, 1, 5, 5, "Failed to load background image...", $tc);
-}else{
+        <div id="cert_name" style="padding-top: 15px;font-family:Sarabun;font-size:22px;color:#000000;top:340px;">
+            <br />ได้รับรางวัล ชนะเลิศ การแข่งขันกีฬาวิ่ง ๑๐๐ เมตร ม.๑ ชาย
+        </div>
 
-    // Allocate a color for text (optional, if you want to add text)
-    $text_color = imagecolorallocate($background, 255, 255, 255); // White color
-    // Add text to the image
-    imagestring($background, 5, 50, 50, "Your Certificate", $text_color);
-}
+        <div id="cert_name" style="padding-top: 20px;font-family:Sarabun;font-size:22px;color:#000000;top:340px;">
+            <br /><br />
+        </div>
 
-// Output the image
-imagepng($background);
-
-// Free memory
-imagedestroy($background);
-?>
+    </div>
+  </body>
+</html>

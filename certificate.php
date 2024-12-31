@@ -68,7 +68,6 @@ include 'conn.php';
                     echo "resuit_got_reward = 0 (no data in reward)";
                 }
             }
-            echo "<img src=\"createcertificate.php\" alt=\"Dynamic Image\">";
         }
     }else{
         $find_player = "SELECT * FROM `players`";
@@ -78,7 +77,7 @@ include 'conn.php';
                 foreach ($row_players as $key => $value) {
                     echo "$key => $value";
                 }
-                echo "<a href=\"certificate.php?id_player=".$row_players['id_player']."\">go</a>";
+                echo "<a href=\"createcertificate.php?id_player=".$row_players['id_player']."\">go</a>";
                 echo "<br>";
             }
         }
