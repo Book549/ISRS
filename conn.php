@@ -58,5 +58,7 @@
     ini_set('display_startup_errors', '1');
     error_reporting(E_ALL);
     #error_reporting(E_ERROR | E_PARSE);
-    
+    #header('Content-Type: text/html; charset=UTF-8');
+    mysqli_set_charset($conn, 'utf8mb4');
+    #phpinfo();
     ?>

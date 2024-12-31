@@ -92,7 +92,10 @@
                         <a href="player_name.php" class="btn-menu"><i class="fas fa-address-book"></i> ตรวจสอบรายชื่อนักกีฬา</a>
                     </div>
                     <div>
-                        <a href="http://data.samakkhi.ac.th/certificate/index.php?count=100&year=2567&group_id=0&cert_id=0&sort=user_no&search=" class="btn-menu"><i class="fas fa-award"></i> ระบบเกียรติบัตร</a>
+                        <a href="certificate.php" class="btn-menu"><i class="fas fa-award"></i> ระบบเกียรติบัตร</a>
+                    </div>
+                    <div>
+                        <a href="http://data.samakkhi.ac.th/certificate/index.php?count=100&year=2567&group_id=0&cert_id=0&sort=user_no&search=" class="btn-menu"><i class="fas fa-award"></i> ระบบเกียรติบัตร สามัคคี</a>
                     </div>
                 </div>
             </section>

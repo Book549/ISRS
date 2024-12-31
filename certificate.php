@@ -28,8 +28,63 @@ include 'conn.php';
         <input type="submit">
     </form>
     <?php 
+    if (isset($_GET['id_player'])) {
+        $id_player = $_GET['id_player'];
+        $find_player = "SELECT * FROM `players` WHERE `id_player` = ".$id_player;
+        $resuit_find_player = mysqli_query($conn, $find_player);
+        if (mysqli_num_rows($resuit_find_player) > 0) {
+            while ($row_players = mysqli_fetch_assoc($resuit_find_player)) {//`id_player``player_id``player_title``player_name``player_sirname``player_class``player_room``player_color_id``player_color_id``player_sport_id`
+                $got_reward = "SELECT * FROM `reward` WHERE `reward_sport_id` = ".$row_players['player_sport_id'];
+                $resuit_got_reward = mysqli_query($conn, $got_reward);
+                if (mysqli_num_rows($resuit_got_reward) > 0) {
+                    $reward_got = mysqli_fetch_assoc($resuit_got_reward);
+                    foreach ($reward_got as $key => $value) {
+                        echo "|$key => $value |<br>";
+
+                        if ($row_players['player_color_id'] == $value) {
+                            #echo $row_players['player_color_id']."|<br>";
+                            switch ($key) {
+                                case 'reward_first':
+                                    echo "reward_first";
+                                    break;
+
+                                case 'reward_second':
+                                    echo "reward_second";
+                                    break;
+
+                                case 'reward_third':
+                                case 'reward_third_one':
+                                case 'reward_third_two':
+                                    echo "reward_third";
+                                    break;
+                                
+                                default:
+                                    echo "ไม่พบรางวัล";
+                                    break;
+                            }
+                        }
+                    }
+                }else{
+                    echo "resuit_got_reward = 0 (no data in reward)";
+                }
+            }
+            echo "<img src=\"createcertificate.php\" alt=\"Dynamic Image\">";
+        }
+    }else{
         $find_player = "SELECT * FROM `players`";
         $resuit_find_player = mysqli_query($conn, $find_player);
+        if (mysqli_num_rows($resuit_find_player) > 0) {
+            while ($row_players = mysqli_fetch_assoc($resuit_find_player)) {//`id_player``player_id``player_title``player_name``player_sirname``player_class``player_room``player_color_id``player_color_id``player_sport_id`
+                foreach ($row_players as $key => $value) {
+                    echo "$key => $value";
+                }
+                echo "<a href=\"certificate.php?id_player=".$row_players['id_player']."\">go</a>";
+                echo "<br>";
+            }
+        }
+    }
+
+
      ?>
 </body>
 </html>
