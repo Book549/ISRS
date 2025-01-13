@@ -1,0 +1,82 @@
+@page {
+  margin: 0;
+  padding: 0;
+  size: A4 landscape;
+}
+body,
+html {
+  padding: 0;
+  margin: 0;
+  display: block;
+  overflow: hidden;
+  height: 100%;
+  font-family: Athiti, Loma, Tahoma;
+}
+@media screen {
+  html {
+    background-color: #666;
+  }
+  #cert_bg {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  }
+  a.icon-print {
+    cursor: pointer;
+    display: block;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #ddd;
+    font-size: 30px;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
+    border-radius: 50em;
+    -moz-border-radius: 50em;
+    -webkit-border-radius: 50em;
+  }
+  a.icon-print:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+  }
+  a.icon-print:before {
+    margin: 0;
+  }
+}
+@media print {
+  a.icon-print {
+    display: none;
+  }
+}
+#cert_bg {
+  position: relative;
+  background-color: #fff;
+  text-align: center;
+  width: 297mm;
+  height: 210mm;
+  margin: 0 auto;
+}
+#cert_bg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+#cert_bg #cert_name {
+  position: absolute;
+  margin: 0 auto;
+  width: 80%;
+  left: 10%;
+  line-height: 1.5em;
+  max-height: 3em;
+  font-weight: normal;
+}
+#cert_bg .cert_number {
+  position: absolute;
+  right: 100px;
+  top: 15px;
+}
