@@ -587,8 +587,8 @@
      color: darkblue;
      display: inline-block;
      background-color: #e1e1e1;
-     padding: 15px;
-     border-radius: 100%;
+     padding: 1rem 1.5rem;
+     border-radius: 50%;
      font-size: 20px;
      margin: 0 18px;
      margin-top: 15px;
